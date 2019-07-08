@@ -859,7 +859,7 @@ $(document).ready(function(e) {
     
   $(".visible-links").remove(); 
   var left_list = '<li><a href="#!">일반형</a></li><li><a href="#!">웹모바일</a></li>';
-  $(".author__urls").hide();
+  $(left_list).appendTo(".author__urls");
   alert(left_list);
     
  /* $(".in_name").click(function (){
