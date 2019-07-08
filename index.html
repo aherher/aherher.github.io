@@ -12,7 +12,7 @@ author_profile: true
   .the_list > li .in_name {padding:0; margin:0 0 20px 0; height:35px; line-height:35px; font-size:20px; font-weight:700; /*cursor:pointer;*/
     color:#333;  background:url('images/open_li.png') no-repeat center right 20px; background-size:24px;}
   .the_list > li .the_close {background:url('images/close_li.png') no-repeat center right 20px; background-size:24px;} 
-  .the_list > li a {color:#333; color:#006fcd;}
+  .the_list > li a {color:#333; color:#006fcd; text-decoration:none;}
   .the_list > li > a {display:block; border:1px solid #ddd; box-sizing:border-box; margin-top:20px;}
   
   .infos {line-height:1; margin:20px 0 30px 0; width:100%; /*display:none;*/ padding:0 0 0 20px;}
@@ -858,9 +858,9 @@ $(document).ready(function(e) {
     });  
     
    alert();
-var left_list = '<li><a href="#!">일반형</a></li><li><a href="#!">웹모바일</a></li>';
-var left_menu = $("body").find(".ul.author__urls");
-$(left_list).prependTo.(left_menu);
+  /* var left_list = '<li><a href="#!">일반형</a></li><li><a href="#!">웹모바일</a></li>';
+   var left_menu = $("body").find(".ul.author__urls");
+   $(left_list).prependTo.(left_menu);*/
   
     
  /* $(".in_name").click(function (){
