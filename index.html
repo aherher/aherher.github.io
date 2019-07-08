@@ -844,7 +844,6 @@ author_profile: true
   </li>
 </ul>
 </div>
-<script src="/js/layout.js"></script>
 <script>
 $(document).ready(function(e) { 
    $(".tabs li").click(function (){
@@ -858,6 +857,11 @@ $(document).ready(function(e) {
     
     });  
     
+   alert();
+var left_list = '<li><a href="#!">일반형</a></li><li><a href="#!">웹모바일</a></li>';
+var left_menu = $("body").find(".ul.author__urls");
+$(left_list).prependTo.(left_menu);
+  
     
  /* $(".in_name").click(function (){
    if($(this).parent("li").find(".infos").css("display") == "none"){
