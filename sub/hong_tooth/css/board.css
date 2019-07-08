@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */ 
+ul { list-style:none;}
+table, caption, tbody, tfoot, thead, tr, th, td, p
+{margin: 0; padding: 0;	border:0; border-collapse:collapse;}
+.board_wrap a {text-decoration:none;}
+.board_wrap {overflow:hidden; margin-top:100px;}
+.board_wrap, .the_board {width:100%;}
+.the_board {width:100%;}
+.the_board tr th, .the_board tr td {color:#333; font-size:16px; height:70px; border-bottom:1px solid #ddd; text-align:center;}
+.the_board tr td > a {color:#333; font-size:16px; display:block; height:100%; width:100%; line-height:70px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.the_board tr th {font-weight:500; background-color:#eee; border-top:2px solid #333; height:40px;}
+.the_board tr .onView {text-align:left;}
+.the_board .notice_line td {background-color:#f8f8f8;}
+.new_board {background-color:#F00; color:#fff; text-align:center; vertical-align:baseline; line-height:17px; width:16px; height:16px; border-radius:100%; font-size:10px; margin-left:10px; display:inline-block;}
+.mob_not, .mob_binfo {display:none;} 
+
+.admin_btns {overflow:hidden; margin-top:20px;}
+.admin_btns li {float:left; width:75px; height:35px; margin-left:12px;}
+.admin_btns li a {font-size:16px; display:block; width:100%; height:100%; text-align:center; line-height:35px;}
+.admin_btns li:first-child {margin-left:0;}
+.admin_btns .write_btn a {background-color:#282828; color:#fff;}
+.admin_btns .gadm_btn a {border:2px solid #282828; box-sizing:border-box; line-height:32px; color:#333;}
+
+.pager {text-align:center; margin:70px 0 50px 0;}
+.pager a {display:inline-block; color:#333; text-align:center; width:34px; height:32px; border:1px solid #ddd; line-height:34px; border-left:none; font-size:12px;}
+.pager a:nth-child(1) {border-left:1px solid #ddd;}
+.pager a img {width:auto; vertical-align:baseline;}
+.pager .page_on {border-bottom:2px solid #000; height:34px; box-sizing:border-box;}
+.pager .board_prev img, .pager .board_next img {width:4px;}
+.pager .board_front img, .pager .board_end img {width:7px;}
+
+.board_src {text-align:center;}
+.board_select {vertical-align:middle; height:35px; box-sizing:border-box; border:1px solid #ddd; text-align-last:center; text-align:center; width:90px;}
+.board_txtinput {border:1px solid #ddd; padding-left:5px; height:35px; color:#333; font-size:16px; box-sizing:border-box; vertical-align:top; max-width:350px; width:60%;}
+.board_scrBtn {height:35px; line-height:35px; color:#fff; background-color:#282828; display:inline-block; vertical-align:top; width:70px; text-align:center; font-size:15px;}
+.board_scrBtn:hover {color:#fff;}
+
+/*게시물 보기 페이지*/
+.read_top {height:80px; border-top:2px solid #333; border-bottom:1px solid #ddd; position:relative; padding:0 15px; box-sizing:border-box;}
+.read_top .read_title {font-size:20px; font-weight:500; line-height:80px;}
+.read_top .indate {position:absolute; right:15px; top:30px; font-size:14px; color:#999;}
+.board_read {font-size:16px; color:#333; padding:50px; border-bottom:1px solid #ddd; line-height:1.4;}
+.board_read img {width:auto; max-width:100%;}
+.bothers {border-bottom:1px solid #ddd; height:45px; line-height:45px; font-size:15px;}
+.bothers a {color:#333; font-size:14px;}
+.bothers span {display:inline-block; text-align:center; color:#888; background-color:#f6f6f6; width:150px; margin-right:40px;}
+.bothers span img {width:9px; vertical-align:middle;}
+.board_liast {margin-top:45px; float:right; text-align:center; width:120px; height:50px; background-color:#999;}
+.board_liast a {color:#fff; line-height:50px; font-size:16px; display:block; width:100%; height:100%; text-align:center;}
+
+/*쓰기페이지*/
+.the_write {width:100%;  border-top:2px solid #333;}
+.the_write tr th, .the_write tr td {color:#333; font-size:15px; border-bottom:1px solid #ddd;}
+.the_write tr td {padding:15px 10px;}
+.the_write tr th {text-align:center; background-color:#f8f8f8; min-width:90px; font-weight:500;}
+.the_write tr td input[type=text] {width:100%; height:28px; border:1px solid #ddd; padding-left:10px; box-sizing:border-box; vertical-align:middle;}
+.the_write tr td .board_text {border:1px solid #ddd; padding:10px; box-sizing:border-box; width:100%; height:350px;}
+.the_write tr td .finputupload input[type=text] {max-width:400px; width:100%; background-color:#f5f5f5;}
+.the_write tr td .finputupload label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    width: 100px;
+    height:28px;
+    background: #777;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+	border:none;
+}
+.the_write tr td .finputupload label input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.write_btns {float:right;}
+#not_check {vertical-align:middle;}
+.chk_lab {vertical-align:bottom;}
+
+/*갤러리*/
+.gallboard_wrap {overflow:hidden; width:100%; margin:0 auto;}
+.gallboard_wrap li {float:left; width:236px; border:1px solid #ddd; margin:0 25px 25px 0; padding:10px; box-sizing:border-box; position:relative;} 
+.gallboard_wrap li:nth-of-type(4n) {margin-right:0;}
+.gallboard_wrap li img {width:100%;}
+.gallboard_wrap li .gbimg {width:100%; height:185px; overflow:hidden;}
+.gallboard_wrap li .gall_title {margin:15px 0 7px 0; color:#333; font-size:16px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.gallboard_wrap li .indate {font-size:14px; color:#999; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.gallboard_wrap li .new_board { position:absolute; bottom:8px; right:10px;}
+
+/*qna*/
+.repl {color:#b6b6b6; margin-right:12px;}
+.qnaintxt {text-align:left; background-color:#efefef; padding:30px 40px 30px 110px; line-height:1.4;}
+.pw_title {font-size:30px; padding:30px 0;}
+#boardpw {max-width:450px; height:40px; width:90%; border:1px solid #ddd; padding-left:10px; box-sizing:border-box; font-size:18px;}
+.pw_input {text-align:center;}
+.pw_btns li {display:inline-block; width:100px; height:45px; vertical-align:middle;}
+.pw_btns {padding:25px 0;}
+.pw_btns li a {display:block; width:100%; height:100%;}
+.pwsubmit a {background-color: #282828; color:#fff; line-height:45px;}
+.cancle a {border:2px solid #282828; box-sizing:border-box; line-height:42px; color:#333;}
+.subject {display:none;}
+.onQna { cursor:pointer;}
+.locked {display:inline-block ;margin-right:6px;}
+.locked img {width:auto; vertical-align:baseline;}
+
