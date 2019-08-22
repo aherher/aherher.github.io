@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>무제 문서</title>
+<script src="js/jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="test_css/base.css" />
+</head>
+
+<body>
+<style>
+.btns {overflow:hidden; margin-bottom:40px; list-style:none;}
+.btns li {width:120px; height:60px; line-height:60px; border:1px solid #ddd; float:left; margin-right:15px;}
+.btns li a {display:block; text-align:center; color:#000; text-decoration:none;}
+.test {position:relative;}
+.test li {position:absolute; left:0; top:0; display:none;}
+</style>
+<ul class="btns">
+ <li><a href="#img01">버튼1</a></li>
+ <li><a href="#img02">버튼2</a></li>
+</ul>
+
+<ul class="test">
+  <li id="img01"><img src="img/1.jpg" alt=""/></li>
+  <li id="img02"><img src="img/2.jpg" alt=""/></li>
+</ul>
+<script>
+$(document).ready(function(e) {
+    $(".test #img01").show();
+	$(".btns li a").mouseenter(function (){
+		var thisatt = $(this).attr("href:not(anmimated)");
+		$(".test li").stop().slideUp(600);
+		$($(this).attr("href")).stop().slideDown(600);
+		
+		return false;
+		});
+});
+</script>
+</body>
+</html>
