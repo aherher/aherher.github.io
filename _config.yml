@@ -105,8 +105,8 @@ analytics:
 author:
   name             : "Jeong seung jin"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  bio              : "안녕하세요."
+  location         : "Seoul"
   email            :
   links:
     - label: "Email"
