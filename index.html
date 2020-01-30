@@ -1021,14 +1021,13 @@ author_profile: true
 <!-- 개인습작 끝-->
 <script>
   $(document).ready(function(e) {
-    alert();
     $(".tabs li").click(function() {
       var tab_index = $(this).index();
       // var tab_index = $(this).attr("href");
       $(".the_wraps").hide();
-      $(this).eq(tab_index).show();
+      $(".the_wraps").eq(tab_index).show();
       $(".tabs li").removeClass("tab_on");
-      $(this).parent("li").addClass("tab_on");
+      $(this).addClass("tab_on");
       // return false;
     });
 
