@@ -1016,11 +1016,12 @@ author_profile: true
 </ul>
 </div>
 <script>
-   $(".tabs li a").click(function (){
-    $(".the_wraps").hide();    
+   $(".tabs li a").click(function (){      
    // var tab_index = $(this).index();
-     var tab_index = $(this).attr("href");     
+    var tab_index = $(this).attr("href");   
+    $(".the_wraps").hide();
     $(tab_index).show();    
+     alert(tab_index);
     $(".tabs li").removeClass("tab_on");
     $(this).parent("li").addClass("tab_on");
     return false;
