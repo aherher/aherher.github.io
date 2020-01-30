@@ -1019,13 +1019,11 @@ author_profile: true
    $(".tabs li a").click(function (){
     $(".the_wraps").hide();    
    // var tab_index = $(this).index();
-     var tab_index = $(this).attr("href");
-     
-    $(".the_wraps").eq(tab_index).show();
-    
+     var tab_index = $(this).attr("href");     
+    $(tab_index).show();    
     $(".tabs li").removeClass("tab_on");
     $(this).parent("li").addClass("tab_on");
-    
+    return false;
     });  
     
   $(".visible-links").remove(); 
