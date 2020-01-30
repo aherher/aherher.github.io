@@ -1016,15 +1016,15 @@ author_profile: true
 </ul>
 </div>
 <script>
-$(document).ready(function(e) { 
-   $(".tabs li").click(function (){
+   $(".tabs li a").click(function (){
     $(".the_wraps").hide();    
-    var tab_index = $(this).index();
+   // var tab_index = $(this).index();
+     var tab_index = $(this).attr("href");
      
     $(".the_wraps").eq(tab_index).show();
     
     $(".tabs li").removeClass("tab_on");
-    $(this).addClass("tab_on");
+    $(this).parent("li").addClass("tab_on");
     
     });  
     
@@ -1043,5 +1043,5 @@ $(document).ready(function(e) {
        $(".the_list > li .in_name").removeClass("the_close");     
       };
  }); */
-});
+
 </script>
