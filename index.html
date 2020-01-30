@@ -1020,8 +1020,7 @@ author_profile: true
    // var tab_index = $(this).index();
     var tab_index = $(this).attr("href");   
     $(".the_wraps").hide();
-    $(tab_index).show();    
-     alert(tab_index);
+    $($(this).attr("href")).show();   
     $(".tabs li").removeClass("tab_on");
     $(this).parent("li").addClass("tab_on");
     return false;
