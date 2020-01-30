@@ -33,8 +33,8 @@ author_profile: true
   /*.tabs .tab_on {background-color:#ff8813;}
   .tabs .tab_on a {color:#fff;}*/
   
-  .the_wraps {display:none;}
-  #tabs01 {display:block;}
+  /*.the_wraps {display:none;}
+  #tabs01 {display:block;}*/
 </style>
 <h2 class="page__title">포트폴리오</h2>
 
@@ -1017,13 +1017,13 @@ author_profile: true
 </div>
 <script>
    $(".tabs li a").click(function (){      
-   // var tab_index = $(this).index();
-    var tab_index = $(this).attr("href");   
+   var tab_index = $(this).index();
+   // var tab_index = $(this).attr("href");   
     //$(".the_wraps").hide();
     $($(this).attr("href")).remove();
     $(".tabs li").removeClass("tab_on");
     $(this).parent("li").addClass("tab_on");
-    return false;
+   // return false;
     });  
     
   $(".visible-links").remove(); 
