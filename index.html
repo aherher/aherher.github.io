@@ -1020,6 +1020,7 @@ author_profile: true
 </div>
 <!-- 개인습작 끝-->
 <script>
+ $(window).ready(function(){
    $(".tabs li").click(function (){      
    var tab_index = $(this).index();
    // var tab_index = $(this).attr("href");   
@@ -1045,5 +1046,5 @@ author_profile: true
        $(".the_list > li .in_name").removeClass("the_close");     
       };
  }); */
-
+ });
 </script>
