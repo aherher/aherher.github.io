@@ -1132,9 +1132,13 @@ author_profile: true
   });
   $(window).load(function (){
    var left_tab = $("html").find(".left_tab");
-    alert();
+   
     $(left_tab).click(function(){
-    alert();
+     var left_index = $(this).index();
+      $(".the_wraps").hide();
+      $(".the_wraps").eq(left_index).show();
+      $(".tabs li").removeClass("tab_on");
+      $(left_index).addClass("tab_on");
     });
   });
 </script>
