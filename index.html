@@ -1134,11 +1134,11 @@ author_profile: true
    var left_tab = $("html").find(".left_tab");
    
     $(left_tab).click(function(){
-     var left_index = $(this).index();
+     var left_index = $(this).index() + 1;
       $(".the_wraps").hide();
       $(".the_wraps").eq(left_index).show();
       $(".tabs li").removeClass("tab_on");
-      $(left_index).addClass("tab_on");
+      $(".tabs li").eq(left_index).addClass("tab_on");
     });
   });
 </script>
