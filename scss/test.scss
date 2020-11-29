@@ -1,7 +1,47 @@
 @charset "euc-kr";
+$main-color: red;
+$sub-color:blue;
+$imgurl:'../images/sub';
+
+// ÇÑ±Û
+
+@mixin centerC($position) {
+    position: $position;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+
+@mixin flex ($align, $just){
+    display: flex;
+    align-items: $align;
+    justify-content: $just;
+}
+
+$breakpoints: (
+        'small': (max-width: 767px),
+        'medium': (max-width: 992px),
+        'large': (max-width: 1200px),
+) !default;
+
+@mixin respond-to($breakpoint) {
+    // If the key exists in the map
+    @if screen and map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
 h1 {
     text-align: center;
-    color:red;
+   background-color: $main-color;
     border: 1px solid #ddd;
 
  
@@ -9,8 +49,32 @@ h1 {
 
 .righter{
     text-align: right;
+ color:$sub-color; 
 }
 
-p {
+p {  
     text-align: right;
+    border: 1px solid $sub-color;
+}
+
+.sectionWrap {
+    .title {
+        text-align: center;
+        @include centerC(relative);
+    } 
+    background: url($imgurl+'nav.png');
+}
+
+.lists {
+    @include flex(center, space-between);
+    @include respond-to('medium') {
+      display: block;
+      li {width:50%;
+      font:{
+          size:50px;  
+          weight:bold;       
+      }
+      color:$main-color;
+    }
+    }
 }
