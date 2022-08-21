@@ -1,0 +1,165 @@
+<?
+  $site_path = "../HyAdmin/";
+  require_once($site_path."include/lib.inc.php");
+  
+  $goodsTable = "hy_request";
+  
+  //구분
+  //$str_que = " and ReCatKey = '1'"; //인간운동과학
+  
+  $count_que = "select count(ReIdx) from $goodsTable where (1=1) $str_que";
+  $count_list = mysql_query($count_que);
+  $count_total = @mysql_result($count_list,0,0);
+
+  if(!$scale){
+    $scale = "200"; //리스트수
+  }
+  $pagescale = "10"; //페이지수
+
+  if(!$start) $start=0; //시작페이지
+
+  $list_que = "select * from $goodsTable where (1=1) $str_que order by ReOrder DESC,ReIdx asc limit $start,$scale";
+  $result_list = mysql_query($list_que);
+  $total = mysql_affected_rows();
+?>
+
+<?
+  $list_view = "select * from $goodsTable where ReIdx='$ReIdx'";
+  $result_view = mysql_query($list_view);
+  $row_view = mysql_fetch_array($result_view);  
+?>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>diiPArt</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<!-- <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">-->
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+</head>
+
+<body>
+<div class="Wrap"> 
+  <!-- 헤더 -->
+  <div id="header" class="header">
+    <h1><a href="../main.html"></a></h1>
+  </div>
+  <div class="btn_wrap">
+    <div class="Mmenu_btn"></div>
+    <div class="Mmenu_close"></div>
+  </div>
+  <!-- 메뉴-->
+  <div class="fix_area">
+    <div class="all_wrap">
+      <div class="Mmenu_Wrap">
+        <ul class="Mmenu">
+          <li><a href="../main.html">HOME</a></li>
+          <li><a href="../about/vision.html">ABOUT US</a></li>
+          <li><a href="../news/news.html">NEWS</a></li>
+          <li><a href="../work/work.html">WORK</a></li>
+          <li><a href="../team/team.html">TEAM</a></li>
+          <li><a href="../contact/job.html">CAREER</a></li>
+        </ul>
+        <!-- 다국어 버튼 -->
+        <ul class="MlangWrap">
+          <li><a href="/index.html">English</a></li>
+          <li><a href="/russian/index.html">Russian</a></li>
+        </ul>
+        <!-- 다국어 버튼 끝 --> 
+        <!-- 메뉴 하단 주소 -->
+        <div class="mb_adress">
+          <div class="min_adress">
+            <p class="country red_txt">SEOUL</p>
+            <p class="inadress">16F, 479 Bongeunsa-ro, Gangnam-gu, Seoul, Republic of Korea, 06095<br/>
+              T. +82.2.6952.3818 F. +82.2.6930.4116 </p>
+            <p class="view_map"><a href="../contact/location.html">VIEW MAP</a></p>
+          </div>
+          <div class="min_adress">
+            <p class="country red_txt">SINGAPORE</p>
+            <p class="inadress">152 Beach Road, #08-06/08, Gateway East, Singapore, 189721<br/>
+              T. +65.6909.5960 F. +65.6909.5950</p>
+            <p class="view_map"><a href="../contact/location.html">VIEW MAP</a></p>
+          </div>
+          <div class="min_adress">
+            <p class="country red_txt">UZBEKISTAN</p>
+            <p class="inadress">24-a, block D, Nukus Street, Tashkent City, Republic of Uzbekistan, 100015<br/>
+              T. +99.89.0997.0004</p>
+            <p class="view_map"><a href="../contact/location.html">VIEW MAP</a></p>
+          </div>
+        </div>
+        <!-- 메뉴 하단 주소 끝--> 
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 메뉴 끝--> 
+<!--헤더 끝 --> 
+<!-- <? include "../inc/head.html"; ?> -->
+<!--work 이미지 -->
+
+<div class="mag_box contents"> 
+  <!-- 이미지 롤링 -->
+  <div class="prj_vwrap">
+    <ul class="prj_dots">
+      <li class="prj_on"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="prj_visual">
+      <?if($row_view[ReFile2]){?><img class="resize" src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile2]?>" alt="리사이징용 이미지"/><?}?>
+      <?if($row_view[ReFile2]){?><li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile2]?>" alt="프로젝트 이미지"/></li><?}?>
+      <?if($row_view[ReFile3]){?><li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile3]?>" alt="프로젝트 이미지"/></li><?}?>
+      <?if($row_view[ReFile4]){?><li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile4]?>" alt="프로젝트 이미지"/></li><?}?>
+      <?if($row_view[ReFile5]){?><li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile5]?>" alt="프로젝트 이미지"/></li><?}?>
+      <?if($row_view[ReFile6]){?><li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile6]?>" alt="프로젝트 이미지"/></li><?}?>
+      <?if($row_view[ReFile7]){?><li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile7]?>" alt="프로젝트 이미지"/></li><?}?>
+    </ul>
+  </div>
+  <!-- 이미지 롤링 끝 --> 
+  <!-- 프로젝트 정보 -->
+  <div class="project_wrap">
+    <div class="prj_txts">
+      <p class="prj_title"><?=$row_view[ReTitle]?></p>
+      <p class="prj_copy"><?=nl2br($row_view[ReDetail])?></p>
+      <!--<ul class="prj_info">
+        <li>Project Type : <?=$row_view[ReProType]?></li>
+        <li>Construction Cost : <?=$row_view[ReCost]?></li>
+        <li>Lead Designer : <?=$row_view[ReLead]?></li>
+        <li>Location : <?=$row_view[ReLocation]?></li>
+      </ul>     -->
+      
+     
+       <table class="prj_info">
+      <tbody>
+        <tr><td>Project Type : </td><td><?=$row_view[ReProType]?></td></tr>
+        <tr><td>Construction Cost : </td><td><?=$row_view[ReCost]?></td></tr>
+        <tr><td>Lead Designer : </td><td><?=$row_view[ReLead]?></td></tr>
+        <tr><td>Location : </td><td><?=$row_view[ReLocation]?></td></tr>
+        </tbody>
+      </table>  
+      
+    </div>
+    <?if($row_view[ReFile8]){?><?}?> </div>
+  <!-- 프로젝트 정보 끝 --> 
+</div>
+<!-- <? include "../inc/footer.html"; ?> -->
+<!-- footer -->
+<div class="footer_wrap">
+  <div class="footer center_box">
+   <div class="top_wrap"><div class="intop center_box"><a class="go_top" href="#top"><img src="../images/common/top.png" alt=""/></a></div></div>
+    <p class="fntns"><span><a href="../about/vision.html">ABOUT</a></span></p>
+    <p class="finfo"><span>TEL : +82 2-6952-3818</span> <span>ADDRESS : 51-2, Samsung-dong, Gangnam-gu, Seoul, Republic of Korea</span></p>
+    <p class="copyright">Copyright ⓒ diiPArt KOREA. All Rights Reserved</p>
+  </div>
+</div>
+<!-- footer 끝 --> 
+<script src="../js/jquery-1.7.1.min.js"></script> 
+<script src="../js/layOut.js"></script>
+<script src="../js/jquery.bxslider.js"></script>
+</body>
+</html>

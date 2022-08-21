@@ -1,0 +1,128 @@
+<?
+  $site_path = "../HyAdmin/";
+  require_once($site_path."include/lib.inc.php");
+  
+  $goodsTable = "hy_request";
+  
+  //구분
+  //$str_que = " and ReCatKey = '1'"; //인간운동과학
+  
+  $count_que = "select count(ReIdx) from $goodsTable where (1=1) $str_que";
+  $count_list = mysql_query($count_que);
+  $count_total = @mysql_result($count_list,0,0);
+
+  if(!$scale){
+    $scale = "200"; //리스트수
+  }
+  $pagescale = "10"; //페이지수
+
+  if(!$start) $start=0; //시작페이지
+
+  $list_que = "select * from $goodsTable where (1=1) $str_que order by ReOrder DESC,ReIdx asc limit $start,$scale";
+  $result_list = mysql_query($list_que);
+  $total = mysql_affected_rows();
+?>
+<?
+  $list_view = "select * from $goodsTable where ReIdx='$ReIdx'";
+  $result_view = mysql_query($list_view);
+  $row_view = mysql_fetch_array($result_view);  
+?>
+<? include "../inc/head.html"; ?>
+<!--work 이미지 -->
+
+<div class="mag_box contents"> 
+  <!-- 이미지 롤링 -->
+  <div class="prj_vwrap">
+    <ul class="prj_dots">
+      <?if($row_view[ReFile2]){?><li class="prj_on"></li><?}?>
+      <?if($row_view[ReFile3]){?><li></li><?}?>
+      <?if($row_view[ReFile4]){?><li></li><?}?>
+      <?if($row_view[ReFile5]){?><li></li><?}?>
+      <?if($row_view[ReFile6]){?><li></li><?}?>
+      <?if($row_view[ReFile7]){?><li></li><?}?>
+      <?if($row_view[ReFile9]){?><li></li><?}?>
+      <?if($row_view[ReFile10]){?><li></li><?}?>
+      <?if($row_view[ReFile11]){?><li></li><?}?>
+      <?if($row_view[ReFile12]){?><li></li><?}?>
+    </ul>
+    <ul class="prj_visual">
+      <?if($row_view[ReFile2]){?>
+      <img class="resize" src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile2]?>" alt="리사이징용 이미지"/>
+      <?}?>
+      <?if($row_view[ReFile2]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile2]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile3]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile3]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile4]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile4]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile5]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile5]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile6]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile6]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile7]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile7]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile9]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile9]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile10]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile10]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile11]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile11]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+      <?if($row_view[ReFile12]){?>
+      <li><img src="/HyAdmin/upload/etcFile/<?=$row_view[ReFile12]?>" alt="프로젝트 이미지"/></li>
+      <?}?>
+    </ul>
+  </div>
+  <!-- 이미지 롤링 끝 --> 
+  <!-- 프로젝트 정보 -->
+  <div class="project_wrap">
+    <div class="prj_txts">
+      <p class="prj_title">
+        <?=$row_view[ReTitle]?>
+      </p>
+      <p class="prj_copy">
+        <?=nl2br($row_view[ReDetail])?>
+      </p>
+      <!--<ul class="prj_info">
+        <li>Project Type : <?=$row_view[ReProType]?></li>
+        <li>Construction Cost : <?=$row_view[ReCost]?></li>
+        <li>Lead Designer : <?=$row_view[ReLead]?></li>
+        <li>Location : <?=$row_view[ReLocation]?></li>
+      </ul>   -->
+      
+      <table class="prj_info">
+        <tbody>
+          <tr>
+            <th>Project Type<span> : </span></th>
+            <td><?=$row_view[ReProType]?></td>
+          </tr>
+          <tr>
+            <th>Construction Cost</th>
+            <td> : <?=$row_view[ReCost]?></td>
+          </tr>
+          <tr>
+            <th>Development Area</th>
+            <td> : <?=$row_view[ReLead]?></td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td> : <?=$row_view[ReLocation]?></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <?if($row_view[ReFile8]){?>
+    
+    <?}?>
+  </div>
+  <!-- 프로젝트 정보 끝 --> 
+</div>
+<? include "../inc/footer.html"; ?>

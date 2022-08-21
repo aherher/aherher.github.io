@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+@import url(base.css);
+@import url(layout.css);
+
+
+@font-face{
+	font-family:Exo-Regular;
+	src:url(../font/Exo-Regular.eot); 
+    src:url(../font/Exo-Regular.woff) format('woff'); }
+	
+@font-face{
+	font-family:Exo-SemiBold;
+	src:url(../font/Exo-SemiBold.eot); 
+    src:url(../font/Exo-SemiBold.woff) format('woff'); }
+
+

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>diiPArt</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<!-- <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">-->
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<script src="../js/jquery-1.7.1.min.js"></script>
+<script src="../js/jquery.bxslider.js"></script>
+</head>
+
+<body>
+<header class="Wrap">
+  <!-- 헤더 -->
+  <section id="header" class="header">
+    <h1><a href="../main.html"></a></h1>
+  </section>
+  <div class="btn_wrap">
+    <div class="Mmenu_btn"></div>
+    <div class="Mmenu_close"></div>
+  </div>
+  <!-- 메뉴-->
+  <div class="fix_area">
+    <div class="all_wrap">
+      <div class="Mmenu_Wrap">
+        <ul class="Mmenu">
+          <li><a href="../main.html">HOME</a></li>
+          <li><a href="../about/vision.html">ABOUT US</a></li>
+          <li><a href="../news/news.html">NEWS</a></li>
+          <li><a href="../work/work.html">WORK</a></li>
+          <li><a href="../team/team.html">TEAM</a></li>
+          <li><a href="../contact/job.html">CAREER</a></li>
+        </ul>
+        <!-- 다국어 버튼 -->
+        <ul class="MlangWrap">
+          <li><a href="/index.html">English</a></li>
+          <li><a href="#!">Russian</a></li>
+        </ul>
+        <!-- 다국어 버튼 끝 -->
+        <!-- 메뉴 하단 주소 -->
+        <div class="mb_adress">
+          <div class="min_adress">
+            <p class="country red_txt">SEOUL</p>
+            <p class="inadress">16F, 479 Bongeunsa-ro, Gangnam-gu, Seoul, Republic of Korea, 06095<br/>
+              T. +82.2.6952.3818 F. +82.2.6930.4116 </p>
+            <p class="view_map"><a href="#map_wrap01">VIEW MAP</a></p>
+          </div>
+          <div class="min_adress">
+            <p class="country red_txt">SINGAPORE</p>
+            <p class="inadress">152 Beach Road, #08-06/08, Gateway East, Singapore, 189721<br/>
+              T. +65.6909.5960 F. +65.6909.5950</p>
+            <p class="view_map"><a href="#map_wrap02">VIEW MAP</a></p>
+          </div>
+          <div class="min_adress">
+            <p class="country red_txt">UZBEKISTAN</p>
+            <p class="inadress">24-a, block D, Nukus Street, Tashkent City, Republic of Uzbekistan, 100015<br/>
+              T. +99.87.1207.0660</p>
+            <p class="view_map"><a href="#map_wrap03">VIEW MAP</a></p>
+          </div>
+        </div>
+        <!-- 메뉴 하단 주소 끝-->
+      </div>
+    </div>
+  </div>
+</header>
+<!-- 메뉴 끝-->
+<!--헤더 끝 -->
+
+<!-- contact 시작 -->
+<div class="contents">
+	<div class="loc_img visual_wrap"></div>
+	<div class="center_box">
+		<h2 class="lets_work">LET'S WORK TOGETHER</h2>
+		<p class="job_commnet">diiPArt is always open to talented and enthusiastic professionals like you.</p>
+		<form name="frm" action="job_ps.php" method="post" ENCTYPE="multipart/form-data">
+			<section class="intr"> <span class="intd">
+					<input type="text" name="ReMemName" placeholder="Full Name *">
+				</span> <span class="intd">
+					<input type="text" name="ReEmail" placeholder="Email Address *">
+				</span>
+			</section>
+			<section class="intr">
+				<article class="intd">
+					<div class="select_wrap"> <span>Desired Office(s)</span>
+						<select class="sub_sel" name="ReEtc1">
+							<option value="">Desired Office(s)</option>
+							<option value="Seoul">Seoul</option>
+							<option value="Singapore">Singapore</option>
+							<option value="Tashkent">Tashkent</option>
+						</select>
+					</div>
+				</article>
+				<article class="intd">
+					<div class="select_wrap"> <span>Job Area</span>
+						<select class="sub_sel" name="ReEtc2">
+							<option value="">Job Area</option>
+							<option value="Architecture">Architecture</option>
+							<option value="Interior">Interior</option>
+							<option value="Urban">Urban</option>
+							<option value="Interactive">Interactive</option>
+							<option value="HR/Accounting/Admin">HR/Accounting/Admin</option>
+							<option value="Landscaping">Landscaping</option>
+							<option value="Arch Design">Arch Design</option>
+							<option value="Construction">Construction</option>
+							<option value="Interior">Interior</option>
+						</select>
+					</div>
+				</article>
+			</section>
+			<section class="intr">
+				<textarea class="state" name="ReContent" placeholder="Personal statement"></textarea>
+				<button type="button" class="submit">SEND</button>
+			</section>
+		</form>
+	</div>
+</div>
+<!-- contact 끝 -->
+<!-- 서울지도 -->
+    <section id="map_wrap01" class="pop_wrap">
+      <div class="map_area pop_area"> <img class="close" src="../images/team/close.png" alt=""/>
+       <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=51-2%2C%20Samsung-dong%2C%20Gangnam-gu%2C%20Seoul%2C%20Republic%20of%20Korea&key=AIzaSyALNFySDNLkP4Ao9GWI3AT1NvjHpGYtUGg&language=en" allowfullscreen></iframe>
+      </div>
+    </section>
+    <!-- 서울지도 끝-->
+     <!-- 싱가포르지도 -->
+    <section id="map_wrap03" class="pop_wrap">
+      <div class="map_area pop_area"> <img class="close" src="../images/team/close.png" alt=""/>
+        <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=152%20Beach%20Road%2C%20%2308-06%2F08%20Gateway%20East%2C%20Singapore%20189721.&key=AIzaSyALNFySDNLkP4Ao9GWI3AT1NvjHpGYtUGg&language=en" allowfullscreen></iframe>
+      </div>
+    </section>
+    <!-- 싱가포르지도 끝-->
+     <!-- 우즈벡지도 -->
+    <section id="map_wrap02" class="pop_wrap">
+      <div class="map_area pop_area"> <img class="close" src="../images/team/close.png" alt=""/>
+         <iframe width="100%" height="450" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=Mirobod%20district%20Nukus%20str%2024A&key=AIzaSyALNFySDNLkP4Ao9GWI3AT1NvjHpGYtUGg&language=en" allowfullscreen></iframe>
+      </div>
+    </section>
+    <!-- 우즈벡지도 끝-->
+<!-- footer -->
+<footer class="footer_wrap">
+  <section class="footer center_box">
+   <div class="top_wrap"><div class="intop center_box"><a class="go_top" href="#top"><img src="../images/common/top.png" alt=""/></a></div></div>
+   <!-- <p class="fntns"><span><a href="../about/vision.html">ABOUT</a></span></p>
+    <p class="finfo"><span>TEL : +82 2-6952-3818</span> <span>ADDRESS : 51-2, Samsung-dong, Gangnam-gu, Seoul, Republic of Korea</span></p>
+    <p class="copyright">Copyright ⓒ diiPArt KOREA. All Rights Reserved</p>-->
+  </section>
+</footer>
+<!-- footer 끝 -->
+<script src="../js/layOut.js"></script>
+<script src="../js/sub.js"></script>
+</body>
+</html>
