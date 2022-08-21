@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/* reset style [start] */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, big, cite, code,
+del, dfn, em, font, img, ins, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, 
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td 
+{margin: 0; padding: 0;	border:0; border-collapse:collapse;} /* vertical-align: baseline; outline: 0; ie 외 브라우저 포커싱 사라지는 문제로 제거 */
+img {vertical-align:middle;}
+body {line-height:1; font-family: '나눔고딕', NanumGothic, 'Nanum Gothic', sans-serif; font-style:normal;}
+input, textarea, select, button {font-family: '나눔고딕', NanumGothic, 'Nanum Gothic', sans-serif !important; font-style:normal;}
+ol, ul, li {list-style: none;}
+blockquote, q {quotes: none;}
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+button { border:none; cursor:pointer;}
+/* tables still need 'cellspacing="0"' in the markup */
+/*table {border-spacing:0;} /* border-collapse: collapse; ff에서 border="0" 인 경우 문제 발생 */
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;} /* font-weight:normal */
+/* reset style [end] */
+.radio {margin-bottom:-2px;border:none;}
+textarea {border:1px solid #969696;}
+caption, {display: none;}
+legend { visibility:hidden; height:0; width:0; font-size:0;display:none;}
+
+
+*{ margin:0; padding:0;}
+a{text-decoration:none;}
+a:hover,a:focus,a:active,a:active{text-decoration:none;}
+
+h1, h2, h2, h3, b, strong, th {font-weight:600;}
+
+.mt10{ margin-top:10px !important;}
+.mt20{ margin-top:20px !important;}
+.mt30{ margin-top:30px !important;}
+.mt40{ margin-top:40px !important;}
