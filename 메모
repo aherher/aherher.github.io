@@ -12,6 +12,9 @@ https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K
 깃허브 가져오기(풀)
 git pull origin master
 
+깃허브 리모트 삭제
+git remote remove origin
+
 리액트 설치
 npx create-react-app my-app
 
