@@ -15,6 +15,26 @@ git pull origin master
 깃허브 리모트 삭제
 git remote remove origin
 
+1. 초기화
+git init
+
+2. 추가할 파일 더하기
+git add .
+
+3. 상태확인
+git status
+
+4. 히스토리 만들기
+git commit -m "first commit"
+
+5. 연결
+git remote add origin https://github.com/aherher/myStudy.git
+
+6. 업로드
+git push origin master
+
+
+
 리액트 설치
 npx create-react-app my-app
 
