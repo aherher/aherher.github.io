@@ -34,10 +34,13 @@ git remote add origin https://github.com/aherher/myStudy.git
 git push origin master
 
 
-
 리액트 설치
 npx create-react-app my-app
 
+경력기술서 예제
+https://designmeme.github.io/ko/about/resume/
+
+----------------------
 
 https://studio.zepeto.me/kr
 https://fleava.com/works
