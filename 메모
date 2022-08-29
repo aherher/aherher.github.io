@@ -9,6 +9,9 @@
 깃허브 기능 정리
 https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K
 
+깃허브 가져오기 전 클론
+git clone https://github.com/aherher/porto.git
+
 깃허브 가져오기(풀)
 git pull origin master
 
