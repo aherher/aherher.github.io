@@ -37,7 +37,8 @@ git commit -m "first commit"
 git remote add origin https://github.com/aherher/myStudy.git
 
 6. 업로드
-git push origin master
+git push -u origin master
+git push -f origin master
 
 
 리액트 설치
