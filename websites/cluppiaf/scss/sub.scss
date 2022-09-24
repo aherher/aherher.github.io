@@ -1,0 +1,1497 @@
+@charset "utf-8";
+@import './mixin';
+
+// 서브공통
+.subContents {
+  padding: 12rem 0 7rem 0;
+  overflow-x: hidden;
+
+  @include pc {
+    padding: 15rem 0 12rem 0;
+  }
+}
+
+.subHead {
+  margin-bottom: 4rem;
+
+  @include pc {
+    margin-bottom: 8.5rem;
+  }
+}
+
+.pageTitle {
+  @include font(3, 5.5, 700, 1);
+  margin-bottom: 0.5em;
+}
+
+.subPages {
+  display: flex;
+
+  li {
+    margin-right: 2.5rem;
+
+    a {
+      @include font(1.8, 2.3);
+      display: block;
+      position: relative;
+      color: #111111;
+      padding-bottom: 0.6rem;
+
+      &::after {
+        content: '';
+        display: none;
+        width: 100%;
+        height: 0.3rem;
+        background-color: #d3a010;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    &.on {
+      a {
+        color: #e2a909;
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+.sub_center {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+// 클럽피아프 소개
+.vetnamGo {
+  @include font(2.2, 4.5);
+  color: #000;
+  margin-bottom: 4rem;
+
+  @include pc {
+    margin-bottom: 5rem;
+  }
+}
+
+.transImage {
+
+  @include pc {
+    img {
+      min-width: 120rem;
+      // transition: all 0.5s;
+      @include centerX(relative);
+
+      &.wd70 {
+        width: 70%;
+      }
+
+      &.wd90 {
+        width: 90%;
+      }
+
+      &.wd100 {
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+.aboutArticle {
+  color: #111111;
+  @include font(2, 3);
+}
+
+.clubiafTexts {
+  margin: 6rem 0 7rem 0;
+
+  &__texts {
+    @include font(1.6, 1.7, 400, 1.5);
+    color: #555555;
+  }
+
+  @include mobileOnly {
+    &__article {
+      margin-bottom: 3rem;
+
+      br {
+        display: none
+      }
+    }
+  }
+
+  @include pc {
+    @include flexStart;
+    margin: 8rem 0 14rem 0;
+
+    >article {
+      width: 50%;
+    }
+  }
+
+}
+
+.atozImg {
+  width: 100%;
+  height: 20rem;
+  background: url(../images/sub/company/atozBg.jpg)no-repeat center center;
+  background-size: 100% auto;
+  margin-top: 4rem;
+
+  @include pc {
+    width: 1560px;
+    height: 40rem;
+    margin-top: 5rem;
+    background-attachment: fixed;
+  }
+}
+
+.compayInfo {
+  margin-top: 7rem;
+
+  &__dl {
+    margin-bottom: 3rem;
+
+    dt {
+      @include font(1.4, 2, 400, 1);
+      margin-bottom: 0.5em;
+      color: #e2a909;
+    }
+
+    dd {
+      @include font(2.3, 4, 700, 1);
+    }
+  }
+
+  &__lists {
+    max-width: 90rem;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+
+    li {
+      width: 50%;
+      text-align: center;
+      border-left: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      box-sizing: border-box;
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+  }
+
+  &__cell {
+    dt {
+      font-size: 2.2rem;
+      font-weight: 700;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 2rem;
+        height: 0.3rem;
+        background-color: #d3a010;
+        margin: 1.5rem auto;
+      }
+    }
+
+    dd {
+      @include font(1.3, 1.6);
+    }
+  }
+
+
+  &__icon {
+    height: 7rem;
+  }
+
+  &__article {
+    width: 100%;
+    max-width: 290px;
+    box-sizing: border-box;
+    padding: 0 2.5%;
+    @include centerC(absolute);
+  }
+
+  @include mobileOnly {
+    &__icon {
+      height: 2.5rem;
+      margin-bottom: 1rem;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  @include tablet {
+    @include flexStart;
+    margin-top: 14rem;
+
+    &__lists {
+      width: 80%;
+
+      li {
+        width: 33.333333%;
+      }
+    }
+  }
+}
+
+// 연혁
+.historyImg {
+  &__mobile {
+    margin: 0 auto;
+    display: block;
+  }
+
+  &__pc {
+    display: none;
+    max-width: none;
+    @include centerX(relative);
+  }
+
+  @include tablet {
+    &__mobile {
+      display: none;
+    }
+
+    &__pc {
+      display: block;
+      width: 150%;
+    }
+  }
+
+  @include pc {
+    &__pc {
+      width: auto;
+      display: block;
+    }
+  }
+
+}
+
+
+// 오시는 길
+.mapTab {
+  display: flex;
+  @include font(2.5, 4.5, 400, 1);
+  margin-bottom: 4rem;
+
+  li {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 0.6em;
+      padding-right: 0.8em;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: #000;
+        border-radius: 100%;
+        right: 0;
+        @include centerY(absolute);
+      }
+    }
+
+    a {
+      display: block;
+      position: relative;
+      color: #000;
+
+
+      span {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    &.on {
+      a {
+        font-weight: 700;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          height: 0.4em;
+          bottom: 0;
+          background-color: #fcdb7c;
+        }
+      }
+
+
+    }
+  }
+}
+
+.mapWrap {
+  display: none;
+
+  &.view {
+    display: block;
+  }
+}
+
+.mapIframe {
+  width: 100%;
+  height: 30rem;
+  z-index: 0;
+
+  @include pc {
+    height: 48rem;
+  }
+}
+
+.address {
+  &__box {
+    background-color: #333;
+    padding: 2rem;
+
+    dt {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #fcdb7c;
+    }
+
+    dd {
+      @include font(3, 3.5, 700);
+      color: #fff;
+      margin-top: 2em;
+    }
+  }
+
+  &__detail {
+    border-top: 1px solid #ddd;
+
+    li {
+      @include font(1.4, 1.7, 400);
+      @include flexCenter;
+      border-bottom: 1px solid #ddd;
+      padding: 2.5rem 0;
+
+      .th {
+        width: 8rem;
+        color: #000;
+        font-weight: 600;
+        position: relative;
+
+        em {
+          position: relative;
+          z-index: 1;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 0.38em;
+          position: absolute;
+          left: 0;
+          bottom: 0.4em;
+          z-index: 0;
+          background-color: #fcdb7c;
+        }
+      }
+
+      .td {
+        color: #555555;
+        width: calc(95% - 8rem);
+      }
+    }
+  }
+
+  &__article {
+    margin-top: 4rem;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 47rem;
+    width: 100%;
+    margin-top: 4rem;
+
+    li {
+      width: 49%;
+      height: 6rem;
+
+      a {
+        display: block;
+        padding: 0 1rem;
+        color: #000;
+        background: url(../images/sub/company/btnArr.png) no-repeat center right 1rem;
+        @include font(1.4, 1.7, 400, 6rem);
+      }
+    }
+
+    .btn01 {
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+
+    .btn02 {
+      background-color: #ffe618;
+    }
+  }
+
+
+  @include lap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    &__box {
+      width: 30rem;
+      height: 30rem;
+      box-sizing: border-box;
+      padding: 3.5rem;
+      margin-right: 5rem;
+      position: relative;
+      transform: translateY(-50%);
+
+      dd {
+        margin-top: 3em;
+      }
+    }
+
+    &__article {
+      width: calc(95% - 42rem);
+      margin-top: 5rem;
+    }
+
+    &__btns {
+      li {
+        a {
+          padding: 0 2rem;
+          background-position: center right 2rem;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+/*개인정보취급방침*/
+.privacy {
+  background: #fbfafa;
+  border: 1px solid #d7d5d5;
+  padding: 25px;
+  height: 645px;
+  box-sizing: border-box;
+
+  >div {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    height: 100%;
+
+    >.intxtarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      line-height: 1.7;
+      word-break: keep-all;
+      font-size: 14px;
+      overflow-y: scroll;
+      white-space: pre-line;
+    }
+  }
+}
+
+// 뉴스
+.newsLists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  li {
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    margin-bottom: 2.5rem;
+    box-shadow: 2px 2px 3px 0px #ddd;
+
+    a {
+      display: block;
+      padding: 2rem;
+    }
+  }
+
+  &__title {
+    @include font(2, 2.7, 500);
+    margin-bottom: 1em;
+    height: 2.7em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  &__text {
+    @include font(1.4, 1.6, 300);
+    color: #696969;
+    height: 4.3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  &__date {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #777777;
+    margin-top: 2em;
+    background: url(../images/sub/news/date.png) no-repeat left center;
+    background-size: 1.4rem auto;
+    padding-left: 2rem;
+  }
+
+  @include tablet {
+
+
+    li {
+      width: 49%;
+      margin: 0 0 2.5rem 0;
+    }
+  }
+
+  @include pc {
+    justify-content: flex-start;
+    margin: 0 -1.5rem;
+
+    li {
+      width: 32%;
+      margin: 0 1.5rem;
+
+      a {
+        padding: 3.5rem;
+      }
+
+      &:hover {
+        background-color: #fdf9ee;
+      }
+    }
+
+    &__date {
+      margin-top: 6em;
+    }
+  }
+}
+
+.tableBtns {
+  margin-top: 2.5rem;
+
+
+  &__pager {
+    display: flex;
+    margin-top: 2rem;
+
+    li {
+      width: 3.5rem;
+      height: 3.5rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      margin: 0 0.2rem;
+
+      a {
+        height: 100%;
+        font-size: 1.4rem;
+        @include flexAlign;
+      }
+    }
+  }
+
+  @include pc {
+    position: relative;
+
+    &__pager {
+      margin-top: 0;
+      top: 0;
+      @include centerX(absolute);
+    }
+  }
+}
+
+// 뉴스 상세
+.boardView {
+  &__title {
+    @include font(2.2, 3);
+    padding-bottom: 0.7em;
+    margin-bottom: 1.8rem;
+    border-bottom: 2px solid #000;
+  }
+
+  &__date {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #666666;
+  }
+
+  &__article {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #666666;
+    padding: 4.5rem 0 6rem 0;
+  }
+
+  &__nav {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    li {
+      height: 7.5rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-weight: 300;
+
+        span {
+          font-size: 1.8rem;
+          width: 11.5rem;
+          box-sizing: border-box;
+          position: relative;
+          padding-left: 2rem;
+
+          &::after {
+            content: '';
+            width: 9px;
+            /* 사이즈 */
+            height: 9px;
+            /* 사이즈 */
+            border-top: 2px solid #333;
+            /* 선 두께 */
+            border-right: 2px solid #333;
+            /* 선 두께 */
+            display: inline-block;
+            /* 각도 */
+            position: absolute;
+            top: 2px;
+            /* 기본 0px 값으로 해주세요 */
+            left: 0;
+            /* 기본 0px 값으로 해주세요 */
+          }
+        }
+
+        p {
+          font-size: 2rem;
+          width: calc(100% - 11.5rem);
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+        }
+      }
+
+      &.prev {
+        border-bottom: 1px solid #eeeeee;
+
+        a {
+          span {
+            &:after {
+              top: 8px;
+              transform: rotate(315deg);
+            }
+          }
+        }
+      }
+
+      &.next {
+
+        a {
+          span {
+            &:after {
+              top: 2px;
+              transform: rotate(137deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 워크
+.workDl {
+  color: #000;
+
+  dt {
+    @include font(2.3, 4.5, 700);
+    margin-bottom: 0.8em;
+  }
+
+  dd {
+    @include font(1.6, 3);
+  }
+
+  @include mobileOnly {
+    dd {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  @include pc {}
+}
+
+.sectionDl {
+  color: #111;
+
+  dt {
+    @include font(2.2, 3, 700);
+    margin-bottom: 0.5rem;
+  }
+
+  dd {
+    @include font(1.6, 2.5);
+  }
+
+  margin-top: 4rem;
+
+  @include pc {
+    margin-top: 13rem;
+  }
+}
+
+.workSection {
+  &__title {
+    @include font(2, 3, 700, 1);
+    color: #111;
+  }
+
+  &__boxes {
+    position: relative;
+  }
+
+  &__ul {
+    display: flex;
+    border-right: 1px solid #ddd;
+
+    li {
+      border: 1px solid #ddd;
+      border-right: none;
+      box-sizing: border-box;
+      text-align: center;
+      position: relative;
+      width: 33.33333%;
+
+      &::after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+  }
+
+  &__boxDl {
+    width: 90%;
+    @include centerC(absolute);
+
+    dt {
+      @include font(1.8, 2.2, 700, 1.3);
+
+      &:after {
+        content: '';
+        display: block;
+        width: 2rem;
+        height: 0.3rem;
+        background-color: #d3a010;
+        margin: 1.5rem auto;
+      }
+    }
+
+    dd {
+      @include font(1.5, 1.6);
+    }
+  }
+
+  &__dots {
+    li {
+      @include font(1.4, 1.6);
+      padding-left: 1.5rem;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+        background-color: #d3a010;
+        position: absolute;
+        left: 0;
+        top: 1rem;
+      }
+    }
+
+  }
+
+  &__btns {
+    width: 100%;
+    max-width: 32.6rem;
+    margin: 0 auto;
+
+    li {
+      background-color: #1c2b55;
+      height: 7.7rem;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-size: 1.8rem;
+        padding-left: 10%;
+        position: relative;
+
+        span {
+          width: 2.5rem;
+          text-align: center;
+          margin-right: 1rem;
+        }
+
+        &:after {
+          content: '';
+          width: 8px;
+          height: 8px;
+          border-top: 2px solid #fff;
+          border-right: 2px solid #fff;
+          display: inline-block;
+          transform: translateY(-50%) rotate(45deg);
+          position: absolute;
+          top: 50%;
+          right: 10%;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    .slick-dots {
+      li {
+        width: 3.5rem;
+        height: 0.4rem;
+        background-color: #e0e0e0;
+
+        &.slick-active {
+          background-color: #d3a010;
+          ;
+        }
+      }
+    }
+  }
+
+  &__text {
+    @include font(1.8, 2.5);
+    margin-bottom: 1.5rem;
+  }
+
+  &__table {
+    width: 100%;
+    text-align: center;
+
+    th,
+    td {
+      padding: 2.5rem 0.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    thead {
+      tr {
+        th {
+          @include font(1.5, 2, 500);
+          color: #fff;
+          background-color: #3e3e3e;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: #f8f8f8;
+
+        }
+
+        th,
+        td {
+          @include font(1.3, 1.6);
+        }
+
+        th {
+          font-weight: 500;
+        }
+
+        td {
+          color: #555555;
+        }
+      }
+    }
+  }
+
+  .stepIcon {
+    display: none;
+  }
+
+  .stepMobile {
+    display: block;
+  }
+
+  @include mobileOnly {
+    &__title {
+      margin-bottom: 2rem;
+    }
+
+    &__btns {
+      margin-top: 3rem;
+      width: 22rem;
+
+      li {
+        height: 5rem;
+      }
+    }
+
+    &__ul {
+      display: block;
+      border-bottom: 1px solid #ddd;
+
+      li {
+        width: 100%;
+        border-bottom: none;
+
+        &::after {
+          padding-bottom: 60%;
+        }
+      }
+    }
+
+    &__slide {
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @include tablet {
+    @include flexStart;
+
+    .stepIcon {
+      display: block;
+    }
+
+    .stepMobile {
+      display: none;
+    }
+
+    &__title {
+      width: 25%;
+    }
+
+    &__right {
+      width: 75%;
+    }
+
+    &__flex {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &__slide {
+      width: 45%;
+    }
+  }
+}
+
+.faceBookImg {
+  background: url(../images/sub/work/appsBg.jpg) no-repeat center right;
+  background-size: cover;
+
+  @include pc {
+    background-attachment: fixed;
+    background-size: 100%;
+  }
+}
+
+.instarImgs {
+  margin-top: 5rem;
+
+  @include mobileOnly {
+    li {
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @include tablet {
+    width: 100%;
+    @include flexStart;
+
+    li {
+      width: 32%;
+
+      &.instar01 {
+        padding-top: 7rem;
+      }
+
+      &.instar03 {
+        padding-top: 3rem;
+      }
+    }
+  }
+
+  @include pc {
+    width: 128%;
+  }
+}
+
+// 서포트
+.export {
+  margin-bottom: 6rem;
+
+  @include mobileOnly {
+    &__dl {
+      dd {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  @include pc {
+    margin-bottom: 9rem;
+    @include flexStart;
+
+    &__dl {
+      dt {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// 컨택트
+.contentTitle {
+  @include font(2.2, 4.5, 700);
+  color: #000;
+  margin-bottom: 2em;
+}
+
+.contactFrm {
+  &__agreeTitle {
+    font-size: 2rem;
+    margin-bottom: 0.8em;
+  }
+
+  &__pravBox {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    height: 22rem;
+    font-size: 1.4rem;
+    overflow-y: scroll;
+    line-height: 1.5;
+    white-space: pre-line;
+  }
+
+  &__agree {
+    position: relative;
+    margin-top: 1.5rem;
+
+    input[type="checkbox"] {
+      position: absolute;
+      right: 0;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0 none;
+      margin: 0;
+      top: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    label {
+      background: url(../images/sub/uncheck.png) no-repeat center left;
+      padding-left: 25px;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #555555;
+    }
+
+    input[type="checkbox"]:checked+label {
+      background: url(../images/sub/checked.png) no-repeat center left;
+    }
+
+  }
+
+  .valueSelect {
+    padding-bottom: 3rem;
+    margin: 5rem 0;
+    border-bottom: 1px solid #ddd;
+
+    &__what {
+      @include font(1.6, 1.8, 500, 1);
+      color: #555555;
+      position: relative;
+      padding-left: 1.4rem;
+      margin-right: 1rem;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #f4bb19;
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+        top: 6px
+      }
+    }
+
+    &__Select {
+      display: flex;
+      height: 5rem;
+      width: 100%;
+      max-width: 36rem;
+
+      li {
+        position: relative;
+        margin-left: 1rem;
+        width: 48%;
+        max-width: 17.4rem;
+
+        input[type="radio"] {
+          position: absolute;
+          right: 0;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          border: 0 none;
+          margin: 0;
+          top: 0;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+        }
+
+        label {
+          cursor: pointer;
+          width: 100%;
+          display: block;
+          text-align: center;
+          border: 1px solid #ddd;
+          font-size: 1.6rem;
+          font-weight: 300;
+          color: #555555;
+          background-color: #f1f1f1;
+          line-height: 5rem;
+        }
+
+        input[type="radio"]:checked+label {
+          color: #fff;
+          background-color: #1c2b55;
+        }
+      }
+    }
+
+    @include mobileOnly {
+      &__what {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .infoIputs {
+
+    input[type=text],
+    input[type=number] {
+      width: 100%;
+      border: 1px solid #ddd;
+      height: 5rem;
+      box-sizing: border-box;
+      padding-left: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 300;
+    }
+
+    &__label {
+      @include font(1.5, 1.7);
+    }
+
+    &__radioWrap {
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    &__radios {
+      display: flex;
+
+      li {
+        position: relative;
+
+        &:first-child {
+          margin-right: 4rem;
+        }
+
+        input[type="radio"] {
+          position: absolute;
+          right: 0;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          border: 0 none;
+          margin: 0;
+          top: 0;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+        }
+
+        label {
+          font-size: 1.8rem;
+          color: #666666;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          &:before {
+            content: '';
+            display: block;
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 1px solid #ddd;
+            border-radius: 100%;
+            box-sizing: border-box;
+            margin-right: 0.5rem;
+          }
+        }
+
+        input[type="radio"]:checked+label {
+          &:before {
+            border: 8px solid #1c2b55;
+          }
+        }
+      }
+
+
+    }
+
+    &__mail {
+      @include flexCenter;
+
+      input[type=text] {
+        width: 48%;
+      }
+
+      .mailAt {
+        text-align: center;
+        font-size: 1.6rem;
+      }
+    }
+
+    @include mobileOnly {
+
+      input[type=text],
+      input[type=number] {
+        font-size: 1.3rem;
+        letter-spacing: -0.05em;
+        padding-left: 0.8rem;
+      }
+
+      &__line {
+        >.boxDiv {
+          &:first-child {
+            margin-bottom: 2rem;
+          }
+        }
+      }
+
+      &__radioWrap {
+        &:first-child {
+          margin-bottom: 3rem;
+        }
+
+        p {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    @include tablet {
+      &__radioWrap {
+        @include flexCenter;
+      }
+
+      &__line {
+        @include flexStart;
+
+        >div {
+          width: 48%;
+        }
+      }
+    }
+  }
+
+  .otherInputs {
+    padding: 5.5rem 0;
+    margin: 5.5rem 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+    &__file {
+      position: relative;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+
+      .icon {
+        width: 3.5rem;
+        text-align: center;
+        padding-top: 0.4rem;
+      }
+
+      #fileName {
+        display: block;
+        width: calc(100% - 100px);
+        height: 60px;
+        padding-left: 0px;
+        background-color: #fff;
+        text-align: left;
+        border: none;
+      }
+
+      label {
+        display: block;
+        width: 100px;
+        height: 60px;
+        line-height: 60px;
+        color: #fff;
+        font-size: 16px;
+        background-color: #333;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      input[type="file"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+
+      @include pc {
+        #fileName {
+          width: calc(100% - 164px);
+        }
+
+        label {
+          width: 164px;
+        }
+      }
+    }
+
+    &__textarea {
+      border: 1px solid #ddd;
+      height: 16rem;
+      padding: 1rem 0;
+      box-sizing: border-box;
+      @include flexStart;
+
+      .icon {
+        width: 3.5rem;
+        text-align: center;
+        padding-top: 0.4rem;
+      }
+
+      textarea {
+        border: none;
+        width: calc(100% - 3.5rem);
+        height: 100%;
+        resize: none;
+        @include font(1.3, 1.6, 300);
+      }
+    }
+  }
+
+  .subMit {
+    border-top: 2px solid #333;
+    margin-top: 4rem;
+    padding-top: 4rem;
+
+    @include tablet {
+      margin-top: 6rem;
+      padding-top: 6rem;
+    }
+
+    button {
+      width: 30rem;
+      height: 7.5rem;
+      color: #fff;
+      background-color: #1c2b55;
+      font-size: 1.8rem;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  @include mobileOnly {}
+
+  @include pc {
+    &__textarea {
+      .icon {
+        width: 5rem;
+      }
+
+      textarea {
+        width: calc(100% - 5rem);
+      }
+    }
+  }
+}

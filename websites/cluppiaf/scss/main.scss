@@ -1,0 +1,388 @@
+@charset "utf-8";
+@import './mixin';
+
+main {
+  section {
+    height: 100vh;
+  }
+}
+
+.mv {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 8.1rem;
+
+  &__title {
+    @include font(3.5, 8.5, 700);
+    color: #1c2b55;
+    margin-bottom: 0.7em;
+    transform: translateY(50px);
+  }
+
+  &__text {
+    @include font(1.8, 3.5, 300);
+    @include flexAlign;
+    color: #000;
+    transform: translateY(50px);
+
+    img {
+      width: 5rem;
+    }
+  }
+
+  &__article {
+    text-align: center;
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 71.05263157895%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .mvImg01 {
+      z-index: 1;
+    }
+
+    .mvImg02 {
+      z-index: 0;
+    }
+
+    .chat {
+      transform: translateY(50px);
+    }
+  }
+
+  &__scroll {
+    @include centerX(absolute);
+    width: 3rem;
+    bottom: 3rem;
+  }
+
+  @include mobileOnly {
+    padding-top: 13rem;
+
+    &__article {
+      margin-bottom: 2rem;
+    }
+
+    &__img {
+      left: 10%;
+    }
+  }
+
+  @include pc {
+    &__align {
+      @include flexAlign;
+      position: relative;
+      left: 10%;
+      height: 100%;
+    }
+
+
+    &__img {
+      width: 1140px;
+      // transform: translateX(15%);
+    }
+  }
+}
+
+.about {
+  background: url(../images/main/about_bg.jpg) no-repeat center;
+  background-size: cover;
+
+  &__dl {
+    margin-bottom: 4rem;
+
+    dt {
+      @include font(2.4, 3, 700, 1.2);
+      color: #000;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 0.8em;
+      transform: translateX(-50px);
+
+      span {
+        position: relative;
+        z-index: 1;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0.4em;
+        position: absolute;
+        background-color: #f4bb19;
+        opacity: 0.5;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+      }
+    }
+
+    dd {
+      @include font(1.6, 1.8);
+      transform: translateX(-50px);
+    }
+  }
+
+  &__more {
+    @include font(2, 2, 500, 1);
+    display: flex;
+    align-items: center;
+    color: #000;
+
+    img {
+      margin-left: 1rem;
+    }
+  }
+
+  &__img {
+    transform: scale(0.9);
+  }
+
+  @include mobileOnly {
+    padding-top: 8rem;
+    height: auto;
+
+    &__img {
+      margin-top: 5rem;
+    }
+  }
+
+  @include pc {
+    &__align {
+      @include flexCenter;
+      height: 100%;
+      position: relative;
+    }
+
+    &__article {
+      width: 37%;
+      position: relative;
+      z-index: 1;
+    }
+
+    &__dl {
+      margin-bottom: 6rem;
+    }
+
+    &__img {
+      position: absolute;
+      bottom: 0;
+      right: -17%;
+      z-index: 0;
+    }
+  }
+}
+
+.doing {
+  background: url(../images/main/doing_bg.jpg) no-repeat center;
+  background-size: cover;
+
+  &__box {
+    @include centerY(relative);
+    text-align: center;
+    color: #fff;
+    width: 95%;
+    max-width: 930px;
+    margin: 0 auto;
+  }
+
+  &__dl {
+    dt {
+      @include font(4, 8, 700, 1);
+      margin-bottom: 1.5rem;
+      transform: translateY(50px);
+    }
+
+    dd {
+      @include font(1.6, 2.5, 300, 1.5);
+      transform: translateY(50px);
+    }
+  }
+
+  &__btns {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 0;
+    width: 95%;
+    max-width: 70rem;
+    margin: 2rem auto 0 auto;
+    @include flexAlign;
+
+    li {
+      margin: 0 11px;
+      transform: translateY(50px);
+    }
+
+    .icon {
+      height: 5rem;
+    }
+
+    p {
+      @include font(1.6, 2, 500, 1);
+      color: #fff;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 0.1rem;
+        height: 2rem;
+        background-color: rgba(255, 255, 255, 0.3);
+        margin: 0.5rem auto;
+      }
+    }
+  }
+
+
+  @include mobileOnly {
+    height: 40rem;
+    background: url(../images/main/doing_Mobile.jpg) no-repeat center;
+    background-size: cover;
+
+    &__box {
+      border: 6px solid #fff;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+
+    &__btns {
+      .icon {
+        transform: scale(0.5);
+      }
+    }
+  }
+
+  @include pc {
+    &__btns {
+      padding: 4rem 0;
+      margin: 3rem auto 0 auto;
+
+      li {
+        margin: 0 33px;
+
+        p {
+          &:before {
+            margin: 2rem auto;
+          }
+        }
+      }
+    }
+
+    &__dl {
+      dt {
+        margin-bottom: 10rem;
+      }
+    }
+  }
+}
+
+.solution {
+  background: url(../images/main/solution_bg.jpg) no-repeat center;
+  // background-size: cover;
+
+  &__align {
+    @include centerY(relative);
+    top: 52%;
+    color: #fff;
+    padding: 0;
+    box-sizing: border-box;
+    // background: url(../images/main/boxBorder.png) no-repeat center left;
+  }
+
+  &__title {
+    @include font(3.5, 8, 700, 1);
+    margin-bottom: 1.2rem;
+    transform: translateY(50px);
+  }
+
+  &__text {
+    @include font(2, 2.5);
+    transform: translateY(50px);
+  }
+
+  &__logos {
+    width: 25.6rem;
+    margin: 3rem 0 4rem 0;
+    transform: translateY(50px);
+  }
+
+  &__btns {
+    @include flexStart;
+    width: 100%;
+    max-width: 52.5rem;
+
+    li {
+      border: 1px solid #fff;
+      text-align: center;
+      width: 48.5%;
+      height: 6.4rem;
+      transform: translateY(50px);
+
+      a {
+        @include font(1.4, 1.8);
+        @include flexAlign;
+        height: 100%;
+        color: #fff;
+        padding: 0 1rem;
+
+        img {
+          width: 1.8rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @include mobileOnly {
+    background: url(../images/main/solution_mobile.jpg) no-repeat center;
+    box-sizing: border-box;
+    height: 70vh;
+
+    &__align {
+      border: 6px solid #fff;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  }
+
+  @include lap {
+    background-position: center left 50%;
+
+    &__align {
+      padding: 0rem 5%;
+    }
+  }
+}
+
+.footerSection {
+  height: auto;
+}
+
+
+// 퀵메뉴
+.quick {
+  right: 2rem;
+  z-index: 2;
+  @include centerY(fixed);
+
+  @include mobileOnly {
+    right: 0.5rem;
+
+    >div {
+      width: 8rem;
+    }
+  }
+}
