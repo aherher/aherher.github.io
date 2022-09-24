@@ -1,79 +1,254 @@
-<? include "../inc/header.html"; ?>
+<!doctype html>
+<html>
 
-<!-- 서브 비주얼 -->
-<section class="subVisual subVisual01">
-  <h2>우리봄은</h2>
-</section>
-<!-- 서브 비주얼 끝-->
-<? include "../inc/sub_select.html"; ?>
-<script>
-  let thisPage = "#sub01";
-</script>
+<head>
+  <meta charset="utf-8">
+  <title>(주)KCD우리봄</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg">
+  <meta name="format-detection" content="telephone=no">
+  <link href='https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../css/sub.css" />
+  <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
 
-<main class="subContents">
-  <div class="sub_center">
-    <h3 class="pageTitle">비전</h3>
+<body>
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="header__head center_box flex_center">
+      <h1 class="header__logo"><a href="../"><img src="../images/common/logo.png" alt="(주)KCD우리봄"></a></h1>
+      <dl class="header__dl">
+        <dt>우리봄</dt>
+        <dd>국악을 계승 발전 및 대중화·세계화에<br />
+          기여하고자 합니다.
+        </dd>
+      </dl>
+      <nav class="header__menuWrap">
+        <ul class="header__menu">
+          <li><a href="../about/sub01.html">우리봄은</a>
+            <ul class="header__sub_menu">
+              <li><a href="../about/sub01.html">우리봄 소개 </a></li>
+              <li><a href="../about/sub02.html">이사장 인사말 </a></li>
+              <li><a href="../about/sub03.html">비전 </a></li>
+              <li><a href="../about/sub04.html">조직도 </a></li>
+              <li><a href="../about/sub05.html">오시는 길 </a></li>
+            </ul>
+          </li>
+          <li><a href="../kmusical/sub01.html">여성국극</a>
+            <ul class="header__sub_menu">
+              <li><a href="../kmusical/sub01.html">여성국극 소개</a></li>
+              <li><a href="../kmusical/sub02.html">국극배우</a></li>
+              <!-- <li><a href="../kmusical/sub03.html">출연진</a></li> -->
+              <li><a href="../kmusical/sub04.html">향후 발전 방향</a></li>
+            </ul>
+          </li>
+          <li><a href="../center/sub01.html">센터 소개</a>
+            <ul class="header__sub_menu">
+              <!-- <li><a href="../center/sub01.html">센터 소개</a></li> -->
+              <li><a href="../center/sub02.html">기업연수 소개</a></li>
+              <li><a href="../center/sub03.html">프로그램 소개</a></li>
+            </ul>
+          </li>
+          <li><a href="../HyAdmin/list.php?bbs_id=bo01">우리봄 소식</a>
+            <ul class="header__sub_menu">
+              <li><a href="../HyAdmin/list.php?bbs_id=bo01">공지사항</a></li>
+              <li><a href="../HyAdmin/list.php?bbs_id=bo02">행사 사진첩</a></li>
+              <li><a href="../HyAdmin/list.php?bbs_id=bo03">Q&A</a></li>
+            </ul>
+          </li>
+          <!-- <li><a href="../donate/sub01.html">후원안내</a>
+            <ul class="header__sub_menu">
+              <li><a href="../donate/sub01.html">후원안내</a></li>
+              <li><a href="../donate/sub02.html">후원혜택</a></li>
+              <li><a href="../donate/sub03.html">후원신청</a></li>
+            </ul>
+          </li> -->
+        </ul>
+      </nav>
+      <!-- <div class="header__gnb"><a href="#!">소식안내</a></div> -->
+      <div class="header__gnb"><a href="../news/sub03.html">소식지 신청</a></div>
+      <div class="header__menu_btn"><span></span></div>
+    </div>
+    <div class="header__bg"></div>
+  </header>
+  <!-- 헤더 끝 -->
 
-    <section class="visionWrap">
-
-      <div class="visionBox">
-        <div class="visionBox__title mission">
-          <p>미션</p>
+  <!-- 서브 비주얼 -->
+  <section class="subVisual subVisual01">
+    <h2>우리봄은</h2>
+  </section>
+  <!-- 서브 비주얼 끝-->
+  <section class="subLinks">
+    <div class="sub_center">
+      <div class="subLinks__wrap">
+        <div class="subLinks__Home"><img src="../images/sub/home.png" alt=""></div>
+        <div class="subLinks__leftLink">
+          <p class="cur_page"><span></span></p>
+          <ul class="subLinks__List il_left">
+            <li><a href="../about/sub01.html">우리봄은</a></li>
+            <li><a href="../kmusical/sub01.html">여성국극</a></li>
+            <li><a href="../center/sub01.html">센터 소개</a></li>
+            <!-- <li><a href="../training/sub01.html">기업연수</a></li> -->
+            <li><a href="../news/sub01.html">우리봄 소식</a></li>
+            <!-- <li><a href="../donate/sub01.html">후원안내</a></li> -->
+          </ul>
         </div>
-        <article class="visionBox__article">
-          <p class="visionBox__text">K-뮤지컬 여성국극을 활용하여, 우리 문화의 자긍심 고취를 목표</p>
-        </article>
-      </div>
+        <div class="subLinks__rightLink">
+          <p class="cur_page"><span></span></p>
 
-      <div class="visionBox">
-        <div class="visionBox__title vision">
-          <p>비전</p>
         </div>
-        <article class="visionBox__article">
-          <p class="visionBox__text">전 국민적 국극의 홍보와 함께, 여성국악의 두 가지 갈래를 충족</p>
-        </article>
-      </div>
+        <div class="hided_lise">
+          <ul id="sub01" class="subLinks__List il_right">
+            <ul class="sub_menu">
+              <li><a href="../about/sub01.html">우리봄 소개 </a></li>
+              <li><a href="../about/sub02.html">이사장 인사말 </a></li>
+              <li><a href="../about/sub03.html">비전 </a></li>
+              <li><a href="../about/sub04.html">조직도 </a></li>
+              <li><a href="../about/sub05.html">오시는 길 </a></li>
+            </ul>
+          </ul>
+          <ul id="sub02" class="subLinks__List il_right">
+            <li><a href="../kmusical/sub01.html">여성국극 소개</a></li>
+            <li><a href="../kmusical/sub02.html">국극배우</a></li>
+            <!-- <li><a href="../kmusical/sub03.html">출연진</a></li> -->
+            <li><a href="../kmusical/sub04.html">향후 발전 방향</a></li>
+          </ul>
+          <ul id="sub03" class="subLinks__List il_right">
+            <!-- <li><a href="../center/sub01.html">센터 소개</a></li> -->
+            <li><a href="../center/sub02.html">기업연수 소개</a></li>
+            <li><a href="../center/sub03.html">프로그램 소개</a></li>
+            <!-- <li><a href="../center/sub03.html">교육안내</a></li>
+            <li><a href="../center/sub04.html">강사 프로필</a></li>
+            <li><a href="../center/sub05.html">공연자 모집</a></li> -->
+          </ul>
+          <!-- <ul id="sub04" class="subLinks__List il_right">
+            <li><a href="../training/sub01.html">기업연수 소개</a></li>
 
-      <div class="vistionImg"><img src="../images/sub/about/vision.jpg" alt=""></div>
-
-
-      <div class="visionBox">
-        <div class="visionBox__title value">
-          <p>핵심가치</p>
+          </ul> -->
+          <ul id="sub05" class="subLinks__List il_right">
+            <li><a href="../news/sub01.html">공지사항</a></li>
+            <li><a href="../news/sub02.html">행사 사진첩</a></li>
+            <li><a href="../news/sub03.html">Q&A</a></li>
+          </ul>
+          <!-- <ul id="sub06" class="subLinks__List il_right">
+            <li><a href="../donate/sub01.html">후원안내</a></li>
+            <li><a href="../donate/sub02.html">후원혜택</a></li>
+            <li><a href="../donate/sub03.html">후원신청</a></li>
+          </ul> -->
         </div>
-        <article class="visionBox__article">
-          <dl class="visionBox__dl">
-            <dt>국극의 레트로화 : </dt>
-            <dd>전통국악과 더불어 현의 가락을 통하여, 기성세대에는 회상을 선사.
-              여성국극과 크로스오버 공연을 중심으로 한 공간에 모여 전통의 정서를 통해
-              위로받을 수 있는 기회 제공.
-            </dd>
-          </dl>
-
-          <dl class="visionBox__dl">
-            <dt>연대의 장 : </dt>
-            <dd>전통문화와 놀이를 교육하고, 함께 즐길 수 있는 축제의 장을 꾸림.
-              ‘하나로 바라봄’이라는 연대의 감정과 즐거움을 느낄 수 있는 기회를 제공, 참가자는 위와 같은
-              연수과정을 통해 연대의 마당을 확장할 수 있음.
-
-            </dd>
-          </dl>
-
-          <dl class="visionBox__dl">
-            <dt>흥과 멋 : </dt>
-            <dd>통 공연과 예술을 큰 무대에서 즐길 수 있도록, K-뮤지컬 여성국극을 기본 토대로 한다.
-              국민에게 ‘흥’을 불어넣어 전통의 ‘멋’을 찾고, 세대를 아울러 통합하며 다시 나아갈 수 있는 세상,
-              세계로 진출할 수 있는 바탕을 마련하고 추진.
-            </dd>
-          </dl>
-
-        </article>
       </div>
+      <ul class="pageNav flex_center">
+        <li>Home</li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </section>
+  <script>
+    let thisPage = "#sub01";
+  </script>
 
-    </section>
+  <main class="subContents">
+    <div class="sub_center">
+      <h3 class="pageTitle">비전</h3>
 
-  </div>
-</main>
+      <section class="visionWrap">
 
-<? include "../inc/footer.html"; ?>
-<script src="../js/sub.js"></script>
+        <div class="visionBox">
+          <div class="visionBox__title mission">
+            <p>미션</p>
+          </div>
+          <article class="visionBox__article">
+            <p class="visionBox__text">K-뮤지컬 여성국극을 활용하여, 우리 문화의 자긍심 고취를 목표</p>
+          </article>
+        </div>
+
+        <div class="visionBox">
+          <div class="visionBox__title vision">
+            <p>비전</p>
+          </div>
+          <article class="visionBox__article">
+            <p class="visionBox__text">전 국민적 국극의 홍보와 함께, 여성국악의 두 가지 갈래를 충족</p>
+          </article>
+        </div>
+
+        <div class="vistionImg"><img src="../images/sub/about/vision.jpg" alt=""></div>
+
+
+        <div class="visionBox">
+          <div class="visionBox__title value">
+            <p>핵심가치</p>
+          </div>
+          <article class="visionBox__article">
+            <dl class="visionBox__dl">
+              <dt>국극의 레트로화 : </dt>
+              <dd>전통국악과 더불어 현의 가락을 통하여, 기성세대에는 회상을 선사.
+                여성국극과 크로스오버 공연을 중심으로 한 공간에 모여 전통의 정서를 통해
+                위로받을 수 있는 기회 제공.
+              </dd>
+            </dl>
+
+            <dl class="visionBox__dl">
+              <dt>연대의 장 : </dt>
+              <dd>전통문화와 놀이를 교육하고, 함께 즐길 수 있는 축제의 장을 꾸림.
+                ‘하나로 바라봄’이라는 연대의 감정과 즐거움을 느낄 수 있는 기회를 제공, 참가자는 위와 같은
+                연수과정을 통해 연대의 마당을 확장할 수 있음.
+
+              </dd>
+            </dl>
+
+            <dl class="visionBox__dl">
+              <dt>흥과 멋 : </dt>
+              <dd>통 공연과 예술을 큰 무대에서 즐길 수 있도록, K-뮤지컬 여성국극을 기본 토대로 한다.
+                국민에게 ‘흥’을 불어넣어 전통의 ‘멋’을 찾고, 세대를 아울러 통합하며 다시 나아갈 수 있는 세상,
+                세계로 진출할 수 있는 바탕을 마련하고 추진.
+              </dd>
+            </dl>
+
+          </article>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../js/sub.js"></script>
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer__foot center_box">
+      <div class="footer__btnWrap">
+        <ul class="footer__btns">
+          <li><a href="../about/sub02.html">인사말</a></li>
+          <li><a href="../about/sub05.html">오시는 길</a></li>
+          <li><a href="../etc/sub01.html">이용약관</a></li>
+          <li><a href="../etc/sub02.html">개인정보취급방침</a></li>
+          <li><a href="../etc/sub03.html">이메일 수집거부</a></li>
+        </ul>
+        <ul class="footer__sns">
+          <li><a href="#!"><img src="../images/common/sns01.png" alt=""></i></a></li>
+          <li><a href="#!"><img src="../images/common/sns02.png" alt=""></a></li>
+          <li><a href="#!"><img src="../images/common/sns03.png" alt=""></a></li>
+        </ul>
+      </div>
+      <div class="footer__txts">
+        <div class="footer__logo"><img src="../images/common/foot_logo.png" alt=""></div>
+        <article class="footer__article">
+          <p class="footer__info"><span>인천광역시 서구 백범로 611 (가좌동 524-11)</span><span>대표 : 탁월한</span><span>사업자등록번호 : 111-11-11111</span></p>
+          <p class="footer__info"><span>TEL : 032-571-8878</span><span>FAX : 032-571-8871</span><span>MAIL : xkrpark123@naver.com</span></p>
+          <p class="footer__copy">Copyright (C) (사)우리봄. ALL RIGHTS RESERVED.</p>
+        </article>
+        <dl class="footer__call">
+          <dt><a href="tel:032-571-8878">032-571-8878</a></dt>
+          <dd>오전 9시~ 오후 6시 / 주말 및 공휴일 휴무</dd>
+        </dl>
+      </div>
+    </div>
+  </footer>
+  <!-- 푸터 끝 -->
+  <script src="../js/layout.js"></script>
+</body>
+
+</html>
