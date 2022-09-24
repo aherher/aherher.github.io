@@ -1,115 +1,279 @@
-<? include "../inc/header.html"; ?>
-<script src="../js/slick.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/slick.css" />
-<link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
-<main class="subContents">
-  <div class="sub_center">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta property="og:image" content="../images/common/linkkakao_bar.jpg" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+    <link rel="icon" href="../images/common/favicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/sub.css" />
+    <title>베트남 SNS 마케팅 클럽피아프 | Club Piaf</title>
+  </head>
 
-    <div class="subHead poppins">
-      <h2 class="pageTitle">Work</h2>
-      <ul class="subPages">
-        <li class="on"><a href="sub01.html">Facebook</a></li>
-        <li><a href="sub02.html">Influencer</a></li>
-      </ul>
-    </div>
-
-    <dl class="workDl">
-      <dt class="poppins">Facebook Posting Marketing</dt>
-      <dd>베트남 MZ 세대 150 만 팔로워를 보유하고 있는<br />
-        클럽피아프 페이스북 페이지에서의 홍보를 통한 브랜드 인지도 확보</dd>
-    </dl>
-
-    <div class="atozImg faceBookImg"></div>
-
-    <dl class="sectionDl mb80">
-      <dt>포스팅 광고</dt>
-      <dd>베트남에서 가장 점유율이 높은 페이스북 채널을 이용하여 브랜드 인지도 구축</dd>
-    </dl>
-
-    <section class="workSection mb80">
-      <p class="workSection__title">제공 서비스</p>
-
-      <div class="workSection__right">
-        <div class="workSection__boxes">
-          <ul class="workSection__ul">
+  <body>
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="header__head">
+        <h1 class="header__logo">
+          <a href="../"><img src="../images/common/logo.png" alt="" /></a>
+        </h1>
+        <nav class="header__menuWrap">
+          <ul class="header__menu poppins">
             <li>
-              <dl class="workSection__boxDl">
-                <dt>콘텐츠 결과 및 트렌드 분석</dt>
-                <dd>포스팅 인게이지먼트 분석 및
-                  타겟층 반응 리포트 제공</dd>
-              </dl>
+              <a href="../company/sub01.html">Company</a>
+              <!-- <ul class="header__sub_menu">
+
+            </ul> -->
             </li>
+            <li><a href="../work/sub01.html">Works</a></li>
+            <li><a href="../surpport/sub01.html">Government Support</a></li>
             <li>
-              <dl class="workSection__boxDl">
-                <dt>콘텐츠의 현지화</dt>
-                <dd>V-Trend 에 맞는 디자인 및
-                  카피라이팅 작업 진행</dd>
-              </dl>
+              <a href="../news/sub01.html">News・Promotion</a>
             </li>
-            <li>
-              <dl class="workSection__boxDl">
-                <dt>타켓 광고 플래닝 및 집행</dt>
-                <dd>브랜드의 타겟에 맞춰 메타 광고
-                  전략 수립 및 집행</dd>
-              </dl>
-            </li>
+            <li><a href="../contact/sub01.html">Contact</a></li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="workSection mb80">
-      <p class="workSection__title">장점</p>
-
-      <div class="workSection__right">
-        <ul class="workSection__dots">
-          <li>브랜드 마케팅의 경험, 채널 운영 노하우, 전문 현지 마케팅 능력 등을 통한 효율적인 결과 도출</li>
-          <li>언어와 문화 등의 장벽을 허물고 브랜드 고유의 마케팅 포인트는 살리고 베트남 특유의 트렌드를 살려
-            타겟에게 전달</li>
-          <li>SNS 채널의 장점인 양방향 커뮤니케이션을 통해 고객층에게 브랜드 신뢰성 제공</li>
+        </nav>
+        <!-- <div class="header__lang"><img src="images/common/langIcon.png" alt="">
+        <ul class="header__langList">
+          <li class="current"><a href="../#!">KR</a></li>
+          <li><a href="../#!">EN</a></li>
         </ul>
+      </div> -->
+        <div class="header__menu_btn"><span></span></div>
       </div>
-    </section>
-
-    <section class="workSection">
-      <p class="workSection__title">SNS 채널</p>
-
-      <div class="workSection__right">
-        <div class="workSection__flex">
-          <ul class="workSection__slide">
-            <li><img src="../images/sub/work/phone01.png" alt=""></li>
-            <li><img src="../images/sub/work/phone02.png" alt=""></li>
-            <li><img src="../images/sub/work/phone03.png" alt=""></li>
-          </ul>
-          <ul class="workSection__btns">
-            <li><a href="https://www.facebook.com/clubpiaf.vn" target="_blank"><span><img src="../images/sub/work/sns01.png" style="width: 11px;" alt=""></span>페이스북 채널 바로가기</a></li>
-            <li><a href="https://www.instagram.com/clubpiaf_vn/" target="_blank"><span><img src="../images/sub/work/sns02.png" style="width: 20px;" alt=""></span>인스타그램 채널 바로가기</a></li>
-            <li><a href="https://www.youtube.com/c/ClubPiaf" target="_blank"><span><img src="../images/sub/work/sns03.png" style="width: 25px;" alt=""></span>유튜브 채널 바로가기</a></li>
+    </header>
+    <!-- 헤더 끝 -->
+    <script src="../js/slick.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+    <main class="subContents">
+      <div class="sub_center">
+        <div class="subHead poppins">
+          <h2 class="pageTitle">Work</h2>
+          <ul class="subPages">
+            <li class="on"><a href="sub01.html">Facebook</a></li>
+            <li><a href="sub02.html">Influencer</a></li>
           </ul>
         </div>
+
+        <dl class="workDl">
+          <dt class="poppins">Facebook Posting Marketing</dt>
+          <dd>
+            베트남 MZ 세대 150 만 팔로워를 보유하고 있는
+            <br />
+            클럽피아프 페이스북 페이지에서의 홍보를 통한 브랜드 인지도 확보
+          </dd>
+        </dl>
+
+        <div class="atozImg faceBookImg"></div>
+
+        <dl class="sectionDl mb80">
+          <dt>포스팅 광고</dt>
+          <dd>
+            베트남에서 가장 점유율이 높은 페이스북 채널을 이용하여 브랜드 인지도
+            구축
+          </dd>
+        </dl>
+
+        <section class="workSection mb80">
+          <p class="workSection__title">제공 서비스</p>
+
+          <div class="workSection__right">
+            <div class="workSection__boxes">
+              <ul class="workSection__ul">
+                <li>
+                  <dl class="workSection__boxDl">
+                    <dt>콘텐츠 결과 및 트렌드 분석</dt>
+                    <dd>포스팅 인게이지먼트 분석 및 타겟층 반응 리포트 제공</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl class="workSection__boxDl">
+                    <dt>콘텐츠의 현지화</dt>
+                    <dd>V-Trend 에 맞는 디자인 및 카피라이팅 작업 진행</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl class="workSection__boxDl">
+                    <dt>타켓 광고 플래닝 및 집행</dt>
+                    <dd>브랜드의 타겟에 맞춰 메타 광고 전략 수립 및 집행</dd>
+                  </dl>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="workSection mb80">
+          <p class="workSection__title">장점</p>
+
+          <div class="workSection__right">
+            <ul class="workSection__dots">
+              <li>
+                브랜드 마케팅의 경험, 채널 운영 노하우, 전문 현지 마케팅 능력
+                등을 통한 효율적인 결과 도출
+              </li>
+              <li>
+                언어와 문화 등의 장벽을 허물고 브랜드 고유의 마케팅 포인트는
+                살리고 베트남 특유의 트렌드를 살려 타겟에게 전달
+              </li>
+              <li>
+                SNS 채널의 장점인 양방향 커뮤니케이션을 통해 고객층에게 브랜드
+                신뢰성 제공
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="workSection">
+          <p class="workSection__title">SNS 채널</p>
+
+          <div class="workSection__right">
+            <div class="workSection__flex">
+              <ul class="workSection__slide">
+                <li><img src="../images/sub/work/phone01.png" alt="" /></li>
+                <li><img src="../images/sub/work/phone02.png" alt="" /></li>
+                <li><img src="../images/sub/work/phone03.png" alt="" /></li>
+              </ul>
+              <ul class="workSection__btns">
+                <li>
+                  <a
+                    href="https://www.facebook.com/clubpiaf.vn"
+                    target="_blank"
+                  >
+                    <span>
+                      <img
+                        src="../images/sub/work/sns01.png"
+                        style="width: 11px"
+                        alt=""
+                      />
+                    </span>
+                    페이스북 채널 바로가기
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/clubpiaf_vn/"
+                    target="_blank"
+                  >
+                    <span>
+                      <img
+                        src="../images/sub/work/sns02.png"
+                        style="width: 20px"
+                        alt=""
+                      />
+                    </span>
+                    인스타그램 채널 바로가기
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/c/ClubPiaf" target="_blank">
+                    <span>
+                      <img
+                        src="../images/sub/work/sns03.png"
+                        style="width: 25px"
+                        alt=""
+                      />
+                    </span>
+                    유튜브 채널 바로가기
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+    </main>
 
-  </div>
-</main>
+    <script src="../js/sub.js"></script>
+    <script>
+      $(".workSection__slide").slick({
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 1000,
+        arrows: false,
+        pauseOnHover: false,
+        // responsive: [{
+        //   breakpoint: 1260,
+        //   settings: {
+        //     centerMode: true, //센터모드
+        //   }
+        // }]
+      })
+    </script>
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="footer__foot">
+        <div class="footer__txts">
+          <div class="footer__logo">
+            <img src="../images/common/foot_logo.png" alt="" />
+          </div>
+          <ul class="footer__sns">
+            <li>
+              <a href="/https://www.facebook.com/clubpiaf.vn" target="_blank">
+                <img src="../images/common/sns01.png" alt="페이스북" />
+              </a>
+            </li>
+            <li>
+              <a href="/https://www.instagram.com/clubpiaf_vn/" target="_blank">
+                <img src="../images/common/sns02.png" alt="인스타" />
+              </a>
+            </li>
+            <li>
+              <a href="/https://pf.kakao.com/_TCDKs" target="_blank">
+                <img src="../images/common/sns03.png" alt="카톡" />
+              </a>
+            </li>
+            <li>
+              <a href="/https://www.youtube.com/c/ClubPiaf" target="_blank">
+                <img src="../images/common/sns04.png" alt="유튜브" />
+              </a>
+            </li>
+            <li>
+              <a href="../#!">
+                <img src="images/common/sns05.png" alt="틱톡" />
+              </a>
+            </li>
+          </ul>
+          <article class="footer__article">
+            <ul class="footer__btns">
+              <li><a href="../etc/sub01.html">개인정보취급방침</a></li>
+              <li><a href="../contact/sub01.html">광고문의</a></li>
+            </ul>
+            <p class="footer__info mb10"><b>주식회사 디엠앤씨</b></p>
+            <p class="footer__info">
+              <span>
+                Address: 서울 금천구 가산디지털1로 171, 301~302호 (가산동, SK
+                V1센터)
+              </span>
+            </p>
+            <p class="footer__info">
+              <span>CEO : Moon Suck-bum</span>
+              <span>Business license number: 122-86-45558</span>
+              <span>Tel: 02-6083-1082</span>
+            </p>
+            <p class="footer__copy">
+              COPYRIGHT © Clubpiaf. ALL RIGHTS RESERVED
+            </p>
+          </article>
+        </div>
+      </div>
+    </footer>
+    <!-- 푸터 끝 -->
 
-<script src="../js/sub.js"></script>
-<script>
-  $('.workSection__slide').slick({
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 1000,
-    arrows: false,
-    pauseOnHover: false,
-    // responsive: [{
-    //   breakpoint: 1260,
-    //   settings: {
-    //     centerMode: true, //센터모드
-    //   }
-    // }]
-
-  });
-</script>
-<? include "../inc/footer.html"; ?>
+    <script src="../js/layout.js"></script>
+  </body>
+</html>
