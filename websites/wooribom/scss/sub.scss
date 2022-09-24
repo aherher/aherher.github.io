@@ -1,0 +1,1464 @@
+@charset "uft-8";
+@import './mixin';
+
+// 서브공통
+.subVisual {
+  height: 20rem;
+  @include flexAlign;
+  margin-top: 91px;
+
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+
+  @include pc {
+    margin-top: 101px;
+    height: 30rem;
+  }
+
+  &01 {
+    background: url(../images/sub/subVisual01.jpg) no-repeat center;
+  }
+}
+
+.sub_center {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.subLinks {
+  height: 5rem;
+  line-height: 5rem;
+  border-bottom: 1px solid #dedede;
+
+  .sub_center {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__wrap {
+    display: flex;
+
+    >div {
+      border-right: 1px solid #dedede;
+      height: 100%;
+    }
+  }
+
+  &__Home {
+    display: none;
+    width: 6rem;
+    border-left: 1px solid #dedede;
+    text-align: center;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  &__leftLink,
+  &__rightLink {
+    width: 50%;
+    box-sizing: border-box;
+
+    .cur_page {
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: #999999;
+      padding: 0 2rem;
+      background: url(../images/sub/openTab.png) no-repeat center right 2rem;
+      background-size: 1.1rem auto;
+      cursor: pointer;
+    }
+
+    .openedTab {
+      background: url(../images/sub/closeTab.png) no-repeat center right 2rem;
+      background-size: 1.1rem auto;
+    }
+  }
+
+  &__List {
+    // border-bottom: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    background-color: #fff;
+    position: relative;
+    top: 1px;
+    left: -1px;
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s -0.3s;
+
+    li {
+      a {
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: #999999;
+        padding: 0 2rem;
+        display: block;
+      }
+    }
+  }
+
+  .listOpen {
+    max-height: 60rem;
+    border-bottom: 1px solid #dedede;
+    transition-delay: 0s;
+  }
+
+  .hided_lise {
+    display: none;
+  }
+
+  @include tablet {
+    .sub_center {
+      width: 95%;
+    }
+
+    &__Home {
+      display: block;
+    }
+
+    &__leftLink,
+    &__rightLink {
+      max-width: 24.0rem;
+    }
+  }
+}
+
+.pageNav {
+  display: none;
+  right: 0;
+  @include centerY(absolute);
+
+  li {
+    font-size: 1.4rem;
+    color: #999999;
+    padding-right: 1.7rem;
+    margin-right: 1rem;
+
+    &:last-child {
+      color: #222;
+    }
+
+    &:not(:last-child) {
+      background: url(../images/sub/pageNav.png) no-repeat center right;
+    }
+  }
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.subContents {
+  padding: 7rem 0;
+
+
+  .pageTitle {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2em;
+  }
+
+  @include pc {
+    padding: 9.5rem 0;
+
+    .pageTitle {
+      font-size: 4rem;
+    }
+  }
+}
+
+
+
+// 우리봄소개
+.about {
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #0a2f8f;
+    line-height: 1.3;
+    margin-bottom: 1em;
+  }
+
+  &__Img {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    color: #555555;
+    line-height: 1.5;
+  }
+
+  @include pc {
+    @include flexStart;
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__Img {
+      margin-bottom: 0;
+    }
+
+    &__article {
+      width: 50%;
+    }
+
+    &__text {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.ceoGreeting {
+  @include mobileOnly {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .ceo {
+    color: #555;
+
+    b {
+      color: #000;
+    }
+
+    margin-top: 4rem;
+    font-size: 2rem;
+
+    @include pc {
+      margin-top: 5rem;
+      font-size: 2.2rem;
+    }
+
+
+
+
+  }
+}
+
+// 비전
+.visionWrap {
+  width: 100%;
+  max-width: 89rem;
+  margin: 0 auto;
+
+  .vistionImg {
+    margin-bottom: 4.5rem;
+  }
+}
+
+.visionBox {
+  border: 1px solid #ddd;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  &__title {
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+
+    &.mission {
+      background-color: #25345c;
+    }
+
+    &.vision {
+      background-color: #79462b;
+    }
+
+    &.value {
+      background-color: #5b2b79;
+    }
+
+    p {
+      position: relative;
+      padding: 0 8.5rem;
+      display: inline-block;
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        background: url(../images/sub/about/icon.png) no-repeat;
+        background-size: cover;
+
+        @include centerY(absolute);
+      }
+
+      &::after {
+        right: 0;
+      }
+
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  &__article {
+    padding: 3rem 5%;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    color: #555555;
+  }
+
+  &__dl {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #555555;
+    line-height: 1.5;
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    dt {
+      position: relative;
+      margin-right: 0.5rem;
+      padding-left: 1rem;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        background-color: #0a2f8f;
+        border-radius: 100%;
+        left: 0;
+        @include centerY(absolute);
+      }
+    }
+
+    dd {
+      flex: 1;
+    }
+  }
+
+  @include pc {
+    &__article {
+      padding: 4.5rem 5%;
+    }
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__text {
+      font-size: 2.2rem;
+    }
+
+    &__dl {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+}
+
+// 조직도
+.operation {
+  text-align: right;
+}
+
+// 향후발전방향
+.direction {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  li {
+    text-align: center;
+    background-color: #f5f5fb;
+    width: 100%;
+    padding: 5rem 4%;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__icon {
+    height: 10rem;
+    margin-bottom: 4rem;
+  }
+
+  &__dl {
+    font-size: 2.4rem;
+
+    dt {
+      font-size: 1em;
+      font-weight: 700;
+      margin-bottom: 0.4em;
+    }
+
+    dd {
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+  }
+
+  @include pc {
+    li {
+      width: 24%;
+      height: 47rem;
+      box-sizing: border-box;
+      padding: 7rem 4% 0 4%;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// 오시는 길
+.mapWrap {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+
+  .theMap {
+    z-index: 1;
+    width: 100%;
+    margin-bottom: 30px;
+
+    .wrap_map {
+      height: 400px;
+    }
+  }
+
+  .squer {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #008fac;
+    z-index: 0;
+    top: -30px;
+    right: -30px
+  }
+
+  .addTxts {
+    li {
+      @include flexAlign;
+
+      p {
+        font-size: 18px;
+        line-height: 1.3;
+        margin-left: 10px;
+        width: calc(100% - 33px);
+      }
+
+      @include mobileOnly {
+        justify-content: flex-start;
+
+        p {
+          font-size: 14px;
+        }
+
+        .addIcon {
+          width: 33px;
+          text-align: center
+        }
+      }
+    }
+
+    @include layout("li", 10px);
+
+  }
+}
+
+.contactWrap {
+  .metro {
+    @include flexAlign;
+
+    .metroLine {
+      display: block;
+      width: 75px;
+      height: 75px;
+      line-height: 1.2;
+      border-radius: 100%;
+      border: 8px solid #ffa642;
+      color: #ffa642;
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 16px;
+      font-weight: 500;
+      margin-right: 15px;
+      padding-top: 8px;
+    }
+
+    p {
+      width: calc(100% - 75px);
+      font-size: 18px;
+      color: #555555;
+      line-height: 1.4;
+
+      @include mobileOnly {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .mapsBtn {
+    display: flex;
+
+    li {
+      width: 278px;
+      line-height: 73px;
+
+      a {
+        color: #000;
+        font-size: 17px;
+        @include flexAlign;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 11px;
+          height: 20px;
+          background: url(../images/sub/about/btnArr.png) no-repeat center;
+          margin-left: 35px;
+        }
+      }
+    }
+
+    .naverBtn {
+      border: 1px solid #ddd;
+      margin-right: 15px;
+    }
+
+    .kakaoBtn {
+      background-color: #ffe618;
+    }
+
+    @include mobileOnly {
+      flex-wrap: wrap;
+
+      li {
+        width: 100%;
+      }
+
+      .naverBtn {
+        margin: 0 0 15px 0;
+      }
+    }
+  }
+
+  @include layout(".metro, .mapsBtn", 10px, $tablet);
+}
+
+.posterWrap {
+  text-align: center;
+}
+
+// 기업연수 소개
+.introDl {
+  margin-bottom: 4.5rem;
+
+  dt {
+    color: #0259a7;
+    margin-bottom: 0.6em;
+    font-weight: 300;
+    line-height: 1.3;
+    font-size: 2rem;
+  }
+
+  dd {
+    font-size: 1.7rem;
+    line-height: 1.4;
+  }
+
+  @include pc {
+    margin-bottom: 6rem;
+
+    dt {
+      font-size: 3rem;
+    }
+
+    dd {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+.wokrshopTable {
+  width: 100%;
+
+  thead {
+    tr {
+      th {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 500;
+        background-color: #3e3e3e;
+        color: #fff;
+        padding: 2.5rem;
+
+        @include pc {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+  }
+
+  tbody {
+    tr {
+
+      th,
+      td {
+        font-size: 1.6rem;
+        padding: 1.8rem;
+        border-bottom: 1px solid #ddd;
+
+        @include pc {
+          font-size: 1.8rem;
+          padding: 2.5rem;
+        }
+      }
+
+      th {
+        text-align: center;
+        font-weight: 500;
+        background-color: #f8f8f8;
+      }
+
+      td {
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+.warnTxt {
+  font-size: 1.8rem;
+  line-height: 1.3;
+  color: #555;
+  margin-top: 1.5rem;
+  position: relative;
+  padding-left: 2.3rem;
+
+  &::before {
+    content: '※';
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+// 프로그램 소개
+.educationWrap {
+  background: url(../images/sub/center/educationBg.png) no-repeat center;
+}
+
+.education {
+  &__dl {
+    color: #111111;
+    margin-bottom: 3.5rem;
+
+    dt {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.8em;
+    }
+
+    dd {
+      font-size: 1.8rem;
+      line-height: 1.4;
+    }
+  }
+
+  &__musical {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5em;
+  }
+
+  &__img {
+    margin-top: 3rem;
+    max-width: 52rem;
+    box-shadow: 4px 4px 11px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  @include tablet {
+    @include flexStart;
+
+    &__texts {
+      width: 47%;
+      max-width: 52rem;
+    }
+
+    &__img {
+      width: 50%;
+      margin-top: 0;
+    }
+
+    &__dl {
+      dt {
+        font-size: 3rem;
+      }
+
+      dd {
+        font-size: 2rem;
+      }
+    }
+
+    &__musical {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.education2 {
+  margin-top: 55rem;
+
+  @include tablet {
+    margin-top: 12rem;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+
+.subTabs {
+  @include flexAlign;
+  max-width: 64rem;
+  margin: 0 auto 4rem auto;
+  box-shadow: 4px 4px 11px 0px rgba(0, 0, 0, 0.2);
+
+  li {
+    width: 50%;
+    text-align: center;
+    line-height: 6rem;
+
+    a {
+      font-size: 1.7rem;
+      font-weight: 500;
+      display: block;
+      color: #000;
+    }
+
+    &.on {
+      background-color: #0a2f8f;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  @include pc {
+    margin-bottom: 8rem;
+
+    li {
+      a {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.programDl {
+  text-align: center;
+  line-height: 1.3;
+  color: #111111;
+  width: 100%;
+  max-width: 79rem;
+  margin: 0 auto;
+
+  dt {
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 0.7em;
+  }
+
+  dd {
+    font-size: clamp(1.8rem, 3vw, 2rem);
+  }
+}
+
+.studyStep {
+  text-align: center;
+  margin-top: 4rem;
+
+  @include pc {
+    margin-top: 9.5rem;
+  }
+}
+
+// 국극배우
+.aboutPark {
+  margin-bottom: 8rem;
+
+  &__dl {
+    dt {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1em;
+      color: #0a2f8f;
+    }
+
+    dd {
+      font-size: 1.8rem;
+      line-height: 1.4;
+      color: #555555;
+    }
+  }
+
+  &__texts {
+    margin-bottom: 3rem;
+  }
+
+  &__control {
+    position: relative;
+    text-align: center;
+    margin-top: 4rem;
+
+    .plaing {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.7em;
+    }
+
+    .counterAll {
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: #a2a2a2;
+    }
+
+    .slick-arrow {
+      width: 35px;
+      height: 35px;
+    }
+
+    .slick-prev {
+      background: url(../images/sub/kmusical/prev.png) no-repeat center !important;
+      background-size: cover !important;
+      left: 0;
+    }
+
+    .slick-next {
+      background: url(../images/sub/kmusical/next.png) no-repeat center !important;
+      background-size: cover !important;
+      right: 0;
+    }
+  }
+
+  @include tablet {
+    @include flexStart;
+    margin-bottom: 17.5rem;
+
+    &__control {
+      margin-top: 10rem;
+    }
+
+    &__texts {
+      width: 45%;
+      margin-bottom: 0rem;
+    }
+
+    &__slides {
+      width: 50%;
+    }
+
+    .slick-arrow {
+      width: 75px;
+      height: 75px;
+    }
+  }
+}
+
+.aboutPlaings {
+  text-align: center;
+  margin: 7rem 0 9rem 0;
+
+  &__title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: #111111;
+    margin-bottom: 0.6em;
+
+    span {
+      font-weight: 300;
+      display: block;
+    }
+  }
+
+  &__dl {
+    text-align: left;
+    margin-bottom: 4rem;
+
+    dt {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.8em;
+      color: #111111;
+
+      &.flatform {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        span {
+          margin: 0 0 1rem 0;
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    dd {
+      font-size: 1.6rem;
+      color: #555555;
+      line-height: 1.4;
+    }
+
+  }
+
+  &__img {
+    margin-bottom: 5rem;
+  }
+
+  @include pc {
+    margin-top: 14rem;
+
+    &__dl {
+      margin-bottom: 5rem;
+
+      dt {
+        font-size: 3rem;
+
+        &.flatform {
+          span {
+            display: inline;
+            margin: 0 2rem 0 0;
+            width: auto;
+          }
+        }
+      }
+
+
+      dd {
+        font-size: 1.8rem;
+      }
+    }
+
+    &__title {
+      font-size: 3rem;
+
+      span {
+        font-weight: 300;
+        display: inline;
+      }
+    }
+
+    &__img {
+      margin-bottom: 9rem;
+    }
+  }
+}
+
+.musicalHistory {
+  &__tabs {
+    @include flexAlign;
+    max-width: 49rem;
+    margin: 0 auto 7rem auto;
+    line-height: 6rem;
+    border-radius: 6rem;
+    overflow: hidden;
+    text-align: center;
+
+    li {
+      width: 33.33333333%;
+
+      a {
+        display: block;
+        background-color: #ededed;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #555555;
+      }
+    }
+
+    .on {
+      a {
+        background-color: #658ae9;
+        color: #fff;
+      }
+    }
+  }
+
+  &__hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+
+  &__flex {
+
+    @include pc {
+      @include flexStart;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__lists {
+    box-sizing: border-box;
+
+    li {
+      font-size: 1.7rem;
+      color: #555555;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 1.5rem;
+
+      &::before {
+        content: '・';
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__other {
+    margin-top: 5rem;
+    padding-top: 5rem;
+    border-top: 1px dashed #ddd;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      font-size: 1.7rem;
+      line-height: 1.5;
+      color: #555555;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+
+      .date {
+        width: 10.5rem;
+      }
+
+      >div {
+        width: calc(100% - 10.5rem);
+
+        >p {
+          position: relative;
+          padding-left: 1.5rem;
+
+          &::before {
+            content: '・';
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include pc {
+    &__lists {
+      width: calc(45% - 1px);
+
+      &:first-child {
+        width: 50%;
+        padding-right: 5%;
+        margin-right: 5%;
+        border-right: 1px dashed #ddd;
+      }
+    }
+
+    &__other {
+      margin-top: 7rem;
+      padding-top: 7rem;
+    }
+  }
+}
+
+// 문의
+.aboutConsult {
+  background: url(../images/sub/news/aboutBg.jpg) no-repeat center;
+  // background-size: cover;
+  padding: 3rem 5%;
+
+  dl {
+    color: #fff;
+
+    dt {
+      font-size: clamp(2.8rem, 3vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 0.6em;
+    }
+
+    dd {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      line-height: 1.4;
+    }
+  }
+
+  @include tablet {
+    padding: 10.5rem 15%;
+    background-size: 100% auto;
+  }
+}
+
+.consultFrm {
+  background-color: #f8f8f8;
+  padding: 7.5rem 2.5%;
+
+  &__title {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 500;
+  }
+
+  .agree {
+    margin-bottom: clamp(6rem, 4vw, 9.5rem);
+
+    &__info {
+      height: 15.5rem;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      line-height: 1.4;
+      font-size: 1.4em;
+      overflow-y: scroll;
+      white-space: pre-line;
+    }
+
+    &__check {
+      position: relative;
+      margin-top: 2rem;
+
+      input[type="checkbox"] {
+        position: absolute;
+        right: 0;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        border: 0 none;
+        margin: 0;
+        top: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      label {
+        background: url(../images/sub/uncheck.png) no-repeat center left;
+        padding-left: 25px;
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: #555555;
+      }
+
+      input[type="checkbox"]:checked+label {
+        background: url(../images/sub/checked.png) no-repeat center left;
+      }
+    }
+  }
+
+  .inputHaad {
+    padding-bottom: 2rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: flex-end;
+
+    &__must {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #555555;
+      position: relative;
+      padding-left: 1rem;
+      margin: 0 0 0 1rem;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+        background-color: #f0091a;
+        left: 0;
+        @include centerY(absolute);
+      }
+    }
+
+
+  }
+
+  .inputLine {
+    margin-bottom: 1.5rem;
+
+    &__th {
+      font-size: 1.8rem;
+      font-weight: 500;
+      width: 10%;
+      min-width: 10rem;
+      box-sizing: border-box;
+      padding-left: 1.3rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+        background-color: #f0091a;
+        left: 0;
+        @include centerY(absolute);
+      }
+    }
+
+    &__td {
+      width: 90%;
+    }
+
+    &__select {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 28rem;
+      height: 50px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      background-color: #fff;
+
+
+      span {
+        display: block;
+        height: 48px;
+        padding-left: 10px;
+        line-height: 50px;
+        text-align: left;
+        font-size: 18px;
+        font-weight: 300;
+        background: url(../images/sub/select.png) no-repeat center right 10px;
+      }
+
+      .sub_sel {
+        width: 100%;
+        font-size: 16px;
+        height: 50px;
+        background-color: #fff;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        padding-left: 10px;
+        filter: alpha(opacity=0);
+        z-index: 1;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+      }
+
+    }
+
+    &__number {
+      display: flex;
+      align-items: center;
+
+      input {
+        width: calc(33.33333% - 3rem);
+      }
+
+      em {
+        text-align: center;
+        width: 1.4rem;
+        font-size: 1.8rem;
+        width: 3rem;
+      }
+    }
+
+    &__radio {
+      display: flex;
+
+      li {
+        width: 48%;
+        max-width: 16.5rem;
+        height: 5rem;
+        line-height: 5rem;
+        text-align: center;
+        position: relative;
+        border: 1px solid #ddd;
+
+        &:first-child {
+          margin-right: 1rem;
+        }
+
+        input[type="radio"] {
+          position: absolute;
+          right: 0;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          border: 0 none;
+          margin: 0;
+          top: 0;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+        }
+
+        label {
+          font-size: 1.8rem;
+          font-weight: 300;
+          color: #555555;
+          display: block;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          background-color: #f1f1f1;
+        }
+
+        input[type="radio"]:checked+label {
+          background-color: #0a2f8f;
+          color: #fff;
+        }
+      }
+    }
+
+    &__smsAgree {
+      position: relative;
+
+      input[type="checkbox"] {
+        position: absolute;
+        right: 0;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        border: 0 none;
+        margin: 0;
+        top: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      label {
+        background: url(../images/sub/uncheck.png) no-repeat top 3px left;
+        padding-left: 25px;
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: #555555;
+        display: block;
+        line-height: 1.4;
+      }
+
+      input[type="checkbox"]:checked+label {
+        background: url(../images/sub/checked.png) no-repeat top 3px left;
+      }
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      border: 1px solid #ddd;
+      width: 100%;
+      max-width: 28rem;
+      height: 5rem;
+      box-sizing: border-box;
+      padding-left: 1.5rem;
+      font-size: 1.8rem;
+      background-color: #fff;
+    }
+  }
+
+  .submit {
+    margin-top: clamp(4rem, 4vw, 7rem);
+    padding-top: clamp(2.5rem, 4vw, 5rem);
+    border-top: 2px solid #333;
+
+    &__btn {
+      width: 95%;
+      max-width: 42rem;
+      height: 9rem;
+      margin: 0 auto;
+      background-color: #333333;
+
+
+
+      a {
+        @include flexAlign;
+        box-sizing: border-box;
+        padding-top: 1rem;
+        text-align: center;
+        color: #fff;
+        font-size: 2.4rem;
+        font-weight: 500;
+        height: 100%;
+      }
+    }
+
+  }
+
+  @include pc {
+    padding: 7.5rem 6%;
+  }
+}
+
+/*개인정보취급방침*/
+.privacy {
+  background: #fbfafa;
+  border: 1px solid #d7d5d5;
+  padding: 25px;
+  height: 645px;
+  box-sizing: border-box;
+
+  >div {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    height: 100%;
+
+    >.intxtarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      line-height: 1.7;
+      word-break: keep-all;
+      font-size: 14px;
+      overflow-y: scroll;
+      white-space: pre-line;
+    }
+  }
+}
