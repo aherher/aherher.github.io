@@ -1,96 +1,262 @@
-  <? include "../inc/header.html"; ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta property="og:image" content="images/common/linkkakao_bar.jpg" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+    <link rel="icon" href="images/common/favicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/sub.css" />
+    <title>베트남 SNS 마케팅 클럽피아프 | Club Piaf</title>
+  </head>
 
-  <main class="subContents">
-    <div class="sub_center">
+  <body>
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="header__head">
+        <h1 class="header__logo">
+          <a href=""><img src="images/common/logo.png" alt="" /></a>
+        </h1>
+        <nav class="header__menuWrap">
+          <ul class="header__menu poppins">
+            <li>
+              <a href="company/sub01.html">Company</a>
+              <!-- <ul class="header__sub_menu">
 
-      <div class="subHead">
-        <h2 class="pageTitle">클럽피아프 소개</h2>
-        <ul class="subPages">
-          <li><a href="sub01.html">브랜드 소개</a></li>
-          <li><a href="sub02.html">연혁</a></li>
-          <li class="on"><a href="sub03.html">오시는 길</a></li>
+            </ul> -->
+            </li>
+            <li><a href="work/sub01.html">Works</a></li>
+            <li><a href="surpport/sub01.html">Government Support</a></li>
+            <li><a href="HyAdmin/list.php?bbs_id=bo01">News・Promotion</a></li>
+            <li><a href="contact/sub01.html">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- <div class="header__lang"><img src="images/common/langIcon.png" alt="">
+        <ul class="header__langList">
+          <li class="current"><a href="#!">KR</a></li>
+          <li><a href="#!">EN</a></li>
         </ul>
+      </div> -->
+        <div class="header__menu_btn"><span></span></div>
       </div>
+    </header>
+    <!-- 헤더 끝 -->
 
-      <ul class="mapTab">
-        <li class="on"><a href="#korea"><span>한국</span></a></li>
-        <li><a href="#vietnam"><span>베트남</span></a></li>
-      </ul>
+    <main class="subContents">
+      <div class="sub_center">
+        <div class="subHead">
+          <h2 class="pageTitle">클럽피아프 소개</h2>
+          <ul class="subPages">
+            <li><a href="sub01.html">브랜드 소개</a></li>
+            <li><a href="sub02.html">연혁</a></li>
+            <li class="on"><a href="sub03.html">오시는 길</a></li>
+          </ul>
+        </div>
 
-      <section class="mapWrap view" id="korea">
-        <iframe class="mapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.2209975468236!2d126.87943881564648!3d37.47911093688714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6101ae1f426d%3A0x90f75fe9c9297b83!2z6rCA7IKwU0tWMeyEvO2EsA!5e0!3m2!1sko!2skr!4v1657160914221!5m2!1sko!2skr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <ul class="mapTab">
+          <li class="on">
+            <a href="#korea"><span>한국</span></a>
+          </li>
+          <li>
+            <a href="#vietnam"><span>베트남</span></a>
+          </li>
+        </ul>
 
-        <div class="address">
+        <section class="mapWrap view" id="korea">
+          <iframe
+            class="mapIframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.2209975468236!2d126.87943881564648!3d37.47911093688714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b6101ae1f426d%3A0x90f75fe9c9297b83!2z6rCA7IKwU0tWMeyEvO2EsA!5e0!3m2!1sko!2skr!4v1657160914221!5m2!1sko!2skr"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
 
-          <dl class="address__box">
-            <dt class="poppins">Location</dt>
-            <dd>클럽피아프<br />
-              한국 본사</dd>
-          </dl>
+          <div class="address">
+            <dl class="address__box">
+              <dt class="poppins">Location</dt>
+              <dd>
+                클럽피아프
+                <br />
+                한국 본사
+              </dd>
+            </dl>
 
-          <article class="address__article">
-            <ul class="address__detail">
-              <li><span class="th poppins"><em>ADD</em></span><span class="td">서울시 금천구 가산디지털 1 로 171, 301~2 호 (가산동, 가산 SK V1 센터)</span></li>
-              <li><span class="th poppins"><em>TEL</em></span><span class="td poppins">02-6083-1082</span></li>
-              <li><span class="th poppins"><em>Fax</em></span><span class="td poppins">02-6280-6077</span></li>
-              <li><span class="th poppins"><em>SUBWAY</em></span><span class="td">1호선・7호선 가산디지털단지역 6번 출구에서 도보 3분</span></li>
+            <article class="address__article">
+              <ul class="address__detail">
+                <li>
+                  <span class="th poppins"><em>ADD</em></span>
+                  <span class="td">
+                    서울시 금천구 가산디지털 1 로 171, 301~2 호 (가산동, 가산 SK
+                    V1 센터)
+                  </span>
+                </li>
+                <li>
+                  <span class="th poppins"><em>TEL</em></span>
+                  <span class="td poppins">02-6083-1082</span>
+                </li>
+                <li>
+                  <span class="th poppins"><em>Fax</em></span>
+                  <span class="td poppins">02-6280-6077</span>
+                </li>
+                <li>
+                  <span class="th poppins"><em>SUBWAY</em></span>
+                  <span class="td">
+                    1호선・7호선 가산디지털단지역 6번 출구에서 도보 3분
+                  </span>
+                </li>
+              </ul>
+              <ul class="address__btns">
+                <li class="btn01">
+                  <a href="http://naver.me/xmiAkC41" target="_blank">
+                    <b>NAVER</b>
+                    지도 보기
+                  </a>
+                </li>
+                <li class="btn02">
+                  <a href="http://kko.to/p219oOjHm" target="_blank">
+                    <b>KAKAO</b>
+                    지도 보기
+                  </a>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="mapWrap" id="vietnam">
+          <iframe
+            class="mapIframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1241646089275!2d106.71203711533417!3d10.801801161677158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a500fb999f%3A0x75fb71de4f015bfa!2sTo%C3%A0%20nh%C3%A0%20194%20Golden%20Building!5e0!3m2!1sko!2skr!4v1657586060424!5m2!1sko!2skr"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+          <div class="address">
+            <dl class="address__box">
+              <dt class="poppins">Location</dt>
+              <dd>
+                클럽피아프
+                <br />
+                베트남
+              </dd>
+            </dl>
+
+            <article class="address__article">
+              <ul class="address__detail">
+                <li>
+                  <span class="th poppins"><em>ADD</em></span>
+                  <span class="td poppins">
+                    Ho chi minh city, Binh thanh district, Ward 25, No.473 Dien
+                    bien phu street, 194 Golden building, Floor 10)
+                  </span>
+                </li>
+                <li>
+                  <span class="th poppins"><em>TEL</em></span>
+                  <span class="td poppins">+84-28-6258-3688</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      const mapTab = document.querySelectorAll(".mapTab li")
+      const mapWrap = document.querySelectorAll(".mapWrap")
+
+      function remover() {
+        mapWrap.forEach((maps) => {
+          maps.classList.remove("view")
+        })
+
+        mapTab.forEach((btns) => {
+          btns.classList.remove("on")
+        })
+      }
+
+      mapTab.forEach((arr) => {
+        let tabHref = arr.querySelector("a")
+        arr.addEventListener("click", (event) => {
+          remover()
+          arr.classList.add("on")
+          let linker = document.querySelector(tabHref.getAttribute("href"))
+          linker.classList.add("view")
+          event.preventDefault(linker)
+        })
+      })
+    </script>
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="footer__foot">
+        <div class="footer__txts">
+          <div class="footer__logo">
+            <img src="images/common/foot_logo.png" alt="" />
+          </div>
+          <ul class="footer__sns">
+            <li>
+              <a href="https://www.facebook.com/clubpiaf.vn" target="_blank">
+                <img src="images/common/sns01.png" alt="페이스북" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/clubpiaf_vn/" target="_blank">
+                <img src="images/common/sns02.png" alt="인스타" />
+              </a>
+            </li>
+            <li>
+              <a href="https://pf.kakao.com/_TCDKs" target="_blank">
+                <img src="images/common/sns03.png" alt="카톡" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/c/ClubPiaf" target="_blank">
+                <img src="images/common/sns04.png" alt="유튜브" />
+              </a>
+            </li>
+            <li>
+              <a href="#!"><img src="images/common/sns05.png" alt="틱톡" /></a>
+            </li>
+          </ul>
+          <article class="footer__article">
+            <ul class="footer__btns">
+              <li><a href="etc/sub01.html">개인정보취급방침</a></li>
+              <li><a href="contact/sub01.html">광고문의</a></li>
             </ul>
-            <ul class="address__btns">
-              <li class="btn01"><a href="http://naver.me/xmiAkC41" target="_blank"><b>NAVER</b> 지도 보기</a></li>
-              <li class="btn02"><a href="http://kko.to/p219oOjHm" target="_blank"><b>KAKAO</b> 지도 보기</a></li>
-            </ul>
+            <p class="footer__info mb10"><b>주식회사 디엠앤씨</b></p>
+            <p class="footer__info">
+              <span>
+                Address: 서울 금천구 가산디지털1로 171, 301~302호 (가산동, SK
+                V1센터)
+              </span>
+            </p>
+            <p class="footer__info">
+              <span>CEO : Moon Suck-bum</span>
+              <span>Business license number: 122-86-45558</span>
+              <span>Tel: 02-6083-1082</span>
+            </p>
+            <p class="footer__copy">
+              COPYRIGHT © Clubpiaf. ALL RIGHTS RESERVED
+            </p>
           </article>
         </div>
-      </section>
+      </div>
+    </footer>
+    <!-- 푸터 끝 -->
 
-      <section class="mapWrap" id="vietnam">
-        <iframe class="mapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1241646089275!2d106.71203711533417!3d10.801801161677158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a500fb999f%3A0x75fb71de4f015bfa!2sTo%C3%A0%20nh%C3%A0%20194%20Golden%20Building!5e0!3m2!1sko!2skr!4v1657586060424!5m2!1sko!2skr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-        <div class="address">
-
-          <dl class="address__box">
-            <dt class="poppins">Location</dt>
-            <dd>클럽피아프<br />
-              베트남</dd>
-          </dl>
-
-          <article class="address__article">
-            <ul class="address__detail">
-              <li><span class="th poppins"><em>ADD</em></span><span class="td poppins">Ho chi minh city, Binh thanh district, Ward 25, No.473 Dien bien phu street,
-                  194 Golden building, Floor 10)</span></li>
-              <li><span class="th poppins"><em>TEL</em></span><span class="td poppins">+84-28-6258-3688</span></li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-    </div>
-  </main>
-  <script>
-    const mapTab = document.querySelectorAll(".mapTab li");
-    const mapWrap = document.querySelectorAll(".mapWrap");
-
-    function remover() {
-      mapWrap.forEach(maps => {
-        maps.classList.remove("view")
-      });
-
-      mapTab.forEach(btns => {
-        btns.classList.remove("on")
-      });
-
-    };
-
-
-    mapTab.forEach(arr => {
-      let tabHref = arr.querySelector("a");
-      arr.addEventListener("click", (event) => {
-        remover();
-        arr.classList.add("on");
-        let linker = document.querySelector(tabHref.getAttribute("href"));
-        linker.classList.add("view");
-        event.preventDefault(linker);
-      });
-    });
-  </script>
-  <? include "../inc/footer.html"; ?>
+    <script src="/js/layout.js"></script>
+  </body>
+</html>
