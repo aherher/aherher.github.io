@@ -1,0 +1,93 @@
+$lap: 1400px;
+$tablet: 960px;
+$mobile: 700px;
+
+
+@mixin lap {
+  @media screen and (max-width:$lap) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width:$tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width:$mobile) {
+    @content;
+  }
+}
+
+
+$subImg: '../images/sub';
+$comImg: '../images/common';
+
+@mixin centerX($p) {
+  position: $p;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin centerY($p) {
+  position: $p;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin centerC($p) {
+  position: $p;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flexAlign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin layout($inbox:null, $mb:null, $sizing:$mobile) {
+  $box: unquote($inbox); //문자보간. 따옴표를 붙여야 한다.
+
+  @media screen and (max-width:$sizing) {
+    //모바일 기본값
+    flex-wrap: wrap;
+
+    #{$box} {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: $mb;
+      }
+    }
+  }
+}
+
+@mixin flexStart ($from) {
+  @media screen and (min-width:$from) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+@mixin flexCenter {
+  @media screen and (min-width:$from) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@mixin flexEnd {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+
+$mainColor:#e94615;

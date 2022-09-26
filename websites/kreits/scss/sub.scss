@@ -1,0 +1,1442 @@
+@charset "utf-8";
+@import './mixin';
+
+
+// 서브공통
+.subVisual {
+  height: 550px;
+  background-size: cover;
+  position: relative;
+
+  dl {
+    @include centerY(relative);
+    top: 55%;
+    color: #fff;
+    text-align: center;
+
+    dt {
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 0.7em;
+      transform: translateY(50px);
+    }
+
+    dd {
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 1.4;
+      transform: translateY(50px);
+    }
+
+    @include mobile {
+      top: 65%;
+
+      dt {
+        font-size: 40px;
+        margin-bottom: 0.5em;
+      }
+
+      dd {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @include mobile {
+    height: 300px;
+  }
+}
+
+.subVisual01 {
+  background: url(../images/sub/subVisual01.jpg) no-repeat center;
+}
+
+.subVisual02 {
+  background: url(../images/sub/subVisual02.jpg) no-repeat center;
+}
+
+
+.subVisual03 {
+  background: url(../images/sub/subVisual03.jpg) no-repeat center;
+}
+
+.subVisual04 {
+  background: url(../images/sub/subVisual04.jpg) no-repeat center;
+}
+
+.subContents {
+  padding: 100px 0;
+
+  .sub_center {
+    width: 95%;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .subTitle {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 80px;
+    text-align: center;
+    transform: translateY(50px);
+
+    @include mobile {
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+  }
+
+  @include mobile {
+    padding: 65px 0;
+  }
+}
+
+// 인사말
+// .ceoWrap {
+//   background: url(../images/sub/about/ceoBg.jpg) no-repeat center;
+//   background-size: cover;
+
+//   @include tablet {
+//     background-size: 100%;
+//   }
+// }
+
+.greetingDl {
+  font-size: 40px;
+  color: #111111;
+  line-height: 1.2;
+  margin-bottom: 1em;
+
+  dt {
+    font-weight: 300;
+    transform: translateY(50px);
+
+    span {
+      position: relative;
+
+      em {
+        position: relative;
+        z-index: 1;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0.4em;
+        background-color: #ceedfa;
+        position: absolute;
+        bottom: 0.3em;
+        left: 0;
+        z-index: 0;
+      }
+    }
+  }
+
+  dd {
+    font-weight: 700;
+    transform: translateY(50px);
+  }
+
+  @include mobile {
+    font-size: 24px;
+  }
+}
+
+.greetingTxt {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #555555;
+  transform: translateY(50px);
+}
+
+.ceo {
+  display: flex;
+  align-items: flex-end;
+  color: #000000;
+  margin-top: 45px;
+  transform: translateY(50px);
+
+  dt {
+    font-size: 17px;
+    font-weight: 300;
+    margin-right: 15px;
+  }
+
+  dd {
+    font-size: 30px;
+  }
+}
+
+// 회사개요
+.aboutCompany {
+  background: url(../images/sub/about/aboutBg.jpg) no-repeat center;
+  height: 380px;
+  padding: 0 6%;
+  @include flexAlign;
+
+  dl {
+    color: #fff;
+    line-height: 1.4;
+
+    dt {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 0.4em;
+      transform: translateY(-50px);
+    }
+
+    dd {
+      font-size: 23px;
+      transform: translateY(-50px);
+    }
+  }
+
+  @include mobile {
+    height: auto;
+    padding: 40px 4%;
+
+    dl {
+      dt {
+        font-size: 18px;
+      }
+
+      dd {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.companyInfo {
+  width: 100%;
+  max-width: 1000px;
+  margin: 45px auto 130px auto;
+  flex-wrap: wrap;
+
+  li {
+    width: 46%;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.4;
+    transform: translateX(50px);
+
+    .infoDt {
+      width: 77px;
+      font-weight: 500;
+    }
+
+    .infoDd {
+      width: calc(100% - 77px);
+      font-weight: 300;
+    }
+  }
+
+  @include mobile {
+    margin: 30px auto 60px auto;
+
+    li {
+      width: 100%;
+    }
+  }
+
+}
+
+.theHistorys {
+  margin-bottom: 130px;
+
+  @include mobile {
+    margin-bottom: 70px;
+  }
+
+  .historyWrap {
+    transform: translateY(50px);
+
+    .year {
+      font-size: 55px;
+      font-weight: 700;
+
+      dt {
+        color: #d6d6d6;
+        margin-bottom: 0.3em;
+      }
+
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+
+    .historys {
+      position: relative;
+      width: 60%;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: #dddddd;
+        position: absolute;
+        left: 3px;
+        top: 8px;
+      }
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        font-size: 16px;
+        line-height: 1.4;
+        position: relative;
+        padding-left: 55px;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 7px;
+          height: 7px;
+          background-color: #333333;
+          border-radius: 100%;
+          position: absolute;
+          left: 0;
+          top: 10px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+
+        .histDay {
+          font-weight: 700;
+          color: #1c8ab7;
+          width: 90px;
+        }
+
+        .hisTxt {
+          width: calc(100% - 90px);
+          color: #555555;
+          font-weight: 300;
+
+          p:not(:last-child) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      @include mobile {
+        width: calc(100% - 100px);
+
+        li {
+          padding-left: 20px;
+          @include layout(".histDay, .hisTxt", 0);
+          word-break: break-all;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      .historys {
+        padding-bottom: 110px;
+      }
+    }
+
+    &:last-child {
+      .historys {
+        &::before {
+          height: calc(100% - 45px);
+        }
+      }
+    }
+  }
+}
+
+.parters {
+  flex-wrap: wrap;
+  transform: translateY(50px);
+
+  li {
+    border: 1px solid #ddd;
+    margin-bottom: 2px;
+    width: calc(16.66666666666667% - 4px);
+    text-align: center;
+
+    @include tablet {
+      width: 32.5%;
+    }
+
+    @include mobile {
+      width: 49%;
+    }
+  }
+}
+
+// 비전
+.theVisions {
+  margin-bottom: 130px;
+
+  .visionImg {
+    width: 47%;
+    text-align: center;
+  }
+
+  .aboutVision {
+    width: 50%;
+
+    dl {
+      transform: translateX(50px);
+
+      &:not(:last-child) {
+        margin-bottom: 28px;
+      }
+
+      dt {
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 15px;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 15px;
+          height: 15px;
+          border-radius: 100%;
+          margin-bottom: 5px;
+        }
+      }
+
+      .red {
+        color: #f2655e;
+
+        &::before {
+          background-color: #f2655e;
+          ;
+        }
+      }
+
+      .purple {
+        color: #a751a5;
+
+        &::before {
+          background-color: #a751a5;
+          ;
+        }
+      }
+
+      .sky {
+        color: #50bbe7;
+
+        &::before {
+          background-color: #50bbe7;
+        }
+      }
+
+      dd {
+        font-size: 18px;
+        font-weight: 300;
+        color: #555555;
+        line-height: 1.4;
+      }
+
+      .dot {
+        padding-left: 14px;
+        position: relative;
+
+        &:before {
+          content: '·';
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  @include layout(".visionImg, .aboutVision", 35px);
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+}
+
+.building {
+  background: url(../images/sub/about/building.jpg) no-repeat center;
+  background-size: cover;
+  height: 610px;
+}
+
+.twoBox {
+  display: flex;
+  width: 100%;
+  max-width: 1160px;
+  margin: -355px auto 130px auto;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.14);
+
+
+  >article {
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 95px 6%;
+    position: relative;
+
+    >p {
+      transform: translateY(50px);
+    }
+
+
+    .bgTxt {
+      width: 95%;
+      text-align: center;
+      position: absolute;
+      top: 0em;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      z-index: 0;
+    }
+
+    .tbTxt01 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 0.7em;
+    }
+
+    .tbTxt02 {
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 55px;
+    }
+
+    .tbTxt03 {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    @include mobile {
+      padding: 95px 4% 50px 4%;
+
+      .tbTxt01 {
+        font-size: 30px;
+      }
+
+      .tbTxt02 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .tbTxt03 {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .investor {
+    background-color: #fff;
+
+    .tbTxt01 {
+      color: #111111;
+    }
+
+    .tbTxt03 {
+
+      color: #555555;
+    }
+  }
+
+  .people {
+    background-color: #24aae1;
+    color: #fff;
+  }
+
+  @include layout(">article", 0);
+
+  @include mobile {
+    margin-bottom: 70px;
+  }
+}
+
+.rp3 {
+  text-align: center;
+  margin-bottom: 130px;
+  transform: translateY(50px);
+
+  @include mobile {
+    margin-bottom: 70px;
+  }
+
+  ;
+}
+
+.blueBox {
+  background-color: #24aae1;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #fff;
+  padding: 50px 4%;
+  transform: translateY(50px);
+
+  @include mobile {
+    font-size: 16px;
+    padding: 40px 4%;
+  }
+}
+
+// 주주현황
+.sectionTitle {
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #111111;
+  margin-bottom: 1.5em;
+  text-align: center;
+  transform: translateY(50px);
+
+  @include mobile {
+    font-size: 25px;
+  }
+}
+
+.cosmic {
+  background: url(../images/sub/about/econoBg.jpg) no-repeat center;
+  background-size: cover;
+  padding: 115px 5%;
+  margin-bottom: 30px;
+
+  .issueBox {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+
+    .total {
+      font-size: 70px;
+      font-weight: 700;
+      transform: translateY(50px);
+
+      span {
+        font-size: 0.4em;
+        font-weight: 300;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 65px;
+        margin: 10px auto;
+        background-color: #fff;
+
+        @include mobile {
+          height: 45px;
+        }
+      }
+
+      @include mobile {
+        font-size: 35px;
+      }
+    }
+
+    .iBtxt01 {
+      font-size: 15px;
+      margin-bottom: 20px;
+      transform: translateY(50px);
+    }
+
+    .iBtxt02 {
+      font-size: 18px;
+      line-height: 1.3;
+      transform: translateY(50px);
+    }
+  }
+
+  @include mobile {
+    padding: 60px 5%;
+  }
+}
+
+.thatDay {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+
+  span {
+    position: relative;
+    margin-right: 10px;
+    padding-right: 13px;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 13px;
+      background-color: #cccccc;
+      right: 0;
+      @include centerY(absolute);
+    }
+  }
+}
+
+// 오시는 길
+.mapWrap {
+  z-index: 0;
+  width: 100% !important;
+  transform: translateY(50px);
+
+  .wrap_map {
+    height: 450px !important;
+
+    @include mobile {
+      height: 300px !important;
+    }
+  }
+}
+
+.address {
+  margin-top: 40px;
+  transform: translateY(50px);
+
+  >div {
+    width: 50%;
+    display: flex;
+
+    .icon {
+      width: 75px;
+      margin-right: 17px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #555555;
+      line-height: 1.4;
+    }
+
+    @include tablet {
+      .addNumbers {
+        width: calc(100% - 92px);
+      }
+    }
+  }
+
+  .addWrap {
+    align-items: flex-start;
+
+    .addNumbers {
+      p {
+        display: flex;
+        align-items: flex-start;
+
+        .addTd {
+          width: 50px;
+          font-weight: 400;
+          color: #333333;
+        }
+
+        .addDd {
+          width: calc(100% - 50px);
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  .metroWrap {
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  @include layout(">div", 25px, $tablet);
+}
+
+// 포트폴리오
+.portfolio_lists {
+  display: flex;
+  margin: 0 -8px;
+  flex-wrap: wrap;
+
+  li {
+    width: calc(33.25% - 16px);
+    box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.14);
+    margin: 0 8px 40px 8px;
+    transform: translateY(50px);
+
+    .portImg {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        padding-bottom: 82.66666666667%;
+      }
+    }
+
+    .porTxts {
+      padding: 35px 8%;
+
+      .portTitle {
+        font-size: 17px;
+        line-height: 1.4;
+        height: 48px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -os-flexbox;
+        word-wrap: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        margin-bottom: 10px;
+      }
+
+      .portInfo {
+        font-size: 15px;
+
+        .pi01 {
+          font-weight: 500;
+          margin-right: 10px;
+        }
+
+        .pi02 {
+          font-weight: 300;
+          color: #777777;
+          padding-left: 16px;
+          background: url(../images/sub/portfolio/dateIcon.png) no-repeat center left;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    margin: 0;
+
+    li {
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+}
+
+.popWrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  display: none;
+
+  .portView {
+    @include centerC(absolute);
+    z-index: 1;
+    background-color: #fff;
+    width: 95%;
+    max-width: 1110px;
+    box-sizing: border-box;
+    padding: 20px;
+
+    @include mobile {
+      height: 80vh;
+      overflow-y: scroll;
+    }
+
+    .closePop {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: 1px solid #ddd;
+      z-index: 1;
+    }
+
+    .popInner {
+      border: 1px solid #ddd;
+      padding: 75px 3%;
+
+      .innerImg {
+        width: 37.54%;
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          @include mobile {
+            width: 100%;
+          }
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          padding-bottom: 82.66666666667%;
+        }
+      }
+
+      .portDetail {
+        width: 59%;
+
+        .pD_title {
+          font-size: 20px;
+          font-weight: 500;
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+          line-height: 1.3;
+          border-bottom: 2px solid #333;
+        }
+
+        .infosLine {
+          li {
+            padding: 7px 0;
+            line-height: 1.4;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 15px;
+            border-bottom: 1px solid #eeeeee;
+
+            .iLDt {
+              font-size: 15px;
+              font-weight: 500;
+              width: 115px;
+              position: relative;
+
+              &::after {
+                content: '';
+                display: block;
+                width: 2px;
+                height: 14px;
+                background-color: #24aae1;
+                right: 0;
+                @include centerY(absolute);
+
+                // @include mobile {
+                //   display: none;
+                // }
+              }
+            }
+
+            .iLDd {
+              font-weight: 300;
+              color: #555555;
+              width: calc(100% - 128px);
+            }
+
+            // @include layout(".iLDt, .iLDd", 5px);
+          }
+        }
+      }
+
+      @include layout(".innerImg, .portDetail", 30px);
+
+      @include mobile {
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+
+  .blkBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    background-color: #000;
+    opacity: 0.7;
+  }
+}
+
+// 팀
+.team_btns {
+  padding-bottom: 30px;
+  margin-bottom: 55px;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  justify-content: center;
+
+  li {
+    position: relative;
+    transform: translateY(50px);
+
+    &:not(:last-child) {
+      padding-right: 55px;
+      margin-right: 55px;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: #000;
+        border-radius: 100%;
+        right: 0;
+        @include centerY(absolute);
+      }
+
+      @include mobile {
+        padding-right: 25px;
+        margin-right: 25px;
+      }
+    }
+
+    a {
+      font-size: 30px;
+      font-weight: 700;
+      color: #bbbbbb;
+
+      @include mobile {
+        font-size: 23px;
+      }
+    }
+
+    &.on {
+      a {
+        color: #000;
+        position: relative;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 0.4em;
+          background-color: #ceedfa;
+          z-index: 0;
+          position: absolute;
+          left: 0;
+          bottom: 0.2em;
+        }
+
+        span {
+          position: relative;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.btns04 {
+  @include mobile {
+    flex-wrap: wrap;
+
+    li {
+      width: calc(50% - 50px);
+      text-align: center;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 15px;
+      }
+
+      &:nth-child(2) {
+        margin-right: 0;
+        padding-right: 0;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.teamLists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  li {
+    width: 47%;
+    justify-content: space-between;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 0;
+    transform: translateY(50px);
+
+    .teamImg {
+      width: 110px;
+      height: 135px;
+      border: 1px solid #ddd;
+
+      @include mobile {
+        width: 85px;
+        height: auto;
+      }
+    }
+
+    .crueInfo {
+      width: calc(100% - 140px);
+
+      .crueTitle {
+        display: flex;
+        margin-bottom: 20px;
+
+        p {
+          font-size: 20px;
+          font-weight: 300;
+          display: flex;
+
+          span {
+            font-weight: 500;
+            margin-right: 5px;
+          }
+
+          &:first-child {
+            position: relative;
+            padding-right: 15px;
+            margin-right: 15px;
+
+            &:after {
+              content: '';
+              display: block;
+              width: 2px;
+              height: 14px;
+              background-color: #24aae1;
+              right: 0;
+              @include centerY(absolute);
+            }
+
+            @include mobile {
+              margin-right: 0;
+              padding-left: 0;
+
+              &:after {
+                display: none;
+              }
+            }
+          }
+
+          @include mobile {
+            font-size: 18px;
+          }
+        }
+
+        @include layout("p", 10px);
+      }
+
+      .position {
+        border-bottom: 1px solid #eeeeee;
+        font-size: 15px;
+        font-weight: 300;
+        padding: 13px 0;
+        line-height: 1.3;
+        display: flex;
+
+        span {
+          font-weight: 500;
+          margin-right: 5px
+        }
+      }
+
+      @include mobile {
+        width: calc(100% - 100px);
+      }
+    }
+  }
+
+  @include layout("li", 0, $tablet);
+}
+
+// 채용공고
+.wantImg {
+  text-align: center;
+}
+
+.wanted {
+  text-align: center;
+  line-height: 1.4;
+  margin: 50px 0 130px 0;
+
+  .wanTxt01 {
+    font-size: 20px;
+    transform: translateY(50px);
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .wanTxt02 {
+    font-size: 25px;
+    color: #000001;
+    transform: translateY(50px);
+
+    &::before {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 52px;
+      background-color: #000;
+      margin: 35px auto;
+    }
+
+    span {
+      color: #1c8ab7;
+    }
+  }
+
+  @include mobile {
+    margin: 30px 0 70px 0;
+
+    .wanTxt01 {
+      font-size: 18px;
+    }
+
+    .wanTxt02 {
+      font-size: 20px;
+    }
+  }
+}
+
+.greySection {
+  background-color: #f8f8f8;
+  padding: 130px 0;
+
+  .jobStep {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 97%;
+      height: 1px;
+      background-color: #ddd;
+      position: absolute;
+      top: 21.5%;
+      left: 0;
+      z-index: 0;
+    }
+
+    li {
+      width: 20%;
+      max-width: 170px;
+      position: relative;
+      z-index: 1;
+      transform: translateX(-50px);
+
+      .icon {
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      &:not(:first-child) {
+        .icon {
+          margin-bottom: 20px;
+          position: relative;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 11px;
+            background: url(../images/sub/news/stepArr.png) no-repeat;
+            position: absolute;
+            top: 41%;
+            left: -48%;
+
+            @include tablet {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .stepTxt01 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 25px;
+
+        @include mobile {
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .stepTxt02 {
+        font-size: 20px;
+        margin-bottom: 10px;
+
+        @include mobile {
+          font-size: 18px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .stepTxt03 {
+        font-size: 15px;
+        font-weight: 300;
+        color: #555;
+        line-height: 1.3;
+      }
+    }
+
+    @include tablet {
+      flex-wrap: wrap;
+
+      &::before {
+        display: none;
+      }
+
+      li {
+        width: 45%;
+        max-width: none;
+        text-align: center;
+        margin-bottom: 35px;
+        position: relative;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 60px 0;
+  }
+}
+
+.incrude {
+  padding: 40px 4%;
+  background: url(../images/sub/news/incrBox.png) no-repeat center;
+  background-size: 100% auto;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 130px 0 45px 0;
+  transform: translateY(50px);
+
+  @include tablet {
+    background-size: 100% 100%;
+    margin-top: 70px;
+  }
+
+  .aboutIncr {
+    background: url(../images/sub/news/incIcon.png) no-repeat center left;
+    padding: 5px 0 5px 120px;
+
+    .IncrInfo {
+      display: flex;
+
+      li {
+        font-size: 15px;
+        position: relative;
+        padding-left: 15px;
+
+        &:not(:last-child) {
+          margin-right: 5%;
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          width: 7px;
+          height: 7px;
+          border-radius: 100%;
+          background-color: #1c8ab7;
+          left: 0;
+          @include centerY(absolute);
+        }
+
+        .inDt {
+          margin-right: 10px;
+        }
+
+        .inDd {
+          color: #555555;
+          font-weight: 300;
+        }
+      }
+
+      @include layout("li", 15px, $tablet);
+    }
+
+    .warn {
+      font-size: 15px;
+      font-weight: 300;
+      color: #777777;
+      margin-top: 15px;
+    }
+
+    @include mobile {
+      background-position: center top;
+      padding: 80px 5px 0px 5px;
+    }
+  }
+}
+
+.jobBtnWrap {
+  // height: 240px;
+  text-align: center;
+  background-size: cover;
+  margin-top: 50px;
+
+  .jobTxt {
+    position: relative;
+    height: 240px;
+    background: url(../images/sub/news/jobBg.jpg) no-repeat center;
+    transform: translateY(50px);
+
+    >p {
+      font-size: 40px;
+      font-weight: 500;
+      width: 95%;
+      top: 45%;
+      color: #fff;
+      line-height: 1.3;
+      @include centerC(absolute);
+
+      @include tablet {
+        font-size: 25px;
+      }
+    }
+
+  }
+
+  .jobBtn {
+    width: 95%;
+    max-width: 420px;
+    height: 90px;
+    background-color: #0e192c;
+    margin: -45px auto 0 auto;
+    position: relative;
+    z-index: 1;
+    transform: translateY(50px);
+
+    a {
+      height: 100%;
+      font-size: 24px;
+      font-weight: 500;
+      color: #fff;
+      background: url(../images/sub/news/btnArr.png) no-repeat center top 50px;
+      @include flexAlign;
+    }
+
+  }
+
+  @include tablet {
+    height: auto;
+  }
+}
