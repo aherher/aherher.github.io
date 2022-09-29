@@ -1,0 +1,480 @@
+<?
+  $site_path = '../HyAdmin/';
+  require_once($site_path."include/lib.inc.php");
+  
+  $ss_mb_idChk = $_SESSION['ss_mb_id'];
+	
+	if(!$ss_mb_idChk) hy_href("/HyAdmin/mb_login.php","로그인후이용해주세요.");
+	
+	if($ss_mb_idChk){ //회원이라면
+		$queryM = "select * from hy_member where mb_id='$ss_mb_idChk'";
+		$rsM = query($queryM,$dbcon);
+		$rowM = mysql_fetch_array($rsM);
+		$mb_idChk = $rowM[mb_id];
+		$mb_nameChk = $rowM[mb_name];
+	}
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="euc-kr" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta property="og:image" content="images/common/linkkakao_bar.jpg" />
+  <link rel="icon" href="/images/common/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../css/sub.css" />
+  <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+  <script src="../js/jquery-1.9.1.min.js"></script>
+  <script src="../js/slick.js"></script>
+  <title>에피토미</title>
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header class="header_wrap">
+    <div id="header" class="header">
+      <div class="center_box">
+        <a href="tel:02-2010-8950" class="call"><span>02-2191-5714</span></a>
+        <h1><a href="../">에피토미</a></h1>
+        <section class="mob_right">
+          <ul class="login_list flex_center">
+            <li><a href="#!">로그인</a></li>
+            <li><a href="#!">회원가입</a></li>
+          </ul>
+          <ul class="btn_wrap">
+            <li class="Mmenu_btn"></li>
+            <li class="Mmenu_close"></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <nav class="web_header">
+      <ul class="mobile_longin flex_center">
+        <li><a href="#!">로그인</a></li>
+        <li><a href="#!">회원가입</a></li>
+      </ul>
+      <ul class="web_menu flex_start">
+        <li><a href="../about/sub01.html">에피토미</a>
+          <ul class="menu_gnb">
+            <li><a href="../about/sub01.html">에피토미 소개</a></li>
+            <li><a href="../about/sub02.html">작가 소개</a></li>
+          </ul>
+        </li>
+        <li><a href="../service/sub01.html">서비스</a>
+          <ul class="menu_gnb">
+            <li><a href="../service/sub01.html">서비스 소개</a></li>
+            <li><a href="../service/sub02.html">진행절차</a></li>
+            <li><a href="../service/sub03.html">결제안내</a></li>
+          </ul>
+        </li>
+        <li><a href="../apply/sub01.html">서비스 신청</a>
+          <ul class="menu_gnb">
+            <li><a href="../apply/sub01.html">견적문의</a></li>
+            <!-- <li><a href="../work/sub01.html">모바일 간단주문</a></li> -->
+          </ul>
+        </li>
+        <li><a href="../online/sub01.html">온라인 문의</a>
+          <ul class="menu_gnb">
+            <li><a href="../online/sub01.html">묻고 답하기</a></li>
+            <!-- <li><a href="../online/sub02.html">작업진행상황</a></li> -->
+          </ul>
+        </li>
+        <li><a href="../community/sub01.html">커뮤니티</a>
+          <ul class="menu_gnb">
+            <li><a href="../community/sub01.html">공지사항</a></li>
+            <li><a href="../community/sub02.html">고객리뷰</a></li>
+          </ul>
+        </li>
+        </li>
+      </ul>
+      <div class="mob_views">
+        <article class="mv_box">
+          <p class="mvb_title">고객센터</p>
+          <p class="mvb_phone"><a href="../tel:02-2191-5714">02-2191-5714</a></p>
+        </article>
+        <article class="mv_box">
+          <p class="mvb_title">온라인 입금계좌안내 (무통장입금)</p>
+          <div class="inBank flex_center">
+            <div class="bankInfo">
+              <p>
+                <img src="../images/sub/bank_logo.png" style="width: 181px;" alt="">
+              </p>
+              <p class="banktxt01">624401-04-187489</p>
+              </p>
+              <p class=" banktxt02">예금주. 주식회사포스턴얼라이드</p>
+            </div>
+            <img class="head_mark" src="../images/common/kb_mark.png" alt="">
+          </div>
+        </article>
+        <p class="head_copy">COPYRIGHT ⓒ 2020 EPITOME. ALL RIGHTS RESERVED.</p>
+      </div>
+    </nav>
+  </header>
+  <!-- 헤더 끝 -->
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+  function actionGo(){
+    
+    levelOk = 0;
+    for(i=0;i<frm.ReTrack.length;i++){
+      if(frm.ReTrack[i].checked==true){
+        levelOk++;
+      }
+    }
+            
+    if(levelOk == 0){
+      alert("트랙을 선택해주세요.");
+      return;
+    }
+    
+    if(frm.ReKorSel01.checked == false && frm.ReKorSel02.checked == false && frm.ReKorSel03.checked == false && frm.ReKorSel04.checked == false && frm.ReKorSel05.checked == false && frm.ReKorSel06.checked == false && frm.ReKorSel07.checked == false && frm.ReEngSel01.checked == false && frm.ReEngSel02.checked == false && frm.ReEngSel03.checked == false && frm.ReEngSel04.checked == false && frm.ReEngSel05.checked == false && frm.ReEngSel06.checked == false && frm.ReEngSel07.checked == false){
+      alert("서비스를 선택해 주세요.");
+      return;
+    }
+
+    if(frm.ReMemName.value == ""){
+      alert("이름을 입력해 주세요.");
+      frm.ReMemName.focus();
+      return;
+    }
+    if(frm.ReAge.value == ""){
+      alert("나이를 입력해 주세요.");
+      frm.ReAge.focus();
+      return;
+    }
+    
+    levelOk = 0;
+    for(i=0;i<frm.ReSex.length;i++){
+      if(frm.ReSex[i].checked==true){
+        levelOk++;
+      }
+    }
+            
+    if(levelOk == 0){
+      alert("성별을 선택해주세요.");
+      return;
+    }
+    
+    
+    frm.nospamchk.value = "Y";
+    frm.submit();
+    
+  }
+  
+  //메일자동기입
+  function changeMail(str)
+  {
+    frm.ReEmail2.value = str;
+  }
+  
+  //숫자만 기입
+  function onlyNumber(event){
+    event = event || window.event;
+    var keyID = (event.which) ? event.which : event.keyCode;
+    if ( (keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) 
+      return;
+    else
+      return false;
+  }
+
+  function removeChar(event) {
+    event = event || window.event;
+    var keyID = (event.which) ? event.which : event.keyCode;
+    if ( keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) 
+      return;
+    else
+      event.target.value = event.target.value.replace(/[^0-9]/g, "");
+  }
+  
+-->
+</script>  
+
+<section class="sub_visual"></section>
+<section class="sub_content">
+  <div class="center_box">
+    <h2 class="sub_page">견적문의</h2>
+    <ul class="page_tabs">
+      <li><a href="sub01_input.html">대학교/대학원 지원 시</a></li>
+      <li class="tab_on"><a href="sub02_input.html">회사 지원 시</a></li>
+    </ul>
+    <form class="apply_frm" name="frm" action="apply02_ps.php" method="post" ENCTYPE="multipart/form-data">
+    <input type="hidden" name="nospamchk" value="">
+      <section class="apply_box">
+        <p class="ab_title">트랙 선택하기</p>
+        <div class="tracks_wrap">
+          <span class="label_wrap"><input type="radio" name="ReTrack" value="1" id="track01"><label for="track01">3 DAYS</label></span>
+          <span class="label_wrap"><input type="radio" name="ReTrack" value="2" id="track02"><label for="track02">2 DAYS</label></span>
+          <span class=""><input type="radio" name="ReTrack" value="3" id="track03"><label for="track03">24 HOURS</label></span>
+        </div>
+        <div class="inComments" id="tc01">
+          <p class="hippen">3 DAYS는 입금 확인 후 3일 이내에 완료되며, 비용은 서비스별로 3만원~14만원입니다.</p>
+          <p class="hippen">분량은 문서별로 1~2장으로 정해져 있으며, 추가 분량이 필요할 경우 본 게시판에 자유롭게 알려주시기 바랍니다.</p>
+          <p class="hippen">완성도 높은 작업을 위해 에디터가 별도로 연락드릴 수 있습니다.</p>
+        </div>
+        <div class="inComments" id="tc02">
+          <p class="hippen">2 DAYS는 입금 확인 후 2일 이내에 완료되며, 비용은 서비스별로 5만원~18만원입니다.</p>
+          <p class="hippen">분량은 문서별로 1~2장으로 정해져 있으며, 추가 분량이 필요할 경우 본 게시판에 자유롭게 알려주시기 바랍니다.</p>
+          <p class="hippen">완성도 높은 작업을 위해 에디터가 별도로 연락드릴 수 있습니다.</p>
+        </div>
+        <div class="inComments" id="tc03">
+          <p class="hippen">24 HOURS는 입금 확인 후 1일 이내에 완료되며, 비용은 서비스별로 7만원~20만원입니다.</p>
+          <p class="hippen">분량은 문서별로 1~2장으로 정해져 있으며, 추가 분량이 필요할 경우 본 게시판에 자유롭게 알려주시기 바랍니다.</p>
+          <p class="hippen">완성도 높은 작업을 위해 에디터가 별도로 연락드릴 수 있습니다.</p>
+        </div>
+      </section>
+
+      <section class="apply_box">
+        <p class="ab_title">서비스 선택하기</p>
+        <table class="apply_table">
+          <tbody>
+            <tr>
+              <th>국문</th>
+              <td class="check_wrap">
+                <span class="label_wrap"><input type="checkbox" name="ReKorSel01" value="Y" id="kr01"><label for="kr01">이력서</label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReKorSel02" value="Y" id="kr02"><label for="kr02">자기소개서</label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReKorSel03" value="Y" id="kr03"><label for="kr03">추천서</label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReKorSel04" value="Y" id="kr04"><label for="kr04">경력기술서 </label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReKorSel05" value="Y" id="kr05"><label for="kr05">직무계획서 </label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReKorSel06" value="Y" id="kr06"><label for="kr06">학업계획서(대학교)</label></span>
+                <span><input type="checkbox" name="ReKorSel07" value="Y" id="kr07"><label for="kr07">학업계획서(대학원)</label></span>
+              </td>
+            </tr>
+            <tr>
+              <th>영문</th>
+              <td class="check_wrap">
+                <span class="label_wrap"><input type="checkbox" name="ReEngSel01" value="Y" id="en01"><label for="en01">이력서</label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReEngSel02" value="Y" id="en02"><label for="en02">자기소개서</label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReEngSel03" value="Y" id="en03"><label for="en03">추천서</label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReEngSel04" value="Y" id="en04"><label for="en04">경력기술서</label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReEngSel05" value="Y" id="en05"><label for="en05">커버레터 </label></span>
+                <span class="label_wrap"><input type="checkbox" name="ReEngSel06" value="Y" id="en06"><label for="en06">학업계획서(대학교SOP)</label></span>
+                <span><input type="checkbox" name="ReEngSel07" value="Y" id="en07"><label for="en07">학업계획서(대학원SOP)</label></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="apply_box">
+        <p class="ab_title">기본사항</p>
+        <table class="apply_table">
+          <tbody>
+             <tr>
+              <th>이름</th>
+              <td colspan="3">
+                <input type="text" name="ReMemName" value="<?=$mb_nameChk?>" class="long_cell">
+              </td>
+            </tr>
+            <tr>
+              <th>나이</th>
+              <td>
+                <input type="text" name="ReAge" class="long_cell">
+              </td>
+              <th>성별</th>
+              <td>
+                <span class="label_wrap"><input type="radio" name="ReSex" value="1" id="male"><label for="male">남성</label></span>
+                <span><input type="radio" name="ReSex" value="2" id="female"><label for="female">여성</label></span>
+              </td>
+            </tr>
+            <tr>
+              <th>SNS계정</th>
+              <td colspan="3">
+                <input type="text" name="ReSnsLink" class="long_cell" placeholder="문서 작업시완성도가 높아집니다. (인스타그램 / 페이스북)">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="apply_box">
+        <p class="ab_title">학교생활</p>
+        <textarea class="textareaBox" name="ReSchool">고등학교 :&nbsp;
+대학교 및 학과 :&nbsp; 
+봉사활동 :&nbsp; 
+동아리 활동 :&nbsp; 
+자격 및 수료사항 :&nbsp; 
+장학금/수상내역 :&nbsp; 
+유학/어학연수/지역/학교명 :&nbsp; 
+해외 경험 :&nbsp; </textarea>
+      </section>
+
+      <section class="apply_box">
+        <p class="ab_title">성장과정</p>
+        <textarea class="textareaBox" name="ReCharacter">성격의 장점/단점 :&nbsp; 
+취미/특기 :&nbsp; 
+힘들었던 경험/어떻게 극복했는지 :&nbsp; </textarea>
+      </section>
+
+      <section class="apply_box">
+        <p class="ab_title">경력사항</p>
+        <table class="apply_table">
+          <tbody>
+            <tr>
+              <th>회사명</th>
+              <td colspan="3">
+                <input type="text" name="ReBeCompany" class="long_cell">
+              </td>
+            </tr>
+            <tr>
+              <th>부서</th>
+              <td>
+                <input type="text" name="ReBePatition" class="long_cell">
+              </td>
+              <th>직급</th>
+              <td>
+                <input type="text" name="ReBePosition" class="long_cell">
+              </td>
+            </tr>
+
+            <tr>
+              <th>근무기간</th>
+              <td>
+                <input type="text" name="ReBeGigan" class="long_cell">
+              </td>
+              <th>담당업무</th>
+              <td>
+                <input type="text" name="ReBeDamdang" class="long_cell">
+              </td>
+            </tr>
+            <tr>
+              <th>이직사유</th>
+              <td colspan="3">
+                <input type="text" name="ReBeReason" class="long_cell">
+              </td>
+            </tr>
+            <tr>
+              <th>홈페이지</th>
+              <td colspan="3">
+                <input type="text" name="ReBeHomepage" class="long_cell">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="apply_box">
+        <p class="ab_title">지원회사</p>
+        <table class="apply_table">
+          <tbody>
+            <tr>
+              <th>회사명</th>
+              <td colspan="3">
+                <input type="text" name="ReWaCompany" class="long_cell">
+              </td>
+            </tr>
+            <tr>
+              <th>부서</th>
+              <td>
+                <input type="text" name="ReWaPatition" class="long_cell">
+              </td>
+              <th>직급</th>
+              <td>
+                <input type="text" name="ReWaPosition" class="long_cell">
+              </td>
+            </tr>
+
+            <tr>
+              <th>지원사유</th>
+              <td colspan="3">
+                <input type="text" name="ReWaReason" class="long_cell">
+              </td>
+            </tr>
+            <tr>
+              <th>홈페이지</th>
+              <td colspan="3">
+                <input type="text" name="ReWaHomepage" class="long_cell">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="apply_box">
+        <p class="ab_title">추천인 관련</p>
+        <table class="apply_table">
+          <tbody>
+            <tr>
+              <th>추천인 소개</th>
+              <td>
+                <input type="text" name="ReGiveWho" class="long_cell" placeholder="이름, 직업 등">
+              </td>
+            </tr>
+            <tr>
+              <th>관계</th>
+              <td>
+                <input type="text" name="ReGiveWhat" class="long_cell" placeholder="추천인과 의뢰인과의 관계, 어떻게 알게 되었는지">
+              </td>
+            </tr>
+            <tr>
+              <th>내용</th>
+              <td>
+                <input type="text" name="ReGiveCont" class="long_cell" placeholder="추천서에 언급했으면 하는 내용">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="apply_box">
+        <p class="ab_title">에디터 요청사항</p>
+        <textarea class="textareaBox" name="ReAsk" placeholder="문서 작업 시 에디터가 알았으면 하는 내용을 써주세요."></textarea>
+      </section>
+      <ul class="apply_btns flex_start">
+        <li class="submit"><a href="javascript:actionGo();">신청하기</a></li>
+        <li class="cancle"><a href="javascript:history.back(-1);">취소하기</a></li>
+      </ul>
+
+    </form>
+
+  </div>
+</section>
+ <!-- 푸터 -->
+  <footer class="footer_wrap">
+    <div class="foot center_box">
+      <ul class="foot_btns">
+        <li><a href="../etc/sub01.html">이용약관</a></li>
+        <li><a href="../etc/sub02.html">개인정보처리방침</a></li>
+        <!-- <li><a href="../etc/sub02.html">개인정보취급방침</a></li> -->
+      </ul>
+      <div class="marks flex_center">
+        <img class="foot_Mark" src="../images/common/foot_logo.png" alt="" />
+        <form name="KB_AUTHMARK_FORM" method="get">
+          <input type="hidden" name="page" value="C021590" />
+          <input type="hidden" name="cc" value="b034066:b035526" />
+          <input type="hidden" name="mHValue" value="c17d82cfa483f57c6e24a2fb1c346519202006291820237" />
+        </form>
+        <a href="#">
+          <img src="../images/common/kb_mark.png" />
+        </a>
+      </div>
+      <!-- <p class="foot_logo">Epitome</p> -->
+      <p class="foot_info">
+        <span>주식회사 포스턴얼라이드</span>
+        <span>대표자.이재진</span>
+        <span>사업자등록번호. 836-81-01635</span>
+        통신판매업신고. 제2020-창원의창-0476호
+      </p>
+      <p class="foot_info">
+        <span>서울. 서울시 강남구 삼성로 508 LG 트윈빌딩 2차 5층</span>
+        창원. 경남 창원시 의창구 의창대로211번길 2, 202호
+      </p>
+      <p class="foot_info">
+        <span class="tel">T. 02-2191-5714</span>
+        <span>Fax. 02-538-3668</span>
+        Email. epitome@essayepitome.com
+      </p>
+      <p class="copy">COPYRIGHT ⓒ 2020 EPITOME. ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+  <!-- 푸터 끝 -->
+  <script src="../js/layout.js"></script>
+
+</body>
+
+</html>

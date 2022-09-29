@@ -1,0 +1,93 @@
+<!-- 헤더 -->
+<header class="header_wrap">
+  <div id="header" class="header">
+    <div class="center_box">
+      <a href="tel:02-2010-8950" class="call"><span>02-2191-5714</span></a>
+      <h1><a href="/index.html">에피토미</a></h1>
+      <section class="mob_right">
+        <ul class="login_list flex_center">
+          <?if(!$_SESSION['ss_mb_id']){?>
+          <li><a href="/HyAdmin/mb_login.php">로그인</a></li>
+          <li><a href="/HyAdmin/mb_join.php">회원가입</a></li>
+          <?}else{?>
+          <li><a href="/HyAdmin/mb_logout.php">로그아웃</a></li>
+          <li><a href="/HyAdmin/mb_edit.php">정보변경</a></li>
+          <li><a href="/member/my_page.html">마이페이지</a></li>
+          <?}?>
+        </ul>
+        <ul class="btn_wrap">
+          <li class="Mmenu_btn"></li>
+          <li class="Mmenu_close"></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <nav class="web_header">
+    <ul class="mobile_longin flex_center">
+      <?if(!$_SESSION['ss_mb_id']){?>
+      <li><a href="/HyAdmin/mb_login.php">로그인</a></li>
+      <li><a href="/HyAdmin/mb_join.php">회원가입</a></li>
+      <?}else{?>
+      <li><a href="/HyAdmin/mb_logout.php">로그아웃</a></li>
+      <li><a href="/HyAdmin/mb_edit.php">정보변경</a></li>
+      <li><a href="/member/my_page.html">마이페이지</a></li>
+      <?}?>
+    </ul>
+    <ul class="web_menu flex_start">
+      <li><a href="/about/sub01.html">에피토미</a>
+        <ul class="menu_gnb">
+          <li><a href="/about/sub01.html">에피토미 소개</a></li>
+          <li><a href="/about/sub02.html">작가 소개</a></li>
+        </ul>
+      </li>
+      <li><a href="/service/sub01.html">서비스</a>
+        <ul class="menu_gnb">
+          <li><a href="/service/sub01.html">서비스 소개</a></li>
+          <li><a href="/service/sub02.html">진행절차</a></li>
+          <li><a href="/community/sub02.htmll">결제안내</a></li>
+        </ul>
+      </li>
+      <li><a href="/apply/sub01.html">서비스 신청</a>
+        <ul class="menu_gnb">
+          <li><a href="/apply/sub01.html">견적문의</a></li>
+          <!-- <li><a href="/work/sub01.html">모바일 간단주문</a></li> -->
+        </ul>
+      </li>
+      <li><a href="/HyAdmin/list.php?bbs_id=bo01">온라인 문의</a>
+        <ul class="menu_gnb">
+          <li><a href="/HyAdmin/list.php?bbs_id=bo01">묻고 답하기</a></li>
+          <!-- <li><a href="/online/sub02.html">작업진행상황</a></li> -->
+        </ul>
+      </li>
+      <li><a href="/HyAdmin/list.php?bbs_id=bo02">커뮤니티</a>
+        <ul class="menu_gnb">
+          <li><a href="/HyAdmin/list.php?bbs_id=bo02">공지사항</a></li>
+          <li><a href="/HyAdmin/list.php?bbs_id=bo04">고객리뷰</a></li>
+        </ul>
+      </li>
+      </li>
+    </ul>
+    <div class="mob_views">
+      <article class="mv_box">
+        <p class="mvb_title">고객센터</p>
+        <p class="mvb_phone"><a href="tel:02-2191-5714">02-2191-5714</a></p>
+      </article>
+      <article class="mv_box">
+        <p class="mvb_title">온라인 입금계좌안내 (무통장입금)</p>
+        <div class="inBank flex_center">
+          <div class="bankInfo">
+            <p>
+              <img src="/images/sub/bank_logo.png" style="width: 181px;" alt="">
+            </p>
+            <p class="banktxt01">624401-04-187489</p>
+            </p>
+            <p class=" banktxt02">예금주. 주식회사포스턴얼라이드</p>
+          </div>
+          <img class="head_mark" src="/images/common/kb_mark.png" alt="">
+        </div>
+      </article>
+      <p class="head_copy">COPYRIGHT ⓒ 2020 EPITOME. ALL RIGHTS RESERVED.</p>
+    </div>
+  </nav>
+</header>
+<!-- 헤더 끝 -->

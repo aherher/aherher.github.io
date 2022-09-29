@@ -1,0 +1,511 @@
+<?
+  $site_path = "../HyAdmin/";
+  require_once($site_path."include/lib.inc.php");
+
+  $ss_mb_idChk = $_SESSION['ss_mb_id'];
+
+	if(!$ss_mb_idChk) hy_href("/HyAdmin/mb_login.php","로그인후이용해주세요.");
+
+	if($ss_mb_idChk){ //회원이라면
+		$queryM = "select * from hy_member where mb_id='$ss_mb_idChk'";
+		$rsM = query($queryM,$dbcon);
+		$rowM = mysql_fetch_array($rsM);
+		$mb_idChk = $rowM[mb_id];
+	}
+
+  $goodsTable = "hy_apply";
+
+  //if(!$CatNo) $CatNo = 1;
+
+  //구분
+  $str_que = " and ReMemId = '$mb_idChk'";
+
+  if($searTex){
+
+    if($searWh == "1"){
+      $str_que .= " and (ReMemName like '%$searTex%' or ReCatTitle like '%$searTex%' or ReTrackTitle like '%$searTex%')";
+    }elseif($searWh == "2"){
+      $str_que .= " and ReMemName like '%$searTex%'";
+    }elseif($searWh == "3"){
+      $str_que .= " and ReCatTitle like '%$searTex%'";
+    }elseif($searWh == "4"){
+      $str_que .= " and ReTrackTitle like '%$searTex%'";
+    }
+
+  }
+
+
+  //총상품갯수
+  $count_que = "select * from $goodsTable where (1=1) $str_que";
+  $count_list = query($count_que,$dbcon);
+  $count_total = mysql_num_rows($count_list);
+
+  if(!$scale){
+    $scale = "10"; //리스트수
+  }
+  $pagescale = "10"; //페이지수
+
+  if(!$start) $start=0; //시작페이지
+
+  $current = ceil(($start+1)/$scale); //현재
+
+  $list_que = "select * from $goodsTable where (1=1) $str_que order by ReOrder DESC,ReIdx DESC limit $start,$scale";
+  $result_list = query($list_que,$dbcon);
+  $total = mysql_num_rows($result_list);
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="euc-kr" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta property="og:image" content="images/common/linkkakao_bar.jpg" />
+  <link rel="icon" href="/images/common/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../css/sub.css" />
+  <link rel="stylesheet" type="text/css" href="../css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+  <script src="../js/jquery-1.9.1.min.js"></script>
+  <script src="../js/slick.js"></script>
+  <title>에피토미</title>
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header class="header_wrap">
+    <div id="header" class="header">
+      <div class="center_box">
+        <a href="tel:02-2010-8950" class="call"><span>02-2191-5714</span></a>
+        <h1><a href="../">에피토미</a></h1>
+        <section class="mob_right">
+          <ul class="login_list flex_center">
+            <li><a href="#!">로그인</a></li>
+            <li><a href="#!">회원가입</a></li>
+          </ul>
+          <ul class="btn_wrap">
+            <li class="Mmenu_btn"></li>
+            <li class="Mmenu_close"></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <nav class="web_header">
+      <ul class="mobile_longin flex_center">
+        <li><a href="#!">로그인</a></li>
+        <li><a href="#!">회원가입</a></li>
+      </ul>
+      <ul class="web_menu flex_start">
+        <li><a href="../about/sub01.html">에피토미</a>
+          <ul class="menu_gnb">
+            <li><a href="../about/sub01.html">에피토미 소개</a></li>
+            <li><a href="../about/sub02.html">작가 소개</a></li>
+          </ul>
+        </li>
+        <li><a href="../service/sub01.html">서비스</a>
+          <ul class="menu_gnb">
+            <li><a href="../service/sub01.html">서비스 소개</a></li>
+            <li><a href="../service/sub02.html">진행절차</a></li>
+            <li><a href="../service/sub03.html">결제안내</a></li>
+          </ul>
+        </li>
+        <li><a href="../apply/sub01.html">서비스 신청</a>
+          <ul class="menu_gnb">
+            <li><a href="../apply/sub01.html">견적문의</a></li>
+            <!-- <li><a href="../work/sub01.html">모바일 간단주문</a></li> -->
+          </ul>
+        </li>
+        <li><a href="../online/sub01.html">온라인 문의</a>
+          <ul class="menu_gnb">
+            <li><a href="../online/sub01.html">묻고 답하기</a></li>
+            <!-- <li><a href="../online/sub02.html">작업진행상황</a></li> -->
+          </ul>
+        </li>
+        <li><a href="../community/sub01.html">커뮤니티</a>
+          <ul class="menu_gnb">
+            <li><a href="../community/sub01.html">공지사항</a></li>
+            <li><a href="../community/sub02.html">고객리뷰</a></li>
+          </ul>
+        </li>
+        </li>
+      </ul>
+      <div class="mob_views">
+        <article class="mv_box">
+          <p class="mvb_title">고객센터</p>
+          <p class="mvb_phone"><a href="../tel:02-2191-5714">02-2191-5714</a></p>
+        </article>
+        <article class="mv_box">
+          <p class="mvb_title">온라인 입금계좌안내 (무통장입금)</p>
+          <div class="inBank flex_center">
+            <div class="bankInfo">
+              <p>
+                <img src="../images/sub/bank_logo.png" style="width: 181px;" alt="">
+              </p>
+              <p class="banktxt01">624401-04-187489</p>
+              </p>
+              <p class=" banktxt02">예금주. 주식회사포스턴얼라이드</p>
+            </div>
+            <img class="head_mark" src="../images/common/kb_mark.png" alt="">
+          </div>
+        </article>
+        <p class="head_copy">COPYRIGHT ⓒ 2020 EPITOME. ALL RIGHTS RESERVED.</p>
+      </div>
+    </nav>
+  </header>
+  <!-- 헤더 끝 -->
+
+<script language="JavaScript" type="text/JavaScript">
+  <!--
+  function searchGo(){
+    if(frmS.searTex.value == ""){
+      alert("검색어를 입력해 주세요.");
+      frmS.searTex.focus();
+      return;
+    }
+    frmS.submit();
+  }
+-->
+</script>
+
+<style>
+  /*페이지넘버 New*/
+  .list_top_padd {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .list_b_number {
+    padding: 3px;
+    MARGIN: 3px;
+    TEXT-ALIGN: center
+  }
+
+  .list_b_number A {
+    padding: 5px 8px 4px 8px;
+    MARGIN: 2px;
+    BORDER: #ccc 1px solid;
+    COLOR: #888;
+    TEXT-DECORATION: none
+  }
+
+  .list_b_number A:hover {
+    BORDER: #888 1px solid;
+    COLOR: #555;
+  }
+
+  .list_b_number A:active {
+    BORDER: #888 1px solid;
+    COLOR: #555;
+  }
+
+  .list_b_number .current {
+    BORDER: <?=$bbsColorBg?> 1px solid;
+    padding: 5px 8px 4px 8px;
+    FONT-WEIGHT: bold;
+    MARGIN: 2px;
+    COLOR: <?=$bbsColorBg?>;
+  }
+
+  .list_b_number .disabled {
+    BORDER: #ddd 1px solid;
+    padding: 5px 8px 4px 8px;
+    MARGIN: 2px;
+    COLOR: #ccc;
+  }
+
+  /*페이지넘버 New*/
+</style>
+
+<section class="sub_visual"></section>
+<section class="sub_content">
+  <div class="center_box">
+    <h2 class="sub_page">마이페이지</h2>
+
+    <section class="theResult_lists">
+      <div class="list_top flex_center">
+        <p></p>
+        <form name="frmS" action="?" method="post" class="src_frm flex_center">
+          <select name="searWh" class="src_select">
+            <option value="1" <?if($searWh=="1" ) echo "selected" ;?> >전체</option>
+            <option value="2" <?if($searWh=="2" ) echo "selected" ;?> >이름</option>
+            <option value="3" <?if($searWh=="3" ) echo "selected" ;?> >분류</option>
+            <option value="4" <?if($searWh=="4" ) echo "selected" ;?> >트랙</option>
+          </select>
+          <div class="src_box flex_center">
+            <input type="text" name="searTex" value="<?=$searTex?>" class="src_input">
+            <a href="javascript:searchGo();" class="src_btn"><img src="../images/sub/service/src_icon.png" alt=""></a>
+          </div>
+        </form>
+      </div>
+      <table class="list_table">
+        <colgroup>
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+          <col width="11%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>주문날짜</th>
+            <th>입금상태</th>
+            <th>분류</th>
+            <th>트랙</th>
+            <th>서비스</th>
+            <th>답변</th>
+            <th>진행상태</th>
+            <th>작업상태</th>
+            <th>리뷰요청</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <?
+            $n = $count_total - ($scale*($current-1));
+
+            for($i=0; $i<$total; $i++){
+              $row = mysql_fetch_array($result_list);
+
+              if($row[ReCatKey] == "1") $ReCatKeyTit = "학교 지원";
+              elseif($row[ReCatKey] == "2") $ReCatKeyTit = "회사 지원";
+              else $ReCatKeyTit = "";
+
+              if($row[ReTrack] == "1") $ReTrackTit = "3 DAYS";
+              elseif($row[ReTrack] == "2") $ReTrackTit = "2 DAYS";
+              elseif($row[ReTrack] == "3") $ReTrackTit = "24 HOURS";
+              else $ReTrackTit = "";
+
+              if($row[ReSex] == "1") $ReSexTit = "남성";
+              elseif($row[ReSex] == "2") $ReSexTit = "여성";
+              else $ReSexTit = "";
+
+              if($row[ReInput] == "N") $ReInputTit = "입금전";
+              elseif($row[ReInput] == "Y") $ReInputTit = "<font color=#ac0202>입금완료</font>";
+              else $ReInputTit = "";
+
+              $ReInDate = $row[ReInDate];
+              $ReInDateArr = explode("-",$ReInDate);
+
+
+              $ReViewSel = "";
+
+              $ReKorSel = $row[ReKorSel];
+              $ReKorSelArr = explode("|",$ReKorSel);
+
+              if($ReKorSelArr[1] == "Y") $ReViewSel .= "[국문 이력서]";
+              if($ReKorSelArr[2] == "Y") $ReViewSel .= "[국문 자기소개서]";
+              if($ReKorSelArr[3] == "Y") $ReViewSel .= "[국문 추천서]";
+              if($ReKorSelArr[4] == "Y") $ReViewSel .= "[국문 경력기술서]";
+              if($ReKorSelArr[5] == "Y") $ReViewSel .= "[국문 직무계획서]";
+              if($ReKorSelArr[6] == "Y") $ReViewSel .= "[국문 학업계획서(대학교)]";
+              if($ReKorSelArr[7] == "Y") $ReViewSel .= "[국문 학업계획서(대학원)]";
+
+              $ReEngSel = $row[ReEngSel];
+              $ReEngSelArr = explode("|",$ReEngSel);
+
+              if($ReEngSelArr[1] == "Y") $ReViewSel .= "[영문 이력서]";
+              if($ReEngSelArr[2] == "Y") $ReViewSel .= "[영문 자기소개서]";
+              if($ReEngSelArr[3] == "Y") $ReViewSel .= "[영문 추천서]";
+              if($ReEngSelArr[4] == "Y") $ReViewSel .= "[영문 경력기술서]";
+              if($ReEngSelArr[5] == "Y") $ReViewSel .= "[영문 커버레터]";
+              if($ReEngSelArr[6] == "Y") $ReViewSel .= "[영문 학업계획서(대학교SOP)]";
+              if($ReEngSelArr[7] == "Y") $ReViewSel .= "[영문 학업계획서(대학원SOP) ]";
+
+
+          ?>
+
+          <tr>
+            <td><?=$ReInDateArr[0]?>.<?=$ReInDateArr[1]?>.<?=$ReInDateArr[2]?></td>
+            <td class="name_tag"><?=$ReInputTit?></td>
+            <td><?=$ReCatKeyTit?></td>
+            <td><?=$ReTrackTit?></td>
+            <td><?=$ReViewSel?></td>
+
+            <?if($row[ReState]=="N"){?>
+            <td class="name_tag ">답변전</td>
+            <?}else{?>
+            <td class="name_tag answer_btn">답변완료▼</td>
+            <?}?>
+
+            <td>
+
+              <?if($row[ReState]=="B"){?>
+              <div class="tager go_order"><a href="./my_page_view.html?ReIdx=<?=$row[ReIdx]?>">주문하기</a></div>
+              <?}elseif($row[ReState]=="Y"){?>
+              <div class="tager order_done"><a href="./my_page_view.html?ReIdx=<?=$row[ReIdx]?>">주문 완료</a></div>
+              <?}?>
+
+            </td>
+            <td>
+
+              <?if($row[ReState]=="Y"){?>
+              <?if($row[ReWork]=="W"){?>
+              <div class="tager waiting">작업대기</div>
+              <?}elseif($row[ReWork]=="G"){?>
+              <div class="tager proccing">작업중</div>
+              <?}elseif($row[ReWork]=="Y"){?>
+              <div class="tager download"><a href="/HyAdmin/downUpdate.php?file_name=<?=$row[ReFile1]?>&file_nameRel=<?=$row[ReFileRel1]?>">다운로드</a></div>
+              <?}?>
+              <?}?>
+
+            </td>
+            <td class="name_tag review_btn">
+              <?if($row[ReReviewAsk]){?>
+              <p>리뷰요청▼</p>
+              <?}?>
+            </td>
+          </tr>
+
+          <tr class="answer">
+            <td colspan="8">
+              <p class="answer_txts">
+                <?=nl2br($row[ReMemo])?>
+                <p>견적금액 : <?=number_format($row[RePrice])?>원</p>
+              </p>
+            </td>
+            <td>에피토피</td>
+          </tr>
+          <tr class="reivew_tr">
+            <td colspan="9">
+              <div class="review_txts">
+                <?=nl2br($row[ReReviewAsk])?>
+                <a href="/HyAdmin/write.php?bbs_id=bo04" class="go_riviews">리뷰작성하기</a>
+              </div>
+            </td>
+          </tr>
+
+
+          <?}?>
+
+        </tbody>
+      </table>
+
+
+      <?
+        if(!$total){
+      ?>
+
+      <div style="width:100%;height:160px;text-align:center;font-size:14px;border-bottom:solid 1px #dddcdc;"><br><br><br><br><br>등록된 문의내용이 없습니다.</div>
+
+      <?}?>
+
+
+
+      <?
+        $page=  floor($start/($scale*$pagescale)) ;
+        $tmp_prev = $start - $scale; // 이전 누르면 찾아갈 곳
+        $tmp_next = $start + $scale; // 다음 누르면 찾아갈 곳
+      ?>
+
+      <div class="list_top_padd">
+        <div>
+          <p>
+            <div class="list_b_number">
+
+              <?
+                if($start+1 > $scale*$pagescale){
+          		    $pre_start= $start - $scale*$pagescale ;
+                  echo "<a href='$PHP_SELF?searWh=$searWh&searTex=$searTex&start=$pre_start'><<</a>";
+
+          		  }
+          		?>
+
+              <?
+                if($start > 1){
+                  echo "<a href='$PHP_SELF?searWh=$searWh&searTex=$searTex&start=$tmp_prev'><  이전</a>";
+                }else{
+                  echo "<span class='disabled'><  이전</span>";
+                }
+              ?>
+
+              <?
+                for($vj=0; $vj < $pagescale ; $vj++){
+            		  $ln = ($page * $pagescale + $vj)*$scale ;
+            		  $vk= $page * $pagescale + $vj+1 ;
+            		  if($ln<$count_total){
+            			  if($ln!=$start){
+                      echo "<a href='$PHP_SELF?searWh=$searWh&searTex=$searTex&start=$ln'>$vk</a>";
+                    }else{
+                      echo "<span class='current'>$vk</span>";
+                    }
+                  }
+                }
+              ?>
+
+              <?
+                if($count_total>=$start+$scale){
+              		echo "<a href='$PHP_SELF?searWh=$searWh&searTex=$searTex&start=$tmp_next'>다음  ></a>";
+              	}else{
+              	  echo "<span class='disabled'>다음  ></span>";
+              	}
+              ?>
+
+              <?
+                if ($count_total > (($page+1)*$scale*$pagescale)){
+          		    $n_start=($page+1)*$scale*$pagescale ;
+
+          		    echo "<a href='$PHP_SELF?searWh=$searWh&searTex=$searTex&start=$n_start'>>></a>";
+
+          		  }
+              ?>
+
+            </div>
+          </p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</section>
+ <!-- 푸터 -->
+  <footer class="footer_wrap">
+    <div class="foot center_box">
+      <ul class="foot_btns">
+        <li><a href="../etc/sub01.html">이용약관</a></li>
+        <li><a href="../etc/sub02.html">개인정보처리방침</a></li>
+        <!-- <li><a href="../etc/sub02.html">개인정보취급방침</a></li> -->
+      </ul>
+      <div class="marks flex_center">
+        <img class="foot_Mark" src="../images/common/foot_logo.png" alt="" />
+        <form name="KB_AUTHMARK_FORM" method="get">
+          <input type="hidden" name="page" value="C021590" />
+          <input type="hidden" name="cc" value="b034066:b035526" />
+          <input type="hidden" name="mHValue" value="c17d82cfa483f57c6e24a2fb1c346519202006291820237" />
+        </form>
+        <a href="#">
+          <img src="../images/common/kb_mark.png" />
+        </a>
+      </div>
+      <!-- <p class="foot_logo">Epitome</p> -->
+      <p class="foot_info">
+        <span>주식회사 포스턴얼라이드</span>
+        <span>대표자.이재진</span>
+        <span>사업자등록번호. 836-81-01635</span>
+        통신판매업신고. 제2020-창원의창-0476호
+      </p>
+      <p class="foot_info">
+        <span>서울. 서울시 강남구 삼성로 508 LG 트윈빌딩 2차 5층</span>
+        창원. 경남 창원시 의창구 의창대로211번길 2, 202호
+      </p>
+      <p class="foot_info">
+        <span class="tel">T. 02-2191-5714</span>
+        <span>Fax. 02-538-3668</span>
+        Email. epitome@essayepitome.com
+      </p>
+      <p class="copy">COPYRIGHT ⓒ 2020 EPITOME. ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+  <!-- 푸터 끝 -->
+  <script src="../js/layout.js"></script>
+
+</body>
+
+</html>

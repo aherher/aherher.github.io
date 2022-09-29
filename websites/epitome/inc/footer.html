@@ -1,0 +1,59 @@
+<!-- 푸터 -->
+<footer class="footer_wrap">
+  <div class="foot center_box">
+    <ul class="foot_btns">
+      <li><a href="/etc/sub01.html">이용약관</a></li>
+      <li><a href="/etc/sub02.html">개인정보처리방침</a></li>
+      <!-- <li><a href="/etc/sub02.html">개인정보취급방침</a></li> -->
+    </ul>
+    <div class="marks flex_center">
+      <img class="foot_Mark" src="/images/common/foot_logo.png" alt="" />
+      <form name="KB_AUTHMARK_FORM" method="get">
+        <input type="hidden" name="page" value="C021590" />
+        <input type="hidden" name="cc" value="b034066:b035526" />
+        <input type="hidden" name="mHValue" value="c17d82cfa483f57c6e24a2fb1c346519202006291820237" />
+      </form>
+      <a href="#" onclick="javascript:onPopKBAuthMark();return false;">
+        <img src="/images/common/kb_mark.png" />
+      </a>
+    </div>
+    <!-- <p class="foot_logo">Epitome</p> -->
+    <p class="foot_info">
+      <span>주식회사 포스턴얼라이드</span>
+      <span>대표자.이재진</span>
+      <span>사업자등록번호. 836-81-01635</span>
+      통신판매업신고. 제2020-창원의창-0476호
+    </p>
+    <p class="foot_info">
+      <span>서울. 서울시 강남구 삼성로 508 LG 트윈빌딩 2차 5층</span>
+      창원. 경남 창원시 의창구 의창대로211번길 2, 202호
+    </p>
+    <p class="foot_info">
+      <span class="tel">T. 02-2191-5714</span>
+      <span>Fax. 02-538-3668</span>
+      Email. epitome@essayepitome.com
+    </p>
+    <p class="copy">COPYRIGHT ⓒ 2020 EPITOME. ALL RIGHTS RESERVED</p>
+  </div>
+</footer>
+<!-- 푸터 끝 -->
+<script src="/js/layout.js"></script>
+<script src="/js/sub.js"></script>
+<!-- KB에스크로 이체 인증마크 적용 시작 -->
+<script>
+  function onPopKBAuthMark() {
+    window.open(
+      "",
+      "KB_AUTHMARK",
+      "height=604, width=648, status=yes, toolbar=no, menubar=no, location=no"
+    );
+    document.KB_AUTHMARK_FORM.action = "https://okbfex.kbstar.com/quics";
+    document.KB_AUTHMARK_FORM.target = "KB_AUTHMARK";
+    document.KB_AUTHMARK_FORM.submit();
+  }
+</script>
+
+<!-- KB에스크로이체 인증마크 적용 종료 -->
+</body>
+
+</html>
