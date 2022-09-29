@@ -1,0 +1,960 @@
+@charset "utf-8";
+@import './mixin';
+
+// 메인 슬라이드
+.main_visual {
+  margin-top: 125px;
+
+  .slide {
+    .slick-slide {
+      height: auto;
+    }
+
+    .slick-next,
+    .slick-prev {
+      width: 39px;
+      height: 70px;
+      bottom: auto;
+      top: 50%;
+
+      @include mobile {
+        width: 15px;
+        height: 27px;
+      }
+    }
+
+    .slick-next {
+      background: url(../images/main/btnNext.png) no-repeat;
+      background-size: cover;
+      right: 0;
+      left: auto;
+      transform: translate(-500%, -50%);
+
+      @include lap {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .slick-prev {
+      background: url(../images/main/btnPrev.png) no-repeat;
+      background-size: cover;
+      left: 0;
+      right: auto;
+      transform: translate(500%, -50%);
+
+      @include lap {
+        transform: translate(50%, -50%);
+      }
+    }
+
+    li {
+      position: relative;
+
+      .mob_mv {
+        display: none;
+
+        @include mobile {
+          display: block;
+        }
+      }
+
+      .pc_mv {
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      .slideTxts {
+        position: absolute;
+        color: #c2583d;
+        line-height: 1.2;
+        font-size: 56px;
+
+        @include tablet {
+          font-size: 40px;
+        }
+
+        @include mobile {
+          font-size: 25px;
+        }
+
+        .sT01 {
+          font-weight: 300;
+        }
+
+        .sT02 {
+          font-weight: 700;
+        }
+
+        .moreBtn {
+          margin-top: 60px;
+
+          @include tablet {
+            margin-top: 30px;
+          }
+
+          @include tablet {
+            width: 200px;
+          }
+        }
+      }
+
+      .text01 {
+        left: 0;
+        top: 10%;
+        transform: translateX(45%);
+
+        @include lap {
+          transform: translateX(15%);
+        }
+      }
+
+      .text02 {
+        right: 0;
+        top: 50%;
+        transform: translate(-75%, -50%);
+
+        @include lap {
+          transform: translate(-15%, -50%);
+        }
+
+        @include mobile {
+          right: auto;
+          left: 40px;
+          transform: translate(0%, -50%);
+        }
+      }
+
+      .text03 {
+        left: 0;
+        top: 50%;
+        transform: translate(45%, -50%);
+        color: #fff;
+
+        @include lap {
+          transform: translate(15%, -50%);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    margin-top: 91px;
+  }
+}
+
+// qna
+.qnaWrap {
+  background: url(../images/main/qnaBg.jpg) no-repeat center;
+  background-size: cover;
+  padding: 115px 0;
+
+  .skinBox {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+
+    .skinBg {
+      padding-bottom: 65%;
+      background: url(../images/main/skinBg.jpg) no-repeat top center;
+      background-size: 100% auto;
+    }
+
+    .aboutSkin {
+      color: #fff;
+      font-size: 40px;
+      font-weight: 500;
+      background-color: #47b0b1;
+      padding: 5px 15px;
+      line-height: 1.3;
+      top: 105px;
+      width: 90%;
+      max-width: 1036px;
+      text-align: center;
+      box-sizing: border-box;
+      z-index: 1;
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      transform: translateY(60px);
+      // @include centerX(absolute);
+
+      @include tablet {
+        font-size: 25px;
+        top: 35px;
+      }
+    }
+
+    .hair {
+      position: absolute;
+      animation: theHair 3s;
+      animation-iteration-count: infinite;
+    }
+
+    .hair01 {
+      left: 11.25%;
+      bottom: 12.17948717949%;
+      width: 9.16666666667%;
+    }
+
+    .hair03 {
+      left: 42.16666666667%;
+      bottom: 34.35897435897%;
+      width: 15.25%;
+    }
+
+    .hair02 {
+      right: 17.5%;
+      bottom: 13.17948717949%;
+      width: 10.25%;
+    }
+  }
+}
+
+
+@keyframes theHair {
+  0% {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-60%);
+    opacity: 0;
+  }
+}
+
+// 다릅니다
+.deferWrap {
+  height: 640px;
+  background: url(../images/main/defurBg.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  @include flexAlign;
+
+  dl {
+    text-align: center;
+    font-size: 48px;
+    width: 95%;
+    margin: 0 auto;
+    line-height: 1.3;
+
+    dt {
+      font-weight: 700;
+      margin-bottom: 10px;
+      transform: translateY(60px);
+    }
+
+    dd {
+      font-weight: 300;
+      transform: translateY(60px);
+    }
+
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+
+  @include mobile {
+    height: 400px;
+  }
+}
+
+// 해결
+.theMedicals {
+  text-align: center;
+  margin: 120px 0;
+
+  .medicalDl {
+    line-height: 1.3;
+    font-size: 48px;
+    margin-bottom: 1.7em;
+
+
+    dt {
+      font-size: 1em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      transform: translateY(60px);
+    }
+
+    dd {
+      font-size: 0.65em;
+      font-weight: 300;
+      transform: translateY(60px);
+    }
+
+    @include mobile {
+      font-size: 30px;
+      margin-bottom: 0.8em;
+    }
+  }
+
+  .viru {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    li {
+      width: 33.33333%;
+      transform: translateY(60px);
+
+      dl {
+        margin-top: 45px;
+
+        dt {
+          font-size: 27px;
+          font-weight: 500;
+
+          &:after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: #000;
+            margin: 20px auto;
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      flex-wrap: wrap;
+
+      li {
+        width: 100%;
+        margin: 30px 0;
+
+        dl {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
+  .moreBtn {
+    margin: 90px auto;
+    transform: translateY(60px);
+
+    @include mobile {
+      margin-top: 50px;
+    }
+  }
+
+  @include mobile {
+    margin: 80px 0;
+  }
+}
+
+// 시스템
+.systemWrap {
+  margin: 30px 0 185px 0;
+
+  .systemCenter {
+    width: 95%;
+    max-width: 1740px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    .sysTxt {
+      font-size: 70px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.05em;
+
+      @include tablet {
+        font-size: 55px;
+        margin-bottom: 30px;
+      }
+
+      @include mobile {
+        font-size: 35px;
+      }
+    }
+
+    .sysDl {
+      dt {
+        font-size: 33px;
+        font-weight: 700;
+        margin-bottom: 21px;
+
+        @include mobile {
+          font-size: 25px;
+        }
+      }
+
+      dd {
+        font-size: 18px;
+        color: #555555;
+        line-height: 1.4;
+      }
+    }
+
+    .leftSystem,
+    .rightSystem {
+      position: absolute;
+      width: 24%;
+      height: 100%;
+      padding-top: 90px;
+      box-sizing: border-box;
+      top: 0;
+
+      @include tablet {
+        position: static;
+        height: auto;
+        width: 70%;
+        padding: 0;
+        margin-top: 40px;
+      }
+    }
+
+    .leftSystem {
+      left: 0;
+
+      .sysTxt {
+        color: #737373;
+        transform: translateX(-60px);
+      }
+
+      .sysDl {
+        padding-left: 125px;
+        background: url(../images/main/ampleColor01.png) no-repeat top left;
+        position: absolute;
+        bottom: 0;
+        transform: translateX(-60px);
+
+        @include tablet {
+          position: static;
+        }
+      }
+    }
+
+    .rightSystem {
+      right: 0;
+
+      @include tablet {
+        float: right;
+      }
+
+      .sysTxt {
+        color: #f18a44;
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        transform: translateX(60px);
+
+        @include tablet {
+          position: static;
+        }
+      }
+
+      .sysDl {
+        padding-right: 110px;
+        background: url(../images/main/ampleColor02.png) no-repeat top right;
+        transform: translateX(60px);
+
+        dt {
+          color: #f18a44;
+        }
+
+        @include tablet {
+          text-align: right;
+        }
+      }
+    }
+
+    .centerSystem {
+      width: 47%;
+      text-align: center;
+      margin: 0 auto;
+
+      .systmeTitle {
+        font-size: 48px;
+        font-weight: 500;
+        margin-bottom: 55px;
+        transform: translateY(60px);
+
+        @include mobile {
+          font-size: 30px;
+          margin-bottom: 30px;
+        }
+      }
+
+      .aboutSystem {
+        font-size: 25px;
+        line-height: 1.4;
+        margin-top: 70px;
+        transform: translateY(60px);
+
+        @include mobile {
+          font-size: 18px;
+          margin-top: 40px;
+        }
+      }
+
+      @include tablet {
+        width: 100%;
+      }
+
+      .ampleImg {
+        transform: translateY(60px);
+      }
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+}
+
+
+// 글로벌 기업
+.globalWrap {
+  text-align: center;
+  margin: 50px 0 120px 0;
+
+  .globalHead {
+    text-align: center;
+    color: #000;
+    line-height: 1.3;
+    font-size: 35px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    transform: translateY(60px);
+
+    @include mobile {
+      font-size: 27px;
+    }
+  }
+
+  .global_title01 {
+    transform: translateY(60px);
+  }
+
+  .global_title02 {
+    font-size: 45px;
+    font-weight: 500;
+    color: #2152ae;
+    font-style: italic;
+    margin: 20px 0;
+    transform: translateY(60px);
+
+
+    @include mobile {
+      font-size: 35px;
+    }
+  }
+
+  .global_title03 {
+    font-size: 23px;
+    color: #000000;
+    line-height: 1.3;
+    transform: translateY(60px);
+  }
+
+  .globalBox {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+
+    .slick-slide {
+      height: auto;
+    }
+
+    article {
+      @include centerC(absolute);
+      color: #fff;
+      line-height: 1.3;
+      z-index: 1;
+
+      .glbTxt01 {
+        font-size: 40px;
+        font-weight: 700;
+        transform: translateY(60px);
+
+
+        &::after {
+          content: '';
+          display: block;
+          width: 50px;
+          height: 4px;
+          background-color: #fff;
+          margin: 40px auto;
+        }
+      }
+
+      .glbTxt02 {
+        font-size: 27px;
+        margin-bottom: 30px;
+        transform: translateY(60px);
+
+      }
+
+      .glbTxt03 {
+        font-size: 22px;
+        transform: translateY(60px);
+
+      }
+
+      @include mobile {
+        width: 95%;
+
+        .glbTxt01 {
+          font-size: 25px;
+        }
+
+        .glbTxt02 {
+          font-size: 22px;
+        }
+
+        .glbTxt03 {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .companyBgs {
+    li {
+      width: 100%;
+      max-width: 1200px;
+      height: 540px;
+    }
+
+    .bgs01 {
+      background: url(../images/main/company01.jpg) no-repeat center;
+      background-size: cover;
+    }
+
+    .bgs02 {
+      background: url(../images/main/company02.jpg) no-repeat center;
+      background-size: cover;
+    }
+
+    .bgs03 {
+      background: url(../images/main/company03.jpg) no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+}
+
+
+// 스페셜 체인지
+.moreBtn {
+  width: 200px;
+  height: 50px;
+
+  a {
+    height: 100%;
+    background-color: $lightgreen;
+    @include flexAlign;
+
+    span {
+      color: #fff;
+      font-size: 13px;
+      margin-right: 15px;
+    }
+  }
+
+  &:hover {
+    a {
+      background-color: $green;
+    }
+  }
+}
+
+// 6주
+.weekWrap {
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+
+  .layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .center_box {
+    @include centerC(absolute);
+    z-index: 1;
+  }
+
+  .weekDl {
+    font-size: 55px;
+    line-height: 1.3;
+    color: #fff;
+
+    dt {
+      font-weight: 300;
+    }
+
+    dd {
+      font-weight: 700;
+    }
+
+    @include tablet {
+      font-size: 30px;
+    }
+
+    @include mobile {
+      font-size: 25px;
+    }
+  }
+
+  .moreBtn {
+    margin: 75px auto 0 auto;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+
+  video {
+    width: 100%;
+
+    @include tablet {
+      height: 400px;
+      width: auto;
+    }
+  }
+}
+
+
+// 브랜드 리뷰
+.reviewHead {
+  position: relative;
+
+  .reviewDl {
+    display: flex;
+    align-items: flex-end;
+    font-size: 56px;
+    margin-bottom: 1em;
+
+    dt {
+      font-size: 1em;
+      font-weight: 700;
+      color: $green;
+      margin-right: 28px;
+    }
+
+    dd {
+      font-size: 20px;
+      color: #000;
+    }
+
+    @include layout("dt, dd", 0);
+
+    @include mobile {
+      font-size: 35px;
+      margin-bottom: 0.8em;
+
+      dd {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .moreReview {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    width: 125px;
+    line-height: 40px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+
+    @include mobile {
+      width: 95px;
+    }
+  }
+}
+
+.brandReview {
+  width: 95%;
+  max-width: 1200px;
+  margin: 130px auto 95px auto;
+
+  .reviewDl {
+
+    dt,
+    dd {
+      transform: translateX(-70px);
+    }
+  }
+
+  .reviewsLists {
+    li {
+      width: 32%;
+      transform: translateY(70px);
+
+      article {
+        padding: 35px 3%;
+
+        .reviewTitle {
+          font-size: 20px;
+          color: #000;
+          margin-bottom: 0.7em;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .reviewTxt {
+          font-size: 16px;
+          font-weight: 300;
+          color: #777777;
+          height: 46px;
+          line-height: 1.4;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -os-flexbox;
+          word-wrap: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+
+        }
+
+        .starWrap {
+          margin-top: 40px;
+
+          .stars {
+            width: 84px;
+            height: 13px;
+          }
+
+          .star01 {
+            background: url(../images/main/star01.png) no-repeat;
+          }
+
+          .star02 {
+            background: url(../images/main/star02.png) no-repeat;
+          }
+
+          .star03 {
+            background: url(../images/main/star03.png) no-repeat;
+          }
+
+          .star04 {
+            background: url(../images/main/star04.png) no-repeat;
+          }
+
+          .star05 {
+            background: url(../images/main/star05.png) no-repeat;
+          }
+
+          @include layout("p, span", 10px);
+        }
+      }
+    }
+
+    // @include mobile {
+    //   flex-wrap: wrap;
+
+    //   li {
+    //     width: 48%;
+    //   }
+    // }
+  }
+
+  @include mobile {
+    margin: 80px auto 0px auto;
+  }
+}
+
+
+.sectionDl {
+  margin-bottom: 120px;
+
+  dt {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.65em;
+    transform: translateY(70px);
+  }
+
+  dd {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4;
+    transform: translateY(70px);
+  }
+
+  @include mobile {
+    margin-bottom: 90px;
+
+    dt {
+      font-size: 27px;
+    }
+  }
+}
+
+.ampls {
+  li {
+    width: 31%;
+    background-color: #fff;
+    padding: 95px 5% 55px 5%;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.13);
+    position: relative;
+    transform: translateY(70px);
+
+    .ampleIcon {
+      width: 104px;
+      top: -55px;
+      @include centerX(absolute);
+    }
+
+    dl {
+      dt {
+        font-size: 27px;
+        font-weight: 500;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color: #333;
+          margin: 20px auto;
+        }
+      }
+
+      dd {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+        color: #53545a;
+      }
+    }
+  }
+
+  @include layout("li", 90px, $tablet);
+}

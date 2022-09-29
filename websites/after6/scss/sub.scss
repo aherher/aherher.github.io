@@ -1,0 +1,747 @@
+@charset "utf-8";
+@import './mixin';
+
+
+// 서브공통
+.subConents {
+  background-color: #f6f6f8;
+  padding: 100px 0;
+  margin-top: 125px;
+
+  @include mobile {
+    margin-top: 90px;
+    padding: 60px 0;
+  }
+}
+
+.subCenter {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1200px;
+}
+
+.pageTitle {
+  text-align: center;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #000;
+
+  dt {
+    font-size: 46px;
+    font-weight: 500;
+    // margin-bottom: 0.7em;
+
+    @include mobile {
+      font-size: 37px;
+    }
+  }
+
+  dd {
+    font-size: 20px;
+    font-weight: 300;
+    color: #555555;
+    line-height: 1.4;
+    display: none;
+  }
+}
+
+
+.subBox {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 90px 2.5%;
+
+  @include mobile {
+    padding: 60px 2.5%;
+  }
+}
+
+.subVod {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: block;
+}
+
+// 브랜드소개
+// .frameImg {
+//   width: 95%;
+//   max-width: 790px;
+//   box-shadow: 5px 5px 5px 5px #000;
+//   position: relative;
+//   padding-bottom: 189.24050632911%;
+//   text-align: center;
+//   margin: 0 auto;
+
+//   .innerFrame {
+//     // width: 86.07594936709%;
+//     @include centerC(absolute);
+
+//     .frameTxts {
+//       @include centerC(absolute);
+//       text-align: center;
+//       color: #fff;
+
+//       .infTxt {
+//         font-size: 40px;
+//         font-weight: 700;
+//         line-height: 1.4;
+//       }
+//     }
+//   }
+// }
+
+.frameImg {
+  text-align: center;
+  transform: translateY(10px);
+}
+
+.resultWrap {
+  text-align: center;
+  margin-top: 100px;
+
+  .careTxt {
+    font-size: 25px;
+    line-height: 1.4;
+    width: 95%;
+    margin: 0 auto;
+    transform: translateY(60px);
+
+    span {
+      font-weight: 700;
+      color: #b16f47;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  .headResult {
+    font-size: 50px;
+    font-weight: 500;
+    position: relative;
+    color: $green;
+    margin-top: 1em;
+    display: inline-block;
+    transform: translateY(60px);
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    em {
+      position: absolute;
+      width: 100%;
+      height: 0.5em;
+      background-color: #e6eeee;
+      z-index: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+
+  .aboutBott {
+    padding: 100px 0 220px 0;
+    background: url(../images/sub/after6/bottBg.jpg) no-repeat center top;
+    background-size: cover;
+
+    .wonin {
+      color: $green;
+      font-size: 40px;
+      transform: translateY(60px);
+
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+
+    .aftersix {
+      font-size: 60px;
+      margin-top: 55px;
+      transform: translateY(60px);
+
+      span {
+        font-weight: 500;
+      }
+    }
+
+    padding: 50px 0 70px 0;
+  }
+
+  @include mobile {
+    margin-top: 40px;
+  }
+}
+
+
+// 성분스토리
+.subTabs {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 90px auto;
+  box-shadow: 2px 2px 9px 2px rgba(0, 0, 0, 0.12);
+
+  li {
+    width: 50%;
+    line-height: 60px;
+    text-align: center;
+
+    a {
+      display: block;
+      font-size: 20px;
+      color: #000;
+    }
+  }
+
+  .on {
+    background-color: $lightgreen;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+}
+
+.licence_dl {
+  dt {
+    font-size: 50px;
+    font-weight: 500;
+    color: $green;
+    margin-bottom: 0.3em;
+  }
+
+  dd {
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 1.3;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  @include mobile {
+    dt {
+      font-size: 35px;
+    }
+
+    dd {
+      font-size: 20px;
+    }
+  }
+}
+
+.licencsWrap {
+  &:not(:last-child) {
+    margin-bottom: 115px;
+
+    @include mobile {
+      margin-bottom: 65px;
+    }
+
+  }
+
+  .licence_dl {
+    margin-bottom: 55px;
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  .licence_lists {
+    display: flex;
+    margin: 0 -20px;
+
+    li {
+      width: 31%;
+      max-width: 340px;
+      text-align: center;
+      margin: 0 20px;
+
+      p {
+        font-size: 20px;
+        color: #555555;
+        margin-top: 20px;
+        line-height: 1.3;
+      }
+    }
+
+    @include mobile {
+      margin: 0 -5px;
+
+      li {
+        margin: 0 5px;
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.aboutFlex {
+  .licence_dl {
+    width: 46%;
+
+    dt,
+    dd {
+      transform: translateX(-60px);
+    }
+  }
+
+  .extractAbout {
+    width: 46%;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #555555;
+    transform: translateX(-60px);
+  }
+
+  @include layout(".licence_dl, .extractAbout", 25px);
+}
+
+.extractWrap {
+  margin-bottom: 170px;
+
+  .extractImg {
+    width: 47%;
+    transform: translateY(-60px);
+  }
+
+  .extArticle {
+    width: 47%;
+
+    .extractTitle {
+      font-size: 35px;
+      font-weight: 300;
+      margin-bottom: 30px;
+      transform: translateX(-60px);
+
+      span {
+        font-size: 20px;
+      }
+
+      b {
+        font-weight: 500;
+      }
+    }
+
+    .extractTxt {
+      font-size: 18px;
+      line-height: 1.5;
+      transform: translateX(-60px);
+
+      .browned {
+        color: #b16f47;
+      }
+    }
+
+    .warn {
+      font-size: 18px;
+      line-height: 1.4;
+      color: #000000;
+      margin: 35px 0 20px 0;
+      transform: translateX(-60px);
+    }
+
+    .numberBox {
+      background-color: $lightgreen;
+      display: inline-block;
+      color: #fff;
+      padding: 7px;
+      transform: translateX(-60px);
+    }
+  }
+
+  @include layout(".extractImg, .extArticle", 25px);
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+}
+
+.revers {
+  flex-direction: row-reverse;
+}
+
+.bgBox {
+  height: 418px;
+}
+
+.mountain {
+  background: url(../images/sub/after6/moutain.jpg) no-repeat center;
+  background-attachment: fixed;
+}
+
+.island {
+  background: url(../images/sub/after6/island.jpg) no-repeat center;
+  background-attachment: fixed;
+}
+
+.aboutTitle {
+  text-align: center;
+  font-size: 50px;
+  color: $green;
+  margin-bottom: 1.5em;
+  transform: translateY(-60px);
+
+  @include mobile {
+    font-size: 35px;
+  }
+}
+
+.premiumBox {
+  margin-bottom: 110px;
+
+  .hairStrong {
+    width: 46%;
+
+    .peaceTitle,
+    .deFont {
+      transform: translateX(-60px);
+    }
+
+    .skin {
+      text-align: center;
+      margin-top: 65px;
+    }
+  }
+
+  .preumLists {
+    width: 46%;
+
+    li {
+      transform: translateY(60px);
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+
+      .plemdl {
+        width: calc(100% - 120px);
+
+        dt {
+          font-size: 27px;
+          font-weight: 500;
+          color: #3b3d45;
+
+          &:after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: #3b3d45;
+            margin: 20px 0;
+          }
+        }
+
+        dd {
+          font-size: 16px;
+          font-weight: 300;
+          color: #53545a;
+          line-height: 1.5;
+        }
+      }
+
+      .ampleImg {
+        width: 104px;
+      }
+    }
+  }
+
+  @include layout(".hairStrong, .preumLists", 25px);
+}
+
+.peaceTitle {
+  font-size: 35px;
+  font-weight: 300;
+  margin-bottom: 0.9em;
+
+  b {
+    font-weight: 700;
+  }
+
+  @include mobile {
+    font-size: 27px;
+  }
+}
+
+.deFont {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #555;
+
+  @include mobile {
+    font-size: 18px;
+  }
+}
+
+.secTitle {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+.secFont {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #555555;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+.shieldWrap {
+  flex-direction: row-reverse;
+  margin-bottom: 110px;
+
+  .stopGraph {
+    width: 44%;
+  }
+
+  .hairlFall {
+    width: 47%;
+
+    .colored {
+      color: $green;
+      font-size: 23px;
+      margin-bottom: 0.7em;
+    }
+
+    .brown {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #b16f47;
+      margin-top: 10px;
+    }
+  }
+
+  .peaceTitle,
+  .deFont,
+  .secTitle,
+  .secFont,
+  .colored,
+  .brown {
+    transform: translateY(60px);
+  }
+
+  @include layout(".stopGraph, .hairlFall", 40px);
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+}
+
+.solution {
+  >p {
+    transform: translateY(60px);
+  }
+}
+
+.solutionExtracts {
+
+  li {
+    transform: translateY(60px);
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .img {
+      width: 29.9%;
+    }
+
+    .extractDl {
+      width: 67%;
+
+      dt {
+        font-size: 23px;
+        font-weight: 500;
+        color: $green;
+        margin-bottom: 0.8em;
+      }
+
+      dd {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #555;
+      }
+    }
+
+    @include layout(".img, .extractDl", 20px);
+  }
+}
+
+.subinTxt {
+  text-align: center;
+  margin-top: 30px;
+  color: #000;
+  font-size: 35px;
+  font-weight: 300;
+
+  b {
+    font-weight: 500;
+  }
+}
+
+.vodUl {
+  li {
+    width: 49%;
+
+    video {
+      width: 100%;
+    }
+  }
+}
+
+// 제품소개
+.theProductWrap {
+  .productImg {
+    width: 50%;
+  }
+
+  .productInfo {
+    width: 47%;
+
+    .productName {
+      font-size: 40px;
+      margin-bottom: 35px;
+      font-family: 'KoPub Batang', serif;
+
+      @include mobile {
+        font-size: 26px;
+        margin-bottom: 17px;
+        line-height: 1.3;
+      }
+    }
+
+    .intxt {
+      font-size: 17px;
+      font-weight: 300;
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    .thePrice {
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #c1c0bd;
+      margin: 90px 0;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+
+      .prevPrice {
+        font-size: 16px;
+        font-weight: 500;
+        color: #777777;
+        background: url(../images/sub/shampoo/saleArr.png) no-repeat center;
+        width: 80px;
+        text-align: center;
+      }
+
+      .priceBox {
+        width: calc(100% - 80px);
+        display: flex;
+        padding-left: 15%;
+        box-sizing: border-box;
+
+        @include mobile {
+          width: auto;
+          padding-left: 0;
+        }
+      }
+
+      .theSale {
+        font-size: 30px;
+        font-weight: 700;
+
+        span {
+          font-size: 0.7em;
+        }
+
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+
+      .sales {
+        color: #af8d2f;
+        margin-right: 20px;
+      }
+
+      .totlaPrice {
+        color: #2f7c7d;
+      }
+
+      @include mobile {
+        margin: 50px 0;
+        justify-content: space-between;
+      }
+    }
+
+    .storeBtn {
+      display: block;
+      text-align: center;
+      max-width: 330px;
+      width: 100%;
+      line-height: 70px;
+      color: #fff;
+      font-size: 22px;
+      background-color: $lightgreen;
+    }
+  }
+
+  @include layout(".productImg, .productInfo", 30px);
+}
+
+
+/*개인정보취급방침*/
+.privacy {
+  background: #fbfafa;
+  border: 1px solid #d7d5d5;
+  padding: 25px;
+  height: 645px;
+  box-sizing: border-box;
+
+  >div {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    height: 100%;
+
+    >.intxtarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      line-height: 1.7;
+      word-break: keep-all;
+      font-size: 14px;
+      overflow-y: scroll;
+      white-space: pre-line;
+    }
+  }
+}
