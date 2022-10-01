@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="euc-kr">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg">
+  <link href='https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../css/sub.css" />
+  <script src="../js/jquery-1.7.1.min.js"></script>
+  <title>롤카데미</title>
+</head>
+
+<body>
+  <? include "../inc/menu_wrap.html"; ?>
+  <? include "../inc/right_quick.html"; ?>
+  <? include "../inc/header.html"; ?>
+  <style>
+    .board_wrap {
+      margin: 0 auto;
+      padding: 30px 0;
+    }
+
+
+    .board_wrap a {
+      text-decoration: none;
+    }
+
+    .new_tagview {
+      display: inline-block;
+      color: #fff;
+      font-size: 10px;
+      text-align: center;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      background-color: #ff7b05;
+      margin-left: 6px;
+      border-radius: 4px;
+    }
+
+    .the_board {
+      width: 100%;
+      border-top: 2px solid #fff;
+    }
+
+    .the_board tr th,
+    .the_board tr td {
+      color: #fff;
+      font-size: 16px;
+      padding: 15px 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .the_board tr .title_td {
+      text-align: left;
+    }
+
+    .the_board tr a {
+      color: #fff;
+    }
+
+    .the_board thead tr th {
+      font-weight: bold;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .the_board tr td .board_title {
+      display: block;
+      height: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 590px;
+    }
+
+    .the_board tr td .innerTxts em {
+      font-size: 13px;
+      color: #ff615e;
+    }
+
+    /* 게시판 하단 버튼 */
+    .admin_btns {
+      overflow: hidden;
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .admin_btns li {
+      width: 125px;
+      height: 45px;
+      margin-left: 12px;
+    }
+
+    .admin_btns li a {
+      font-size: 16px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 45px;
+      box-sizing: border-box;
+    }
+
+    .admin_btns li:first-child {
+      margin-left: 0;
+    }
+
+    .admin_btns .write_btn a {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+      line-height: 42px;
+    }
+
+    .admin_btns .gadm_btn a {
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* 찾기기능 */
+    .board_src {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .board_src form {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .board_src .board_select {
+      vertical-align: middle;
+      height: 44px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      text-align-last: center;
+      text-align: center;
+      width: 90px;
+      margin-right: 10px;
+      background:none;
+      color:#fff;
+    }
+
+    .board_src .board_txtinput {
+      border: 1px solid #ddd;
+      height: 44px;
+      color: #333;
+      font-size: 16px;
+      box-sizing: border-box;
+      vertical-align: middle;
+      width: 235px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background:none;
+      color:#fff;
+    }
+
+    .board_src .board_txtinput .txtinput {
+      border: none;
+      width: 180px;
+      height: 100%;
+      font-size: 15px;
+      background:none;
+      color:#fff;
+    }
+
+    .board_src .board_txtinput .board_scrBtn {
+      height: 100%;
+      width: 26px;
+      line-height: 35px;
+    }
+
+    .board_src .board_txtinput .board_scrBtn img {
+      vertical-align: middle;
+    }
+
+
+    /* 페이저 */
+    .board_pager_wrap {
+      text-align: center;
+      margin: 60px auto 0 auto;
+      width: 95%;
+    }
+
+    .board_pager_wrap .board_pager {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .board_pager_wrap .board_pager li {
+      width: 40px;
+      height: 40px;
+      line-height: 38px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-left: 0;
+    }
+
+    .board_pager_wrap .board_pager li:first-child {
+      border-left: 1px solid #ddd;
+    }
+
+    .board_pager_wrap .board_pager li a {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      color: #555;
+    }
+
+    .board_pager_wrap .board_pager li a:hover,
+    .board_pager_wrap .board_pager .current_page a {
+      border-bottom: 2px solid #000000;
+      color: #fff;
+    }
+
+    .board_pager_wrap .board_pager .pagerarr a {
+      position: relative;
+    }
+
+    .board_pager_wrap .board_pager .pagerarr a img {
+      vertical-align: middle;
+    }
+
+
+    @media screen and (max-width:720px) {
+      .board_src {
+        width: 95%;
+        margin: 0 auto 20px auto;
+      }
+
+      .the_board thead,
+      .the_board .number,
+      .the_board .boardvalue,
+      .the_board .howMany,
+      .the_board .checkTd,
+      .the_board colgroup {
+        display: none;
+      }
+
+      .the_board tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+
+      }
+
+      .the_board,
+      .the_board tbody,
+      .the_board tbody tr,
+      .the_board tbody tr td,
+      .the_board tbody tr th {
+        display: block;
+      }
+
+      .the_board tbody tr {
+        font-size: 0;
+      }
+
+      .the_board tbody tr td,
+      .the_board tbody tr th {
+        font-size: 16px;
+        box-sizing: border-box;
+        border: none;
+        padding: 0;
+      }
+
+      .the_board tr .title_td {
+        width: 75%;
+        display: inline-block;
+        vertical-align: middle;
+        /* overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; */
+      }
+
+      .the_board tr .theWriter {
+        width: 25%;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: right;
+      }
+
+      .the_board .writeDate {
+        text-align: left;
+        width: 100%;
+        padding-top: 10px;
+      }
+
+    }
+  </style>
+
+  <!-- 서브 비주얼 -->
+  <section class="sub_visual">
+    <h2>OUR LOLCADEMI</h2>
+  </section>
+
+  <section class="sub_contents">
+    <div class="center_box sub_center">
+      <p class="subTitle">공지사항</p>
+      <!-- 검색영역 시작 -->
+      <div class="board_src">
+        <form>
+          <select class="board_select">
+            <option>전체</option>
+            <option>제목</option>
+            <option>작성자</option>
+            <option>내용</option>
+          </select>
+          <div class="board_txtinput">
+            <input type="text" class="txtinput">
+            <a href="#!" class="board_scrBtn"><img src="/HyAdmin/skin/board/WebList/images/src_icon.png" alt=""></a> </div>
+        </form>
+      </div>
+      <!-- 검색영역 끝 -->
+      <!-- 게시판 -->
+      <table class="the_board">
+        <colgroup>
+          <col width="5%" class="number">
+          <col width="5%">
+          <col width="10%">
+          <col width="55%">
+          <col width="5%">
+          <col width="20%">
+          <col width="5%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="number">번호</th>
+            <th class="checkTd"><input type="checkbox"></th>
+            <th class="boardvalue">분류</th>
+            <th class="TdTitle">제목</th>
+            <th class="theWriter">작성자</th>
+            <th class="writeDate">등록일</th>
+            <th class="howMany">조회수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="number">3</td>
+            <td class="checkTd"><input type="checkbox" name="chk_hy_num[]" value="2"></td>
+            <td class="boardvalue">분류1</td>
+            <td class="title_td">
+
+              <a href="./view.html" class="bbs">
+                테스트 게시만
+                <span class="innerTxts"><img src="/HyAdmin/skin/board/WebList/images/comment_count.gif" border="0">
+                  <em>2</em>
+                </span>
+
+                <span class="new_tagview">N</span>
+                &nbsp;<img src="/HyAdmin//skin/board/WebList//images/icon_file.gif" style="margin-top:4px">
+              </a>
+
+            </td>
+            <td class="theWriter">관리자</td>
+            <td class="writeDate">2021-01-13</td>
+            <td class="howMany">4</td>
+          </tr>
+          <tr>
+            <td class="number">2</td>
+            <td class="checkTd"><input type="checkbox" name="chk_hy_num[]" value="2"></td>
+            <td class="boardvalue">분류1</td>
+            <td class="title_td">
+              <img height="1" width="10" border="0"><img src="/HyAdmin/skin/board/WebList/images/re_arr.png" align="absmiddle" style="margin-right:5px;" border="0"><span style="margin-right:10px;color:#0c4ca3;">Re</span>
+
+              <a href="./view.html" class="bbs">
+                [답변]테스트 게시만 [답변]테스트 게시만 [답변]테스트 게시만 [답변]테스트 게시만 [답변]테스트 게시만 [답변]테스트 게시만 [답변]테스트 게시만 [답변]테스트 게시만 [답변]테스트 게시만
+              </a>
+              <span class="new_tagview">N</span>
+            </td>
+            <td class="theWriter">관리자</td>
+            <td class="writeDate">2021-01-13</td>
+            <td class="howMany">4</td>
+          </tr>
+          <tr>
+            <td class="number">1</td>
+            <td class="checkTd"><input type="checkbox" name="chk_hy_num[]" value="2"></td>
+            <td class="boardvalue">분류2</td>
+            <td class="title_td">
+              <a href="./view.html" class="bbs">
+                테스트 게시만
+              </a>
+              <span class="new_tagview">N</span>
+            </td>
+            <td class="theWriter">관리자</td>
+            <td class="writeDate">2021-01-13</td>
+            <td class="howMany">4</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- 게시판 끝-->
+      <!-- 쓰기/관리 -->
+      <ul class="admin_btns">
+        <li class="write_btn"><a href="#!">글쓰기</a></li>
+        <li class="gadm_btn"><a href="#!">관리</a></li>
+      </ul>
+      <!-- 쓰기/ 관리 -->
+
+      <!-- 페이저 -->
+      <div class="board_pager_wrap">
+        <ul class="board_pager">
+          <li class="pagerarr"><a href="#!"><img src="/HyAdmin/skin/board/WebList/images/pager_front.png" alt="" /></a></li>
+          <li class="pagerarr"><a href="#!"><img src="/HyAdmin/skin/board/WebList/images/pager_back.png" alt="" /></a></li>
+          <li class="current_page"><a href="#!">1</a></li>
+          <li><a href="#!">2</a></li>
+          <li><a href="#!">3</a></li>
+          <li><a href="#!">4</a></li>
+          <li><a href="#!">5</a></li>
+          <li class="pagerarr"><a href="#!"><img src="/HyAdmin/skin/board/WebList/images/pager_next.png" alt="" /></a></li>
+          <li class="pagerarr"><a href="#!"><img src="/HyAdmin/skin/board/WebList/images/pager_end.png" alt="" /></a></li>
+        </ul>
+      </div>
+      <!-- 페이저 끝 -->
+
+    </div>
+  </section>
+  <script src="../js/sub.js"></script>
+  <? include "../inc/footer.html"; ?>
+  <footer class="footer_wrap">
+    <div class="center_box foot">
+      <ul class="flex_center partners">
+        <li><a href="#!"><img src="/images/common/sns01.png" alt=""></a></li>
+        <li><a href="#!"><img src="/images/common/sns02.png" alt=""></a></li>
+        <li><a href="#!"><img src="/images/common/sns03.png" alt=""></a></li>
+      </ul>
+      </ul>
+      <p class="foot_logo">롤카데미</p>
+      <p class="footInfo">
+        <span>주소 : 대구시 달서구 본동 구마로 36길 33 , 301동 1306호</span>통신판매업신고번호 : 2020-대구시 달서-0000호</p>
+      <p class="footInfo">
+        <span>T. 010-9955-3867</span><span>사업자등록번호. 000-00-00000</span>대표자. 김상현</p>
+      <p class="copy">Copyrights ⓒ 2020 Korea Content Awards. All rights reserved. </p>
+    </div>
+  </footer>
+
+  <script src="/js/layout.js"></script>
+</body>
+
+</html>

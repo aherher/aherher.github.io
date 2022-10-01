@@ -1,0 +1,323 @@
+  <? include "../inc/header.html"; ?>
+
+  <style>
+    .writeBoard {
+      width: 100%;
+      border-top: 2px solid #fff;
+    }
+
+    .writeBoard th,
+    .writeBoard td {
+      padding: 15px 10px;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .writeBoard th {
+      text-align: center;
+      /* background-color: #F9F9F9; */
+      color: #fff;
+    }
+
+    .writeBoard td input[type="text"] {
+      width: 100%;
+      height: 35px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+      border: 1px solid #3f3f3f;
+      background-color: #000;
+      color:#fff;
+    }
+
+    .writeBoard td .editTd {
+      max-width: 150px;
+    }
+
+    .writeBoard td select {
+      padding: 0 30px 0 10px;
+      height: 35px;
+      font-size: 16px;
+    }
+
+    .writeBoard td .noticeChecking {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .writeBoard td .noticeChecking input {
+      margin-top: 5px;
+    }
+
+    .writeBoard td .noticeChecking>label {
+      display: inline-block;
+      position: relative;
+      margin-left: 7px;
+      padding-left: 20px;
+    }
+
+    .writeBoard td .noticeChecking>label:before {
+      content: '※';
+      position: absolute;
+      left: 0;
+      top: 0px;
+    }
+
+    .writeBoard td iframe {
+      width: 100%;
+    }
+
+    .writeBoard td .theFile {
+      display: flex;
+      position: relative;
+    }
+
+    .writeBoard td .theFile .fileName {
+      display: inline-block;
+      width: 320px;
+      height: 70px;
+      line-height: 70px;
+      padding-left: 10px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      vertical-align: middle;
+      text-align: left;
+    }
+
+    .writeBoard td .theFile label {
+      display: inline-block;
+      width: 200px;
+      height: 35px;
+      line-height: 35px;
+      margin-left: 5px;
+      color: #fff;
+      font-size: 16px;
+      background-color: #333;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .writeBoard td .theFile input[type="file"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    .writeBoard td .deltFile {
+      margin-top: 5px;
+    }
+
+    .bb_wrap .board_btns {
+      display: flex;
+      text-align: center;
+      justify-content: flex-end;
+      margin-top: 30px;
+    }
+
+    .bb_wrap .board_btns li {
+      width: 150px;
+      height: 45px;
+      line-height: 45px;
+      box-sizing: border-box;
+      vertical-align: middle;
+      /* border: 1px solid #ddd; */
+      margin-left: 10px;
+      background-color: #ededed;
+    }
+
+    .bb_wrap .board_btns li:first-child {
+      margin-left: 0;
+    }
+
+    .bb_wrap .board_btns li a {
+      display: block;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .bb_wrap .board_btns .confirm {
+      background-color: #333;
+      color: #fff;
+    }
+
+    @media screen and (max-width:750px) {
+      .writeBoard th {
+        width: 5%;
+        font-size: 13px
+      }
+
+      .writeBoard td .theFile {
+        flex-wrap: wrap;
+      }
+
+      .writeBoard td .theFile .fileName,
+      .writeBoard td .theFile label {
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+    }
+  </style>
+
+  <!-- 서브 비주얼 -->
+  <section class="sub_visual">
+    <h2>OUR LOLCADEMI</h2>
+  </section>
+
+  <section class="sub_contents">
+    <div class="center_box sub_center">
+      <p class="subTitle">공지사항</p>
+
+      <form>
+        <!-- 쓰기영역 -->
+        <table class="writeBoard">
+          <colgroup>
+            <col width="10%">
+            <col width="90%">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>분류</th>
+              <td>
+                <select class="selectH">
+                  <option value="1">분류1</option>
+                  <option value="2">분류2</option>
+                  <option value="3">분류3</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>공지글</th>
+              <td>
+                <div class="noticeChecking">
+                  <input type="checkbox" id="noticeCheck">
+                  <label for="noticeCheck">상단에 위치시킬 공지글인 경우 체크해 주세요.</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>제목</th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+
+            <tr>
+              <th>내용</th>
+              <td>
+                <iframe frameborder="0" scrolling="no" style="width: 100%; height: 449px;" src="./naverEditor/SmartEditor2Skin.html"></iframe>
+              </td>
+            </tr>
+
+            <tr>
+              <th>링크주소1</th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+
+            <tr>
+              <th>링크주소2</th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+
+            <tr>
+              <th>유튜브링크1</th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+
+            <tr>
+              <th>유튜브링크2</th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+
+            <tr>
+              <th>첨부파일1</th>
+              <td>
+                <div class="theFile">
+                  <input type="text" class="filesName" readonly>
+                  <label for="file01" class="btn_file">파일첨부</label>
+                  <input type="file" id="file01" class="writeFile">
+                </div>
+                <div class="deltFile">
+                  <input name="del_file1" type="checkbox" id="del_file1" value="1">
+                  <label for="del_file1">삭제(pimg09.jpg)</label>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th>첨부파일2</th>
+              <td>
+                <div class="theFile">
+                  <input type="text" class="filesName" readonly>
+                  <label for="file02" class="btn_file">파일첨부</label>
+                  <input type="file" id="file02" class="writeFile">
+                </div>
+                <div class="deltFile">
+                  <input name="del_file2" type="checkbox" id="del_file2" value="1">
+                  <label for="del_file2">삭제(pimg09.jpg)</label>
+                </div>
+
+              </td>
+            </tr>
+
+            <tr>
+              <th>등록일</th>
+              <td>
+                <input type="text" class="editTd">
+              </td>
+            </tr>
+
+            <tr>
+              <th>조회수</th>
+              <td>
+                <input type="text" class="editTd">
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+        <!-- 쓰기영역 끝 -->
+
+        <!-- 게시물 버튼 -->
+        <div class="bb_wrap">
+          <ul class="board_btns">
+            <li><a href="#!" class="confirm">확인</a></li>
+            <li><a href="#!">취소</a></li>
+          </ul>
+        </div>
+        <!-- 게시물 버튼 끝 -->
+      </form>
+
+      <!-- 파일 업로드 js  -->
+      <script>
+        var uploadFile = $('.writeFile');
+        uploadFile.on('change', function () {
+          if (window.FileReader) {
+            var filename = $(this)[0].files[0].name;
+          } else {
+            var filename = $(this).val().split('/').pop().split('\\').pop();
+          }
+          $(this).siblings('.filesName').val(filename);
+        });
+      </script>
+      <!-- 파일 업로드 js 끝 -->
+
+
+    </div>
+  </section>
+  <script src="../js/sub.js"></script>
+  <? include "../inc/footer.html"; ?>

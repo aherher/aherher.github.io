@@ -1,0 +1,154 @@
+@charset "euc-kr";
+
+@mixin sub_lap {
+
+  // 서브공통
+  .sub_center {
+    padding: 60px 4%;
+  }
+
+  // 시간제강의
+  .grades {
+    li {
+      width: 49%;
+    }
+
+    .lastGrade {
+      width: 100%;
+    }
+  }
+
+  // 신청안내
+  .stepsWrap {
+    .steps {
+      li {
+        .stepNumber {
+          // font-size: 18px;
+          // width: 70px;
+        }
+
+        .stepTxts {
+          // width: calc(100% - 70px);
+
+          .hst {
+            // font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin sub_tablet {
+
+  // 롤카데미 소개
+  .introduceTxt {
+    flex-wrap: wrap;
+
+    .deFont,
+    .displayCard {
+      width: 100%;
+    }
+
+    .displayCard {
+      margin-top: 40px;
+      position: static;
+      transform: translateY(0);
+      text-align: center;
+    }
+  }
+
+  .introWran {
+    margin-top: 50px;
+    height: auto;
+    padding: 40px 7%;
+
+    .wTxt {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  // 강사진 소개
+  .thumLists {
+    li {
+      width: 48%;
+
+      &:nth-child(3n) {
+        margin-right: 2%;
+      }
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // 시간제강의
+  .readyWrap {
+    padding: 160px 0 80px 0;
+  }
+
+  .rW_article {
+    flex-wrap: wrap;
+
+    .rW_dl {
+      width: 100%;
+
+      &:first-child {
+        margin-bottom: 40px;
+      }
+    }
+
+  }
+
+
+  // 그룹강의
+  .groupWrap {
+    .saleWrap {
+      .dashed {
+        width: 107%;
+        max-width: 823px;
+      }
+    }
+  }
+
+  // 신청안내
+  .applyAbout {
+    padding: 60px 5% 100px 5%;
+
+    .aA_txt {
+      font-size: 22px;
+    }
+
+    .timo {
+      width: 50%;
+      max-width: 369px;
+      right: 0;
+      bottom: -40%;
+    }
+  }
+
+  .stepsWrap {
+    .steps {
+      padding: 50px 4% 20px 4%;
+      flex-wrap: wrap;
+      background-position: center top;
+
+      li {
+        width: 48%;
+        justify-content: center;
+        padding: 20px 0;
+
+        .stepNumber {
+          margin: 15px 0 20px 0;
+        }
+
+        .stepTxts {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}

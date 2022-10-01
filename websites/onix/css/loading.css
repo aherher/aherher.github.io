@@ -1,0 +1,88 @@
+@charset "euc-kr";
+
+.loading_wrap {
+  height:100vh;
+  background:url(../images/load/load_bg.jpg) center;
+  background-size:cover;
+}
+
+.load_center {position:absolute;
+  width:95%;
+  max-width:510px;
+  margin:0 auto;
+  text-align:center;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+.load_center img {
+  width:170px;
+  margin-bottom:75px;
+  animation: rotate 2s;
+  -webkit-animation: rotate 2s;
+
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    transform:rotate(0deg);
+  }
+
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform:rotate(0deg);
+  }
+
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+.load_center .bar_wrap {
+  height: 5px;
+  border-radius: 5px;
+  background-color: #464646;
+  overflow: hidden;
+}
+
+.load_center .bar_wrap .inner_bar {
+  height:100%;
+  background-color:#fff;
+  border-radius:5px;
+  animation: load 2s;
+  -webkit-animation: load 2s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes load {
+  0% {
+    width: 0;
+
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+

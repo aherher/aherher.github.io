@@ -1,0 +1,51 @@
+@charset "euc-kr";
+
+@mixin main_lap {
+
+  // 공지사항
+  .news_table {
+    background-position: center right;
+
+    a {
+      flex-wrap: wrap;
+    }
+
+    .new_date {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      padding: 0;
+      font-size: 26px;
+    }
+
+    .new_txts {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+@mixin main_tablet {
+
+  // 메인 슬라이드
+  .main_slide {
+    height: auto;
+
+    li {
+      img {
+        width: 100%;
+      }
+      dl {
+        font-size: 40px;
+      }
+
+      .viewBtn {
+        width: 130px;
+        height: 66px;
+        line-height: 66px;
+        font-size: 18px;
+        background-size: cover;
+      }
+    }
+  }
+}

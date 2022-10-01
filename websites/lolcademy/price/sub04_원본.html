@@ -1,0 +1,43 @@
+  <? include "../inc/header.html"; ?>
+  <!-- 서브 비주얼 -->
+  <section class="sub_visual sub_visual03">
+    <h2>OUR tuition fees</h2>
+  </section>
+
+  <section class="sub_contents">
+    <div class="center_box sub_center">
+      <p class="subTitle">그룹강의</p>
+      <? include "./subTab.html"; ?>
+      <script>
+        $(".sub_tabs > li").eq(3).addClass("tabOn");
+      </script>
+      <p class="priceInfo">각 포지션 담당 강사님과 수강생분들이 (최대 5인)<br />
+        한 그룹을 구성해 함께 강의를 받아보실 수 있습니다.<br />
+        1:1 강의나, 수강료가 부담되시는 분들께 추천드립니다. </p>
+
+      <div class="groupWrap">
+        <img class="death" src="../images/sub/price/death.png" alt="">
+        <div class="saleWrap">
+          <article class="theSale">
+            <p class="monthPrice">한 달 기준 <b>수강료</b></p>
+
+            <dl class="saleBox">
+              <dt>매주 2시간 씩 한 달 총 8시간</dt>
+              <dd>40%할인</dd>
+            </dl>
+
+          </article>
+          <img class="dashed" src="../images/sub/price/dashed.png" alt="">
+        </div>
+
+        <article class="salePrice">
+          <p class="unSale">24만원</p>
+          <img class="priceArr" src="../images/sub/price/priceArr.png" alt="">
+          <p class="Saled">14만원</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+  <script src="../js/sub.js"></script>
+  <? include "../inc/footer.html"; ?>

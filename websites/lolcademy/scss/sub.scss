@@ -1,0 +1,787 @@
+@charset "euc-kr";
+@import './mixin';
+@import './sub_tablet';
+@import './sub_mobile';
+
+// 서브공통
+body,
+html {
+  color: #fff;
+}
+
+.sub_visual {
+  height: 200px;
+  text-align: center;
+  margin-top: 100px;
+
+  h2 {
+    font: {
+      size: 50px;
+      weight: 700;
+    }
+
+    text-transform: uppercase;
+    color: #fff;
+    @include centerY(relative);
+  }
+
+  @include mobile {
+    margin-top: 90px;
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+}
+
+.sub_visual01 {
+  background: url(../images/sub/sub_visual01.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.sub_visual02 {
+  background: url(../images/sub/sub_visual02.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.sub_visual03 {
+  background: url(../images/sub/sub_visual03.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+.sub_visual04 {
+  background: url(../images/sub/sub_visual04.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+.sub_visual05 {
+  background: url(../images/sub/sub_visual05.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+.sub_visual06 {
+  background: url(../images/sub/sub_visual06.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+.sub_visual07 {
+  background: url(../images/sub/sub_visual07.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+.sub_contents {
+  padding: 90px 0;
+
+  @include mobile {
+    padding: 50px 0;
+  }
+}
+
+.sub_center {
+  background-color: #0d0d0d;
+  padding: 70px 6.2%;
+  box-sizing: border-box;
+}
+
+.subTitle {
+  font: {
+    size: 50px;
+    weight: 500;
+  }
+
+  line-height: 1.3;
+  margin-bottom: 1.600em;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #646464;
+    margin-top: 10px;
+  }
+
+  @include mobile {
+    font: {
+      size: 23px;
+    }
+  }
+}
+
+/*개인정보취급방침*/
+.privacy {
+  background: #fbfafa;
+  border: 1px solid #d7d5d5;
+  padding: 25px;
+  height: 645px;
+  box-sizing: border-box;
+
+  >div {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    height: 100%;
+
+    >.intxtarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      line-height: 1.7;
+      word-break: keep-all;
+      font-size: 14px;
+      overflow-y: scroll;
+      white-space: pre-line;
+    }
+  }
+}
+
+
+.deFont {
+  font: {
+    size: 18px;
+  }
+
+  line-height: 1.5;
+
+  b {
+    font-weight: 500;
+  }
+}
+
+// 롤카데미 소개
+.support {
+  text-align: center;
+  margin-bottom: 85px;
+}
+
+.introduceTxt {
+  position: relative;
+
+  .deFont {
+    width: 52%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .displayCard {
+    width: 55%;
+    transform: translateY(-90px);
+    position: absolute;
+    right: 0;
+    text-align: right;
+  }
+}
+
+.introWran {
+  height: 200px;
+  background: url(../images/sub/about/warnBg.jpg) no-repeat center;
+  background-size: cover;
+  @include flexAlign;
+  padding: 0 8%;
+  margin-top: 100px;
+
+  .thisClass {
+    color: #fff;
+    font-size: 23px;
+    line-height: 1.4;
+
+    .wran_icon {
+      width: 79px;
+      margin-right: 20px;
+    }
+
+    .wTxt {
+      width: calc(100% - 99px);
+
+      span {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+}
+
+
+// 강사진 소개
+.teachHead {
+  position: relative;
+  margin-bottom: 60px;
+
+  .allTeachers {
+    // position: absolute;
+    // left: 0;
+    // top: 62%;
+    margin-top: -8%;
+  }
+
+  .aTc {
+    font-size: 23px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #e1e1e1;
+    // margin-top: 25px;
+  }
+}
+
+.allTeachers {
+  font-size: 25px;
+  line-height: 1.4;
+  // color: #111111;
+
+  span {
+    font-size: 1.400em;
+    font-weight: 700;
+    color: $redColor;
+  }
+}
+
+.thumLists {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    width: 32%;
+    text-align: center;
+    position: relative;
+    margin: 0 2% 20px 0;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .tThum_title {
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      line-height: 1.3;
+      @include centerC(absolute);
+      z-index: 1;
+      transition: all 0.5s;
+
+      .tTxt01 {
+        font-size: 10px;
+        margin-bottom: 15px;
+      }
+
+      .tTxt02 {
+        font-size: 25px;
+        margin-bottom: 35px;
+      }
+
+      .tTxtInfo {
+        font-size: 20px;
+      }
+
+      .tTxt_hidden {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.4;
+        margin: 25px 0;
+        display: none;
+      }
+
+      .tTxt_view {
+        font-size: 13px;
+        display: none;
+      }
+    }
+
+    .layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #000;
+      opacity: 0.4;
+      z-index: 0;
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      .tThum_title {
+
+        .tTxt_hidden,
+        .tTxt_view {
+          display: block;
+        }
+      }
+
+      .layer {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// 시간제강의
+.sub_tabs {
+  display: flex;
+  justify-content: center;
+  box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.1);
+
+  li {
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-right: none;
+    line-height: 60px;
+    position: relative;
+    background-color: #fff;
+
+    &:last-child {
+      border-right: 1px solid #ddd;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 0px;
+      height: 100%;
+      background-color: $redColor;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all 0.5s
+    }
+
+    a {
+      display: block;
+      font-size: 18px;
+      color: #000;
+      position: relative;
+      z-index: 1;
+      transition: all 0.5s
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .tabOn a {
+    background-color: $redColor;
+    color: #fff;
+  }
+}
+
+.tab04 {
+  li {
+    width: 25%;
+  }
+}
+
+.priceInfo {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  margin: 3.043em auto 3.261em auto;
+  width: 100%;
+  max-width: 1050px;
+}
+
+.grades {
+  flex-wrap: wrap;
+
+  li {
+    width: 32%;
+    color: #fff;
+    margin-bottom: 25px;
+
+    .gradeName {
+      background-color: $redColor;
+      display: flex;
+      align-items: center;
+      height: 150px;
+      padding: 0 7%;
+
+      .gN_icon {
+        width: 130px;
+      }
+
+      .gN_class {
+        width: calc(100% - 130px);
+        font-size: 27px;
+        font-weight: 700;
+      }
+    }
+
+    .thePrice {
+      background-color: #282828;
+      padding: 30px 4%;
+
+      .inPrice {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+
+        span:first-child {
+          padding-right: 5%;
+          margin-right: 5%;
+          position: relative;
+          width: 135px;
+
+          &:after {
+            content: '';
+            width: 1px;
+            height: 18px;
+            background-color: #6e6e6e;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .lastGrade {
+    width: 66%;
+
+    .gradeName {
+      padding: 0 4%;
+
+      .grand_icons {
+        width: 350px;
+        padding-right: 3%;
+        display: flex;
+      }
+
+      .gN_class {
+        width: auto;
+      }
+    }
+
+    .thePrice {
+      .inPrice {
+        justify-content: flex-start;
+
+        span:first-child {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.readyWrap {
+  background: url(../images/sub/price/readyBg.jpg) no-repeat center;
+  // background-size: cover;
+  margin-top: 170px;
+  color: #fff;
+  position: relative;
+  // padding: 160px 0 100px 0;
+
+  .lolLogo {
+    // @include centerX(absolute);
+    // top: -90px;
+    display: block;
+    margin: -90px auto;
+
+  }
+
+  .rW_title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin: 150px 0 1.500em 0;
+    text-shadow: 2px 2px 10px #000;
+  }
+}
+
+.rW_article {
+  width: 95%;
+  max-width: 970px;
+  margin: 0 auto;
+
+  .rW_dl {
+    width: 47%;
+    line-height: 1.4;
+    text-shadow: 2px 2px 6px #000;
+
+    dt {
+      font-size: 23px;
+      font-weight: 500;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #fff;
+      color: #fffd7e;
+    }
+
+    dd {
+      font-size: 18px;
+    }
+  }
+}
+
+.redBlock {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    background-color: #d92b2b;
+    height: 0.5em;
+    width: 100%;
+    position: absolute;
+    bottom: 0.100em;
+    left: 0;
+    z-index: 0;
+  }
+
+  em {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// 그룹강의
+.groupWrap {
+  // width: 100%;
+  // max-width: 766px;
+  // margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+
+  .group_m {
+    display: none;
+  }
+
+  .death {
+    position: absolute;
+    top: 75px;
+    right: -220px;
+    z-index: 1;
+  }
+
+  .saleWrap {
+    background: url(../images/sub/price/gruopBg.png) no-repeat center top;
+    background-size: cover;
+    padding: 35px 0 17px 0;
+    position: relative;
+
+    .dashed {
+      @include centerX(absolute);
+      width: 823px;
+      max-width: none;
+    }
+  }
+
+  .theSale {
+    border-radius: 25px;
+    border: 3px solid #fff;
+    overflow: hidden;
+    width: 94%;
+    margin: 0 auto;
+
+    .monthPrice {
+      font-size: 35px;
+      font-weight: 500;
+      line-height: 1.3;
+      color: #000;
+      background-color: #ffe3e3;
+      padding: 15px 4%;
+    }
+  }
+
+  .saleBox {
+    background: url(../images/sub/price/sbBg.jpg) no-repeat center;
+    background-size: cover;
+    font-size: 136px;
+    padding: 0.551em 0;
+
+    dt {
+      font-size: 0.331em;
+      font-weight: 500;
+      color: #fffd7e;
+      margin-bottom: 0.147em;
+    }
+
+    dd {
+      font-weight: 700;
+      font-size: 1em;
+      color: #fff;
+    }
+  }
+
+  .salePrice {
+    @include flexAlign;
+    background: url(../images/sub/price/salePrice.png) no-repeat center top;
+    padding: 35px 0 45px 0;
+
+    p {
+      font-size: 60px;
+      color: #fff;
+    }
+
+    .unSale {
+      text-decoration: line-through;
+    }
+
+    .Saled {
+      font-weight: 700;
+    }
+
+    .priceArr {
+      margin: 0 25px;
+    }
+  }
+}
+
+
+// 신청안내
+.applyAbout {
+  position: relative;
+  background: url(../images/sub/guide/applyBg.jpg) no-repeat center;
+  background-size: cover;
+  padding: 95px 7%;
+
+  .aA_txt {
+    color: #fff;
+    font-size: 25px;
+    line-height: 1.4;
+    width: 100%;
+    max-width: 810px;
+  }
+
+  .timo {
+    position: absolute;
+    right: 3%;
+    bottom: -110px;
+  }
+}
+
+.stepsWrap {
+  margin-top: 30px;
+
+  .steps {
+    background: url(../images/sub/guide/step_bg.png) no-repeat center;
+    background-size: cover;
+    padding: 140px 4% 100px 4%;
+
+    li {
+      // display: flex;
+      // align-items: flex-end;
+      width: 25%;
+      text-align: center;
+
+      img {
+        width: 104px;
+      }
+
+      .stepNumber {
+        // font-size: 25px;
+        // font-weight: 700;
+        // color: #fff;
+        font-size: 16px;
+        color: #b4b4b4;
+        margin: 30px 0 40px 0;
+      }
+
+      .stepTxts {
+        // position: relative;
+        // text-align: center;
+        // margin-left: -30px;
+        // width: 200px;
+        // max-width: 200px;
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 1.4;
+
+        .hst {
+          // font-size: 27px;
+          // font-weight: 700;
+          // color: #000;
+          // line-height: 1.3;
+          // position: absolute;
+          // top: 40%;
+          // left: 50%;
+          // width: 90%;
+          // transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+.bankWrap {
+  position: relative;
+  padding-top: 50px;
+
+  .ash {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    max-width: 346px;
+  }
+
+  .allTeachers {
+    text-align: right;
+  }
+
+  .bankingStep {
+    background: url(../images/sub/guide/bankBg.png) no-repeat center;
+    background-size: cover;
+    padding: 140px 5% 120px 15%;
+
+    li {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 35px;
+      line-height: 1.4;
+      color: #fff;
+
+      p {
+        display: inline-block;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #fff;
+      }
+
+      &:nth-child(1) {
+        padding-left: 10%;
+      }
+
+      &:nth-child(2) {
+        padding-left: 15%;
+      }
+
+      &:nth-child(3) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+@include lap {
+  @include sub_lap;
+}
+
+@include tablet {
+  @include sub_tablet;
+}
+
+@include mobile {
+  @include sub_mobile;
+}

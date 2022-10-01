@@ -1,0 +1,346 @@
+  <? include "../inc/header.html"; ?>
+  <style>
+    /*게시물 보기 페이지*/
+    .read_top {
+      position: relative;
+      box-sizing: border-box;
+      font-size: 16px;
+      border-top: 2px solid #fff;
+      line-height: 1.2;
+    }
+
+    .read_top .read_title {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .read_top .boardInfo {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .read_top .boardInfo .indate {
+      color:#b3b3b3;
+      font-weight: 300;
+      display: flex;
+    }
+
+    .read_top .boardInfo .indt01 {
+      width: calc(100% - 320px);
+      width: -webkit-calc(100% - 320px);
+    }
+
+    .read_top .boardInfo .indt02 {
+      width: 215px;
+    }
+
+    .read_top .boardInfo .indt03 {
+      width: 105;
+    }
+
+    .read_top .boardInfo .indate span {
+      padding: 15px 10px;
+    }
+
+
+    .read_top .boardInfo .indate .idTd {
+      width: 60px;
+      text-align: center;
+      background-color: #ededed;
+      font-weight: 500;
+      color: #000
+    }
+
+    .board_read {
+      font-size: 16px;
+      color: #fff;
+      padding: 40px 2%;
+      line-height: 1.4;
+      min-height: 130px;
+    }
+
+    .board_read img {
+      max-width: 100%;
+    }
+
+    .board_read .boldy {
+      font-weight: 500;
+    }
+
+    .board_read .orng {
+      color: #ef6b00;
+      font-weight: 300;
+    }
+
+    .board_read .greyd {
+      color: #666666;
+      font-weight: 300;
+    }
+
+    .board_view .writeComment {
+      width: 100%;
+      display: flex;
+      /* background-color: #ededed; */
+      padding: 10px;
+      box-sizing: border-box;
+      border-top: 1px solid #ddd;
+    }
+
+    .board_view .writeComment p {
+      font-size: 18px;
+      text-align: center;
+      width: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .board_view .writeComment textarea {
+      width: 80%;
+      resize: none;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 0 2%;
+      height: 100px;
+      border: none;
+      background:#000;
+      color:#fff;
+    }
+
+    .board_view .writeComment .submitwC {
+      width: 100px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      background: #fff;
+    }
+
+
+    .other_reads .bothers {
+      border-bottom: 1px solid #ddd;
+      height: 75px;
+      line-height: 75px;
+      font-size: 15px;
+      padding: 0 2%;
+    }
+
+    .other_reads .bothers a {
+      color: #fff;
+      font-size: 16px;
+      width: -webkit-calc(100% - 100px);
+      width: calc(100% - 100px);
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .other_reads .prev_board {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .other_reads .bothers span {
+      display: inline-block;
+      vertical-align: middle;
+      color: #fff;
+      width: 100px;
+      font-size: 16px;
+    }
+
+    .other_reads .bothers span img {
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .bb_wrap {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .bb_wrap .board_btns {
+      display: flex;
+      text-align: center;
+      justify-content: flex-end;
+    }
+
+    .bb_wrap .board_btns li {
+      width: 150px;
+      height: 45px;
+      line-height: 45px;
+      box-sizing: border-box;
+      vertical-align: middle;
+      /* border: 1px solid #ddd; */
+      margin-left: 10px;
+      background-color: #ededed;
+    }
+
+    .bb_wrap .board_btns li:first-child {
+      margin-left: 0;
+    }
+
+    .bb_wrap .board_btns li a {
+      display: block;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .bb_wrap .board_btns .board_list {
+      /* background-color: #2bbac6; */
+
+    }
+
+    .bb_wrap .board_btns .board_list a {
+      /* color: #fff; */
+    }
+
+    .bb_wrap .board_btns .board_re {
+      /* background-color: #4b4b4b; */
+    }
+
+    .bb_wrap .board_btns .board_re a {
+      /* color: #fff; */
+    }
+
+    .theIncommnet {
+      border-top: 1px solid #ddd;
+      padding: 15px 2%;
+    }
+
+    .theIncommnet .tInfo {
+      display: flex;
+      margin-bottom: 15px;
+      align-items: center;
+    }
+
+    .theIncommnet .tInfo .tIWriter {
+      font-size: 18px;
+      color: #fff;
+      margin-right: 15px;
+    }
+
+    .theIncommnet .tInfo .tIDate {
+      font-size: 14px;
+      color: #b2b2b2;
+      margin-right: 10px;
+    }
+
+    .theIncommnet .tInfo a img {
+      vertical-align: middle;
+    }
+
+    .theIncommnet .tITXT {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    @media screen and (max-width:750px) {
+      .read_top .boardInfo {
+        flex-wrap: wrap;
+      }
+
+      .read_top .boardInfo .indate {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .read_top .boardInfo {
+        border-bottom: 0;
+      }
+
+      .board_view .writeComment {
+        flex-wrap: wrap;
+      }
+
+      .board_view .writeComment p,
+      .board_view .writeComment textarea,
+      .board_view .writeComment .submitwC {
+        width: 100%;
+      }
+
+      .board_view .writeComment p {
+        padding: 15px 0;
+        /* text-align: left; */
+        display: block;
+      }
+
+      .board_view .writeComment textarea {
+        margin: 10px 0;
+      }
+
+      .board_view .writeComment .submitwC {
+        height: 60px;
+        display: block;
+      }
+    }
+  </style>
+
+  <!-- 서브 비주얼 -->
+  <section class="sub_visual">
+    <h2>OUR LOLCADEMI</h2>
+  </section>
+
+  <section class="sub_contents">
+    <div class="center_box sub_center">
+      <p class="subTitle">공지사항</p>
+
+      <!-- 게시물 영역 -->
+      <div class="board_view">
+        <div class="read_top">
+          <article class="boardInfo">
+            <p class="indate"><span class="idTd">제목</span> <span class="read_title">답변]테스트 게시만</span></p>
+          </article>
+          <article class="boardInfo">
+            <p class="indate indt01"><span class="idTd">작성자</span> <span>관리자</span></p>
+            <p class="indate indt02"><span class="idTd">등록일</span> <span>2021-01-13</span></p>
+            <p class="indate indt03"><span class="idTd">조회수</span> <span>0</span></p>
+          </article>
+        </div>
+        <div class="board_read">
+          <p>관리자님의 글입니다. 테스트 게시만<br />
+            관리자님의 글입니다. 테스트 게시만
+
+          </p>
+        </div>
+
+        <article class="theIncommnet">
+          <p class="tInfo"><span class="tIWriter">관리자</span><span class="tIDate">2021-01-13</span>
+            <a href="./comment.php?&amp;bbs_id=bo04&amp;page=&amp;type=delete&amp;cmt_num=1"> <img src="/HyAdmin/skin/board/WebList/images/del.gif"></a></p>
+          <p class="tITXT">테스트댓글</p>
+        </article>
+
+        <article class="theIncommnet">
+          <p class="tInfo"><span class="tIWriter">관리자</span><span class="tIDate">2021-01-13</span>
+            <a href="./comment.php?&amp;bbs_id=bo04&amp;page=&amp;type=delete&amp;cmt_num=1"> <img src="/HyAdmin/skin/board/WebList/images/del.gif"></a>
+          </p>
+          <p class="tITXT">테스트댓글</p>
+        </article>
+
+        <form class="writeComment">
+          <p>댓글</p>
+          <textarea></textarea>
+          <input type="submit" class="submitwC" value="저장">
+        </form>
+
+        <div class="other_reads">
+          <div class="prev_board bothers"><span><img src="/HyAdmin/skin/board/WebList/images/prev_arr.png" />Prev</span><a href="#!">이전글이 없습니다. 이전글이 없습니다.이전글이 없습니다.이전글이 없습니다.</a></div>
+          <div class="next_board bothers"><span><img src="/HyAdmin/skin/board/WebList/images/next_arr.png" />Next</span><a href="#!">다음글이 없습니다.</a></div>
+        </div>
+      </div>
+      <!-- 게시물 끝 -->
+      <!-- 게시물 버튼 -->
+      <div class="bb_wrap">
+        <ul class="board_btns">
+          <li class="board_list"><a href="#!">목록</a></li>
+          <li class="board_re"><a href="#!">답변</a></li>
+          <li class="board_re"><a href="#!">수정</a></li>
+          <li class="board_re"><a href="#!">삭제</a></li>
+        </ul>
+      </div>
+      <!-- 게시물 버튼 끝 -->
+
+    </div>
+  </section>
+  <script src="../js/sub.js"></script>
+  <? include "../inc/footer.html"; ?>

@@ -1,0 +1,247 @@
+<?
+  $site_path = "./HyAdmin/";
+  require_once($site_path."include/lib.inc.php");
+  //require_once($site_path."lib/common.php"); //쇼핑몰추가
+
+  $ss_mb_idMain = $_SESSION['ss_mb_id'];
+
+  //작업도메인 체크
+  $site_domainchk = $_SERVER["HTTP_HOST"];
+  $findme = "o2vation";
+
+  $pos = strpos($site_domainchk, $findme);
+
+  if($pos === false) {
+    $domaChk = "N";
+  }else{
+    $domaChk = "Y";
+  }
+  //작업도메인 체크
+
+  //모바일체크 펑션
+  if($moChk) $_SESSION['moChk']="Y";
+  function MobileCheck() {
+    global $HTTP_USER_AGENT;
+    $MobileArray  = array("iphone","lgtelecom","skt","mobile","samsung","nokia","blackberry","android","android","sony","phone","iPad","POLARIS","Note");
+
+    $checkCount = 0;
+      for($i=0; $i<sizeof($MobileArray); $i++){
+        if(preg_match("/$MobileArray[$i]/", strtolower($HTTP_USER_AGENT))){ $checkCount++; break; }
+      }
+    return ($checkCount >= 1) ? "Mobile" : "Computer";
+  }
+  //모바일체크 펑션
+
+
+  //모바일인지 체크
+  if(MobileCheck() == "Mobile"){
+    $mobileChk = "Y";
+  }else{
+    $mobileChk = "";
+  }
+  //모바일인지 체크
+
+
+  //올드 접속통계 시작
+  $dbqryY4 = "SHOW TABLES	like 'hy_logfile'";
+  $rsY4 = query($dbqryY4,$dbcon);
+  $countY4 = mysql_num_rows($rsY4);
+	if($countY4) {
+
+    if(!$_SESSION[SITE]){
+      insert("hy_logfile", "ip='$_SERVER[REMOTE_ADDR]', url='$_SERVER[HTTP_REFERER]', register=now()");
+    }
+
+    //접속통계 세션생성
+    if(empty($_SESSION[SITE])) {
+      $SITE=md5(uniqid(rand()));
+      //@session_register("SITE") or die("session_register SITE_ID err");
+      $_SESSION[SITE] = $SITE;
+    }
+
+  }
+  //올드 접속통계 끝
+
+?>
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="euc-kr">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg">
+  <link href='https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/common.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css?v=201202" />
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+  <link rel="canonical" href="http://www.xn--3e0bs9hba213gr3f0own4bh4fkyl.kr/">
+  <script src="js/jquery-1.7.1.min.js"></script>
+  <script src="js/slick.js"></script>
+
+
+<?if($domaChk == "Y"){?>
+  <title></title>
+<?}else{?>
+  <?if($site[st_naverkey]){?>
+  <meta name="naver-site-verification" content="<?=$site[st_naverkey]?>"/>
+  <?}?>
+  <?if($site[st_site_exp]){?>
+  <meta name="description" content="<?=$site[st_site_exp]?>">
+  <meta name="keywords" content="<?=$site[st_site_exp]?>">
+  <?}?>
+  <title><?=$site[st_site_name]?></title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?=$site[st_site_name]?>">
+  <meta property="og:url" content="http://www.xn--3e0bs9hba213gr3f0own4bh4fkyl.kr/">
+  <meta property="og:description" content="<?=$site[st_site_exp]?>">
+	<meta property="og:site_name" content="<?=$site[st_site_name]?>">
+<?}?>
+
+
+<?if($mobileChk == "Y"){?>
+
+<?
+  //모바일 팝업창 시작
+  $dbqryY1 = "SHOW TABLES	like 'hy_popupMobile'";
+	$rsY1 = query($dbqryY1,$dbcon);
+	$countY1 = mysql_num_rows($rsY1);
+	if($countY1) {
+	  include "./HyAdmin/include/popupM_inc.php";
+	}
+	//모바일 팝업창 끝
+?>
+
+<?}else{?>
+
+<?
+  //팝업창 시작
+  $dbqryY1 = "SHOW TABLES	like 'hy_popupNew'";
+	$rsY1 = query($dbqryY1,$dbcon);
+	$countY1 = mysql_num_rows($rsY1);
+	if($countY1) {
+	  include "./HyAdmin/include/popup_inc.php";
+	}
+	//팝업창 끝
+?>
+
+<?}?>
+
+
+</head>
+
+<body>
+  <? include "inc/menu_wrap.html"; ?>
+
+  <div class="mainWrap">
+    <!-- 비주얼 -->
+    <section class="visual flex_start">
+      <div class="troph"><img src="images/main/troph.png" alt=""></div>
+      <div class="mainTitle">
+        <div class="mb20"><img src="images/main/title_img.png" alt="2020 대한민국 콘텐츠대상"></div>
+        <p class="mTxt01 mb10"><img src="images/main/kca.png" alt=""></p>
+        <p class="mTxt02">2020. <span>12. 8</span> (화) CKL 스테이지</p>
+      </div>
+      <div class="mob_mv"><img src="images/main/mob_mv.png" alt=""></div>
+    </section>
+    <!-- 비주얼 끝-->
+    <div class="center_box">
+      <!-- 수상자 슬라이드 -->
+      <section class="winnersWrap">
+        <dl class="wW_title">
+          <dt>세계를 움직이는 힘, 대한민국 콘텐츠</dt>
+          <dd><img src="images/main/ww_dd.png" alt="KOREA CONTENT AWARDS"></dd>
+        </dl>
+        <div class="winSlide_wrap flex_start">
+          <div class="wS_left flex_start">
+            <p class="wS_title">대한민국 콘텐츠 산업을<br />
+              빛낸 주인공을 소개합니다.</p>
+            <a href="/sub/sub02.html" class="moreWiner flex_center"><span>수상자(작) 정보 더보기</span> <img src="images/main/arr.png" class="btn_arr" alt=""></a>
+          </div>
+
+          <?
+            $queryB = "select * from hy_banner order by ReOrder desc,ReIdx desc";
+            $rsB = query($queryB,$dbcon);
+            $countB = mysql_num_rows($rsB);
+          ?>
+
+          <ul class="winners">
+
+            <?
+              for($k=0;$k<$countB;$k++){
+                $rowB = mysql_fetch_array($rsB);
+            ?>
+
+            <li>
+              <?if($rowB[ReLink1]){?><a href="<?=$rowB[ReLink1]?>" <?if($rowB[ReMethod]=="2"){?>target="_blank"<?}?>><?}?>
+                <div class="winer_img"><img src="/HyAdmin/upload/etcFile/<?=$rowB[ReFile1]?>" alt=""></div>
+                <dl class="winer_dl">
+                  <dt><?=$rowB[ReTitle]?></dt>
+                  <dd><?=$rowB[RePrize]?> <span><?=$rowB[ReMemName]?></span></dd>
+                </dl>
+              </a>
+            </li>
+
+            <?}?>
+
+          </ul>
+        </div>
+      </section>
+      <!-- 수상자 슬라이드 끝-->
+      <section class="vodWrap">
+        <!-- <img src="images/main/vod.jpg" alt=""> -->
+        <iframe class="mainVod" src="https://www.youtube.com/embed/60hdnaAehDI?rel=0&amp;enablejsapi=1" frameborder="0" autoplay=1 allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </section>
+      <!-- 관련소식 -->
+      <section class="newsWrap">
+        <div class="nW_title flex_center">
+          <p>관련소식</p> <a href="/HyAdmin/list.php?bbs_id=bo01" class="moreWiner flex_center"><span>더보기</span> <img src="images/main/arr.png" class="btn_arr" alt=""></a>
+        </div>
+        <ul class="news_table">
+
+          <?=hy_lastest('maingong','bo01','관련소식',0,4,40, '..')?>
+
+          <!--li>
+            <a href="#!">
+              <p class="new_date">20.11.07</p>
+              <div class="new_txts">
+                <dl>
+                  <dt>2020 대한민국콘텐츠대상 관련 안내</dt>
+                  <dd>‘2020 대한민국콘텐츠대상’ 행사는 코로나-19의 확산에 따른 감염병 방지를 위해 철저한 방역으로 진행하게 되었음을 알려드립니다.</dd>
+                </dl>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <p class="new_date">20.11.07</p>
+              <div class="new_txts">
+                <dl>
+                  <dt>2020 대한민국콘텐츠대상 관련 안내</dt>
+                  <dd>‘2020 대한민국콘텐츠대상’ 행사는 코로나-19의 확산에 따른 감염병 방지를 위해 철저한 방역으로 진행하게 되었음을 알려드립니다.</dd>
+                </dl>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <p class="new_date">20.11.07</p>
+              <div class="new_txts">
+                <dl>
+                  <dt>2020 대한민국콘텐츠대상 관련 안내</dt>
+                  <dd>‘2020 대한민국콘텐츠대상’ 행사는 코로나-19의 확산에 따른 감염병 방지를 위해 철저한 방역으로 진행하게 되었음을 알려드립니다.</dd>
+                </dl>
+              </div>
+            </a>
+          </li-->
+        </ul>
+      </section>
+      <!-- 관련소식 끝 -->
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+
+  <? include "inc/footer.html"; ?>

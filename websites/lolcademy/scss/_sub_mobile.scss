@@ -1,0 +1,279 @@
+@charset "euc-kr";
+
+@mixin sub_mobile {
+
+  // 롤카데미 소개
+  .support {
+    margin-bottom: 40px;
+  }
+
+  .introWran {
+    margin-top: 0px;
+
+    .thisClass {
+      flex-wrap: wrap;
+
+      .wran_icon {
+        margin: 0 auto;
+      }
+
+      .wTxt {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  // 강사진 소개
+  .teachHead {
+    margin-bottom: 50px;
+
+    .allTeachers {
+      font-size: 16px;
+      // top: 80%;
+      margin-top: 0
+    }
+
+
+    .aTc {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  }
+
+
+
+
+  .thumLists {
+    li {
+      width: 100%;
+      margin: 0 0 20px 0;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .priceInfo {
+    font-size: 18px;
+  }
+
+  // 시간제강의
+  .sub_tabs {
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+
+    li {
+      width: 50%;
+      border-bottom: none;
+
+      &:nth-child(2) {
+        border-right: 1px solid #ddd;
+      }
+
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .grades {
+    li {
+      width: 100%;
+
+      .gradeName {
+        .gN_icon {
+          width: 130px;
+        }
+
+        .gN_class {
+          font-size: 22px;
+        }
+      }
+
+    }
+
+    .lastGrade {
+      // .gradeName {
+      //   height: auto;
+      //   flex-wrap: wrap;
+      //   text-align: center;
+      //   padding: 20 3%;
+
+      //   .grand_icons,
+      //   .gN_class {
+      //     width: 100%;
+      //   }
+
+      //   .grand_icons {
+      //     padding-right: 0;
+      //     justify-content: space-between;
+
+      //     p {
+      //       width: 15%;
+      //     }
+      //   }
+
+      //   .gN_class {
+      //     display: flex;
+      //     margin-top: 10px;
+
+      //     p {
+      //       width: 33.33333%;
+      //       font-size: 18px;
+      //     }
+      //   }
+      // }
+      .gradeName {
+        height: auto;
+        padding: 20px 3%;
+
+        .grand_icons {
+          width: 70px;
+          display: block;
+
+          p {
+            margin: 10px 0;
+          }
+        }
+
+        .gN_class {
+          line-height: 90px;
+        }
+      }
+
+      .thePrice {
+        .inPrice {
+          flex-wrap: wrap;
+
+          span {
+            display: block;
+            width: 100%;
+          }
+
+          span:first-child {
+            padding-right: 0;
+            margin: 0 0 15px 0;
+
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .readyWrap {
+    margin-top: 70px;
+    padding: 100px 0 70px 0;
+
+    .lolLogo {
+      width: 70%;
+      top: -50px;
+    }
+
+    .rW_title {
+      font-size: 30px;
+    }
+  }
+
+  .rW_article {
+    .rW_dl {
+      dt {
+        font-size: 20px;
+
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // 그룹강의
+  .groupWrap {
+    .group_pc {
+      display: none;
+    }
+
+    .group_m {
+      display: block;
+    }
+
+
+    .death {
+      width: 120px;
+      right: -40px;
+    }
+
+    .theSale {
+      .monthPrice {
+        font-size: 25px;
+      }
+    }
+
+    .saleBox {
+      font-size: 55px;
+    }
+
+    .salePrice {
+
+      // background: url(../images/sub/price/salePrice.png) no-repeat center top;
+      background-size: cover;
+
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+
+
+  // 신청안내
+  .applyAbout {
+    .aA_txt {
+      font-size: 17px;
+    }
+
+    .timo {
+      bottom: 0;
+      width: 130px;
+      transform: translateY(30px);
+    }
+  }
+
+  .stepsWrap {
+    .steps {
+      padding: 10px 2% 40px 2%;
+      background-position: bottom right;
+
+      li {
+        width: 100%;
+
+        .stepNumber {
+          font-size: 16px;
+        }
+
+        .stepTxts {
+          .hst {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .bankWrap {
+
+    .bankingStep {
+      padding: 80px 5% 70px 5%;
+
+      li {
+        font-size: 17px;
+      }
+    }
+  }
+
+
+}

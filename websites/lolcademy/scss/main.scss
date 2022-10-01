@@ -1,0 +1,667 @@
+@charset "euc-kr";
+@import './mixin';
+@import './main_tablet';
+// @import './main_mobile';
+
+body {
+  color: #fff;
+
+  >img:last-child {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: gyungi;
+  src: url(../font/gyungi_Bold.eot);
+  src: url(../font/gyungi_Bold.woff) format('woff');
+}
+
+// 메인 슬라이드
+.visual {
+  position: relative;
+
+  .scroll {
+    @include centerX(absolute);
+    bottom: 85px;
+    width: 44px;
+  }
+}
+
+.main_slide {
+  // height: 970px;
+  height: 100vh;
+  min-height: 800px;
+  font-size: 0;
+  overflow: hidden;
+
+  li {
+    position: relative;
+
+    img {
+      max-width: none;
+      @include centerX(relative);
+      z-index: 0;
+
+      @media screen and (min-width:1925px) {
+        width: 100%;
+      }
+    }
+
+    .mv_mob {
+      display: none;
+    }
+
+    .msTxt {
+      @include centerC(absolute);
+      z-index: 1;
+    }
+
+    dl {
+      color: #fff;
+      font-size: 60px;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.750em;
+
+
+      dt {
+        font-size: 1em;
+        font-weight: 700;
+        margin-bottom: 0.750em;
+        line-height: 1.3;
+      }
+
+      dd {
+        font-size: 0.467em;
+        line-height: 1.5;
+      }
+    }
+
+    .viewBtn {
+      display: block;
+      width: 260px;
+      height: 133px;
+      text-align: center;
+      line-height: 133px;
+      font-size: 25px;
+      font-weight: 700;
+      color: #fff;
+      background: url(../images/main/view_btn.png) no-repeat center;
+    }
+  }
+}
+
+
+
+// 메인컨텐츠
+#mainContents {
+  // background-color: #050e13;
+}
+
+.truthWrap {
+  // background: url(../images/main/contentsBg.jpg) no-repeat center bottom;
+  // background-size: cover;
+  position: relative;
+
+  .corki {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 0;
+    max-width: 278px;
+    width: 30%;
+  }
+}
+
+
+.aboutCoach {
+  background: url(../images/main/coachBg.jpg) no-repeat center;
+  background-size: cover;
+  padding-top: 95px;
+
+  .yotubTitle {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.4;
+    padding-left: 145px;
+    margin-bottom: 1.111em;
+    background: url(../images/main/youtube.png) no-repeat center left;
+  }
+
+  .ytxt {
+    font-size: 25px;
+    line-height: 1.4;
+    padding-left: 40px;
+    margin: 0 0 35px 140px;
+    border-left: 1px solid #525455;
+
+    dt {
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+
+    dd {
+      font-size: 0.720em;
+    }
+  }
+
+  .warn {
+    font-size: 23px;
+    color: #fffd7e;
+    line-height: 1.4;
+    margin-left: 145px;
+    padding: 16px 0 16px 95px;
+    background: url(../images/main/warn.png) no-repeat center left;
+  }
+}
+
+.aboutYour {
+  height: 800px;
+  padding-top: 150px;
+  background: url(../images/main/dust_bg.png) no-repeat center;
+}
+
+
+.tW_title {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+  font-family: gyungi, 'gyungi', sans-serif;
+  font-style: italic;
+  margin-bottom: 2em;
+  position: relative;
+  z-index: 0;
+
+  span em {
+    font-style: italic;
+  }
+}
+
+.redBlock {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    background-color: #d92b2b;
+    height: 0.5em;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  em {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.mapWrap {
+  position: relative;
+  z-index: 1;
+
+  .map {
+    @include centerX(relative);
+    z-index: 0;
+  }
+
+  .probleDl {
+    position: absolute;
+    width: 100%;
+    letter-spacing: -0.03em;
+
+    dt {
+      font-size: 25px;
+      font-weight: 700;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #575757;
+      line-height: 1.3;
+      display: inline-block;
+    }
+
+    dd {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+  }
+
+  .pD01 {
+    top: 13.51351351351%;
+    max-width: 355px;
+  }
+
+  .pD02 {
+    top: 81.08108108108%;
+    left: 2.77777777778%;
+    max-width: 360px;
+  }
+
+  .pD03 {
+    top: 28.15315315315%;
+    right: 0;
+    max-width: 440px;
+  }
+
+  .pD04 {
+    top: 88.96396396396%;
+    right: 0;
+    max-width: 400px;
+  }
+
+  .pD05 {
+    top: 117.11711711712%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+  }
+}
+
+.bg_img {
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.cross_bg {
+  margin-top: -400px;
+}
+
+.lolWrap {
+
+  // background: url(../images/main/tree_bg.png) no-repeat center bottom;
+  // background-size: 100% auto;
+  // padding: 196px 0 135px 0;
+  // transform: translateY(-200px);
+  position: relative;
+  margin-top: -80px;
+  // overflow-x: hidden;
+
+
+  .lW_box {
+    position: relative;
+    z-index: 1;
+  }
+
+  .tree_bg {
+    @include centerX(absolute);
+    z-index: 0;
+    max-width: none;
+    top: -200px;
+  }
+}
+
+.lol_logo {
+  text-align: center;
+  padding: 0 0 285px 0;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+
+  li {
+    width: 316px;
+    height: 301px;
+    margin: 0 20px;
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    background: url(../images/main/serv_bg.png) no-repeat center;
+    position: relative;
+
+    .serv01 {
+      font-size: 1em;
+      font-weight: 700;
+      line-height: 40px;
+      padding-top: 23px;
+    }
+
+    .serv02 {
+      font-size: 0.840em;
+      line-height: 1.4;
+      padding: 0 2em;
+      width: 100%;
+      box-sizing: border-box;
+      @include centerY(absolute);
+      top: 53%;
+    }
+  }
+}
+
+
+/* 공지사항 */
+.newsWrap {
+  padding: 100px 0;
+  // background-color: #050e13;
+}
+
+.nW_title {
+  margin-bottom: 35px;
+
+  p {
+    font-size: 35px;
+    font-weight: 500;
+  }
+
+  .moreWiner {
+    width: 10.333em;
+    height: 58px;
+    line-height: 58px;
+    font-size: 18px;
+    color: #f0d49b;
+    text-align: center;
+    border: 1px solid #ffecc4;
+    display: block;
+
+    img {
+      vertical-align: middle;
+      width: 33px;
+      margin-left: 15px;
+    }
+  }
+}
+
+
+.news_table {
+  border-top: 4px solid #ffecc4;
+  width: 100%;
+
+  li {
+    border-bottom: 1px solid #ffecc4;
+    padding: 40px 0;
+    overflow: hidden;
+    vertical-align: middle;
+    background: url(../images/main/table_arr.png) no-repeat center right 45px;
+
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    .new_date {
+      padding: 0 2% 0 2%;
+      font-size: 22px;
+      color: #f0d49b;
+      width: 17%;
+      font-size: 35px;
+      box-sizing: border-box;
+    }
+
+    .new_txts {
+      width: 83%;
+      box-sizing: border-box;
+
+      dl {
+        width: 85%;
+        color: #fff;
+
+        dt {
+          font-size: 23px;
+          font-weight: 500;
+          margin-bottom: 15px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 100%;
+        }
+
+        dd {
+          font-size: 16px;
+          font-weight: 300;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include lap {
+
+  // 공지사항
+  .news_table {
+    background-position: center right;
+
+    li {
+      a {
+        flex-wrap: wrap;
+      }
+
+      .new_date {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        padding: 0;
+        font-size: 26px;
+      }
+
+      .new_txts {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+@include tablet {
+
+  // 메인 슬라이드
+  .main_slide {
+    height: auto;
+    min-height: auto;
+
+    li {
+      img {
+        width: 100%;
+      }
+
+      dl {
+        font-size: 40px;
+      }
+
+      .viewBtn {
+        width: 130px;
+        height: 66px;
+        line-height: 66px;
+        font-size: 18px;
+        background-size: cover;
+      }
+    }
+  }
+
+  // 메인 컨텐츠
+  .tW_title {
+    font-size: 40px;
+    line-height: 1.3;
+
+    .redBlock {
+      display: inline-block;
+    }
+  }
+
+  .mapWrap {
+    .probleDl {
+      position: static;
+      max-width: none !important;
+      margin-bottom: 40px;
+    }
+
+    .pD05 {
+      transform: translateX(0);
+    }
+  }
+
+  .aboutYour {
+    height: auto;
+  }
+
+  .cross_bg {
+    margin-top: -30px;
+  }
+
+  .services {
+    display: block;
+
+    li {
+      margin: 0 auto 40px auto;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}
+
+@include mobile {
+
+  // 메인 비주얼
+  .main_slide {
+    li {
+      img {
+        width: 100%;
+      }
+
+      .mv_mob {
+        display: block;
+      }
+
+      .mv_pc {
+        display: none;
+      }
+
+      dl {
+        font-size: 35px;
+
+        dt {
+          font-size: 27px;
+        }
+
+        br {
+          display: none;
+        }
+      }
+
+      .msTxt {
+        top: 40%;
+      }
+    }
+  }
+
+  .visual {
+    margin-top: 90px;
+
+    .scroll {
+      width: 30px;
+      bottom: 45px;
+    }
+  }
+
+  // 메인컨텐츠
+  .tW_title {}
+
+  .aboutCoach {
+    .yotubTitle {
+      padding: 15px 0 15px 100px;
+      font-size: 25px;
+      background-size: 80px auto;
+
+      br {
+        display: none;
+      }
+    }
+
+    .ytxt,
+    .warn {
+      margin-left: 0;
+    }
+
+    .ytxt {
+      padding-left: 0;
+      border-left: none;
+    }
+
+    .warn {
+      font-size: 20px;
+
+      br {
+        display: none;
+
+      }
+    }
+  }
+
+  .lolWrap {
+    overflow: hidden;
+
+    .tree_bg {
+      top: 0;
+      width: 200%;
+      @include centerC(absolute);
+    }
+
+    margin-top: 0;
+  }
+
+  .lol_logo {
+    padding: 0 0 80px 0;
+
+    img {
+      width: 200px;
+    }
+  }
+
+
+
+  // 공지사항
+  .nW_title {
+    margin-bottom: 20px;
+
+    p {
+      font-size: 23px;
+    }
+
+    .moreWiner {
+      width: 120px;
+      height: 40px;
+      line-height: 38px;
+    }
+  }
+
+  .newsWrap {
+    padding: 80px 0;
+  }
+
+  .news_table {
+    li {
+      padding: 20px 0;
+      background-position: center right;
+
+      .new_date {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .new_txts {
+        dl {
+          dt {
+            font-size: 15px;
+            margin-bottom: 10px;
+          }
+
+          dd {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+
+}

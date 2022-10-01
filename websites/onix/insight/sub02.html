@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta property="og:image" content="../images/common/linkkakao_bar.jpg" />
+  <link href="https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../css/sub.css" />
+  <script src="../js/jquery-1.9.1.min.js"></script>
+
+  <title>ONIX</title>
+
+</head>
+
+<body>
+  <!-- ?? -->
+  <header class="header_wrap">
+    <div class="head center_box flex_center">
+      <h1><a href="../"><img src="../images/common/logo.png" alt="" /></a></h1>
+      <nav class="menu_wrap">
+        <p class="close_btn"><img src="../images/common/close_btn.png" alt=""></p>
+        <div class="menu_inner">
+          <div class="nav_align">
+            <ul class="menu center_align">
+              <li><a href="../main.html">Main</a></li>
+              <li><a href="../about/sub01.html">About Us</a>
+                <!-- <ul class="sub_menu">
+                  <li><a href="../about/sub01.html">Onix Capital</a></li>
+                  <li><a href="../about/sub02.html">FAQ</a></li>
+                </ul> -->
+              </li>
+              <li><a href="../#!">Insight</a>
+                <ul class="sub_menu">
+                  <!-- <li><a href="../insight/sub01.html">Sydney</a></li> -->
+                  <li><a href="../insight/sub02.html">London</a></li>
+                  <li><a href="../insight/sub03.html">Mumbai</a></li>
+                  <li><a href="../insight/sub04.html">Seoul</a></li>
+                </ul>
+              </li>
+              <li><a href="../careers/sub01.html">Careers</a></li>
+              <!-- <li><a href="../technology/sub01.html">Technology</a></li> -->
+              <li><a href="../team/sub01.html">Our Team</a></li>
+              <li><a href="../contact/sub01.html">Contact</a></li>
+            </ul>
+          </div>
+          <article class="site_info">
+            <div class="center_align">
+              <dl class="address">
+                <dt>Address</dt>
+                <dd>18-20 Appold St London EC2A 2AS United Kingdom</dd>
+              </dl>
+              <!-- <p class="connect"><span>T</span> +44 00 0000 0000</p> -->
+              <p class="connect"><span>E</span> info-uk@onixcapital.io</p>
+              <p class="copy">? ONIXCAPITAL. All rights reserved.</p>
+            </div>
+          </article>
+        </div>
+      </nav>
+      <div class="menu_btn"><img src="../images/common/menu_btn.png" alt="" /></div>
+    </div>
+    <!-- <div class="subm_bg"></div> -->
+  </header>
+  <!-- ?? ? -->
+  <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <section class="sub_contents">
+    <div class="main_contents">
+      <section class="center_1200">
+        <div class="insight_wrap flex_start">
+          <h2 class="sub_title">Insight</h2>
+          <? include "../inc/lnsight_tabs.html"; ?>
+          <script>
+            $(".insight_lists li").eq(0).addClass("tab_on");
+          </script>
+        </div>
+
+        <article class="scroll_box">
+          <p class="inTitle">London</p>
+          <p class="istxt">Notes from the Head of Trading (London)</p>
+          <div class="def_txt">
+            With a vast experience across multiple asset classes from both a discretionary and algorithmic perspective,
+            it is abundantly clear the day-to-day opportunities existing in cryptocurrency are second to none.
+            The cryptocurrency and blockchain ecosphere constantly cater for unique challenges and opportunities.<br /><br />
+            State of the art office in London, remote capabilities, and a meritocratic culture of openness and cohesiveness allows for
+            an unparalleled environment, for Onix Capital Traders, to excel in the challenging world of proprietary trading.<br /><br />
+            Our incubation system aims to cultivate fledgling traders, exhibiting the right qualities, and propel them into world class
+            operators.<br /><br />
+            In trading, many will come and many will go. Separating those that make it and those that don¡¯t are some key fundamental
+            traits. Many on paper have potential but the qualities possessed by those succeeding in trading come down to a few
+            common traits:<br /><br />
+            <p class="blit_txts mb10">Entrepreneurial Mindset - a self starter with the clarity of vision to realise what is achievable, constantly exploiting
+              current edges and seeking new ones.</p>
+            <p class="blit_txts mb10">Determination and ability to efficiently recover from setbacks.</p>
+            <p class="blit_txts mb10">Discipline to follow a plan, learn from feedback and adapt when necessary.</p>
+            <p class="blit_txts">Effective Communication - ability to both listen and share ideas to add value and synergies.</p>
+            <br /><br />
+            The cryptocurrency/blockchain landscape looks to continue to be in a healthy state with evolving innovation, mainstream
+            adoption and consolidation taking place in the industry. With our experience, partnerships and network of contacts,
+            Onix Capital is well placed to continue its growth and become world leaders in what we do.
+          </div>
+        </article>
+
+      </section>
+    </div>
+    <div class="sub_bg"><img src="../images/sub/sub_bg.jpg" alt=""></div>
+  </section>
+  <script src="../js/jquery.mCustomScrollbar.js"></script>
+  <script>
+    $(window).on("load", function () {
+
+      $.mCustomScrollbar.defaults.scrollButtons.enable = true; //enable scrolling buttons by default
+      $.mCustomScrollbar.defaults.axis = "yx"; //enable 2 axis scrollbars by default
+
+      $(".scroll_box").mCustomScrollbar();
+
+
+    });
+  </script>
+  <!-- ?? -->
+  <footer class="footer_wrap">
+    <ul class="the_fixed sub_link">
+      <li><a href="../about/sub01.html">about us</a></li>
+      <li><a href="../contact/sub01.html">contact</a></li>
+    </ul>
+    <p class="the_fixed fix_copy">? ONIXCAPITAL. All rights reserved.</p>
+  </footer>
+  <!-- ?? -->
+  <script src="../js/layout.js"></script>
+</body>
+
+</html>
