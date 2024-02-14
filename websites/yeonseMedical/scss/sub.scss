@@ -1,0 +1,1019 @@
+@charset "utf-8";
+@import './mixin';
+
+
+// 서브공통
+.subContents {
+  margin-top: 81px;
+  padding: 100px 0;
+
+  .pageTitle {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000000;
+    padding-bottom: 50px;
+    margin-bottom: 80px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+
+    @include mobile {
+      font-size: 35px;
+      padding-bottom: 30px;
+      margin-bottom: 50px;
+    }
+  }
+
+  @include mobile {
+    padding: 60px 0;
+  }
+}
+
+.boxTitle {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+.deFont {
+  font-size: 18px;
+  font-weight: 300;
+  color: #555555;
+  line-height: 1.5;
+}
+
+// 인사말
+.greetingTitle {
+  background-color: #35a6c2;
+
+  .greetFlex {
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 45px 0 140px 0;
+
+    dl {
+      color: #fff;
+      line-height: 1.3;
+
+      dt {
+        font-size: 28px;
+      }
+
+      dd {
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      @include mobile {
+        dt {
+          font-size: 20px;
+        }
+
+        dd {
+          font-size: 18px;
+        }
+      }
+    }
+
+    @include layout(".ambulImg, dl", 20px, $tablet);
+
+    @include tablet {
+      text-align: center;
+      padding-bottom: 160px;
+    }
+  }
+}
+
+.greetingTxts {
+  width: 95%;
+  max-width: 930px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  padding: 60px 5%;
+  margin: -133px auto 0 auto;
+  background-color: #fff;
+
+  .boxTitle {
+    margin-bottom: 45px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  .ceogreeting {
+    flex-direction: row-reverse;
+
+    .deFont {
+      width: calc(100% - 300px);
+    }
+
+    .ceoImg {
+      text-align: center
+    }
+
+    @include layout(".ceoImg, .deFont", 20px);
+  }
+
+  @include mobile {
+    padding: 30px 4%;
+  }
+}
+
+
+// 참여기관
+.alTitledl {
+  text-align: center;
+  margin-bottom: 60px;
+
+  dt {
+    @include flexAlign;
+    margin-bottom: 20px;
+
+    span {
+      font-size: 45px;
+      font-weight: 700;
+      color: #000000;
+      margin-left: 15px;
+
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+  }
+
+  dd {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+    display: inline-block;
+    padding: 10px 20px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c1000f+0,f04754+100 */
+    background: rgb(193, 0, 15);
+    /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(193, 0, 15, 1) 0%, rgba(240, 71, 84, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(193, 0, 15, 1) 0%, rgba(240, 71, 84, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(193, 0, 15, 1) 0%, rgba(240, 71, 84, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c1000f', endColorstr='#f04754', GradientType=1);
+    /* IE6-9 */
+
+    span {
+      font-weight: 500;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 30px;
+  }
+}
+
+// 사업소개
+.subTabs {
+  margin-bottom: 70px;
+
+  li {
+    width: 20%;
+    text-align: center;
+    border: 1px solid #ddd;
+    height: 78px;
+    position: relative;
+
+    @include mobile {
+      height: 60px;
+    }
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+
+    a {
+      @include flexAlign;
+      height: 100%;
+      line-height: 1.3;
+      font-size: 20px;
+      color: #555555;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    &.on {
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: #e60012;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      a {
+        color: #e60012;
+      }
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+}
+
+.tabs02 {
+  li {
+    width: 50%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.businessTitle {
+  text-align: center;
+  line-height: 1.3;
+  font-size: 40px;
+  font-weight: 300;
+  color: #000000;
+
+  @include mobile {
+    font-size: 25px;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.businTxt {
+  font-size: 25px;
+  line-height: 1.4;
+  text-align: center;
+
+  @include mobile {
+    font-size: 20px;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.blue {
+  color: #0076bd;
+  font-weight: 700;
+}
+
+.center_img {
+  text-align: center;
+}
+
+.greySection {
+  background-color: #f6f6f6;
+  padding: 130px 0;
+  margin-bottom: 130px;
+
+  @include mobile {
+    padding: 60px 0;
+    margin-bottom: 60px;
+  }
+}
+
+.whiteBox {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 40px 4%;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.07);
+}
+
+.inGrey {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #000;
+
+  @include mobile {
+    font-size: 22px;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.greyBox {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 40px 5%;
+
+  @include mobile {
+    padding: 25px 5%;
+  }
+}
+
+.autech {
+  margin: 60px auto 45px auto;
+
+  @include mobile {
+    margin: 40px auto 30px auto;
+  }
+}
+
+.emergency {
+  margin: 95px auto 65px auto;
+
+  @include mobile {
+    margin: 40px auto 40px auto;
+  }
+}
+
+#tab01 {
+  .greyBox {
+    margin-top: 95px;
+
+    @include mobile {
+      margin-top: 40px;
+    }
+  }
+}
+
+.steps5G {
+  margin: 50px 0 125px 0;
+
+  @include mobile {
+    margin: 40px 0 60px 0;
+  }
+}
+
+.cloudebuild {
+  margin: 50px 0 100px 0;
+
+  @include mobile {
+    margin: 40px 0 60px 0;
+  }
+}
+
+.sysyemIncar {
+  margin: 65px 0 50px 0;
+
+  @include mobile {
+    margin: 30px 0 30px 0;
+  }
+}
+
+.borderGrey {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  padding: 45px 8%;
+
+  .greyTitle {
+    font-size: 23px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.3;
+    margin-bottom: 10px;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  .chcekLists {
+    li {
+      font-size: 23px;
+      padding-left: 27px;
+      line-height: 1.3;
+      box-sizing: border-box;
+      background: url(../images/sub/ambul/listCheck.png) no-repeat center left;
+    }
+
+    @include tablet {
+      flex-wrap: wrap;
+
+      li {
+        width: 48%;
+        font-size: 18px;
+        margin: 10px 0;
+      }
+    }
+  }
+
+  @include lap {
+    padding: 45px 3%;
+  }
+}
+
+#tab02 {
+  .greyBox {
+    margin-bottom: 130px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.aiStep {
+  margin-top: 55px;
+}
+
+.dataSystem {
+  margin-top: 80px;
+
+  @include mobile {
+    margin-top: 40px;
+  }
+}
+
+.servDl {
+  dt {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  dd {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #555555;
+  }
+}
+
+.ems {
+  margin: 75px 0 125px 0;
+
+  @include mobile {
+    margin: 40px 0 60px 0;
+  }
+}
+
+.erLists {
+  margin: 50px 0 90px 0;
+
+  >li {
+    width: 49%;
+
+    .erTitle {
+      font-size: 23px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+
+      @include mobile {
+        margin-bottom: 20px;
+      }
+    }
+
+    .tabletImg {
+      margin-bottom: 35px;
+
+      @include mobile {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+
+    .aboutER {
+      .aboutView {
+        width: 50%;
+        font-size: 20px;
+        font-family: 700;
+        line-height: 1.4;
+      }
+
+      .detailLists {
+        width: 50%;
+
+        li {
+          font-size: 16px;
+          font-weight: 300;
+          color: #555555;
+          margin-bottom: 10px;
+          line-height: 1.3;
+        }
+      }
+
+      @include layout(".aboutView, .detailLists", 10px);
+    }
+  }
+
+  @include layout("li", 60px);
+
+  @include mobile {
+    margin: 40px 0 40px 0;
+  }
+}
+
+.theER {
+  margin-bottom: 120px;
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+}
+
+.avl {
+  margin: 50px 0 80px 0;
+
+  @include mobile {
+    margin: 40px 0 50px 0;
+  }
+}
+
+#tab05 {
+  .borderGrey {
+    padding: 45px 3%;
+  }
+}
+
+.dots {
+  li {
+    position: relative;
+    font-size: 20px;
+    line-height: 1.4;
+    padding-left: 20px;
+
+    &:after {
+      content: '·';
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+}
+
+// 적용사례
+.mapBox {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  position: relative;
+  text-align: center;
+  margin: 55px 0 45px 0;
+  padding: 85px 5%;
+
+  .mapLocate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    width: 330px;
+    line-height: 80px;
+    background: url("../images/sub/ambul/mapTag.png") no-repeat right center;
+  }
+
+  @include mobile {
+    margin: 40px 0 45px 0;
+    padding-bottom: 60px;
+
+    .mapLocate {
+      font-size: 22px;
+      width: 250px;
+      line-height: 60px;
+    }
+  }
+}
+
+.mTable {
+  padding: 0 5% 50px 5%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 100px;
+
+  .leftMap {
+    width: 35%;
+  }
+
+  .rightMap {
+    width: 60%;
+  }
+
+  .locateMap {
+    text-align: center;
+    border-top: 3px solid #00438f;
+    border-bottom: 1px solid #a4a4a4;
+
+    caption {
+      font-size: 23px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: table-caption;
+      text-align: left;
+    }
+
+    tr {
+
+      th,
+      td {
+        padding: 15px 0px;
+        border-bottom: 1px solid #e3e3e3;
+        line-height: 1.3;
+
+        &:first-child {
+          border-right: 1px solid #e3e3e3;
+        }
+      }
+    }
+
+    thead {
+      tr {
+        th {
+          margin-bottom: 20px;
+          color: #fff;
+          font-weight: 18px;
+          background-color: #006ce5;
+        }
+      }
+    }
+
+    tbody {
+
+      tr {
+        th {
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        td {
+          font-size: 16px;
+          font-weight: 300;
+          color: #555555;
+        }
+      }
+
+      .totalTr {
+
+        th,
+        td {
+          background-color: #fcfcfc;
+        }
+      }
+    }
+  }
+
+  @include layout(".leftMap, .rightMap", 40px);
+
+  @include mobile {
+    padding: 0 0 50px 0;
+    margin-bottom: 50px;
+  }
+}
+
+.system_time {
+  text-align: center;
+  margin: 70px 0 90px 0;
+
+  @include mobile {
+    margin: 60px 0 60px 0;
+  }
+}
+
+.bG2 {
+  padding: 45px 4%;
+}
+
+.bGinAlign {
+  p {
+    font-size: 23px;
+    line-height: 1.4;
+
+    &.bGTxt01 {
+      text-align: right;
+      width: calc(56.2% - 55px);
+    }
+
+    &.bGTxt02 {
+      width: calc(43% - 55px);
+    }
+
+    span {
+      display: block;
+      text-align: right;
+      font-size: 20px;
+      font-weight: 300;
+      color: #0076bd;
+
+    }
+
+    @include mobile {
+      font-size: 16px;
+      width: 100% !important;
+      text-align: center !important;
+
+      span {
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .arr {
+    width: 39px !important;
+    margin: 5px 5px 0 5px;
+
+    @include mobile {
+      transform: rotate(90deg);
+      margin: 0 auto;
+    }
+  }
+
+  @include layout("p, .arr", 20px);
+}
+
+.stepsWrap {
+  margin: 65px 0 130px 0;
+  position: relative;
+
+  .stepArr {
+    @include centerC(absolute);
+
+    @include tablet {
+      transform: rotate(90deg);
+      position: static;
+      margin: 0 auto;
+    }
+  }
+
+  >article {
+    .stepsArea {
+      width: 45%;
+      background-color: #f3f3f3;
+      border-radius: 15px;
+      box-sizing: border-box;
+      padding: 60px 4%;
+
+      .stepTitle {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+
+      // .title01 {
+      //   color: #0076bd;
+      // }
+
+      // .title02 {
+      //   color: #218f1b;
+      // }
+
+      .stepBox {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        padding: 45px 7%;
+        box-sizing: border-box;
+        min-height: 340px;
+
+        @include tablet {
+          min-height: auto;
+        }
+
+        &.sB01 {
+          padding: 45px 7%;
+        }
+
+        &.sB02 {
+          padding: 35px 7%;
+        }
+
+        dl {
+          font-weight: 500;
+          padding-bottom: 30px;
+          margin-bottom: 30px;
+          border-bottom: 1px solid #ddd;
+
+          dt {
+            font-size: 23px;
+            margin-bottom: 10px;
+          }
+
+          dd {
+            font-size: 16px;
+            color: #777777;
+          }
+        }
+
+        .stepTxt {
+          font-size: 18px;
+          font-weight: 500;
+          color: #777777;
+          line-height: 1.5;
+        }
+
+        .cureTitle {
+          font-size: 23px;
+          font-weight: 500;
+          margin-bottom: 15px;
+          line-height: 1.3;
+        }
+
+        .final {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1.4;
+          padding-left: 43px;
+
+          background: url(../images/sub/ambul/finalArr.png) no-repeat center left;
+        }
+      }
+    }
+
+    @include layout(".stepsArea", 0px, $tablet);
+  }
+
+  @include mobile {
+    margin: 60px 0 70px 0;
+  }
+}
+
+
+.redDot {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 18px;
+
+  li {
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 100%;
+      border: 3px solid #e60012;
+      position: absolute;
+      left: 0;
+      top: 6px;
+    }
+  }
+}
+
+.vod {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 50px;
+
+  @include mobile {
+    height: 280px;
+    margin-bottom: 40px;
+  }
+}
+
+.feedBacks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  li {
+    width: 48.5%;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    padding: 35px 4%;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-bottom: 25px;
+    }
+
+    .feedDt {
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .feedDd {
+      font-size: 17px;
+      line-height: 1.4;
+      color: #555555;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -2px;
+      background-color: #0076bd;
+    }
+
+    @include mobile {
+      width: 100%;
+      margin-bottom: 25px;
+      padding: 25px 4%;
+
+      .feedDt {
+        font-size: 20px;
+      }
+
+      .feedDd {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.cruesWrap {
+  margin-top: 130px;
+
+  .crues_feedBacks {
+    display: flex;
+    justify-content: space-between;
+
+    .redDot {
+      border: none;
+      padding: 0 7%;
+    }
+
+    >li {
+      width: 31%;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 35px 0 60px 0;
+      position: relative;
+
+      .cfTitle {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .cf_img {
+        text-align: center;
+      }
+
+      .fBTxt {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        position: absolute;
+        width: 100%;
+        bottom: 20px;
+      }
+    }
+  }
+
+  @include mobile {
+    margin-top: 50px;
+
+    .crues_feedBacks {
+      flex-wrap: wrap;
+
+      >li {
+        width: 100%;
+        padding: 30px 0 30px 0;
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+
+        .cfTitle {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+
+        .fBTxt {
+          position: static;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
