@@ -1,0 +1,60 @@
+<?
+  $site_path = "../HyAdmin/";
+  require_once($site_path."include/lib.inc.php");
+
+  $ss_mb_id = $_SESSION['ss_mb_id'];
+
+	if(!$ss_mb_id) hy_href("/","로그인후이용해주세요.");
+
+	if($ss_mb_id){ //회원이라면
+		$query = "select * from hy_member where mb_id='$ss_mb_id'";
+		$rs = query($query,$dbcon);
+		$row = mysql_fetch_array($rs);
+		$ReMemKey = $row[mb_num];
+		$ReMemId = $row[mb_id];
+		$ReMemName = $row[mb_name];
+		$mb_tel = $row[mb_tel];
+		$mb_telArr = explode("-",$mb_tel);
+		$mb_mobile = $row[mb_mobile];
+		$mb_mobileArr = explode("-",$mb_mobile);
+
+		//당첨여부
+		$queryV = "select * from hy_member where mb_id = '$ss_mb_id'";
+	  $rsV = query($queryV,$dbcon);
+	  $countV = mysql_num_rows($rsV);
+	  $rowV = mysql_fetch_array($rsV);
+
+	  $mb_job = $rowV[mb_job];
+
+	  if($mb_job == "Y") hy_href("/sub/winner.html");
+	}
+
+
+?>
+
+  <? include "../inc/header.html"; ?>
+  <main class="loginPage">
+    <section class="contents">
+      <dl class="subPageDl">
+        <dt>당첨자 확인</dt>
+        <dd>이벤트 당첨 여부를 확인해 주세요.</dd>
+      </dl>
+
+      <div class="checkThis">
+        <p class="nowin_text mb10">최애 우동캐 투표 이벤트에<br/>참여해주셔서 감사합니다.</p>
+        <p class="nowin_text">안타깝게도 이번 이벤트에는<br/>당첨되지 않으셨습니다.</p>
+      </div>
+      <div class="consultBox mb40">
+        <p class="checkThis__txt">문의가 있을 경우 사무국(031-994-2849)에 연락해 주세요.</p>
+      </div>
+      <ul class="bottBtns">
+        <li class="home"><a class="jalnan" href="/">홈으로</a></li>
+      </ul>
+    </section>
+  </main>
+  <? include "../inc/footer.html"; ?>
+
+  <script>
+    const end = document.querySelector(".end");
+    end.remove();
+  </script>

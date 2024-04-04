@@ -1,0 +1,72 @@
+<?
+  $site_path = "../HyAdmin/";
+  require_once($site_path."include/lib.inc.php");
+?>
+
+<? include "../inc/header.html"; ?>
+
+<script>
+  function readyGo(){
+    alert("준비중입니다.");
+  }
+</script>
+
+<main class="loginPage">
+  <section class="contents">
+    <dl class="subPageDl">
+      <dt>로그인</dt>
+      <dd>최애 우동캐에 투표해주세요!</dd>
+    </dl>
+
+    <div class="checkThis">
+      <p class="checkThis__txt">투표를 위해 카카오 로그인을 진행합니다.</p>
+      <p class="checkThis__txt">문의가 있을 경우 사무국(031-994-2849)에 연락해 주세요.</p>
+    </div>
+
+    <ul class="bottBtns">
+
+      <?
+        $hostname = $_SERVER["HTTP_HOST"];
+        $clicnt_id = "7ac84baada298c655039b254bd0aa875";
+        $redirect_uri = "http://".$hostname."/HyAdmin/kakaocallback.php";
+        $_SESSION['kakao_state'] = md5(microtime() . mt_rand());
+        $urlkakao = "https://kauth.kakao.com/oauth/authorize?client_id=".$clicnt_id."&redirect_uri=".$redirect_uri."&response_type=code&state=".$_SESSION['kakao_state'];
+      ?>
+
+      <script>
+        function checkLoginkakao(){
+          urlgo = "<?=$urlkakao?>";
+          window.open(urlgo,"01","toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=500,height=600");
+        }
+      </script>
+
+      <li class="kakao mb10"><a class="jalnan" href="javascript:checkLoginkakao();"><img style="width:44px" src="../images/sub/kakaoLogin.png" alt=""> 카카오 로그인</a></li>
+
+
+      <?
+        $callurlin = "http://".$hostname."/HyAdmin/navercallback.php";
+        $NAVER_CLIENT_ID = "diUmh6VXkDVjw78JUsMY";
+        $NAVER_CLIENT_SECRET = "HoGr4LeziX";
+        $NAVER_CALLBACK_URL = $callurlin;
+        $naverUrl = "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=".$NAVER_CLIENT_ID."&redirect_uri=".urlencode($NAVER_CALLBACK_URL);
+      ?>
+
+      <script>
+        function checkLoginNaver(){
+          urlgo = "<?=$naverUrl?>";
+          window.open(urlgo,"04","toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=720");
+        }
+      </script>
+
+      <li class="naver mb10"><a class="jalnan" href="javascript:checkLoginNaver();"><img style="width: 36px;" src="../images/sub/naverLogin.png" alt=""> 네이버 로그인</a></li>
+      <li class="home"><a class="jalnan" href="/">홈으로</a></li>
+    </ul>
+  </section>
+</main>
+<? include "../inc/footer.html"; ?>
+
+
+<script>
+  const end = document.querySelector(".end");
+  end.remove();
+</script>

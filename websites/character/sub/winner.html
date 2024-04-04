@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../css/sub.css?v=220920" />
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <title>우리동네 캐릭터대상</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="Googlebot" content="noindex, nofollow">
+  <meta name="Naverbot" content="noindex, nofollow">
+  <meta name="Daumoa" content="noindex, nofollow">
+</head>
+
+<body>
+
+  <script language="JavaScript" type="text/JavaScript">
+<!--
+  function actionGo(){
+    if(frm.dong1.checked == false){
+      alert("정보 수집에 동의해주세요.");
+      return;
+    }
+    if(frm.ReMemName.value == ""){
+      alert("이름을 입력해 주세요.");
+      frm.ReMemName.focus();
+      return;
+    }
+    if(frm.RePhone1.value == ""){
+      alert("연락처를 입력해 주세요.");
+      frm.RePhone1.focus();
+      return;
+    }
+    if(frm.RePhone2.value == ""){
+      alert("연락처를 입력해 주세요.");
+      frm.RePhone2.focus();
+      return;
+    }
+    if(frm.RePhone3.value == ""){
+      alert("연락처를 입력해 주세요.");
+      frm.RePhone3.focus();
+      return;
+    }
+
+    frm.nospamchk.value = "Y";
+    frm.submit();
+
+  }
+
+  //메일자동기입
+  function changeMail(str)
+  {
+    frm.ReEmail2.value = str;
+  }
+
+  //숫자만 기입
+  function onlyNumber(event){
+    event = event || window.event;
+    var keyID = (event.which) ? event.which : event.keyCode;
+    if ( (keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 )
+      return;
+    else
+      return false;
+  }
+
+  function removeChar(event) {
+    event = event || window.event;
+    var keyID = (event.which) ? event.which : event.keyCode;
+    if ( keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 )
+      return;
+    else
+      event.target.value = event.target.value.replace(/[^0-9]/g, "");
+  }
+
+-->
+</script>
+
+
+  <main class="loginPage">
+    <section class="contents">
+      <dl class="subPageDl">
+        <dt>당첨자 확인</dt>
+        <dd>이벤트 당첨 여부를 확인해 주세요.</dd>
+      </dl>
+
+      <div class="checkThis">
+        <p class="nowin_text mb10">최애 우동캐 투표 이벤트에<br />참여해주셔서 감사합니다.</p>
+        <p class="nowin_text colored">이벤트에 당첨 되셨습니다!</p>
+      </div>
+      <div class="consultBox mb40">
+        <p class="checkThis__txt">당첨자 선물을 받기 위해서 아래의 정보를 적어 주세요.<br />
+          문의가 있을 경우 사무국(031-994-2849)에 연락해 주세요.</p>
+      </div>
+
+      <form class="inputFrm" name="frm" action="winner_ps.php" method="post" ENCTYPE="multipart/form-data">
+        <input type="hidden" name="nospamchk" value="">
+        <p class="inputFrm__title">정보수집에 대한 동의</p>
+        <div class="inputFrm__pravs">▶ 개인정보의 수집 및 이용목적
+          - 서비스 이용에 따른 본인식별, 실명확인, 가입의사 확인, 연령제한 서비스 이용
+          - 당첨자 상품 송부
+          - 기타 원활한 양질의 서비스 제공 등
+
+          ▶ 수집하는 개인정보의 항목
+          - 업체명, 연락처
+
+          ▶ 개인정보의 보유 및 이용기간
+          - 원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.
+          - 다만, 원활한 서비스의 상담을 위해 상담 완료 후 내용을 3개월간 보유할 수 있으며
+          전자상거래에서의 소비자보호에 관한 법률 등 타법률에 의해 보존할 필요가 있는 경우에는 일정기간 보존합니다.</div>
+        <p class="theAgree"><input type="checkbox" id="agreeBtn" name="dong1" value="Y"><label for="agreeBtn">정보 수집에 동의합니다.</label></p>
+
+        <p class="inputFrm__title infoTitle">문의자 정보 <span class="must">는 필수입력항목입니다.</span></p>
+        <div class="inputBox">
+          <p class="boxTh inputFlex must">이름</p>
+          <div class="input_area">
+            <input type="text" name="ReMemName" class="theInput longCell">
+          </div>
+        </div>
+
+        <div class="inputBox mb50">
+          <p class="boxTh inputFlex must">연락처</p>
+          <div class="input_area inputFlex">
+            <input type="number" name="RePhone1" maxlength="3" class="theInput shortCell"> <span>-</span>
+            <input type="number" name="RePhone2" maxlength="4" class="theInput shortCell"> <span>-</span>
+            <input type="number" name="RePhone3" maxlength="4" class="theInput shortCell">
+          </div>
+        </div>
+
+        <ul class="bottBtns">
+          <li class="home"><a class="jalnan" href="javascript:actionGo();">신청하기</a></li>
+        </ul>
+      </form>
+
+    </section>
+  </main>
+
+  <script>
+    const end = document.querySelector(".end");
+    end.remove();
+  </script>
+
+  <script src="../js/layout.js"></script>
+  <footer class="footer">
+    <p>COPYRIGHT © 우리동네 캐릭터 대상. ALL RIGHTS RESERVED.</p>
+  </footer>
+</body>
+
+</html>

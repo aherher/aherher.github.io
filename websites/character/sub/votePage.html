@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../css/sub.css?v=220920" />
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <title>우리동네 캐릭터대상</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="Googlebot" content="noindex, nofollow">
+  <meta name="Naverbot" content="noindex, nofollow">
+  <meta name="Daumoa" content="noindex, nofollow">
+</head>
+
+<body>
+  <script src="../js/slick.js"></script>
+  <link rel="stylesheet" href="../css/slick.css">
+  <link rel="stylesheet" href="../css/slick-theme.css">
+  <main class="voteWrap">
+    <section class="contents">
+      <dl class="voteDl">
+        <dt>“<span>최애 우동캐</span>에 투표해 주세요.”</dt>
+        <dd>지역을 눌러서 마음에 드는 캐릭터를 최소 1작품부터 최대 3작품까지 선택해 주세요.</dd>
+        <dd><span>[자기소개 보기]</span>를 클릭하면 캐릭터의 상세정보를 확인할 수 있습니다.</dd>
+      </dl>
+
+      <div class="voteArea">
+        <!-- 지역선택 -->
+        <div class="voteArea__map">
+          <a class="tag01" href="#area1">서울</a>
+          <a class="tag02" href="#area2">인천</a>
+          <a class="tag03" href="#area3">경기</a>
+          <a class="tag04" href="#area1">강원</a>
+          <a class="tag05" href="#area2">충북</a>
+          <a class="tag06" href="#area3">충남</a>
+          <a class="tag07" href="#area1">세종</a>
+          <a class="tag08" href="#area2">대전</a>
+          <a class="tag09" href="#area3">경북</a>
+          <a class="tag10" href="#area1">대구</a>
+          <a class="tag11" href="#area2">전북</a>
+          <a class="tag12" href="#area3">광주</a>
+          <a class="tag13" href="#area1">전남</a>
+          <a class="tag14" href="#area2">울산</a>
+          <a class="tag15" href="#area3">경남</a>
+          <a class="tag16" href="#area1">부산</a>
+          <a class="tag17" href="#area2">제주</a>
+          <img src="../images/sub/map.png" alt="">
+        </div>
+        <!-- 지역선택 끝-->
+
+
+
+        <div class="voteArea__charactors">
+          <div class="voteArea__title">
+            <img src="../images/sub/votingTitle.png" alt="우리동네 최고의 캐릭터 투표">
+          </div>
+          <!-- 지역별 캐릭터 -->
+          <div class="voteArea__selectWrap">
+
+
+            <ul id="area1" class="voteArea__select">
+
+
+              <li class="area1_1">
+                <div class="selectTop">
+                  <p class="selectTop__name">이름</p>
+                  <div class="selectTop__img">
+                    <img src="../images/sub/chararctor01.png" alt="">
+                  </div>
+                </div>
+                <div class="selectBottom">
+                  <p class="selectBottom__idx" style="display:none;">
+                    입력하세요.
+                  </p>
+                  <p class="selectBottom__title">
+                    부기
+                  </p>
+                  <p class="selectBottom__address">
+                    지역명
+                  </p>
+                  <div class="selectBottom__btn mb10"><a class="choose" href="#!"><img class="btnIcon01" src="../images/sub/btnIcon01.png" alt=""> 투표하기</a></div>
+                  <div class="selectBottom__btn popBtn"><a href="#about1_1"><img class="btnIcon02" src="../images/sub/btnIcon02.png" alt="">캐릭터 소개</a></div>
+                </div>
+              </li>
+
+              <div class="aboutPop" id="about1_1">
+                <div class="about">
+                  <div class="about__close"><img src="../images/sub/close.png" alt=""></div>
+                  <div class="about__main">
+                    <p class="about__title">
+                      부기
+                    </p>
+                    <p class="about__text">
+                      <span>
+                        지역명
+                      </span>
+                    </p>
+                    <ul class="about__slide">
+                      <li>
+                        <img src="../images/sub/chararctor01.png" alt="">
+                      </li>
+                      <li>
+                        <img src="../images/sub/chararctor01.png" alt="">
+                      </li>
+                      <li>
+                        <img src="../images/sub/chararctor01.png" alt="">
+                      </li>
+                    </ul>
+                  </div>
+                  <article class="about__info">
+                    <dl>
+                      <dt>태어난 곳.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>출생년도/생일.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>성격.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>자기소개.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                  </article>
+                </div>
+                <div class="blckBg"></div>
+              </div>
+
+            </ul>
+
+            <ul id="area2" class="voteArea__select">
+
+
+              <li class="area2_1">
+                <div class="selectTop">
+                  <p class="selectTop__name">이름</p>
+                  <div class="selectTop__img">
+                    <img src="../images/sub/chararctor01.png" alt="">
+                  </div>
+                </div>
+                <div class="selectBottom">
+                  <p class="selectBottom__idx" style="display:none;">
+                    입력하세요.
+                  </p>
+                  <p class="selectBottom__title">
+                    부기
+                  </p>
+                  <p class="selectBottom__address">
+                    지역명
+                  </p>
+                  <div class="selectBottom__btn mb10"><a class="choose" href="#!"><img class="btnIcon01" src="../images/sub/btnIcon01.png" alt=""> 투표하기</a></div>
+                  <div class="selectBottom__btn popBtn"><a href="#about2_1"><img class="btnIcon02" src="../images/sub/btnIcon02.png" alt="">캐릭터 소개</a></div>
+                </div>
+              </li>
+
+              <div class="aboutPop" id="about2_1">
+                <div class="about">
+                  <div class="about__close"><img src="../images/sub/close.png" alt=""></div>
+                  <div class="about__main">
+                    <p class="about__title">
+                      부기
+                    </p>
+                    <p class="about__text">
+                      <span>
+                        지역명
+                      </span>
+                    </p>
+                    <ul class="about__slide">
+                      <li>
+                        <img src="../images/sub/chararctor01.png" alt="">
+                      </li>
+                      <li>
+                        <img src="../images/sub/chararctor01.png" alt="">
+                      </li>
+                      <li>
+                        <img src="../images/sub/chararctor01.png" alt="">
+                      </li>
+                    </ul>
+                  </div>
+                  <article class="about__info">
+                    <dl>
+                      <dt>태어난 곳.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>출생년도/생일.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>성격.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>자기소개.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                  </article>
+                </div>
+                <div class="blckBg"></div>
+              </div>
+
+            </ul>
+
+            <ul id="area3" class="voteArea__select">
+
+
+              <li class="area3_1">
+                <div class="selectTop">
+                  <p class="selectTop__name">이름</p>
+                  <div class="selectTop__img">
+                    <img src="../images/sub/chararctor02.png" alt="">
+                  </div>
+                </div>
+                <div class="selectBottom">
+                  <p class="selectBottom__idx" style="display:none;">
+                    입력하세요.
+                  </p>
+                  <p class="selectBottom__title">
+                    메기
+                  </p>
+                  <p class="selectBottom__address">
+                    지역명
+                  </p>
+                  <div class="selectBottom__btn mb10"><a class="choose" href="#!"><img class="btnIcon01" src="../images/sub/btnIcon01.png" alt=""> 투표하기</a></div>
+                  <div class="selectBottom__btn popBtn"><a href="#about3_2"><img class="btnIcon02" src="../images/sub/btnIcon02.png" alt="">캐릭터 소개</a></div>
+                </div>
+              </li>
+
+              <div class="aboutPop" id="about3_2">
+                <div class="about">
+                  <div class="about__close"><img src="../images/sub/close.png" alt=""></div>
+                  <div class="about__main">
+                    <p class="about__title">
+                      메기
+                    </p>
+                    <p class="about__text">
+                      <span>
+                        지역명
+                      </span>
+                    </p>
+                    <ul class="about__slide">
+                      <li>
+                        <img src="../images/sub/chararctor02.png" alt="">
+                      </li>
+                      <li>
+                        <img src="../images/sub/chararctor02.png" alt="">
+                      </li>
+                      <li>
+                        <img src="../images/sub/chararctor02.png" alt="">
+                      </li>
+                    </ul>
+                  </div>
+                  <article class="about__info">
+                    <dl>
+                      <dt>태어난 곳.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>출생년도/생일.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>성격.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>자기소개.</dt>
+                      <dd>
+                        입력하세요.
+                      </dd>
+                    </dl>
+                  </article>
+                </div>
+                <div class="blckBg"></div>
+              </div>
+
+
+            </ul>
+
+
+          </div>
+          <!-- 지역별 캐릭터 끝-->
+        </div>
+      </div>
+
+
+
+
+      <form class="join_frmHov" name="frm" action="votePage_ps.php" method="post" ENCTYPE="multipart/form-data">
+        <input type="hidden" name="nospamchk" value="">
+        <div class="selected">
+          <p class="selected__about">투표대상 : 제 5회 우리동네 캐릭터 대상 본선 진출작 30개 캐릭터</p>
+          <!-- 선택한 캐릭터 -->
+          <ul class="selected__lists">
+
+          </ul>
+          <!-- 선택한 캐릭터 끝 -->
+          <div class="selected__comment">
+            <p>
+              홍길동님이 우동캐에 투표를 위해 선택한 캐릭터
+            </p>
+            <a class="doVote" href="./voting.html">캐릭터 투표하기</a>
+          </div>
+        </div>
+      </form>
+    </section>
+
+
+    <!-- 복제 element -->
+    <ul class="clone">
+      <li>
+        <div class="selected__info">
+          <div class="selected__infoLeft">
+            <p class="title"></p>
+            <div class="image">
+              <!--이미지-->
+            </div>
+          </div>
+          <div class="selected__infoRight">
+            <input type="hidden" name="SeIdx[]">
+            <p class="intxt01">
+              <!-- 이름 -->
+            </p>
+            <p class="intxt02">
+              <!-- 주소 -->
+            </p>
+          </div>
+        </div>
+        <div class="selected__btns">
+          <div class="cancel"><a href="#!"><img class="btnIcon01" src="../images/sub/btnIcon01.png" alt="">투표취소</a></div>
+          <div class="about popBtn"><a href="#clone1_1"><img class="btnIcon01" src="../images/sub/btnIcon02.png" alt="">캐릭터 소개</a></div>
+        </div>
+      </li>
+    </ul>
+
+
+    <div class="aboutPop" id="clone1_1">
+      <div class="about">
+        <div class="about__close"><img src="../images/sub/close.png" alt=""></div>
+        <div class="about__main">
+          <p class="about__title">부산광역시 소통 캐릭터 ‘부기’</p>
+          <p class="about__text">
+            <span>부산이 자랑하는 캐릭터를 소개합니다.</span>
+          </p>
+          <ul class="about__slide">
+            <li><img src="../images/sub/aboutImg.png" alt=""></li>
+            <li><img src="../images/sub/aboutImg.png" alt=""></li>
+            <li><img src="../images/sub/aboutImg.png" alt=""></li>
+          </ul>
+        </div>
+        <article class="about__info">
+          <dl>
+            <dt>태어난 곳.</dt>
+            <dd>부산광역시</dd>
+          </dl>
+          <dl>
+            <dt>출생년도/생일.</dt>
+            <dd>2002-06-05</dd>
+          </dl>
+          <dl>
+            <dt>성격.</dt>
+            <dd>호탕한 성격의 부기</dd>
+          </dl>
+          <dl>
+            <dt>자기소개.</dt>
+            <dd>2002년 대한민국 월드컵, 48년만의 감격의
+              첫승으로 사람들의 함성이 부산 아시아드
+              주경기장에터져나왔고 그 소리에 화들짝 놀라
+              알을 깨고 세상에 나온 부산갈매기 부기.</dd>
+          </dl>
+        </article>
+      </div>
+      <div class="blckBg"></div>
+    </div>
+    <!-- 복제 element 끝 -->
+  </main>
+  <script src="../js/vote.js"></script>
+  <script src="../js/layout.js"></script>
+  <footer class="footer">
+    <p>COPYRIGHT © 우리동네 캐릭터 대상. ALL RIGHTS RESERVED.</p>
+  </footer>
+</body>
+
+</html>
