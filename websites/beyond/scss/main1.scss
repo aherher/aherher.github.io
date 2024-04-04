@@ -1,0 +1,259 @@
+@charset "utf-8";
+@import './mixin';
+
+.visual {
+  position: relative;
+  height: 100vh;
+  background-color: #000;
+
+  h2 {
+    @include flexAlign;
+    color: #fff;
+    height: 100%;
+    font-size: 115px;
+
+    .logoWrap {
+      width: 313px;
+      height: 311px;
+      // background: url(../images/main/logoBg.png) no-repeat center;
+      overflow: hidden;
+      border-radius: 100%;
+      position: relative;
+
+      .logoSlide {
+        @include centerC(relative);
+        text-align: center;
+
+        img {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    // p {
+    //   position: relative;
+    //   z-index: 1;
+    // }
+  }
+
+  canvas {
+    @include centerC(absolute);
+    opacity: 0.2;
+    left: 54%;
+    width: 6000px !important;
+    height: 600px !important;
+    z-index: 1;
+  }
+}
+
+
+@keyframes roundandround {
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes show {
+  to {
+    opacity: 0.2;
+  }
+}
+
+body {
+  background-color: #fff;
+}
+
+.scene {
+  width: 147px;
+  height: 155px;
+  // margin: 2% auto;
+  perspective: 1000px;
+  z-index: 0;
+  @include centerC(absolute);
+  left: 54%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  transform: rotateX(45deg) rotateY(45deg);
+  transform-style: preserve-3d;
+}
+
+.ball {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: roundandround 7.5s infinite linear;
+
+  &:after {
+    display: block;
+    content: '';
+    // background-color: #000;
+    background: url(../images/main/mvLogo2.png) no-repeat;
+    width: 147px;
+    height: 155px;
+    @include centerC(absolute);
+  }
+}
+
+.ball .ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // border: 6px;
+  // border-style: dashed;
+  border-radius: 50%;
+  // animation: show 0.75s forwards ease-in-out;
+
+}
+
+
+// .ring:nth-child(1) {
+//   color: #fff;
+//   transform: rotateY(4deg);
+//   animation-delay: 0s;
+//   opacity: 0.5;
+// }
+
+// .ring:nth-child(2) {
+//   color: #fff;
+//   transform: rotateY(8deg);
+//   animation-delay: 0.1s;
+// }
+
+// .ring:nth-child(3) {
+//   color: #fff;
+//   transform: rotateY(12deg);
+//   animation-delay: 0.2s;
+// }
+
+// .ring:nth-child(4) {
+//   color: #fff;
+//   transform: rotateY(16deg);
+//   animation-delay: 0.3s;
+// }
+
+// .ring:nth-child(5) {
+//   color: #fff;
+//   transform: rotateY(20deg);
+//   animation-delay: 0.4s;
+// }
+
+// .ring:nth-child(6) {
+//   color: #fff;
+//   transform: rotateY(24deg);
+//   animation-delay: 0.5s;
+// }
+
+// .ring:nth-child(7) {
+//   color: #fff;
+//   transform: rotateY(28deg);
+//   animation-delay: 0.6s;
+// }
+
+// .ring:nth-child(8) {
+//   color: #fff;
+//   transform: rotateY(32deg);
+//   animation-delay: 0.7s;
+// }
+
+// .ring:nth-child(9) {
+//   color: #fff;
+//   transform: rotateY(36deg);
+//   animation-delay: 0.8s;
+// }
+
+// .ring:nth-child(10) {
+//   color: #fff;
+//   transform: rotateY(40deg);
+//   animation-delay: 0.9s;
+// }
+
+// .ring:nth-child(11) {
+//   color: #fff;
+//   transform: rotateY(44deg);
+//   animation-delay: 1s;
+// }
+
+// .ring:nth-child(12) {
+//   color: #fff;
+//   transform: rotateY(48deg);
+//   animation-delay: 1.1s;
+// }
+
+// .ring:nth-child(13) {
+//   color: #fff;
+//   transform: rotateY(52deg);
+//   animation-delay: 1s;
+// }
+
+// .ring:nth-child(14) {
+//   color: #fff;
+//   transform: rotateY(56deg);
+//   animation-delay: 0.9s;
+// }
+
+// .ring:nth-child(15) {
+//   color: #fff;
+//   transform: rotateY(60deg);
+//   animation-delay: 0.8s;
+// }
+
+// .ring:nth-child(16) {
+//   color: #fff;
+//   transform: rotateY(64deg);
+//   animation-delay: 0.7s;
+// }
+
+// .ring:nth-child(17) {
+//   color: #fff;
+//   transform: rotateY(68deg);
+//   animation-delay: 0.6s;
+// }
+
+// .ring:nth-child(18) {
+//   color: #fff;
+//   transform: rotateY(72deg);
+//   animation-delay: 0.5s;
+// }
+
+// .ring:nth-child(19) {
+//   color: #fff;
+//   transform: rotateY(76deg);
+//   animation-delay: 0.4s;
+// }
+
+// .ring:nth-child(20) {
+//   color: #fff;
+//   transform: rotateY(80deg);
+//   animation-delay: 0.3s;
+// }
+
+// .ring:nth-child(21) {
+//   color: #fff;
+//   transform: rotateY(84deg);
+//   animation-delay: 0.2s;
+// }
+
+// .ring:nth-child(22) {
+//   color: #fff;
+//   transform: rotateY(88deg);
+//   animation-delay: 0.1s;
+// }
+
+// .ring:nth-child(23) {
+//   color: #fff;
+//   transform: rotateY(92deg);
+//   animation-delay: 0s;
+// }
+
+// .ring:nth-child(24) {
+//   color: #fff;
+//   transform: rotateY(92deg);
+//   animation-delay: 0s;
+// }

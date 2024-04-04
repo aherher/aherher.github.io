@@ -1,0 +1,29 @@
+@charset "utf-8";
+@import './mixin';
+
+.visual {
+  position: relative;
+  height: 100vh;
+  background-color: #3b3b3b;
+
+  h2 {
+    @include flexAlign;
+    color: #fff;
+    height: 100%;
+    font-size: 115px;
+    position: relative;
+    z-index: 1;
+
+    div {
+      margin: 0 100px;
+    }
+  }
+
+  canvas {
+    @include centerC(absolute);
+    left: 48%;
+    width: 800px !important;
+    height: 800px !important;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,124 @@
+<script language="JavaScript" type="text/JavaScript">
+<!--
+  function searchGo(){
+    if(frmS.searchWh.value == ""){
+      alert("검색어를 입력해 주세요.");
+      frmS.searchWh.focus();
+      return;
+    }
+
+    frmS.submit();
+  }
+-->
+</script>
+
+  <!-- 헤더 -->
+  <header class="header_wrap">
+
+    <div class="head">
+      <div class="headTop center_box">
+        <div class="menu_btn"><img src="/images/common/menu_m.png" alt=""></div>
+        <div class="menu_close"><i class="fas fa-times"></i></div>
+        <h1><a href="/index.html"><img src="/images/common/logo.png" alt="이제는 - 투표기반 참여형 플랫폼"></a></h1>
+      </div>
+      <div class="gnb">
+        <div class="center_box">
+          <ul class="snsLists">
+            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- pc -->
+      <nav class="menu_wrap">
+        <div class="center_box flex_center">
+          <ul class="menu">
+            <li><a href="/vote/peolples3.html">이슈투표</a></li>
+            <li><a href="/vote/peolples4.html">꿀잼투표</a></li>
+            <li><a href="/vote/peolples2.html">국민투표</a>
+              <!-- <ul class="gsub">
+              <li><a href="/about/sub01.html">인사말</a></li>
+              <li><a href="/about/sub01_2.html">주요사업</a></li>
+              <li><a href="/about/sub02.html">비전 및 핵심가치</a></li>
+              <li><a href="/about/sub03.html">CI 소개</a></li>
+              <li><a href="/about/sub04.html">연혁</a></li>
+              <li><a href="/about/sub05.html">조직 및 임원구성</a></li>
+              <li><a href="/about/sub06.html">오시는 길</a></li>
+            </ul> -->
+            </li>
+            <li><a href="/vote/secret.html">비밀투표</a></li>
+            <li><a href="/vote/membership_apply.html">독자 제보</a></li>
+          </ul>
+
+          <div class="right_btns flex_center">
+
+            <?if(!$_SESSION['ss_mb_id']){?>
+            <ul class="logs">
+              <li><a href="/HyAdmin/mb_login.php?url=<?=$_SERVER['REQUEST_URI']?>&secv=<?=$secv?>">로그인</a></li>
+              <li><a href="/HyAdmin/mb_join.php?url=<?=$_SERVER['REQUEST_URI']?>&secv=<?=$secv?>">회원가입</a></li>
+            </ul>
+            <?}else{?>
+            <ul class="logs">
+              <li><a href="/HyAdmin/mb_logout.php">로그아웃</a></li>
+              <li><a href="/HyAdmin/mb_edit.php">정보수정</a></li>
+            </ul>
+            <?}?>
+
+            <div class="srcWrap">
+              <a href="#!" class="srcBtn"><i class="fas fa-search"></i></a>
+              <form class="headerSrc" name="frmS" action="/vote/peolples_search.html" method="post" ENCTYPE="multipart/form-data">
+                <div class="flex_center">
+                  <input type="text" name="searchWh" class="inputTxt" placeholder="키워드를 입력해 주세요.">
+                  <a href="javascript:searchGo();" class="doSearch"><i class="fas fa-search"></i></a>
+                  <p class="closeScr"><i class="fas fa-times"></i></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- pc 끝 -->
+      <!-- 모바일 -->
+      <section class="menu_mwrap">
+        <div class="menu_master">
+          <nav class="menu_marea">
+
+            <?if(!$_SESSION['ss_mb_id']){?>
+            <ul class="mob_member">
+              <li><a href="/HyAdmin/mb_login.php?url=<?=$_SERVER['REQUEST_URI']?>&secv=<?=$secv?>">로그인</a></li>
+              <li><a href="/HyAdmin/mb_join.php?url=<?=$_SERVER['REQUEST_URI']?>&secv=<?=$secv?>">회원가입</a></li>
+            </ul>
+            <?}else{?>
+            <ul class="mob_member">
+              <li><a href="/HyAdmin/mb_logout.php">로그아웃</a></li>
+              <li><a href="/HyAdmin/mb_edit.php">정보수정</a></li>
+            </ul>
+            <?}?>
+
+            <ul class="menu_m">
+              <li><a href="/vote/peolples3.html">이슈투표</a></li>
+              <li><a href="/vote/peolples4.html">꿀잼투표</a></li>
+              <li><a href="/vote/peolples2.html">국민투표</a>
+                <!-- <ul class="sub_menus">
+                  <li><a href="/about/sub01.html">인사말</a></li>
+                  <li><a href="/about/sub01_2.html">주요사업</a></li>
+                  <li><a href="/about/sub02.html">비전 및 핵심가치</a></li>
+                  <li><a href="/about/sub03.html">CI 소개</a></li>
+                  <li><a href="/about/sub04.html">연혁</a></li>
+                  <li><a href="/about/sub05.html">조직 및 임원구성</a></li>
+                  <li><a href="/about/sub06.html">오시는 길</a></li>
+                </ul> -->
+              </li>
+              <li><a href="/vote/secret.html">비밀투표</a></li>
+              <li><a href="/vote/membership_apply.html">독자 제보</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <!-- 모바일 끝 -->
+    </div>
+    <div class="head_bg"></div>
+  </header>
+  <!-- 헤더 끝 -->

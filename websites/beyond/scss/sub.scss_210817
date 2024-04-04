@@ -1,0 +1,1771 @@
+@charset "uft-8";
+@import './mixin';
+
+// 서브 공통
+.subContents {
+  padding: 70px 0 120px 0;
+
+  @include mobile {
+    padding: 60px 0 80px 0;
+  }
+}
+
+.subTabs {
+  @include flexAlign;
+  padding: 45px 0;
+
+  li {
+    position: relative;
+
+    a {
+      display: block;
+      font-size: 35px;
+      font-weight: 700;
+      color: #bababa;
+      position: relative;
+      transition: all 0.5s;
+
+      @include mobile {
+        font-size: 25px;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0.5em;
+        background-color: #bcb0ff;
+        bottom: 0;
+        z-index: 0;
+        transition: all 0.5s;
+        @include centerX(absolute);
+      }
+
+      span {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    &.on,
+    &:hover {
+      a {
+        color: #000;
+
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      padding-right: 5%;
+      margin-right: 5%;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: #000;
+        border-radius: 100%;
+        right: -8px;
+        @include centerY(absolute);
+      }
+    }
+  }
+}
+
+.endLayer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 1;
+  background-color: $blkBg;
+
+  .layertxts {
+    width: 100%;
+    color: #fff;
+    @include centerY(absolute);
+
+    .endTxt01 {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .endTxt02 {
+      font-size: 18px;
+      margin-bottom: 15px;
+
+      span {
+        color: #ffa200;
+      }
+    }
+
+    .viewVote {
+      display: block;
+      margin: 0 auto;
+      border: 2px solid #fff;
+      width: 118px;
+      line-height: 48px;
+      box-sizing: border-box;
+      font-size: 18px;
+      transition: all 0.5s;
+    }
+  }
+}
+
+li:hover {
+  .viewVote {
+    background-color: #fff !important;
+    color: #000;
+  }
+}
+
+
+// 페이저
+.pager_wrap {
+  text-align: center;
+  margin-top: 50px;
+
+  .pager {
+    display: inline-block;
+    text-align: center;
+
+    li {
+      float: left;
+      width: 30px;
+      height: 30px;
+      line-height: 28px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-left: 0;
+
+      &:first-child {
+        border-left: 1px solid #ddd;
+      }
+
+      a {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        width: 100%;
+        height: 100%;
+        line-height: 28px;
+        box-sizing: border-box;
+
+        &:hover {
+          border-bottom: 2px solid #000000;
+        }
+      }
+    }
+
+    .pagerarr {
+      line-height: 34px;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// 투표상세페이지
+.viewHead {
+  margin-bottom: 55px;
+
+  .voteTitle {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 0.4em;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  .votedWrap {
+    .voteInfo {
+      .issueDate {
+        font-size: 20px;
+        padding-right: 20px;
+        margin-right: 20px;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: black;
+          width: 1px;
+          height: 20px;
+          background-color: #ddd;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      .voteNubmer {
+        font-size: 20px;
+        font-weight: 500;
+        color: #4b3e96;
+      }
+
+      @include mobile {
+
+        .issueDate,
+        .voteNubmer {
+          font-size: 15px !important;
+          display: block;
+        }
+
+        .issueDate {
+          margin: 0 0 10px 0;
+          padding-right: 0;
+        }
+      }
+    }
+
+    .snsLinks {
+      display: flex;
+
+      li {
+        width: 32px;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    @include layout(".voteInfo, .snsLinks", 20px);
+  }
+
+  @include mobile {
+    margin-bottom: 30px;
+  }
+}
+
+.voteArticle {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #555555;
+  padding-bottom: 70px;
+  margin-bottom: 70px;
+  border-bottom: 2px solid #ddd;
+
+  a {
+    color: #7c2bc9;
+    word-break: break-all;
+  }
+}
+
+.aboutVote {
+  font-size: 30px;
+  margin-bottom: 1em;
+
+  dt {
+    font-size: 1em;
+    margin-bottom: 0.7em;
+    line-height: 1.3;
+  }
+
+  dd {
+    font-size: 0.6em;
+    color: #555555;
+    line-height: 1.4;
+  }
+
+  @include mobile {
+    font-size: 24px;
+  }
+}
+
+.frmSelect_wrap {
+  position: relative;
+  padding: 60px 5%;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+
+  .endlayer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $blkBg;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    p {
+      width: 95%;
+      text-align: center;
+      color: #fff;
+      font-size: 30px;
+      @include centerC(absolute);
+
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 30px 0;
+  }
+}
+
+.voteFrm {
+
+  .selectVote {
+
+    li {
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+
+      input[type="radio"] {
+        position: absolute;
+        right: 0;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        border: 0 none;
+        margin: 0;
+        top: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      label {
+        background: url(../images/sub/vote/uncheck.png) no-repeat center left;
+        background-size: 80px auto;
+        padding: 7px 0 7px 95px;
+        font-size: 20px;
+        line-height: 1.3;
+        color: #555555;
+        cursor: pointer;
+        display: block;
+      }
+
+      input[type="radio"]:checked+label {
+        background: url(../images/sub/vote/checked.png) no-repeat center left;
+        background-size: 80px auto;
+      }
+
+    }
+
+    @include mobile {
+
+      li:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .yesOrnot {
+    li {
+      width: 50%;
+      box-sizing: border-box;
+      position: relative;
+      flex-wrap: wrap;
+
+      &:first-child {
+        // padding-right: 4%;
+        // margin-right: 4%;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 90%;
+          background-color: #ddd;
+          right: 0;
+          @include centerY(absolute);
+        }
+
+        // @include tablet {
+        //   padding-right: 2%;
+        //   margin-right: 2%;
+        // }
+      }
+
+      .chooseIcone {
+
+        img {
+          width: 105px;
+        }
+
+        @include tablet {
+          width: 50px;
+          text-align: center;
+        }
+
+      }
+
+      .yn_btn {
+        max-width: 325px;
+        width: calc(100% - 150px);
+
+        input[type="radio"] {
+          position: absolute;
+          right: 0;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          border: 0 none;
+          margin: 0;
+          top: 0;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+        }
+
+        label {
+          width: 100%;
+          height: 64px;
+          cursor: pointer;
+          display: block;
+          text-indent: -99999px;
+          font-size: 0;
+        }
+
+        .theYes {
+          background: url(../images/sub/vote/yes_label.png) no-repeat center;
+          background-size: 100% auto;
+        }
+
+        .theNo {
+          background: url(../images/sub/vote/no_label.png) no-repeat center;
+          background-size: 100% auto;
+        }
+
+        input[type="radio"]:checked+.theYes {
+          background: url(../images/sub/vote/yes_label_on.png) no-repeat center;
+          background-size: 100% auto;
+        }
+
+        input[type="radio"]:checked+.theNo {
+          background: url(../images/sub/vote/no_label_on.png) no-repeat center;
+          background-size: 100% auto;
+        }
+
+        @include tablet {
+          width: calc(100% - 60px);
+        }
+      }
+
+      .voteVal {
+        width: 100%;
+        line-height: 1.3;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+
+        @include mobile {
+          margin-top: 0px;
+        }
+      }
+
+      @include layout(".chooseIcone, .yn_btn", 0);
+    }
+
+    .liYes {
+      padding-right: 5%;
+
+      .voteVal {
+        color: #214dc0;
+      }
+    }
+
+    .liNo {
+      padding-left: 5%;
+      flex-direction: row-reverse;
+
+      .voteVal {
+        color: #d44848;
+      }
+
+      // @include mobile {
+      //   flex-direction: column-reverse;
+      // }
+    }
+  }
+
+  .voteBtns {
+    margin: 60px auto;
+
+    li {
+      width: 49%;
+      line-height: 70px;
+      border-radius: 10px;
+      text-align: center;
+      box-sizing: border-box;
+
+      a {
+        display: block;
+        font-size: 27px;
+        font-weight: 700;
+      }
+    }
+
+    .doVote {
+      background-color: $mainColor;
+
+      a {
+        color: #fff;
+      }
+    }
+
+    .viewPop {
+      border: 2px solid $mainColor;
+
+      a {
+        color: $mainColor;
+      }
+    }
+  }
+
+  .endbtns {
+    li {
+      width: 100%;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.votePop_wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  top: 0;
+  left: 0;
+  display: none;
+
+  .popsTab {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-top: 30px;
+
+    li {
+      width: 33.3333333%;
+      max-width: 170px;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      text-align: center;
+      line-height: 55px;
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+
+      a {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        color: #555555;
+      }
+    }
+
+    .tabOn {
+      background-color: #4b3e96;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .ynViews {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .ynDl {
+      text-align: right;
+      width: 60px;
+
+      dt {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      dd {
+        font-size: 20px;
+        font-weight: 500;
+
+        span {
+          font-size: 30px;
+        }
+      }
+
+      .dd_yes {
+        color: #2a43ff;
+      }
+
+      .dd_no {
+        color: #ff3737;
+      }
+
+    }
+
+    .yngraph {
+      width: calc(100% - 140px);
+      height: 20px;
+      border-radius: 20px;
+      overflow: hidden;
+
+      >div {
+        height: 100%;
+        position: relative;
+        transition: all 2s;
+        width: 0;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 34px;
+          height: 14px;
+          @include centerY(absolute);
+        }
+      }
+
+      .yes_color {
+        background-color: #2a43ff;
+
+        &:after {
+          right: 10px;
+          background: url(../images/sub/vote/yesArr.png) no-repeat center;
+        }
+      }
+
+      .no_color {
+        background-color: #ff3737;
+
+        &:after {
+          left: 10px;
+          background: url(../images/sub/vote/noArr.png) no-repeat center;
+        }
+      }
+    }
+  }
+
+  .votedBox {
+    background-color: #fff;
+    z-index: 1;
+    width: 95%;
+    max-width: 760px;
+    height: 800px;
+    box-sizing: border-box;
+    padding: 40px 2% 35px 2%;
+    border-radius: 20px;
+    @include centerC(absolute);
+
+    @include mobile {
+      height: 500px;
+      overflow-y: scroll;
+      // padding-right: 30px;
+    }
+
+    .close_pop {
+      float: right;
+      margin-bottom: 15px;
+      font-size: 30px;
+    }
+
+    .edbox {
+      clear: both;
+      border: 1px solid #ddd;
+      background-color: #fafafa;
+      padding: 30px 5%;
+    }
+
+    .prograve {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #ebebeb;
+      left: 0;
+      top: 0;
+      z-index: 0;
+
+      span {
+        display: block;
+        width: 0;
+        height: 100%;
+        transition: all 2s;
+        background-color: #f0e0ff;
+      }
+    }
+
+    .heighest {
+      span {
+        background-color: #d7b6ff;
+      }
+    }
+
+    .barsLists {
+      li {
+        position: relative;
+        height: 50px;
+
+        @include mobile {
+          height: auto;
+          padding: 10px 0;
+        }
+
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        .edinTxt {
+          padding: 0 13px;
+          position: relative;
+          z-index: 1;
+          height: 100%;
+
+          >p {
+            position: relative;
+            line-height: 1.4;
+            z-index: 1;
+          }
+
+          .edTxt01 {
+            width: calc(100% - 110px);
+          }
+
+          .edTxt02 {
+            width: 90px;
+          }
+        }
+
+
+      }
+    }
+
+    .ynlLists {
+      li {
+        position: relative;
+        height: 50px;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        >p {
+          font-size: 20px;
+          width: 55px;
+        }
+
+        .edinTxt {
+          width: calc(100% - 55px);
+          height: 100%;
+          position: relative;
+
+          .edTxt02 {
+            line-height: 50px;
+            position: relative;
+            text-align: right;
+            height: 100%;
+            right: 15px;
+            z-index: 1;
+          }
+
+          .prograve {
+            span {
+              background-color: #eda700;
+            }
+          }
+        }
+      }
+    }
+
+    .votedGraph {
+      margin-top: 30px;
+
+      .voteVal {
+        width: 100px;
+        line-height: 1.2;
+        padding: 8px 0;
+        border-radius: 45px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        background-color: #fff;
+        margin: 0 auto;
+      }
+
+      @include layout(">div", 20px);
+    }
+
+    .agers {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #e4e4e4;
+
+      .voteVal {
+        margin-top: 20px;
+      }
+    }
+
+    .agesBox {
+      .voteVal {
+        margin: 0 5px 0 0;
+        width: 75px;
+      }
+
+      .ynViews {
+        width: calc(100% - 80px);
+      }
+    }
+
+    .gender {
+      width: 48%;
+
+      .highcharts-figure {
+        position: relative;
+        height: 464px;
+
+        @include mobile {
+          height: 400px;
+        }
+
+        #container {
+          width: 100%;
+          @include centerY(absolute);
+        }
+      }
+    }
+
+    .mapStore {
+      width: 50%;
+    }
+
+    .map_img {
+      position: relative;
+      width: 309px;
+      // transform: scale(0.9);
+
+      @include mobile {
+        left: 50%;
+        transform: scale(0.8) translateX(-65%);
+      }
+    }
+
+    .locate_btn {
+      display: block;
+      width: 50px;
+      line-height: 1.3;
+      border-radius: 10px;
+      background-color: $mainColor;
+      font-size: 13px;
+      text-align: center;
+      color: #fff;
+      padding: 5px 0;
+      position: absolute;
+
+      span {
+        display: block;
+      }
+    }
+
+    .yesArea {
+      .locate_btn {
+        background-color: #2a43ff;
+      }
+    }
+
+    .noArea {
+      .locate_btn {
+        background-color: #ff3737;
+      }
+    }
+
+
+    #seoul {
+      top: 68px;
+      left: 107px;
+    }
+
+    #incheon {
+      top: 72px;
+      left: 52px;
+    }
+
+    #gyungi {
+      top: 109px;
+      left: 126px;
+    }
+
+    #gangwon {
+      top: 58px;
+      right: 72px;
+    }
+
+    #chungbook {
+      top: 136px;
+      left: 160px;
+    }
+
+    #chungnam {
+      top: 172px;
+      left: 87px;
+    }
+
+    #sejong {
+      top: 172px;
+      left: 141px;
+    }
+
+    #daejeon {
+      top: 217px;
+      left: 149px;
+    }
+
+    #kyungbook {
+      top: 170px;
+      right: 22px;
+    }
+
+    #daegoo {
+      top: 233px;
+      right: 48px;
+    }
+
+    #ulsan {
+      bottom: 171px;
+      right: 4px;
+    }
+
+    #kyungnam {
+      bottom: 144px;
+      right: 76px;
+    }
+
+    #busan {
+      right: 18px;
+      bottom: 133px;
+    }
+
+    #jeonbook {
+      bottom: 186px;
+      left: 110px;
+    }
+
+    #gwangju {
+      bottom: 143px;
+      left: 109px;
+    }
+
+    #jeonam {
+      bottom: 105px;
+      left: 75px;
+    }
+
+    #jeju {
+      bottom: 13px;
+      left: 69px;
+    }
+  }
+
+  .blk_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: $blkBg;
+  }
+}
+
+
+// 댓글기능
+.commentsWrap {
+  background-color: #fbfbfb;
+  border-top: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
+  padding: 50px 3%;
+
+  .total {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .writing {
+    background-color: #fff;
+    height: 66px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    input[type=text] {
+      border: none;
+      width: calc(100% - 74px);
+      height: 100%;
+      font-size: 18px;
+    }
+
+    .submitWrite {
+      width: 74px;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      background-color: $mainColor;
+      font-size: 20px;
+    }
+  }
+
+  .commentsLists {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+
+    .commented {
+      @include layout(".theComments, .inBtns", 30px);
+    }
+
+    .theComments {
+      width: 75%;
+
+      .writer {
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 0.4em;
+      }
+
+      .writered {
+        font-size: 16px;
+        line-height: 1.4;
+        color: #777777;
+        margin-bottom: 30px;
+      }
+
+      .date {
+        font-size: 16px;
+        color: #909090;
+      }
+    }
+
+    .inBtns {
+      .thisBtns {
+        display: flex;
+
+        li {
+          width: 74px;
+          height: 40px;
+          line-height: 40px;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          text-align: center;
+
+          &:first-child {
+            margin-right: 10px;
+          }
+
+          a {
+            display: block;
+            font-size: 16px;
+            color: #555555;
+          }
+        }
+
+        .active {
+          background-color: $mainColor;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+
+      .goodBad {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 30px;
+
+        li {
+          a {
+            display: flex;
+            align-items: center;
+
+          }
+
+          &:not(:first-child) {
+            margin-left: 20px;
+          }
+
+          img {
+            vertical-align: middle;
+            margin-right: 5px;
+          }
+
+          span {
+            font-size: 18px;
+            color: #555555;
+          }
+        }
+
+
+
+        .doWrite {
+          transform: translateY(-5px);
+        }
+
+        @include mobile {
+          justify-content: flex-start;
+          // margin-top: 0px;
+        }
+      }
+
+      // @include mobile {
+      //   display: flex;
+      //   justify-content: space-between
+      // }
+    }
+
+    .writing {
+      margin-top: 15px;
+      display: none;
+    }
+  }
+
+  .textComment {
+    padding: 20px 0 20px 80px;
+    background: url(../images/sub/txtArr.png) no-repeat top 20px left 20px;
+    background-size: 45px auto;
+  }
+
+  .writing2 {
+    padding-left: 140px;
+    background-position: top 20px left 80px;
+  }
+
+  .writing3 {
+    padding-left: 200px;
+    background-position: top 20px left 140px;
+  }
+
+  .writing4 {
+    padding-left: 260px;
+    background-position: top 20px left 200px;
+  }
+
+  .writing5 {
+    padding-left: 320px;
+    background-position: top 20px left 260px;
+  }
+
+  .writing6 {
+    padding-left: 380px;
+    background-position: top 20px left 320px;
+  }
+
+  .writing7 {
+    padding-left: 440px;
+    background-position: top 20px left 380px;
+  }
+
+  .moreComments {
+    line-height: 60px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin-top: 25px;
+
+
+    a {
+      height: 100%;
+      font-size: 20px;
+
+      span {
+        margin-right: 10px;
+      }
+
+      @include flexAlign;
+    }
+  }
+}
+
+// 멤버십 투표
+.aboutMembership {
+  border-top: 3px solid #000;
+  margin: 75px 0;
+
+  .memberTag {
+    padding: 60px 4%;
+    border-bottom: 1px solid #ddd;
+
+    .tagTitle {
+      font-size: 30px;
+      font-weight: 500;
+      color: $mainColor;
+      line-height: 1.3;
+      cursor: pointer;
+      background: url(../images/sub/vote/closed_col.png) no-repeat center right;
+
+      @include mobile {
+        font-size: 23px;
+      }
+    }
+
+
+    .opended {}
+
+    .memeberTxts {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .dot {
+      font-size: 20px;
+      color: #555555;
+      line-height: 1.4;
+      position: relative;
+      padding-left: 15px;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+        top: 12px;
+        background-color: $mainColor;
+      }
+    }
+
+    @include mobile {
+      padding: 30px 2%;
+    }
+  }
+
+  .opended {
+    .tagTitle {
+      background: url(../images/sub/vote/opened_col.png) no-repeat center right;
+    }
+  }
+
+  @include mobile {
+    margin: 50px 0;
+
+  }
+}
+
+.voteSubmit {
+  margin: 0 auto;
+}
+
+.voteBtns {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .btn {
+    width: 46%;
+  }
+}
+
+// 멤버십 투표 신청
+.apply_title {
+  padding-bottom: 20px;
+  margin: 70px 0 24px 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: flex-end;
+
+  .atxt01 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-right: 15px;
+  }
+
+  .atxt02 {
+    font-size: 15px;
+    font-weight: 300;
+    color: #555555;
+    padding-left: 10px;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      background-color: #f00f1f;
+      position: absolute;
+      left: 0;
+      top: 5px;
+    }
+
+
+  }
+}
+
+.applyTable {
+  width: 100%;
+
+  tr {
+
+    th,
+    td {
+      padding: 5px 0;
+    }
+
+    &.topVertical {
+
+      th,
+      td {
+        vertical-align: top;
+      }
+
+      th {
+        padding-top: 20px;
+      }
+    }
+
+    th {
+      text-align: left;
+      width: 12%;
+      box-sizing: border-box;
+
+      &:nth-child(3) {
+        padding-left: 25px;
+
+        @include mobile {
+          padding-left: 0;
+        }
+      }
+
+      p {
+        position: relative;
+        padding-left: 20px;
+        font-size: 18px;
+        font-weight: 500;
+
+        span {
+          display: block;
+          font-size: 15px;
+          font-weight: 300;
+          color: #555555;
+          margin-top: 5px;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          width: 5px;
+          height: 5px;
+          border-radius: 100%;
+          background-color: #f00f1f;
+          position: absolute;
+          left: 0;
+          top: 5px;
+        }
+      }
+    }
+
+    td {
+      .radioBtns {
+        display: flex;
+        width: 100%;
+        max-width: 330px;
+
+        li {
+          width: 50%;
+          position: relative;
+
+          input[type="radio"] {
+            position: absolute;
+            right: 0;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            border: 0 none;
+            margin: 0;
+            top: 0;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+          }
+
+          label {
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #ddd;
+            text-align: center;
+            color: #555555;
+            display: block;
+            font-size: 18px;
+            cursor: pointer;
+          }
+
+          input[type="radio"]:checked+label {
+            background-color: $mainColor;
+            color: #fff;
+          }
+        }
+      }
+
+
+      input[type="text"] {
+        padding-left: 15px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        border: 1px solid #ddd;
+        font-size: 17px;
+      }
+
+      textarea {
+        padding: 10px;
+        border: 1px solid #ddd;
+        resize: none;
+        width: 100%;
+        height: 220px;
+        font-size: 17px;
+      }
+    }
+  }
+
+  // #radio_yn,
+  // #radio_sult {
+  //   display: none;
+  // }
+
+  @include mobile {
+    display: block;
+
+    tbody,
+    tr,
+    tr th,
+    tr td {
+      display: block;
+      width: 100% !important;
+    }
+
+    tr th {
+      padding-top: 30px !important;
+    }
+  }
+}
+
+.submitApply {
+  margin: 60px auto 0 auto;
+  height: 90px;
+  line-height: 1;
+  // @include flexAlign;
+
+  a {
+    // display: block;
+    font-size: 26px;
+    font-weight: 500;
+    height: 100%;
+    flex-direction: column;
+    padding-top: 15px;
+    box-sizing: border-box;
+    @include flexAlign;
+  }
+}
+
+// 비밀투표
+.agreeVote {
+  overflow-y: scroll;
+  height: 155px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-size: 15px;
+
+  span {
+    color: #4b3e96;
+    font-weight: 700;
+  }
+}
+
+.agreeCheck {
+  margin-top: 20px;
+
+  input[type="checkbox"] {
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0 none;
+    margin: 0;
+    top: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  label {
+    background: url(../images/sub/uncheck.png) no-repeat center left;
+    padding-left: 25px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #555555;
+  }
+
+  input[type="checkbox"]:checked+label {
+    background: url(../images/sub/checked.png) no-repeat center left;
+  }
+
+}
+
+.apply_agree {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.file_wrap {
+  position: relative;
+  font-size: 0;
+
+  .fileName {
+    display: inline-block;
+    width: calc(100% - 192px) !important;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    vertical-align: middle;
+    text-align: left;
+    box-sizing: border-box;
+
+    @include mobile {
+      width: calc(100% - 100px) !important;
+    }
+  }
+
+  label {
+    display: inline-block;
+    width: 96px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #4b3e96;
+    text-align: center;
+    vertical-align: middle;
+
+    @include mobile {
+      width: 50px;
+    }
+  }
+
+  input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .delet_img {
+    display: inline-block;
+    width: 96px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #393939;
+    text-align: center;
+    vertical-align: middle;
+
+    @include mobile {
+      width: 50px;
+    }
+  }
+}
+
+
+// 비밀투표 완료
+.doneBox {
+  width: 100%;
+  max-width: 980px;
+  box-sizing: border-box;
+  padding: 50px 4%;
+  border: 2px solid #4b3e96;
+  border-radius: 10px;
+  margin: 75px auto 0 auto;
+
+  @include mobile {
+    margin-top: 50px;
+  }
+
+  .doneTitle {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    line-height: 1.3;
+
+    @include mobile {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .secretInfo {
+    border-bottom: 1px dashed #ddd;
+    border-top: 1px dashed #ddd;
+    background-color: #fbfbfb;
+    padding: 45px 6%;
+
+    li {
+      line-height: 1.4;
+      font-size: 18px;
+      display: flex;
+
+      .infoTh {
+        color: #000;
+        font-weight: 500;
+        width: 85px;
+      }
+
+      .infoTd {
+        font-size: 18px;
+        color: #555555;
+        width: calc(100% - 85px);
+
+        a {
+          color: #555555;
+          word-break: break-all;
+        }
+      }
+    }
+
+    @include mobile {
+      padding: 45px 3%;
+    }
+  }
+
+  .doneBtn {
+    display: block;
+    width: 250px;
+    line-height: 60px;
+    border-radius: 60px;
+    text-align: center;
+    color: #fff;
+    background-color: #4b3e96;
+    margin: 50px auto 0 auto;
+    font-size: 25px;
+
+    @include mobile {
+      width: 200px;
+      margin-top: 30px;
+    }
+  }
+}
+
+.secretBox {
+  height: auto;
+  overflow-y: auto;
+
+  .codeTtie01 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .codeTtie02 {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  form {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 25px 5%;
+    margin-top: 20px;
+
+    >p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .codeInput {
+      display: flex;
+
+      input {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        width: calc(100% - 96px);
+        padding-left: 10px;
+        box-sizing: border-box;
+        font-size: 18px;
+      }
+
+      .okcode {
+        width: 96px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        background-color: #4b3e96;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+
+.secretTxts {
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 16px;
+  font-weight: 300;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+}
+
+
+/*개인정보취급방침*/
+.privacy {
+  background: #fbfafa;
+  border: 1px solid #d7d5d5;
+  padding: 25px;
+  height: 645px;
+  box-sizing: border-box;
+
+  >div {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    height: 100%;
+
+    >.intxtarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      line-height: 1.7;
+      word-break: keep-all;
+      font-size: 14px;
+      overflow-y: scroll;
+      white-space: pre-line;
+    }
+  }
+}
