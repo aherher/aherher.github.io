@@ -1,0 +1,464 @@
+@charset "utf-8";
+@import './mixin';
+
+// 슬라이드
+.slide {
+  margin-top: 10.1rem;
+
+  &__images {
+    li {
+      .mv_m {
+        display: block;
+      }
+
+      .mv_pc {
+        display: none;
+      }
+    }
+
+    .slick-dots {
+      bottom: 2rem;
+
+      li {
+        width: 1.3rem;
+        height: 1.3rem;
+        box-sizing: border-box;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        vertical-align: middle;
+
+        &.slick-active {
+          background-color: #d19a2c;
+          border: none;
+        }
+      }
+    }
+
+    .slick-prev,
+    .slick-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.5rem;
+      height: 2.4rem;
+      z-index: 1;
+    }
+
+    .slick-prev {
+      background: url(../images/main/prev.png) no-repeat center;
+      background-size: cover;
+      left: 2vw;
+    }
+
+    .slick-next {
+      background: url(../images/main/next.png) no-repeat center;
+      background-size: cover;
+      right: 2vw;
+    }
+
+
+    @include lap {
+      li {
+        .mv_m {
+          display: none;
+        }
+
+        .mv_pc {
+          display: block;
+        }
+
+        img {
+          max-width: none;
+          @include centerX(relative);
+
+          @media screen and (min-width:1925px) {
+            width: 100%;
+          }
+
+          @media screen and (max-width:1240px) {
+            width: 140%;
+          }
+        }
+      }
+
+      .slick-dots {
+        bottom: 12.5rem;
+      }
+
+      .slick-prev,
+      .slick-next {
+        width: 2.9rem;
+        height: 4.8rem;
+      }
+    }
+  }
+}
+
+// 진료
+.diagnosis {
+  &__section {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  &__box {
+    padding: clamp(1.5rem, 5vw, 4.5rem);
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: clamp(1rem, 5vw, 3rem);
+      right: clamp(1.5rem, 5vw, 4.5rem);
+      transform: scale(0.5);
+      transform-origin: top right;
+    }
+
+    &.box01 {
+      background-color: #b5975b;
+
+      &::before {
+        background: url(../images/main/box_icon01.png) no-repeat center;
+        width: 9.1rem;
+        height: 7rem;
+      }
+
+      dl {
+        color: #fff;
+      }
+    }
+
+    &.box02 {
+      background-color: #fcfcfc;
+
+      &::before {
+        background: url(../images/main/box_icon02.png) no-repeat center;
+        width: 6.3rem;
+        height: 7rem;
+      }
+    }
+
+    &.box03 {
+      background-color: #f2f2f2;
+
+      &::before {
+        background: url(../images/main/box_icon03.png) no-repeat center;
+        width: 8.1rem;
+        height: 7rem;
+      }
+    }
+  }
+
+  &__form {
+    .inputs {
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        background-color: #fff;
+        height: 4rem;
+        box-sizing: border-box;
+        padding-left: 1.5rem;
+        font-size: 1.6rem;
+        border: none;
+      }
+
+      .name_cell {
+        width: 34%;
+      }
+
+      .number_cell {
+        width: 64%;
+      }
+    }
+
+    .buttons {
+      margin-top: 1rem;
+
+      li {
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        text-align: center;
+        height: 4rem;
+
+        a {
+          @include flexAlign;
+          height: 100%;
+          color: #fff;
+          font-size: 1.6rem;
+          font-weight: 500;
+        }
+
+        &:hover {
+          background-color: #674f1e;
+          border-color: #99804d;
+        }
+      }
+    }
+  }
+
+  &__dl {
+    margin-bottom: 3rem;
+
+    dt {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+
+    dd {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+  }
+
+  &__buttons {
+    li {
+      height: 4rem;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      box-sizing: border-box;
+      text-align: center;
+
+      &:first-child {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        @include flexAlign;
+        height: 100%;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+
+      &:hover {
+        background-color: #674f1e;
+        border-color: #99804d;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  @include lap {
+    &__section {
+      display: flex;
+      transform: translateY(-10rem);
+    }
+
+    &__box {
+      width: 33.33333333%;
+    }
+  }
+}
+
+// 서비스 바로가기
+.section_title {
+  font-size: clamp(2rem, 7vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 1.2em;
+}
+
+.service {
+  background-color: #f0f0ee;
+  padding: clamp(5rem, 7vw, 7.5rem) 0;
+  text-align: center;
+  margin-top: 7rem;
+
+  &__list {
+    margin-top: clamp(8rem, 9.5vw, 12rem);
+    display: flex;
+    flex-direction: column;
+    row-gap: 8rem;
+
+    li {
+      background-color: #fff;
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 36rem;
+      margin: 0 auto;
+
+      a {
+        display: block;
+        padding: 10rem 2rem 3rem 2rem;
+      }
+
+      .icon {
+        background-color: #fff;
+        border-radius: 100%;
+        width: 12.5rem;
+        height: 12.5rem;
+        box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
+        top: -5.5rem;
+        @include centerX(absolute);
+        @include flexAlign;
+      }
+
+      .text01 {
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .text02 {
+        font-size: 1.3rem;
+        color: #777777;
+        line-height: 1.4;
+      }
+
+      .more {
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #b5975b;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #b5975b;
+        margin-top: 3rem;
+      }
+
+      &:hover {
+        box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  @include lap {
+    margin-top: 0;
+
+    &__list {
+      flex-direction: row;
+      justify-content: space-between;
+
+      li {
+        width: 18%;
+      }
+    }
+  }
+}
+
+// 공지사항
+.notice {
+  padding: clamp(6rem, 7vw, 8rem) 0;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+
+    li {
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+
+      .image {
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          padding-bottom: 63.04347826087%;
+        }
+      }
+
+      dl {
+        padding: clamp(1.5rem, 5vw, 3rem);
+
+        dt {
+          font-size: 1.8rem;
+          line-height: 1.4;
+          margin-bottom: 1em;
+          height: 50px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -os-flexbox;
+          word-wrap: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+
+        }
+
+        dd {
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: #777777;
+        }
+      }
+
+    }
+  }
+
+  @include tablet {
+    &__list {
+      flex-direction: row;
+      justify-content: space-between;
+
+      li {
+        width: 31%;
+      }
+    }
+  }
+}
+
+.contact {
+  margin-bottom: clamp(7rem, 6vw, 12rem);
+
+  .the_map {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    .wrap_map {
+      height: clamp(25rem, 30vw, 45rem);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    li {
+      width: 100%;
+      height: 7.3rem;
+      border: 1px solid #ddd;
+
+      a {
+        height: 100%;
+        font-size: 1.7rem;
+        display: flex;
+        align-items: center;
+        padding-left: clamp(2rem, 4vw, 4rem);
+        background: url(../images/main/btn_arr.png) no-repeat center right clamp(2rem, 4vw, 4rem);
+      }
+    }
+  }
+
+  @include pc {
+    &__buttons {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+
+      li {
+        width: 49%;
+        max-width: 27.8rem;
+      }
+    }
+  }
+}
+
+// 오시는 길 안내

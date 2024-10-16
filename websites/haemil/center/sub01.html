@@ -1,0 +1,166 @@
+<? include "../inc/header.html"; ?>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/slick.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/slick.css" />
+<link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+<main>
+  <!-- 서브비주얼 -->
+  <section class="sub_visual sub_visual04">
+    <dl>
+      <dt>
+        <h2>검진센터</h2>
+      </dt>
+      <dd>정확한 진단과 근본적인 원인을 치료하는 병원이 되겠습니다.</dd>
+    </dl>
+  </section>
+  <!-- 서브비주얼 끝 -->
+  <? include "../inc/sub_link.html"; ?>
+
+  <script>
+    let thisPage = "#sub04";
+  </script>
+
+  <section class="sub_contents">
+    <div class="sub_center">
+      <h2 class="sub_page">검진센터 소개</h2>
+
+      <ul class="sub_tabs true_tabs tab02">
+        <li class="on"><a href="#tab01">검진센터 소개</a></li>
+        <li><a href="#tab02">검진시간 및 이용안내</a></li>
+      </ul>
+
+      <!-- 검진센터 소개 -->
+      <div id="tab01" class="tab_contents">
+        <div class="onStop">
+          <dl>
+            <dt>해밀병원의 건강검진은<br />
+              <span>One-stop 진료 서비스</span>를 통한 건강 지킴이입니다.
+            </dt>
+            <dd>이는 면역 치료와 검진을 기본으로 한 해밀병원의 중점 진료이며, 체계적이고 편안한<br />
+              검진 시스템을 바탕으로 하여 정확하고 빠른 검진 결과를 약속드립니다.
+            </dd>
+          </dl>
+        </div>
+
+        <p class="line_title">해밀병원 검진센터 POINT</p>
+        <ul class="points">
+          <li>
+            <div class="icon"><img src="../images/sub/center/point_icon01.png" alt=""></div>
+            <dl>
+              <dt>POINT. 1</dt>
+              <dd>환자 개개인에 맞는 맞춤형 종합검진 프로그램</dd>
+            </dl>
+          </li>
+          <li>
+            <div class="icon"><img src="../images/sub/center/point_icon02.png" alt=""></div>
+            <dl>
+              <dt>POINT. 2</dt>
+              <dd>전문의가 함께하는 정밀한 정밀검진<br />
+                (가정의학과 / 소화기내과)</dd>
+            </dl>
+          </li>
+          <li>
+            <div class="icon"><img src="../images/sub/center/point_icon03.png" alt=""></div>
+            <dl>
+              <dt>POINT. 3</dt>
+              <dd>첨단 의료장비 및 최신 의료 서비스 제공</dd>
+            </dl>
+          </li>
+          <li>
+            <div class="icon"><img src="../images/sub/center/point_icon04.png" alt=""></div>
+            <dl>
+              <dt>POINT. 4</dt>
+              <dd>쾌적한 시설, 편안하고 친절한 검진 시스템</dd>
+            </dl>
+          </li>
+        </ul>
+
+        <ul class="centerSlide">
+          <li><img src="../images/sub/center/in_center01.jpg" alt=""></li>
+          <li><img src="../images/sub/center/in_center02.jpg" alt=""></li>
+          <li><img src="../images/sub/center/in_center03.jpg" alt=""></li>
+          <li><img src="../images/sub/center/in_center04.jpg" alt=""></li>
+        </ul>
+      </div>
+      <!-- 검진센터 소개 끝-->
+
+      <!-- 안내 -->
+      <div id="tab02" class="tab_contents hide">
+        <p class="line_title">검진시간 및 유의사항</p>
+
+        <div class="mb70">
+          <p class=" dot_title">검진시간</p>
+          <ul class="open_time">
+            <li class="time01">
+              <p><span>평일.</span> 08:00 ~ 16:00</p>
+            </li>
+            <li class="time02">
+              <p><span>토요일.</span> 08:00 ~ 11:00</p>
+            </li>
+            <li class="time03">
+              <p><span>점심시간.</span> 12:00 ~ 13:00</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb70">
+          <p class="dot_title">주의사항</p>
+          <dl class="lineDl">
+            <dt>검사 3일전</dt>
+            <dd class="desc_title"><span class="sky_text">음주, 과식, 지나친 피로, 피가 섞인 날생선, 육류(육회 등)</span>을 피하여 주십시오.</dd>
+          </dl>
+          <dl class="lineDl">
+            <dt>검사 전날</dt>
+            <dd class="desc_title">
+              <p>저녁식사 후 <span class="sky_text">저녁 9시 이후에는 완전 금식</span>하시고 물도 드시면 안 됩니다. (단, 혈압 및 심장약은 아침 5시경 복용함)</p>
+              <p>편안한 상태에서 충분한 수면을 취하시고, <span class="sky_text">음주는 반드시 피하셔야 합니다.</span></p>
+            </dd>
+          </dl>
+          <dl class="lineDl">
+            <dt>검사 당일</dt>
+            <dd class="desc_title">
+              <p>- 소변검사 및 복부 초음파 검사 시 <span class="sky_text">소변을 참고 방문</span>하십시오.</p>
+              <p>- 아침식사는 물론 <span class="sky_text">물, 약, 껌, 담배</span> 등 아무것도 드시지 마십시오.</p>
+              <p>- 샤워, 양치질은 하셔도 됩니다.</p>
+              <p>- <span class="sky_text">심신쇠약자, 임산부나 임신 가능성이 있으신 분</span>은 검진을 받으실 수 없습니다.</p>
+              <p>- 목걸이, 시계, 반지 등 <span class="sky_text">귀중품은 소지하지 마십시오.</span></p>
+              <p>- <span class="sky_text">신분증 및 보험카드는 꼭 지참</span>해 주십시오.</p>
+            </dd>
+          </dl>
+        </div>
+
+
+        <dl class="mb70">
+          <dt class="dot_title">여성고객을 위한 안내</dt>
+          <dd class="desc_title">- <span class="sky_text">임신 중이거나 임신 가능성이 있으신 여성 수검자</span>께서는 방사선 관련 검사를 받을 수 없으므로 <span class="sky_text">검사 전 반드시 직원에게 말씀</span>해 주셔야 합니다.</dd>
+          <dd class="desc_title">- 검진 예정일에 <span class="sky_text">생리 중 이신 경우 자궁암 검사와 소변검사에 지장</span>을 줄 수 있습니다. (가능하면 검진 일을 변경해 주시고 두 검사만 추후에 따로 받으실 수도 있습니다.)</dd>
+          <dd class="desc_title">- 자궁절제술을 받으신 분도 골반 내 장기의 이상 여부 확인을 위해 부인과 검사가 필요합니다.</dd>
+          <dd class="desc_title">- 자궁경부암 검사를 위해 24시간 내에 부부관계, 질정, 크림 사용을 금하십시오.</dd>
+        </dl>
+
+        <dl>
+          <dt class="dot_title">검진 소요시간</dt>
+          <dd class="desc_title"><span class="sky_text">검진시간은 평균 2~3시간 정도 소요</span>되며 검진 항목에 따라 차이가 있습니다.</dd>
+        </dl>
+
+      </div>
+      <!-- 안내 끝-->
+
+    </div>
+  </section>
+</main>
+
+<script>
+  $('.centerSlide').slick({
+    dots: false,
+    infinite: true,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    speed: 1200,
+    arrows: true,
+    pauseOnHover: false,
+  });
+</script>
+
+<? include "../inc/footer.html" ; ?>
+<script src="../js/sub.js"></script>

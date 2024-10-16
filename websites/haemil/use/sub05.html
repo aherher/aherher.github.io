@@ -1,0 +1,65 @@
+<? include "../inc/header.html"; ?>
+<main>
+  <!-- 서브비주얼 -->
+  <section class="sub_visual sub_visual05">
+    <dl>
+      <dt>
+        <h2>이용안내</h2>
+      </dt>
+      <dd>정확한 진단과 근본적인 원인을 치료하는 병원이 되겠습니다.</dd>
+    </dl>
+  </section>
+  <!-- 서브비주얼 끝 -->
+  <? include "../inc/sub_link.html"; ?>
+
+  <script>
+    let thisPage = "#sub05";
+  </script>
+
+  <section class="sub_contents">
+    <div class="sub_center">
+      <h2 class="sub_page">오시는 길</h2>
+
+      <!-- * 카카오맵 - 지도퍼가기 -->
+      <!-- 1. 지도 노드 -->
+      <div id="daumRoughmapContainer1682471298327" class="root_daum_roughmap root_daum_roughmap_landing theMap"></div>
+
+      <!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+      <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+      <!-- 3. 실행 스크립트 -->
+      <script charset="UTF-8">
+        new daum.roughmap.Lander({
+          "timestamp": "1682471298327",
+          "key": "2ek2g",
+        }).render();
+      </script>
+
+      <div class="contactInfo">
+        <dl class="contactInfo__dl">
+          <dt class="poppins">Location</dt>
+          <dd>해밀병원<br />
+            오시는 길</dd>
+        </dl>
+        <div class="contactInfo__right">
+          <div class="contactInfo__texts">
+            <p><span class="dt poppins"><em>ADD</em></span><span class="dd">인천광역시 남동구 백범로 403(간석동 240-5)</span></p>
+            <p><span class="dt poppins"><em>TEL</em></span><span class="dd poppins">032-427-1175</span></p>
+          </div>
+          <ul class="contactInfo__buttons">
+            <li class="naver"><a href="https://naver.me/xDsJa62j" target="_blank"><b>NAVER</b> 지도보기</a></li>
+            <li class="kakao"><a href="http://kko.to/WyH8LqvMgN" target="_blank"><b>KAKAO</b> 지도보기</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</main>
+<? include "../inc/footer.html"; ?>
+
+<script src="../js/sub.js"></script>

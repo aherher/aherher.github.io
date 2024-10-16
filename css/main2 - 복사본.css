@@ -1,0 +1,1 @@
+.visual{position:relative;height:100vh;background-color:#3b3b3b}.visual h2{display:flex;align-items:center;justify-content:center;color:#fff;height:100%;font-size:115px;position:relative;z-index:1}.visual h2 div{margin:0 100px}.visual canvas{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);left:48%;width:800px !important;height:800px !important;z-index:0}
