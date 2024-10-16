@@ -1,58 +1,282 @@
-<? include "../inc/header.html"; ?>
-<main>
-  <!-- 서브비주얼 -->
-  <section class="sub_visual sub_visual01">
-    <dl>
-      <dt>
-        <h2>병원소개</h2>
-      </dt>
-      <dd>정확한 진단과 근본적인 원인을 치료하는 병원이 되겠습니다.</dd>
-    </dl>
-  </section>
-  <!-- 서브비주얼 끝 -->
-  <? include "../inc/sub_link.html"; ?>
-  <script>
-    let thisPage = "#sub01";
-  </script>
+<!DOCTYPE html>
+<html lang="ko">
 
-  <section class="sub_contents">
-    <div class="sub_center">
-      <h2 class="sub_page">병원연혁</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="Googlebot" content="noindex, nofollow">
+  <meta name="Naverbot" content="noindex, nofollow">
+  <meta name="Daumoa" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/common.css?v=230522" />
+  <link rel="stylesheet" type="text/css" href="../css/sub.css?v=230522" />
+  <title>해밀병원</title>
+</head>
 
-      <div class="history">
-        <dl class="history__left">
-          <dt>Haemill history</dt>
-          <dd>건강을 위해 끊임없이 노력해 온
-            <b>해밀병원이 걸어온 길</b>입니다.
-          </dd>
-        </dl>
+<body>
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="header__head center_box">
+      <h1 class="header__logo"><a href="https://aherher.github.io/websites/haemil/"><img src="../images/common/logo.png" alt="해밀병원"></a></h1>
+      <nav class="header__menuWrap">
+        <ul class="header__menu">
+          <li><a href="../about/sub01.html">병원소개</a>
+            <ul class="header__submenu">
+              <li><a href="../about/sub01.html">병원장인사말</a></li>
+              <li><a href="../about/sub02.html">의료진 소개</a></li>
+              <li><a href="../about/sub03.html">미션/비전</a></li>
+              <li><a href="../about/sub04.html">병원연혁</a></li>
+              <li><a href="../about/sub05.html">환자권리의무</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../diagnosis/sub01.html">진료안내</a>
+            <ul class="header__submenu">
+              <li><a href="../diagnosis/sub01.html">만성질환 클리닉</a></li>
+              <li><a href="../diagnosis/sub02.html">소화기질환 클리닉</a></li>
+              <li><a href="../diagnosis/sub03.html">호흡기질환 클리닉</a></li>
+            </ul>
+          </li>
+          <li><a href="../immunity/sub01.html">암 면역 센터</a>
+            <ul class="header__submenu">
+              <li><a href="../immunity/sub01.html">암 면역 센터 소개</a></li>
+              <li><a href="../immunity/sub02.html">암 면역 검사란?</a></li>
+              <li><a href="../immunity/sub03.html">암 면역치료 클리닉</a></li>
+              <li><a href="../immunity/sub04.html">고주파 온열암 치료</a></li>
+            </ul>
+          </li>
+          <li><a href="../center/sub01.html">건강검진센터</a>
+            <ul class="header__submenu">
+              <li><a href="../center/sub01.html">검진센터 소개</a></li>
+              <li><a href="../center/sub02.html">일반검진</a></li>
+              <li><a href="../center/sub03.html">종합검진</a></li>
+              <li><a href="../center/sub04.html">채용검진</a></li>
+            </ul>
+          </li>
+          <li><a href="../use/sub01.html">이용안내</a>
+            <ul class="header__submenu">
+              <!-- <li><a href="../use/sub01.html">예약안내</a></li> -->
+              <li><a href="../use/sub02.html">입퇴원안내</a></li>
+              <li><a href="../use/sub03.html">증명서발급안내</a></li>
+              <li><a href="../use/sub04.html">비급여수가안내</a></li>
+              <li><a href="../use/sub05.html">오시는 길</a></li>
+            </ul>
+          </li>
+          <li><a href="../HyAdmin/list.php?bbs_id=bo01">고객안내</a>
+            <ul class="header__submenu">
+              <li><a href="../HyAdmin/list.php?bbs_id=bo01">공지사항</a></li>
+              <li><a href="../HyAdmin/list.php?bbs_id=bo02">병원소식</a></li>
+              <li><a href="../HyAdmin/list.php?bbs_id=bo03">언론보도</a></li>
+              <li><a href="../HyAdmin/list.php?bbs_id=bo04">건강정보</a></li>
+              <li><a href="../HyAdmin/list.php?bbs_id=bo05">진료상담</a></li>
+              <li><a href="../customer/sub06.html">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <button class="header__menubtn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+      <div class="header__close"></div>
+    </div>
+    <div class="header__back"></div>
+  </header>
+  <!-- 헤더 끝 -->
+  <main>
+    <!-- 서브비주얼 -->
+    <section class="sub_visual sub_visual01">
+      <dl>
+        <dt>
+          <h2>병원소개</h2>
+        </dt>
+        <dd>정확한 진단과 근본적인 원인을 치료하는 병원이 되겠습니다.</dd>
+      </dl>
+    </section>
+    <!-- 서브비주얼 끝 -->
+    <section class="subLinks">
+      <div class="sub_center">
+        <div class="subLinks__wrap">
+          <div class="subLinks__Home">Home</div>
+          <div class="subLinks__leftLink">
+            <p class="cur_page"><span></span></p>
+            <ul class="subLinks__List il_left">
+              <li><a href="../about/sub01.html">병원소개</a></li>
+              <li><a href="../diagnosis/sub01.html">진료안내</a></li>
+              <li><a href="../immunity/sub01.html">암 면역 센터</a></li>
+              <li><a href="../center/sub01.html">건강검진센터</a></li>
+              <li><a href="../use/sub01.html">이용안내</a></li>
+              <li><a href="../customer/sub01.html">고객안내</a></li>
+            </ul>
+          </div>
+          <div class="subLinks__rightLink">
+            <p class="cur_page"><span></span></p>
 
-        <div class="history__right">
-          <dl>
-            <dt>2023</dt>
-            <dd><span class="month">04.</span> <span>건강검진센터 개소 : 면역에 특화된 검진센터 운영</span></dd>
-          </dl>
-          <dl>
-            <dt>2022</dt>
-            <dd><span class="month">12.</span> <span>해밀병원 암 전문 일반병원 전환 </span></dd>
-          </dl>
-          <dl>
-            <dt>2021</dt>
-            <dd><span class="month">11.</span> <span>㈜팀바이오 의료인공지능기업 spin-off 창업</span></dd>
-            <dd><span class="month">11.</span> <span>NICE 기술등급 T4-(우수) 획득 : 암면역 진단기술 확보 </span></dd>
-          </dl>
-          <dl>
-            <dt>2016</dt>
-            <dd><span class="month">09.</span> <span>소망요양병원 암 전문 요양병원 개원 </span></dd>
-          </dl>
-          <div class="point"></div>
+          </div>
+          <div class="hided_lise">
+            <ul id="sub01" class="subLinks__List il_right">
+              <ul class="sub_menu">
+                <li><a href="../about/sub01.html">병원장인사말</a></li>
+                <li><a href="../about/sub02.html">의료진 소개</a></li>
+                <li><a href="../about/sub03.html">미션/비전</a></li>
+                <li><a href="../about/sub04.html">병원연혁</a></li>
+                <li><a href="../about/sub05.html">환자권리의무</a>
+              </ul>
+            </ul>
+            <ul id="sub02" class="subLinks__List il_right">
+              <li><a href="../diagnosis/sub01.html">만성질환 클리닉</a></li>
+              <li><a href="../diagnosis/sub02.html">소화기질환 클리닉</a></li>
+              <li><a href="../diagnosis/sub03.html">호흡기질환 클리닉</a></li>
+            </ul>
+            <ul id="sub03" class="subLinks__List il_right">
+              <li><a href="../immunity/sub01.html">암 면역 센터 소개</a></li>
+              <li><a href="../immunity/sub02.html">암 면역 검사란?</a></li>
+              <li><a href="../immunity/sub03.html">암 면역치료 클리닉</a></li>
+              <li><a href="../immunity/sub04.html">고주파 온열암 치료</a></li>
+            </ul>
+
+            <ul id="sub04" class="subLinks__List il_right">
+              <li><a href="../center/sub01.html">검진센터 소개</a></li>
+              <li><a href="../center/sub02.html">일반검진</a></li>
+              <li><a href="../center/sub03.html">종합검진</a></li>
+              <li><a href="../center/sub04.html">채용검진</a></li>
+            </ul>
+
+            <ul id="sub05" class="subLinks__List il_right">
+              <!-- <li><a href="../use/sub01.html">예약안내</a></li> -->
+              <li><a href="../use/sub02.html">입퇴원안내</a></li>
+              <li><a href="../use/sub03.html">증명서발급안내</a></li>
+              <li><a href="../use/sub04.html">비급여수가안내</a></li>
+              <li><a href="../use/sub05.html">오시는 길</a></li>
+            </ul>
+
+            <ul id="sub06" class="subLinks__List il_right">
+              <li><a href="../customer/sub01.html">공지사항</a></li>
+              <li><a href="../customer/sub02.html">병원소식</a></li>
+              <li><a href="../customer/sub03.html">언론보도</a></li>
+              <li><a href="../customer/sub04.html">건강정보</a></li>
+              <li><a href="../customer/sub05.html">진료상담</a></li>
+              <li><a href="../customer/sub06.html">FAQ</a></li>
+            </ul>
+
+          </div>
         </div>
 
       </div>
+    </section>
+    <script>
+      let thisPage = "#sub01";
+    </script>
 
+    <section class="sub_contents">
+      <div class="sub_center">
+        <h2 class="sub_page">병원연혁</h2>
+
+        <div class="history">
+          <dl class="history__left">
+            <dt>Haemill history</dt>
+            <dd>건강을 위해 끊임없이 노력해 온
+              <b>해밀병원이 걸어온 길</b>입니다.
+            </dd>
+          </dl>
+
+          <div class="history__right">
+            <dl>
+              <dt>2023</dt>
+              <dd><span class="month">04.</span> <span>건강검진센터 개소 : 면역에 특화된 검진센터 운영</span></dd>
+            </dl>
+            <dl>
+              <dt>2022</dt>
+              <dd><span class="month">12.</span> <span>해밀병원 암 전문 일반병원 전환 </span></dd>
+            </dl>
+            <dl>
+              <dt>2021</dt>
+              <dd><span class="month">11.</span> <span>㈜팀바이오 의료인공지능기업 spin-off 창업</span></dd>
+              <dd><span class="month">11.</span> <span>NICE 기술등급 T4-(우수) 획득 : 암면역 진단기술 확보 </span></dd>
+            </dl>
+            <dl>
+              <dt>2016</dt>
+              <dd><span class="month">09.</span> <span>소망요양병원 암 전문 요양병원 개원 </span></dd>
+            </dl>
+            <div class="point"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/sub.js"></script>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer__wrap">
+      <div class="center_box footer__box">
+        <!--  -->
+        <dlv class="footer__right">
+          <ul class="footer__sns">
+            <li><a href="/https://booking.naver.com/booking/6/bizes/887319/items/5006707" target="_blank"><img src="../images/common/sns01.png?v=230502" alt="네이버"></a></li>
+            <li><a href="/https://blog.naver.com/haemill_hospital/" target="_blank"><img src="../images/common/sns02.png?v=230502" alt="블로그"></a></li>
+            <li><a href="#!"><img src="../images/common/sns03.png?v=230502" alt="인스타그램"></a></li>
+            <li><a href="#!"><img src="../images/common/sns04.png?v=230502" alt="카카오톡"></a></li>
+          </ul>
+          <dl class="footer__cs poppins">
+            <dt>CS CENTER</dt>
+            <dd><a href="../#!">032-427-1175</a></dd>
+          </dl>
+          <div class="footer__time">
+            <p class="th"><b>검진센터.</b></p>
+            <p class="td"><span>평일</span> 08:00 ~ 17:00</p>
+            <p class="td last_td"><span>토요일</span> 08:00 ~ 12:00</p>
+          </div>
+          <div class="footer__time">
+            <p class="th"><b>외래.</b></p>
+            <p class="td"><span>평일</span> 08:00 ~ 18:00</p>
+            <p class="td last_td"><span>토요일</span> 09:00 ~ 13:00</p>
+          </div>
+          <div class="footer__time">
+            <p class="off"><b>공휴일, 일요일 휴진</b></p>
+            <p class="td"><span>점심시간</span> 12:00 ~ 13:00</p>
+          </div>
+        </dlv>
+        <!--  -->
+        <!--  -->
+        <div class="footer__left">
+          <p class="footer__logo"><img src="../images/common/foot_logo.png" alt="해밀병원"></p>
+          <p class="footer__info">
+            <span>상호명 <b>해밀병원</b></span> <span>대표자명 <b>강석철</b></span> <span>사업자등록번호 <b>801-90-00326</b></span>
+          </p>
+          <p class="footer__info">
+            <span>주소 <b>인천광역시 남동구 백범로 403(간석동 240-5)</b></span>
+          </p>
+          <ul class="footer__btns">
+            <li><a href="../use/sub05.html">오시는 길</a></li>
+            <li><a href="../use/sub04.html">비급여안내</a></li>
+            <li><a href="../diagnosis/sub01.html">진료안내</a></li>
+            <li><a href="../etc/sub01.html">개인정보처리방침</a></li>
+          </ul>
+        </div>
+        <!--  -->
+      </div>
     </div>
-  </section>
-</main>
+    <footer class="footer__copy">
+      <div class="center_box">
+        <p class="popins">Copyrightⓒ2023 Haemill Hospital.All rights reserved.</p>
+      </div>
+    </footer>
+  </footer>
+  <!-- 푸터 끝 -->
+  <script src="../js/layout.js"></script>
 
-<? include "../inc/footer.html"; ?>
-<script src="../js/sub.js"></script>
+
+</body>
+
+</html>
