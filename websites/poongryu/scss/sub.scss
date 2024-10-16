@@ -1,0 +1,2513 @@
+@charset "utf-8";
+@import './mixin';
+
+:root {
+  --purple: #930883;
+}
+
+body>iframe {
+  display: none;
+}
+
+// 서브공통
+.subVisual {
+  @include flexAlign;
+  background: url(../images/sub/subVisual.jpg) no-repeat center;
+  background-size: cover;
+  text-align: center;
+  height: 18rem;
+
+  dl {
+    color: #000;
+
+    dt {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900;
+      font-family: 'NanumSquareRound';
+      margin-bottom: 1.5rem;
+    }
+
+    dd {
+      font-size: clamp(1.7rem, 3vw, 2rem);
+      font-weight: 700;
+    }
+  }
+
+  @include pc {
+    height: 30rem;
+  }
+}
+
+.subpage_title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  font-family: 'NanumSquareRound';
+  text-align: center;
+  margin-bottom: clamp(6rem, 8vw, 10rem);
+}
+
+.subContents {
+  padding: 9rem 0;
+}
+
+.deFont {
+  font-size: clamp(1.5rem, 5vw, 1.7rem);
+  line-height: 1.6;
+  color: #555555;
+}
+
+// 인사말
+.greeting {
+  &__align {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  &__box {
+    background-color: #d5f3f1;
+    border-radius: 1.5rem;
+    padding: 3.5rem 4%;
+    color: #4f0046;
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.9em;
+    }
+
+    .dot {
+      font-size: 1.9rem;
+      line-height: 1.4;
+      position: relative;
+      padding-left: 1.2rem;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 100%;
+        background-color: #930883;
+        position: absolute;
+        left: 0;
+        top: 0.7rem
+      }
+    }
+  }
+
+  &__text01 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 0.6em;
+    color: #111111;
+  }
+
+  &__text02 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #111111;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+
+    p {
+      display: inline;
+      color: var(--purple);
+    }
+
+    span {
+      position: relative;
+
+      em {
+        position: relative;
+        z-index: 1;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: #f9e0f6;
+        width: 100%;
+        height: 0.5em;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+      }
+    }
+  }
+
+  @include pc {
+    &__align {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: -10rem;
+    }
+
+    &__left {
+      width: calc(100% - 60rem);
+    }
+
+    &__text02 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 연혁
+.about_history {
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+  font-weight: 900;
+  color: #111111;
+  line-height: 1.4;
+  margin-bottom: clamp(5rem, 8rem, 11rem);
+}
+
+.history {
+  .slick-arrow {
+    width: 3rem;
+    height: 1.6rem;
+    top: 2.5rem
+  }
+
+  .slick-prev {
+    background: url(../images/sub/about/prev.png);
+    background-size: cover;
+    left: auto;
+    right: 4rem;
+  }
+
+  .slick-next {
+    background: url(../images/sub/about/next.png);
+    background-size: cover;
+    right: 0;
+  }
+
+
+  &__year {
+    font-size: clamp(6rem, 7vw, 10rem);
+    font-weight: 900;
+    color: #111111;
+    padding-bottom: 0.4em;
+    margin-bottom: 1em;
+    border-bottom: 0.4rem solid var(--purple);
+  }
+
+  &__work {
+
+    li {
+      font-size: 1.7rem;
+      line-height: 1.4;
+      position: relative;
+      padding-left: 1.7rem;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0.9rem;
+        height: 0.9rem;
+        background-color: var(--purple);
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+        top: 0.5rem
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+
+  @include pc {
+    .slick-arrow {
+      width: 6rem;
+      height: 3.2rem;
+    }
+  }
+}
+
+// 강사소개
+.teacher {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+
+  &__text01 {
+    font-size: clamp(3rem, 6vw, 3.5rem);
+    line-height: 1.3;
+    color: #4f0046;
+    padding-bottom: 0.6em;
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid #deb8ff;
+
+    b {
+      font-weight: 900;
+    }
+  }
+
+  &__text02 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+    color: #4f0046;
+    margin-bottom: 4rem;
+  }
+
+  &__dl {
+    dt {
+      font-size: clamp(1.7rem, 5vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.8em;
+    }
+
+    dd {
+      font-size: 1.7rem;
+      line-height: 1.3;
+      color: #555555;
+      position: relative;
+      padding-left: 1.2rem;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+        background-color: #930883;
+        position: absolute;
+        left: 0;
+        top: 0.7rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  @include tablet {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &__texts {
+      width: calc(90% - 37rem);
+    }
+  }
+}
+
+.headTeacher {
+  padding-bottom: clamp(5rem, 7vw, 9rem);
+  margin-bottom: clamp(5rem, 7vw, 9rem);
+  border-bottom: 1px dashed #ddd;
+}
+
+// 오시는 길
+.themap {
+  width: 100% !important;
+  height: 35rem;
+  z-index: 0;
+
+  .wrap_map {
+    height: 100% !important;
+  }
+
+  @include pc {
+    height: 54.6rem;
+  }
+}
+
+.locate {
+  background-color: #008977;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: clamp(3rem, 5vw, 4.5rem) 5%;
+
+  dl {
+    padding-top: 5.5rem;
+
+
+    dt {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 0.8em;
+    }
+
+    dd {
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+  }
+
+  &__01 {
+    background: url(../images/sub/about/locate01.png) no-repeat center top;
+    background-size: 2.3rem;
+  }
+
+  &__02 {
+    background: url(../images/sub/about/locate02.png) no-repeat center top;
+    background-size: 3.4rem;
+  }
+
+  &__03 {
+    background: url(../images/sub/about/locate03.png) no-repeat center top;
+    background-size: 2.6rem;
+  }
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 101rem;
+    margin: -10rem auto 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// 레슨문의
+.onlineFrm {
+  font-family: 'Noto Sans Korean';
+
+  &__box {
+    padding-bottom: clamp(3rem, 7vw, 6rem);
+    margin-bottom: clamp(3rem, 7vw, 6rem);
+    border-bottom: 1px solid #ddd;
+  }
+
+  &__title01 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.8em;
+  }
+
+  &__prav {
+    height: 22rem;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    white-space: pre-line;
+  }
+
+  &__agree {
+    position: relative;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #555555;
+
+    input[type="checkbox"] {
+      position: absolute;
+      right: 0;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0 none;
+      margin: 0;
+      top: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    label {
+      background: url(../images/sub/uncheck.png) no-repeat center left;
+      background-size: 1.5rem;
+      padding-left: 25px;
+    }
+
+    input[type="checkbox"]:checked+label {
+      background: url(../images/sub/checked.png) no-repeat center left;
+      background-size: 1.5rem;
+    }
+
+  }
+
+  &__title02 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__textarea {
+    height: 16rem;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    // padding-left: 4.5rem;
+    // background: url(../images/sub/textarea.png) no-repeat top 2rem left 1rem;
+
+    textarea {
+      font-family: 'Noto Sans Korean' !important;
+      padding: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 1.4;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: none;
+      resize: none;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+
+    input,
+    .selectMail {
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      padding-left: 1.5rem;
+      font-size: 1.6rem;
+      height: 6rem;
+    }
+  }
+
+  .infos {
+    justify-content: space-between;
+
+    input {
+      width: 48%;
+    }
+  }
+
+  .email {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: clamp(5rem, 6vw, 7rem);
+    margin-bottom: clamp(3rem, 6vw, 6rem);
+    border-bottom: 2px solid #333;
+
+    >div {
+      width: 100%;
+    }
+
+    span {
+      font-size: 1.8rem;
+      text-align: center;
+      width: 3.5rem;
+      display: inline-block;
+    }
+
+    .idcell,
+    .mailcell {
+      width: calc(50% - 2rem);
+    }
+
+    .selectMail {
+      width: 100%;
+    }
+  }
+
+  &__submit {
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    height: clamp(6rem, 7vw, 7.5rem);
+    color: #fff;
+    background-color: var(--purple);
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-weight: 700;
+    margin: 0 auto;
+  }
+
+  @include pc {
+    .email {
+      >div {
+        width: auto;
+      }
+
+      .idcell {
+        width: 28rem;
+      }
+
+      .mailcell {
+        width: 40rem;
+      }
+
+      .selectMail {
+        width: 27.6rem;
+      }
+    }
+  }
+}
+
+.file_wrap {
+  padding-bottom: clamp(5rem, 6vw, 7rem);
+  margin-bottom: clamp(3rem, 6vw, 6rem);
+  border-bottom: 2px solid #333;
+
+  li {
+    display: flex;
+
+    .fileName {
+      display: inline-block;
+      width: 320px;
+      height: 60px;
+      line-height: 60px;
+      padding-left: 10px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      vertical-align: middle;
+      text-align: left;
+      font-size: 1.7rem;
+    }
+
+    label {
+      display: inline-block;
+      width: clamp(18rem, 5vw, 23.2rem);
+      max-width: 232px;
+      height: 60px;
+      line-height: 60px;
+      margin-right: 5px;
+      color: #fff;
+      font-size: 2rem;
+      background-color: #333;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  }
+}
+
+
+
+// 교육안내
+.theEducation {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__texts {
+    margin-bottom: 2rem;
+
+    .number {
+      width: 5rem;
+      height: 5rem;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      background-color: #920883;
+      border-radius: 100%;
+      margin-bottom: 2rem;
+      @include flexAlign;
+    }
+
+    .title {
+      font-size: clamp(2rem, 6vw, 2.5rem);
+      line-height: 1.3;
+      margin-bottom: 1em;
+    }
+  }
+
+  @include tablet {
+    li {
+      @include flexCenter;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &__texts,
+    &__image {
+      width: 48%;
+    }
+  }
+}
+
+
+.subTitle {
+  font-size: clamp(3rem, 6vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.3;
+  color: #111111;
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.centerSection {
+  text-align: center;
+}
+
+.pageMargin {
+  margin-bottom: clamp(7rem, 8vw, 11.5rem);
+}
+
+.fans {
+  box-sizing: border-box;
+  border: 0.3rem solid #deb7ff;
+  border-radius: 2rem;
+  padding: clamp(1.5rem, 4vw, 4rem);
+
+  &__list {
+    li {
+      @include flexCenter;
+      flex-direction: column;
+
+      &:not(:last-child) {
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+        border-bottom: 1px dashed #ddd;
+      }
+
+      .labels {
+        margin-top: 2rem;
+
+        p {
+          font-size: clamp(1.6rem, 5vw, 1.8rem);
+          font-weight: 700;
+          position: relative;
+          padding-left: 1.5rem;
+
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            width: 0.7rem;
+            height: 0.7rem;
+            background-color: #920883;
+            border-radius: 100%;
+            left: 0;
+            @include centerY(absolute);
+          }
+        }
+      }
+
+    }
+  }
+
+  @include lap {
+    padding-bottom: 0;
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      li {
+        width: 50%;
+        box-sizing: border-box;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+        padding-top: 3rem;
+
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+
+        &:nth-child(odd) {
+          border-right: 1px dashed #ddd;
+        }
+
+        &:last-child {
+          width: 100%;
+          border-right: none;
+        }
+
+        .image {
+          height: 16.8rem;
+        }
+
+        .labels {
+          transform: translateY(-3rem);
+        }
+      }
+    }
+  }
+}
+
+.steps {
+  @include flexStart;
+  flex-wrap: wrap;
+  row-gap: 6rem;
+
+  li {
+    width: 49%;
+  }
+
+  margin-bottom: 4rem;
+
+
+
+  @include tablet {
+    li {
+      width: 25%;
+      row-gap: 0;
+    }
+  }
+}
+
+.offline {
+  dt {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #555555;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// 채용
+.headDl {
+  margin-bottom: 7rem;
+
+  dt {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1em;
+  }
+
+  dd {
+    font-size: 2rem;
+    line-height: 1.4;
+    color: #555555;
+  }
+}
+
+.happy {
+  height: 24rem;
+  background: url(../images/sub/employment/hands.jpg) no-repeat center;
+  background-size: cover;
+  margin-bottom: 8rem;
+  text-align: center;
+  padding: 0 2rem;
+  @include flexAlign;
+
+  p {
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.3;
+    color: #fff;
+  }
+}
+
+.part {
+  margin-bottom: clamp(8rem, 7vw, 10rem);
+
+  &__dl {
+    margin-bottom: 5rem;
+
+    dt {
+      font-size: clamp(2.4rem, 5vw, 3rem);
+      display: flex;
+      align-items: flex-start;
+      line-height: 1.3;
+
+      b {
+        font-weight: 900;
+      }
+
+      .number {
+        font-size: 2em;
+        font-weight: 900;
+        color: #d2a4cd;
+        letter-spacing: -0.07em;
+        margin-right: 2rem;
+        transform: translateY(-1rem);
+      }
+    }
+
+    dd {
+      font-size: 1.8rem;
+      color: #555555;
+      line-height: 1.5;
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__career {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  &__team {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+
+    .image {
+      margin-bottom: 2.5rem;
+    }
+
+    .title {
+      font-size: 2.3rem;
+      font-weight: 900;
+      line-height: 1.3;
+      color: #000000;
+      margin-bottom: 0.6em;
+    }
+
+    .text {
+      font-size: 1.6rem;
+      line-height: 1.4;
+      color: #555555;
+    }
+  }
+
+  &__working {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+
+    .workingDl {
+      padding-top: 11.8rem;
+      text-align: center;
+
+      dt {
+        font-size: clamp(2rem, 6vw, 2.3rem);
+        font-weight: 900;
+        color: #000000;
+        margin-bottom: 0.6em;
+        line-height: 1.3;
+      }
+
+      dd {
+        font-size: 1.7rem;
+        line-height: 1.4;
+        color: #555555;
+      }
+    }
+
+    .dl01 {
+      background: url(../images/sub/employment/work01.png) no-repeat center top;
+      background-size: 10rem;
+    }
+
+    .dl02 {
+      background: url(../images/sub/employment/work02.png) no-repeat center top;
+      background-size: 10rem;
+    }
+  }
+
+  @include tablet {
+    &__dl {
+      dt {
+        align-items: flex-end;
+
+        .number {
+          transform: translateY(1rem);
+        }
+      }
+    }
+
+    &__career {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    &__team {
+      flex-direction: row;
+      justify-content: space-between;
+
+      li {
+        width: 32%;
+      }
+    }
+
+    &__working {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .workingDl {
+        text-align: left;
+        padding: 1rem 0 0 11.8rem;
+        width: 48%;
+        box-sizing: border-box;
+      }
+
+      .dl01,
+      .dl02 {
+        background-position: center left;
+      }
+    }
+  }
+}
+
+.tenSentence {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  margin-bottom: clamp(8rem, 7vw, 10rem);
+
+  &__dl {
+    dt {
+      font-size: clamp(2.5rem, 6vw, 3rem);
+      margin-bottom: 0.8em;
+      line-height: 1.3;
+
+      b {
+        font-weight: 900;
+      }
+    }
+
+    dd {
+      font-size: clamp(1.7rem, 5vw, 2rem);
+      line-height: 1.4;
+    }
+  }
+
+  &__list {
+    li {
+      line-height: 1.3;
+      font-size: clamp(1.7rem, 4vw, 1.8rem);
+      color: #555555;
+      display: flex;
+      gap: 0.5rem;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      span {
+        color: #333;
+        font-weight: 900;
+      }
+    }
+  }
+
+  @include lap {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+
+  }
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  margin-bottom: clamp(10rem, 10vw, 13.5rem);
+
+  li {
+    text-align: center;
+    position: relative;
+    border-radius: 1.5rem;
+    height: 30rem;
+
+    &.box01 {
+      background: url(../images/sub/employment/box01.png) no-repeat center;
+      box-sizing: border-box;
+    }
+
+    &.box02 {
+      background: url(../images/sub/employment/box02.png) no-repeat center;
+      box-sizing: border-box;
+    }
+
+    &.box03 {
+      background: url(../images/sub/employment/box03.png) no-repeat center;
+      box-sizing: border-box;
+    }
+  }
+
+  &__dl {
+    width: 100%;
+    font-weight: 900;
+    @include centerC(absolute);
+
+    dt {
+      font-size: 1.9rem;
+      color: #98e7e1;
+      margin-bottom: 1em;
+    }
+
+    dd {
+      font-size: 2.3rem;
+      line-height: 1.4;
+      color: #fff;
+    }
+  }
+
+  @include lap {
+    flex-direction: row;
+    justify-content: space-between;
+
+    li {
+      width: 32%;
+    }
+  }
+}
+
+.apply {
+  text-align: center;
+
+  &__dl {
+    line-height: 1.3;
+    margin-bottom: clamp(3rem, 5vw, 6rem);
+
+    dt {
+      font-size: clamp(2.5rem, 6vw, 3rem);
+      font-weight: 900;
+      margin-bottom: 0.25em;
+    }
+
+    dd {
+      font-size: 1.8rem;
+      color: #555555;
+    }
+  }
+
+  &__tab {
+    display: flex;
+    justify-content: center;
+    margin-bottom: clamp(8rem, 10vw, 14rem);
+
+    li {
+      width: 50%;
+      max-width: 28rem;
+      height: 6rem;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+
+      &:first-child {
+        border-right: none;
+      }
+
+      &.current {
+        background-color: #920883;
+
+        a {
+          color: #fff;
+        }
+      }
+
+      a {
+        @include flexAlign;
+        height: 100%;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__steps {
+    .title {
+      font-size: clamp(2rem, 6vw, 2.5rem);
+      font-weight: 900;
+      margin-bottom: clamp(4rem, 6vw, 7rem);
+    }
+  }
+}
+
+.faq {
+  border-top: 2px solid #000;
+  text-align: left;
+
+  li {
+    border-bottom: 1px solid #ddd;
+
+
+    &.on {
+      background-color: #fafafa;
+
+      .faq__title {
+        font-weight: 700;
+
+        &::after {
+          background: url(../images/sub/employment/open.png) no-repeat center;
+          background-size: cover;
+        }
+      }
+
+      .faq__contents {
+        display: block;
+      }
+
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
+    font-weight: 700;
+    line-height: 1.4;
+    padding: 3rem clamp(1.5rem, 5vw, 4rem);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: none;
+
+    span {
+      flex: 1;
+      text-align: left;
+    }
+
+    &::after {
+      content: '';
+      width: 2.4rem;
+      height: 1.4rem;
+      background: url(../images/sub/employment/close.png) no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  &__contents {
+    border-top: 1px solid #ddd;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    padding: clamp(1.5rem, 5vw, 4rem);
+    display: none;
+  }
+}
+
+.applyLink {
+  width: 30rem;
+  height: 8rem;
+  line-height: 8rem;
+  display: block;
+  color: #920883;
+  border: 1px solid #920883;
+  border-radius: 50vmax;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin: clamp(7rem, 7vw, 10rem) auto 0 auto;
+
+  @include pc {
+    &:hover {
+      background-color: #920883;
+      color: #fff;
+    }
+
+  }
+}
+
+.tabBox {
+  display: none;
+}
+
+.view {
+  display: block;
+}
+
+
+// 교육신청
+.comment {
+  font-size: 1.7rem;
+  line-height: 1.3;
+  color: #555555;
+  margin-bottom: 3rem;
+}
+
+.education {
+  border: 1px solid #ddd;
+  padding: clamp(2rem, 4vw, 3.5rem);
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    margin-bottom: 3rem;
+  }
+
+  &__text {
+    .title {
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1.2em;
+    }
+
+    .inText {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      color: #555555;
+
+      &:not(:last-child) {
+        margin-bottom: 0.7rem;
+      }
+    }
+
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px dotted #ddd;
+  }
+
+  &__price {
+    dl {
+      display: flex;
+      justify-content: space-between;
+
+      &:first-child {
+        margin-bottom: 1.5rem;
+      }
+
+      dt {
+        font-size: 1.7rem;
+        font-weight: 700;
+      }
+
+      .price {
+        font-size: 2rem;
+        color: #777777;
+        display: inline-block;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: #777777;
+          @include centerY(absolute);
+        }
+
+        span {
+          font-size: 0.8em;
+        }
+      }
+
+      .sale {
+        font-size: 2.7rem;
+        font-weight: 900;
+        color: #0e5b6e;
+
+        span {
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    li {
+      width: 48.5%;
+      line-height: 4rem;
+      text-align: center;
+      border-radius: 50vmax;
+
+      a {
+        display: block;
+        font-size: 1.7rem;
+      }
+
+      &.button01 {
+        background-color: #ececec;
+
+        a {
+          color: #111111;
+        }
+      }
+
+      &.button02 {
+        background-color: #920883;
+
+        a {
+          color: #fff;
+        }
+      }
+
+      &:hover {
+        background-color: #a847ec;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  @include pc {
+    display: flex;
+    justify-content: space-between;
+
+    &__text {
+      padding: 0 2rem 0 0;
+      margin: 0;
+      border-right: 1px dotted #ddd;
+      border-bottom: none;
+      width: 41rem;
+    }
+
+    &__price {
+      width: 33rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      >div {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// 교육신청 상세
+.aboutClass {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+
+  &__title {
+    font-size: clamp(2.2rem, 6vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.3;
+    padding-bottom: 0.9em;
+    margin-bottom: 1.2em;
+    border-bottom: 0.2rem solid #333;
+  }
+
+  &__text {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #555555;
+
+    .choice {
+      font-weight: 700;
+    }
+  }
+
+  &__box {
+    padding-bottom: clamp(3rem, 6vw, 4rem);
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+    border-bottom: 1px solid #ddd;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+  }
+
+  &__image {
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0%;
+      width: 100%;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 66.79245283019%;
+    }
+  }
+
+  &__price {
+    width: 100%;
+
+    .title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.3em;
+    }
+
+    dl {
+      dd {
+        &.point {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+
+
+
+    .buttons {
+      li {
+        height: 5rem;
+        line-height: 5rem;
+      }
+    }
+  }
+
+  @include lap {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    &__right {
+      width: 44.4%;
+    }
+
+    &__left {
+      width: 50%;
+      max-width: 60rem;
+    }
+
+  }
+}
+
+
+/*개인정보취급방침*/
+.privacy {
+  background: #fbfafa;
+  border: 1px solid #d7d5d5;
+  padding: 25px;
+  height: 645px;
+  box-sizing: border-box;
+
+  >div {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    height: 100%;
+
+    >.intxtarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      line-height: 1.7;
+      word-break: keep-all;
+      font-size: 14px;
+      overflow-y: scroll;
+      white-space: pre-line;
+    }
+  }
+}
+
+
+.product_list {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+.product_list li {
+  max-width: 280px;
+  width: -webkit-calc(25% - 13px);
+  width: calc(25% - 13px);
+  position: relative;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.product_list li:hover:after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #897a5a;
+}
+
+.product_list li .prod_thum {
+  padding-bottom: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.product_list li .prod_thum img {
+  position: absolute;
+  width: 100%;
+}
+
+.product_list li .prod_thum .soldout {
+  width: 52px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 24px;
+  background-color: #da3259;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  z-index: 1;
+}
+
+.product_list li .prod_txts {
+  padding: 25px 8% 25px 8%;
+}
+
+.product_list li .prod_name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product_list li .this_eq {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product_list li .price {
+  font-size: 20px;
+  font-weight: 300;
+  color: #000;
+}
+
+.product_list li .price span {
+  font-weight: 500;
+}
+
+.product_list li .in_btns {
+  overflow: hidden;
+}
+
+.product_list li .in_btns span {
+  float: left;
+  display: block;
+  width: 50%;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  line-height: 53px;
+}
+
+.product_list li .in_btns span a {
+  display: block;
+  font-size: 15px;
+  color: #777777;
+}
+
+.product_list li .in_btns span a:before {
+  content: '';
+  display: inline-block;
+  height: 53px;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+.product_list li .in_btns span:hover {
+  background-color: #fff;
+}
+
+.product_list li .in_btns span:hover a {
+  color: #897a5a;
+}
+
+.product_list li .in_btns .ibt01 {
+  border-right: 1px solid #ddd;
+}
+
+.product_list li .in_btns .ibt01 a:before {
+  background: url(../images//common/ibt01.png) no-repeat center left;
+  background-size: 18px auto;
+  width: 18px;
+}
+
+.product_list li .in_btns .ibt01 a:hover:before {
+  background: url(../images//common/ibt01_on.png) no-repeat center left;
+  background-size: 18px auto;
+}
+
+.product_list li .in_btns .ibt02 a:before {
+  background: url(../images//common/ibt02.png) no-repeat center left;
+  background-size: 18px auto;
+  width: 18px;
+}
+
+.product_list li .in_btns .ibt02 a:hover:before {
+  background: url(../images//common/ibt02_on.png) no-repeat center left;
+  background-size: 18px auto;
+}
+
+
+.product_infowrap {
+  overflow: hidden;
+}
+
+.product_images {
+  float: left;
+  width: 100%;
+  max-width: 570px;
+}
+
+.product_images .mob_prods {
+  display: none;
+}
+
+.product_images .prod_imgs {
+  position: relative;
+  height: 570px;
+  margin-bottom: 10px;
+}
+
+.product_images .prod_imgs .soldout {
+  width: 52px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 24px;
+  background-color: #da3259;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  z-index: 1;
+}
+
+.product_images .prod_imgs li {}
+
+.product_images .prod_imgs li img {
+  width: 100%;
+}
+
+.product_infos {
+  float: right;
+  width: 500px;
+}
+
+.product_infos .product_name {
+  font-size: 30px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.product_infos .price {
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
+  padding-bottom: 20px;
+}
+
+.product_infos .price .this_price {
+  color: #19b1dd;
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+.product_infos .price .prev_price {
+  font-weight: 300;
+  color: #888;
+  text-decoration: line-through;
+  font-size: 16px;
+}
+
+.product_infos .prod_comment {
+  margin-bottom: 35px;
+}
+
+.product_infos .prod_comment .info_table li {
+  line-height: 1.4;
+  margin-bottom: 10px;
+  font-size: 15px;
+  display: table;
+}
+
+.product_infos .prod_comment .info_table li span {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.product_infos .prod_comment .info_table li .it_th {
+  font-weight: 500;
+  margin-right: 10px;
+  padding-right: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product_infos .prod_comment .info_table li .it_td {
+  font-weight: 300;
+}
+
+.product_infos .prod_comment .info_table li .pers_price {
+  color: #19b1dd;
+  font-weight: 500;
+}
+
+.product_infos .option_box {
+  margin-bottom: 25px;
+}
+
+.product_infos .option_box .op_title {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.product_infos .option_box .select_wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  background: url(/imagesNew/sub/select.png) no-repeat center right 10px;
+  box-sizing: border-box;
+}
+
+.product_infos .option_box .select_wrap span {
+  display: block;
+  height: 38px;
+  padding-left: 10px;
+  line-height: 40px;
+  text-align: left;
+}
+
+.product_infos .option_box .sub_sel {
+  width: 100%;
+  font-size: 16px;
+  height: 40px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  padding-left: 10px;
+  filter: alpha(opacity=0);
+  z-index: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+}
+
+.product_infos .hided_box {
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  overflow: hidden;
+  position: relative;
+  margin: 35px 0;
+}
+
+.product_infos .hided_box .close_hb {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.product_infos .hided_box .close_hb img {
+  width: 100%;
+}
+
+.product_infos .hided_box>.hb_title {
+  font-size: 17px;
+  font-weight: 500;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.eq_box {
+  float: left;
+}
+
+.eq_box .quant {
+  width: 55px;
+  height: 35px;
+  border: 1px solid #ddd;
+  float: left;
+  text-align: center;
+}
+
+.eq_box span {
+  display: block;
+  background-color: #fff;
+  width: 20px;
+  height: 37px;
+  line-height: 37px;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+  font-size: 13px;
+}
+
+.eq_box .substr {
+  border-right: none;
+}
+
+.eq_box .add {
+  border-left: none;
+}
+
+.product_infos .hided_box .each_price {
+  font-size: 15px;
+  float: right;
+  margin-top: 5px;
+}
+
+.product_infos .total_wrap {
+  text-align: right;
+  margin-bottom: 35px;
+}
+
+.product_infos .total_wrap .total {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.product_infos .total_wrap .total_price {
+  color: #19b1dd;
+  font-size: 25px;
+  font-weight: 500;
+  margin-left: 50px;
+}
+
+.shop_btns {
+  overflow: hidden;
+}
+
+.shop_btns li {
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  line-height: 45px;
+  height: 46px;
+  margin-right: 5px;
+  width: -webkit-calc(33.333% - 4px);
+  width: calc(33.333% - 4px);
+}
+
+.shop_btns li:last-child {
+  margin-right: 0;
+}
+
+.shop_btns li a {
+  display: block;
+  font-size: 15px;
+}
+
+.shop_btns li a img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.shop_btns .buy_btn {
+  background: #333;
+  border: none;
+}
+
+.shop_btns .buy_btn a {
+  color: #fff;
+}
+
+.detail_infowrap {
+  margin-top: 35px;
+}
+
+.detail_tabs {
+  overflow: hidden;
+  margin-bottom: 35px;
+}
+
+.detail_tabs li {
+  float: left;
+  width: 33.33333%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  border-right: none;
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+}
+
+.detail_tabs li:last-child {
+  border-right: 1px solid #ddd;
+}
+
+.detail_tabs li a {
+  font-size: 15px;
+  display: block;
+}
+
+.detail_tabs .dtab_on {
+  background-color: #fff;
+}
+
+.detail_tabs .dtab_on a {
+  font-weight: 500;
+}
+
+.detail_infowrap .infos {
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.detail_infowrap .dei_section {
+  text-align: center;
+}
+
+.detail_infowrap .infos img {
+  max-width: 100%;
+}
+
+.detail_infowrap .reviews {
+  width: 100%;
+}
+
+.detail_infowrap .reviews tr td,
+.reviews tr th {
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  color: #333;
+  font-size: 14px;
+  padding: 18px 0;
+}
+
+.detail_infowrap .reviews .table_contents {
+  display: none;
+}
+
+.detail_infowrap .reviews .table_contents td {
+  padding-bottom: 60px;
+}
+
+.detail_infowrap .reviews .table_contents td .rev_txt {
+  background-color: #efefef;
+  padding: 18px 0 18px 90px;
+  line-height: 1.5;
+}
+
+.detail_infowrap .brd_title {
+  cursor: pointer;
+}
+
+.detail_infowrap .brd_title .lock {
+  margin-right: 7px;
+  text-align: top;
+}
+
+.detail_infowrap .retexts {
+  color: #999999;
+  margin-right: 15px;
+  font-size: 11px;
+}
+
+.detail_infowrap .re_btns {
+  float: right;
+  margin-top: 20px;
+}
+
+.detail_infowrap .re_btns li {
+  width: 125px;
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+}
+
+.detail_infowrap .re_btns li a {
+  display: block;
+  font-size: 13px;
+}
+
+.detail_infowrap .re_btns .write_btn {
+  color: #fff;
+  background-color: #212121;
+  margin-right: 10px;
+}
+
+.detail_infowrap .re_btns .write_btn a {
+  color: #fff;
+}
+
+.detail_infowrap .re_btns .list_btn {
+  color: #454545;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+.hywmember_input {
+  font-size: 1.7rem;
+}
+
+.hywcheck_wrap .hywcheck_box label {
+  padding: 10px 12px !important;
+}
+
+.hywmember_btn {
+  font-size: 2rem;
+}
+
+.hywlogin_box {
+  input[type=password] {
+    font-family: "굴림" !important;
+  }
+}
+
+.tab_wrap {
+  margin-bottom: 30px;
+}
+
+.tab_wrap .current_page {
+  line-height: 44px;
+  text-align: center;
+  background-color: #64767f;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  display: none;
+}
+
+.sub_tabs {
+  overflow: hidden;
+  text-align: center;
+}
+
+.sub_tabs li {
+  display: inline-block;
+  max-width: 168px;
+  width: -webkit-calc(25% - 10px);
+  width: calc(25% - 10px);
+  line-height: 44px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 44px;
+  border: 1px solid #dbdbdb;
+  margin-left: 5px;
+}
+
+.sub_tabs li a {
+  color: #4d4d4d;
+  font-size: 17px;
+  font-weight: 500;
+  display: block;
+}
+
+.sub_tabs li:first-child {
+  margin-left: 0;
+}
+
+.sub_tabs .currrent {
+  background-color: #64767f;
+  border: none;
+}
+
+.sub_tabs .currrent a {
+  color: #fff;
+}
+
+
+// 당찬언니 칼럼
+.column {
+  padding-top: 4rem;
+  border-top: 0.3rem solid #2bbac6;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  &__thum {
+    position: relative;
+    width: 100%;
+    max-width: 39.8rem;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 67.8391959799%;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2.4rem, 5vw, 2.7rem);
+    font-weight: 700;
+    margin-bottom: 0.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #555555;
+    height: 7.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -os-flexbox;
+    display: box;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-bottom: 3rem;
+  }
+
+  &__bottom {
+    @include flexCenter;
+    // flex-direction: column;
+    // row-gap: 1.5rem;
+  }
+
+  &__date {
+    font-size: 1.8rem;
+    color: #6f6f6f;
+  }
+
+  &__button {
+    @include flexAlign;
+    width: clamp(15rem, 15vw, 19rem);
+    height: 5rem;
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    color: #920883;
+    border: 1px solid #920883;
+    border-radius: 50vmax;
+  }
+
+  @include lap {
+    li {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: clamp(2rem, 3vw, 4rem);
+      padding-right: clamp(2rem, 3vw, 4rem);
+    }
+
+    &__right {
+      width: calc(100% - 44rem);
+    }
+
+    &__button {
+      &:hover {
+        background-color: #920883;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+
+// 부모님 인터뷰
+.interviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+  row-gap: 5rem;
+  padding-top: 4rem;
+  border-top: 0.3rem solid #2bbac6;
+
+  li {
+    width: 48%;
+  }
+
+  &__thum {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 63.15789473684%;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2rem, 4vw, 2.3rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__texts {
+    font-size: 1.7rem;
+    line-height: 1.4;
+    color: #555555;
+    margin-bottom: 2.5rem;
+    height: 4.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -os-flexbox;
+    display: box;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  &__date {
+    font-size: 1.5rem;
+    color: #111111;
+    padding: 0.5rem 0 0.5rem 2.5rem;
+    background: url(../images/sub/commuity/date.png) no-repeat center left;
+    background-size: 2rem;
+  }
+
+  @include lap {
+    gap: 2.45%;
+    row-gap: 6rem;
+
+    li {
+      width: 31.7%;
+
+      &:hover {
+        .interviews__title {
+          color: #920883;
+        }
+      }
+    }
+  }
+}
+
+.boardBtns {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 37rem;
+  margin-top: 7.35rem;
+
+  li {
+    width: calc(50% - 0.5rem);
+    height: 6rem;
+    border-radius: 50vmax;
+
+    &.btn01 {
+      background-color: #2bbac6;
+    }
+
+    &.btn02 {
+      background-color: #6e6e6e;
+    }
+
+    a {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      height: 100%;
+      @include flexAlign;
+    }
+  }
+}
+
+
+// 게시판 상세
+// .board {
+//   &__head {
+//     padding: 3rem 0;
+//     border-top: 3px solid #2bbac6;
+//     border-bottom: 1px solid #2bbac6;
+//     display: flex;
+//     flex-direction: column;
+//     row-gap: 1.5rem;
+
+//     .title {
+//       font-size: clamp(1.8rem, 6vw, 2rem);
+//       font-weight: 700;
+//       line-height: 1.3;
+//     }
+
+//     .date {
+//       font-size: 1.7rem;
+//       color: #888888;
+//     }
+//   }
+
+//   &__contents {
+//     padding: clamp(5.5rem, 6vw, 7rem) 0;
+//     font-size: 1.8rem;
+//     line-height: 1.4;
+//   }
+
+//   &__bottom {
+//     border-top: 1px solid #ddd;
+//     border-bottom: 1px solid #ddd;
+
+//     .nav {
+//       a {
+//         display: flex;
+//         padding: 3rem clamp(3rem, 5vw, 6rem);
+//         gap: clamp(2rem, 5vw, 5rem);
+//       }
+
+//       .other {
+//         font-size: 1.8rem;
+//       }
+
+//       .otherTitle {
+//         font-size: 2rem;
+//         overflow: hidden;
+//         white-space: nowrap;
+//         text-overflow: ellipsis;
+//       }
+//     }
+
+//     .prev {
+//       border-bottom: 1px solid #eeeeee;
+//       background: url(../images/sub/board_prev.png) no-repeat center left clamp(1rem, 2vw, 3rem);
+//     }
+
+//     .next {
+//       background: url(../images/sub/board_next.png) no-repeat center left clamp(1rem, 2vw, 3rem);
+//     }
+//   }
+
+//   @include lap {
+//     &__head {
+//       flex-direction: row;
+//       align-items: center;
+//       justify-content: space-between;
+//     }
+
+//     &__contents {
+//       padding: clamp(5.5rem, 6vw, 7rem) clamp(2rem, 5.5vw, 5rem);
+//     }
+//   }
+// }
+
+
+.editBtns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: clamp(5rem, 6vw, 7rem);
+
+  li {
+    width: 48%;
+    max-width: 18rem;
+    height: 6rem;
+    border-radius: 50vmax;
+
+    &.btn01 {
+      background-color: #2bbac6;
+    }
+
+    &.btn02 {
+      background-color: #4b4b4b;
+    }
+
+    a {
+      @include flexAlign;
+      height: 100%;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+  }
+}
+
+
+// 페이저
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: clamp(5rem, 6.5vw, 7rem);
+
+  li {
+    width: clamp(3rem, 4vw, 5.5rem);
+    height: clamp(3rem, 4vw, 5.5rem);
+    border-radius: 100%;
+    box-sizing: border-box;
+
+    a {
+      height: 100%;
+      @include flexAlign;
+    }
+  }
+
+  .number {
+    a {
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+  }
+
+  &__current {
+    background-color: #2bbac6;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .arrow {
+    border: 1px solid #ddd;
+  }
+
+  &__first {
+    background: url(../images/sub/first.png) no-repeat center;
+    background-size: 1.2rem;
+  }
+
+  &__prev {
+    background: url(../images/sub/prev.png) no-repeat center;
+    background-size: 0.8rem;
+    margin-right: clamp(0.5rem, 3vw, 4rem);
+  }
+
+  &__next {
+    background: url(../images/sub/next.png) no-repeat center;
+    background-size: 0.8rem;
+    margin-left: clamp(0.5rem, 3vw, 4rem);
+  }
+
+  &__last {
+    background: url(../images/sub/last.png) no-repeat center;
+    background-size: 1.2rem;
+  }
+}

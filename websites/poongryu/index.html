@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="Googlebot" content="noindex, nofollow">
+  <meta name="Naverbot" content="noindex, nofollow">
+  <meta name="Daumoa" content="noindex, nofollow">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/slick.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" type="text/css" href="css/common.css?v=231515" />
+  <link rel="stylesheet" type="text/css" href="css/main.css?v=230412" />
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+  <link rel="canonical" href="http://www.pungryusound.com/">
+  <link rel="icon" href="images/common/favicon.png" type="image/x-icon">
+  <title>풍류사운드</title>
+  <meta property="og:type" content="website">">
+</head>
+
+<body>
+<!-- 헤더 -->
+<header class="header">
+  <div class="header__head">
+    <div class="header__top">
+      <div class="center_box">
+        <ul class="header__sns">
+          <li><a href="http://pf.kakao.com/_wBPdxj" target="_blank"><img src="images/common/sns01.png" alt="카카오"></a></li>
+          <li><a href="https://youtube.com/@dangchanuni" target="_blank"><img src="images/common/sns02.png" alt="유튜브"></a></li>
+          <li><a href="https://www.instagram.com/pungryusound/" target="_blank"><img src="images/common/sns03.png" alt="인스타"></a></li>
+          <li><a href="https://blog.naver.com/ateliergarak" target="_blank"><img src="images/common/sns04.png" alt="블로그"></a></li>
+          <li><a href="https://cafe.naver.com/huizhoucommunitys" target="_blank"><img src="images/common/sns05.png" alt="네이버카페"></a></li>
+        </ul>
+        <h1 class="header__logo"><a href="/"><img src="images/common/logo.png" alt=""></a></h1>
+        <ul class="header__gnb">
+
+          <?if(!$_SESSION['ss_mb_id']){?>
+          <li><a href="/HyAdmin/mb_login.php">로그인</a></li>
+          <li><a href="/HyAdmin/mb_join.php">회원가입</a></li>
+          <?}else{?>
+          <li><a href="/HyAdmin/mb_logout.php">로그아웃</a></li>
+          <li><a href="/HyAdmin/mb_edit.php">정보수정</a></li>
+          <?}?>
+          <li><a href="/online/sub01.html">문의하기</a></li>
+          <li><a href="/shop/cartwish.php">장바구니</a></li>
+          <li><a href="/shop/pm_order_list.php">마이페이지</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <nav class=" header__menuWrap">
+      <ul class="header__menu">
+        <li><a href="/about/sub01.html">풍류사운드란?</a>
+          <ul class="header__sub_menu">
+            <li><a href="/about/sub01.html">학원소개</a></li>
+            <li><a href="/about/sub02.html">코치소개</a></li>
+            <li><a href="/about/sub04.html">오시는 길</a></li>
+            <!-- <li><a href="/about/sub02.html">연혁</a></li>
+              <li><a href="/HyAdmin/list.php?bbs_id=bo01">공연활동</a></li>
+              <li><a href="/about/sub04.html">오시는 길</a></li> -->
+          </ul>
+        </li>
+        <li><a href="/education/sub00.html">교육서비스</a>
+          <ul class="header__sub_menu">
+            <li><a href="/education/sub00.html">교육안내</a></li>
+            <li><a href="/shop/sangpum02_list.php">교육신청</a></li>
+            <!-- <li><a href="/program/sub03.html">커리큘럼2</a></li>
+              <li><a href="/program/sub04.html">커리큘럼3</a></li> -->
+          </ul>
+        </li>
+        <li><a href="/HyAdmin/list.php?bbs_id=bo05">커뮤니티</a>
+          <ul class="header__sub_menu">
+            <li><a href="/HyAdmin/list.php?bbs_id=bo05">당찬언니 칼럼</a></li>
+            <li><a href="/HyAdmin/list.php?bbs_id=bo06">부모님 인터뷰</a></li>
+            <!-- <li><a href="#!">후기</a></li> -->
+          </ul>
+        </li>
+        </li>
+        <li><a href="/employment/sub01.html">채용</a>
+          <ul class="header__sub_menu">
+            <li><a href="/employment/sub01.html">채용안내</a></li>
+            <li><a href="/employment/sub02.html">입사지원</a></li>
+          </ul>
+        </li>
+        <li><a href="/online/sub01.html">문의하기</a>
+          <ul class="header__sub_menu">
+            <li><a href="/online/sub01.html">온라인 문의</a></li>
+            <li><a href="/online/sub02.html">샘플수업 신청</a></li>
+          </ul>
+        </li>
+        <!-- <li><a href="/shop/sangpum03_list.php">당찬몰</a>
+          <ul class="header__sub_menu">
+            <li><a href="/shop/sangpum03_list.php">당찬몰</a></li>
+          </ul>
+        </li> -->
+        <!-- <li><a href="/HyAdmin/list.php?bbs_id=bo02">커뮤니티</a>
+            <ul class="header__sub_menu">
+              <li><a href="/HyAdmin/list.php?bbs_id=bo02">공지사항</a></li>
+              <li><a href="/HyAdmin/list.php?bbs_id=bo03">갤러리</a></li>
+              <li><a href="/HyAdmin/list.php?bbs_id=bo04">수강후기</a></li>
+            </ul>
+          </li> -->
+      </ul>
+    </nav>
+    <div class="header__menu_btn"><span></span></div>
+  </div>
+  <div class="header__Bg"></div>
+</header>
+<!-- 헤더 끝 -->
+
+  <!-- 메인 슬라이드 -->
+
+  <div class="slide_wrap">
+    <ul class="slide main_vs">
+      <li>
+        <div class="mv_img">
+            <img class="mv_pc" src="images/main/mvv.jpg" alt="" />
+            <img class="mv_m" src="images/main/mv01_m.jpg" alt="" />
+        </div>
+      </li>
+      <li>
+        <div class="mv_img">
+          <img class="mv_pc" src="images/main/mvv02.jpg" alt="" />
+          <img class="mv_m" src="images/main/mv01_m.jpg" alt="" />
+        </div>
+      </li>
+      <li>
+        <div class="mv_img">
+          <img class="mv_pc" src="images/main/mvv03.jpg" alt="" />
+          <img class="mv_m" src="images/main/mv01_m.jpg" alt="" />
+        </div>
+      </li>
+    </ul>
+    <!-- <div class="center_box slide_btns_wrap">
+
+      <div class="slide_btns">
+        <div class="prev contr play_on"><img src="images/main/prev.png" alt="" /></div>
+        <div class="control play_on"><span class="the_stop cotr_on"><img src="images/main/stop.png" alt="" /></span><span class="the_play cotr_on"><img src="images/main/play.png" alt="" /></span></div>
+        <div class="next contr play_on"><img src="images/main/next.png" alt="" /></div>
+      </div>
+
+      <div class="img_nums">
+        <div class="deco"></div>
+        <span class="current"></span><img src="images/main/currs.png" alt="" /><span class="alls">06</span>
+      </div>
+    </div> -->
+
+  </div>
+  <!-- 메인 슬라이드 끝 -->
+
+  <!-- 영상 -->
+  <section class="shy">
+    <div class="center_box">
+
+      <div class="why">
+        <div class="why__left">
+          <p class="comment">우리 아이가 왜 이렇게 <b>“부끄러움”</b>이
+            많은 걸까요?</p>
+          <a href="/education/sub00.html" class="more">풍류교육 알아보기</a>
+        </div>
+        <div class="why__right">
+          아이들은 모두 각기 성향이 다릅니다.<br />
+          다르다는 것은 잘못된 것이 아니라 아주 자연스러운 것입니다.<br />
+          제각기 다른 꽃향기를 내는 꽃처럼 우리도 아이를 그렇게 바라보며
+          이해하는 것이 중요합니다.<br />
+          우리 아이 속에 잠재되어 있는 저력을 믿으세요!<br />
+          아이만의 특별함을 발견하고 발현시켜 주는 것이 풍류사운드 교육의 목표입니다.
+        </div>
+      </div>
+
+      <div class="videos">
+        <div><iframe src="https://www.youtube.com/embed/48_S4IFulqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div><iframe src="https://www.youtube.com/embed/6_ulh_lFTcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </div>
+
+    </div>
+  </section>
+  <!-- 영상 끝 -->
+
+  <!-- 노하우 -->
+  <section class="knowhow">
+    <div class="center_box">
+      <dl class="knowhow__title">
+        <dt><b>수많은 레슨</b>으로 쌓인 실전 <b>노하우</b>!</dt>
+        <dd>20년 교육경력으로 쌓이 실전노하우!</dd>
+        <dd>약 10,000명의 누적 학생과 2만번 이상의 누적 레슨으로 다져진 풍류사운드만의 노하우를 경험해 보세요.</dd>
+      </dl>
+
+
+      <ul class="aboutCalss">
+        <li>
+          <div class="aboutCalss__icon"><img src="images/main/about01.png" alt=""></div>
+          <dl>
+            <dt>영상 강의</dt>
+            <dd>장소 제한 없이 언제든
+              손쉽게 배우는 교육</dd>
+          </dl>
+        </li>
+        <li>
+          <div class="aboutCalss__icon"><img src="images/main/about02.png" alt=""></div>
+          <dl>
+            <dt>그룹 레슨</dt>
+            <dd>다른 아이들과 함께
+              다양한 주제의 수업</dd>
+          </dl>
+        </li>
+        <li>
+          <div class="aboutCalss__icon"><img src="images/main/about03.png" alt=""></div>
+          <dl>
+            <dt>개인 레슨</dt>
+            <dd>우리 아이를 위한 풍류사운드
+              1:1 맞춤 수업</dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- 노하우 끝 -->
+
+  <!-- 온라인문의 -->
+  <section class="inquiry">
+    <div class="inquiry__box center_box">
+      <div class="inquiry__left">
+        <p class="inquiry__title"><b>어떤 교육</b>을<br />
+          들어야 할지 고민이시죠?
+        </p>
+        <p class="inquiry__text text01">풍류사운드 고객센터 010-5198-9969</p>
+        <p class="inquiry__text text02">업무시간 10:00 ~ 18:00 점심시간 13:00 ~ 14:00<br />
+          토요일, 일요일, 공휴일 휴무</p>
+      </div>
+      <form class="inquiry__form" name="frm" action="index_ps.php" method="post" ENCTYPE="multipart/form-data">
+      <input type="hidden" name="nospamchk" value="">
+        <p class="inquiry__formTitle">교육문의</p>
+        <div class="mb10"><input class="inquiry__input input_text" placeholder="이름" type="text" name="ReMemName"></div>
+        <div class="inquiry__phoneNumber mb10">
+          <input class="inquiry__input input_number" type="number" name="ReTel1" placeholder="연락처">
+          <span>-</span>
+          <input class="inquiry__input input_number" type="number" name="ReTel2">
+          <span>-</span>
+          <input class="inquiry__input input_number" type="number" name="ReTel3">
+        </div>
+        <textarea class="inquiry__textarea" name="ReContent">
+효과적인 상담을 위해 아래 사항을 자세히 작성해 주세요.
+감사합니다. 확인 후 회신 드리겠습니다.
+
+자녀의 나이 :
+성별 :
+거주지역 :
+신청 계기:
+풍류사운드 교육으로 아이에게 주고자하는 것 :
+        </textarea>
+        <div class="inquiry__check">
+          <p><input type="checkbox" name="dong1" value="Y" id="agree"><label for="agree">개인정보취급방침 동의</label></p>
+          <a href="#!">자세히 보기</a>
+        </div>
+        <button type="button" onClick="actionMo();" class="inquiry__submit">교육문의하기</button>
+      </form>
+    </div>
+  </section>
+  <!-- 온라인문의 끝 -->
+
+
+
+  <!-- 후기 -->
+  <section class="preview">
+    <div class="center_box">
+      <dl>
+        <dt><b>풍류사운드 교육</b>을 통해 저희 아이가 얼마나 <b>멋진아이인지</b> 알게 되었어요.</dt>
+        <dd>풍류사운드 교육을 경험한 회원님들의 솔직 후기</dd>
+      </dl>
+      <ul class="preview__sldie">
+
+        <li>
+          <a href="#!">
+            <div class="slideimg"><img src="images/main/reviewThum.jpg" alt=""></div>
+            <p class="sldietitle">풍류사운드의 수강후기 풍류사운드의 수강후기풍류사운드의 수강후기</p>
+          </a>
+        </li>
+        <li><a href="#!">
+            <div class="slideimg"><img src="images/main/reviewThum.jpg" alt=""></div>
+            <p class="sldietitle">풍류사운드의 수강후기</p>
+          </a></li>
+        <li><a href="#!">
+            <div class="slideimg"><img src="images/main/reviewThum.jpg" alt=""></div>
+            <p class="sldietitle">풍류사운드의 수강후기</p>
+          </a></li>
+        <li><a href="#!">
+            <div class="slideimg"><img src="images/main/reviewThum.jpg" alt=""></div>
+            <p class="sldietitle">풍류사운드의 수강후기</p>
+          </a>
+        </li>
+      </ul>
+      <a href="/HyAdmin/list.php?bbs_id=bo06" class="preview__more">더 많은 후기 보기</a>
+    </div>
+  </section>
+  <!-- 후기 끝 -->
+
+  <!-- 풍류사운트 톡 -->
+  <section class="talk">
+    <div class="center_box">
+      <dl class="talk__dl">
+        <dt><b>풍류사운드 Talk</b></dt>
+        <dd>솔직하고 생생한 한마디</dd>
+      </dl>
+    </div>
+
+
+    <ul class="talk__slide">
+
+      <li class="cell">
+        <div class="talk__talker">
+          <div class="people mom">
+            <div class="people__image"><img src="images/main/talker01.png" alt=""></div>
+            <dl>
+              <dt>김미현</dt>
+              <dd>어머니</dd>
+            </dl>
+          </div>
+          <div class="people kid">
+            <div class="people__image"><img src="images/main/talker02.png" alt=""></div>
+            <dl>
+              <dt>이소빈</dt>
+              <dd>8세</dd>
+            </dl>
+          </div>
+          <div class="view_vod">
+            <a href="https://www.youtube.com/watch?v=Q96s3QcixOA&ab_channel=%ED%92%8D%EB%A5%98%EC%82%AC%EC%9A%B4%EB%93%9C">
+              영상<br />보기
+            </a>
+          </div>
+        </div>
+        <a href="#!" class="talking">영상을 보고 너무 놀랐어요.^^<br />
+          첫 영상이라 신기하네요. 첫 수업때는 힘들다고
+          안가겠다고 해서 걱정이 많았는데 2회 때부터
+          지금까지는 판소리학원 가는날을 즐거워하고
+          있어요. ^^<br />
+          아직 발음도 정확치 않고 둘째딸이라 애기로만
+          보였는데 씩씩하개 발표한 모습을 보니까
+          뿌듯하고, 잘 자르쳐주셔서 감사해요...!
+          다음 발표영상이 기다려지네요~</a>
+      </li>
+      <li class="cell">
+        <div class="talk__talker">
+          <div class="people mom">
+            <div class="people__image"><img src="images/main/talker01.png" alt=""></div>
+            <dl>
+              <dt>김미현</dt>
+              <dd>어머니</dd>
+            </dl>
+          </div>
+          <div class="people kid">
+            <div class="people__image"><img src="images/main/talker02.png" alt=""></div>
+            <dl>
+              <dt>이소빈</dt>
+              <dd>8세</dd>
+            </dl>
+          </div>
+          <div class="view_vod">
+            <a href="https://www.youtube.com/watch?v=9mVBCzwnNmY&ab_channel=%ED%92%8D%EB%A5%98%EC%82%AC%EC%9A%B4%EB%93%9C">
+              영상<br />보기
+            </a>
+          </div>
+        </div>
+        <a href="#!" class="talking">영상을 보고 너무 놀랐어요.^^<br />
+          첫 영상이라 신기하네요. 첫 수업때는 힘들다고
+          안가겠다고 해서 걱정이 많았는데 2회 때부터
+          지금까지는 판소리학원 가는날을 즐거워하고
+          있어요. ^^<br />
+          아직 발음도 정확치 않고 둘째딸이라 애기로만
+          보였는데 씩씩하개 발표한 모습을 보니까
+          뿌듯하고, 잘 자르쳐주셔서 감사해요...!
+          다음 발표영상이 기다려지네요~</a>
+      </li>
+      <li class="cell">
+        <div class="talk__talker">
+          <div class="people mom">
+            <div class="people__image"><img src="images/main/talker01.png" alt=""></div>
+            <dl>
+              <dt>김미현</dt>
+              <dd>어머니</dd>
+            </dl>
+          </div>
+          <div class="people kid">
+            <div class="people__image"><img src="images/main/talker02.png" alt=""></div>
+            <dl>
+              <dt>이소빈</dt>
+              <dd>8세</dd>
+            </dl>
+          </div>
+          <div class="view_vod">
+            <a href="https://www.youtube.com/watch?v=rNC6s3Kq-sY&ab_channel=%ED%92%8D%EB%A5%98%EC%82%AC%EC%9A%B4%EB%93%9C">
+              영상<br />보기
+            </a>
+          </div>
+        </div>
+        <a href="#!" class="talking">영상을 보고 너무 놀랐어요.^^<br />
+          첫 영상이라 신기하네요. 첫 수업때는 힘들다고
+          안가겠다고 해서 걱정이 많았는데 2회 때부터
+          지금까지는 판소리학원 가는날을 즐거워하고
+          있어요. ^^<br />
+          아직 발음도 정확치 않고 둘째딸이라 애기로만
+          보였는데 씩씩하개 발표한 모습을 보니까
+          뿌듯하고, 잘 자르쳐주셔서 감사해요...!
+          다음 발표영상이 기다려지네요~</a>
+      </li>
+      <li class="cell">
+        <div class="talk__talker">
+          <div class="people mom">
+            <div class="people__image"><img src="images/main/talker01.png" alt=""></div>
+            <dl>
+              <dt>김미현</dt>
+              <dd>어머니</dd>
+            </dl>
+          </div>
+          <div class="people kid">
+            <div class="people__image"><img src="images/main/talker02.png" alt=""></div>
+            <dl>
+              <dt>이소빈</dt>
+              <dd>8세</dd>
+            </dl>
+          </div>
+          <div class="view_vod">
+            <a href="https://www.youtube.com/watch?v=Q96s3QcixOA&ab_channel=%ED%92%8D%EB%A5%98%EC%82%AC%EC%9A%B4%EB%93%9C">
+              영상<br />보기
+            </a>
+          </div>
+        </div>
+        <a href="#!" class="talking">영상을 보고 너무 놀랐어요.^^<br />
+          첫 영상이라 신기하네요. 첫 수업때는 힘들다고
+          안가겠다고 해서 걱정이 많았는데 2회 때부터
+          지금까지는 판소리학원 가는날을 즐거워하고
+          있어요. ^^<br />
+          아직 발음도 정확치 않고 둘째딸이라 애기로만
+          보였는데 씩씩하개 발표한 모습을 보니까
+          뿌듯하고, 잘 자르쳐주셔서 감사해요...!
+          다음 발표영상이 기다려지네요~</a>
+      </li>
+      <li class="cell">
+        <div class="talk__talker">
+          <div class="people mom">
+            <div class="people__image"><img src="images/main/talker01.png" alt=""></div>
+            <dl>
+              <dt>김미현</dt>
+              <dd>어머니</dd>
+            </dl>
+          </div>
+          <div class="people kid">
+            <div class="people__image"><img src="images/main/talker02.png" alt=""></div>
+            <dl>
+              <dt>이소빈</dt>
+              <dd>8세</dd>
+            </dl>
+          </div>
+          <div class="view_vod">
+            <a href="https://www.youtube.com/watch?v=gm3dHLnBnds&ab_channel=%ED%92%8D%EB%A5%98%EC%82%AC%EC%9A%B4%EB%93%9C">
+              영상<br />보기
+            </a>
+          </div>
+        </div>
+        <a href="#!" class="talking">영상을 보고 너무 놀랐어요.^^<br />
+          첫 영상이라 신기하네요. 첫 수업때는 힘들다고
+          안가겠다고 해서 걱정이 많았는데 2회 때부터
+          지금까지는 판소리학원 가는날을 즐거워하고
+          있어요. ^^<br />
+          아직 발음도 정확치 않고 둘째딸이라 애기로만
+          보였는데 씩씩하개 발표한 모습을 보니까
+          뿌듯하고, 잘 자르쳐주셔서 감사해요...!
+          다음 발표영상이 기다려지네요~</a>
+      </li>
+      <li class="cell">
+        <div class="talk__talker">
+          <div class="people mom">
+            <div class="people__image"><img src="images/main/talker01.png" alt=""></div>
+            <dl>
+              <dt>김미현</dt>
+              <dd>어머니</dd>
+            </dl>
+          </div>
+          <div class="people kid">
+            <div class="people__image"><img src="images/main/talker02.png" alt=""></div>
+            <dl>
+              <dt>이소빈</dt>
+              <dd>8세</dd>
+            </dl>
+          </div>
+          <div class="view_vod">
+            <a href="https://www.youtube.com/watch?v=gm3dHLnBnds&ab_channel=%ED%92%8D%EB%A5%98%EC%82%AC%EC%9A%B4%EB%93%9C">
+              영상<br />보기
+            </a>
+          </div>
+        </div>
+        <a href="#!" class="talking">영상을 보고 너무 놀랐어요.^^<br />
+          첫 영상이라 신기하네요. 첫 수업때는 힘들다고
+          안가겠다고 해서 걱정이 많았는데 2회 때부터
+          지금까지는 판소리학원 가는날을 즐거워하고
+          있어요. ^^<br />
+          아직 발음도 정확치 않고 둘째딸이라 애기로만
+          보였는데 씩씩하개 발표한 모습을 보니까
+          뿌듯하고, 잘 자르쳐주셔서 감사해요...!
+          다음 발표영상이 기다려지네요~</a>
+      </li>
+    </ul>
+  </section>
+
+  <div class="vodPopup">
+    <div class="vodPopup__box">
+      <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gm3dHLnBnds?rel=0&amp;autoplay=1&amp;enablejsapi=1&amp;loop=1&playlist=gm3dHLnBnds" frameborder="0" autoplay=1 allow="autoplay; encrypted-media"></iframe> -->
+      <button class="vodPopup__close"><img src="images/main/close_vod.png" alt=""></button>
+    </div>
+    <div class="vodPopup__bg"></div>
+  </div>
+
+  <!-- 풍류사운트 톡 끝 -->
+
+  <!-- 하단 -->
+  <div class="botttom">
+    <div class="botttom__box center_box">
+      <p class="botttom__text"><b>다양한 채널</b>을 통해 <b>저희의 소식</b>을 받아보실 수 있습니다.</p>
+      <ul class="botttom__sns">
+          <li><a href="http://pf.kakao.com/_wBPdxj" target="_blank"><img src="images/main/sns01.png" alt="카카오"></a></li>
+          <li><a href="https://youtube.com/@dangchanuni" target="_blank"><img src="images/main/sns02.png" alt="유튜브"></a></li>
+          <li><a href="https://www.instagram.com/pungryusound/" target="_blank"><img src="images/main/sns03.png" alt="인스타"></a></li>
+          <li><a href="https://blog.naver.com/ateliergarak" target="_blank"><img src="images/main/sns04.png" alt="블로그"></a></li>
+          <li><a href="https://cafe.naver.com/huizhoucommunitys" target="_blank"><img src="images/main/sns05.png" alt="네이버카페"></a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 하단 끝 -->
+
+
+  <script src="js/main.js?v=230412"></script>
+<footer class="footer">
+  <div class="center_box foot">
+    <div class="foot__etc">
+
+      <ul class="foot__btns">
+        <li><a href="etc/sub02.html">이용약관</a></li>
+        <li><a href="etc/sub01.html">개인정보취급방침</a></li>
+        <li><a href="online/sub01.html">온라인 문의</a></li>
+        <li><a href="about/sub04.html">오시는 길</a></li>
+      </ul>
+    </div>
+    <div class="foot__info">
+      <p class="foot__logo">풍류사운드</p>
+      <p class="foot__txts mb10"><span>경기도 광명시 신기로15 에스프라자 6층 605호</span><span>대표자. 한금채 원장</span><span class="call">T. 010-5198-9969</span></p>
+      <p class="foot__txts mb10"><span>사업자등록번호. 238-01-01687</span><span>통신판매업허가번호. 2023-경기광명-0000</span></p>
+      <p class="foot__txts">COPYRIGHT © 2022 PUNGRYU SOUND. ALL RIGHTS RESERVED</p>
+    </div>
+  </div>
+</footer>
+<script src="js/layout.js"></script>
+
+</body>
+
+</html>
