@@ -7,10 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
-  <meta property="og:image" content="/images/common/linkkakao_bar.jpg" />
-  <link rel="shortcut icon" href="/images/common/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/images/common/favicon.ico" type="image/x-icon">
-  <link rel="canonical" href="http://management-soon.com/">
+  <meta property="og:image" content="images/common/linkkakao_bar.jpg" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="Googlebot" content="noindex, nofollow">
+  <meta name="Naverbot" content="noindex, nofollow">
+  <meta name="Daumoa" content="noindex, nofollow">
+  <link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/common/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/common.css" />
@@ -38,15 +41,13 @@
           </li>
           <li><a href="artist/sub01.html">ARTIST</a></li>
           <li><a href="audition/sub01.html">AUDITION</a></li>
-        </ul>
-
-        <li><a href="pr/sub01.html">PR CENTER</a>
-          <ul class="header__submenu">
-            <li><a href="pr/sub01.html">News</a></li>
-          </ul>
-        </li>
-        <li><a href="support/sub01.html">SUPPORT</a></li>
-        <li><a href="#!">STORE</a></li>
+          <li><a href="pr/sub01.html">PR CENTER</a>
+            <ul class="header__submenu">
+              <li><a href="pr/sub01.html">News</a></li>
+            </ul>
+          </li>
+          <li><a href="support/sub01.html">SUPPORT</a></li>
+          <li><a href="#!">STORE</a></li>
         </ul>
       </nav>
 
@@ -69,18 +70,7 @@
     <section class="mainVisual">
       <!-- 슬라이드 -->
 
-      <?
-        $queryB = "select * from hy_banner order by ReOrder desc,ReIdx desc";
-        $rsB = query($queryB,$dbcon);
-        $countB = mysql_num_rows($rsB);
-      ?>
-
       <div class="mainVisual__slide">
-
-        <?
-          for($k=0;$k<$countB;$k++){
-            $rowB = mysql_fetch_array($rsB);
-        ?>
 
         <!--  -->
         <div class="mainVisual__cell">
@@ -88,39 +78,129 @@
           <div class="mainVisual__pc">
             <div class="mainVisual__texts">
               <p class="mainVisual__text1 poppins">
-                <?=$rowB[ReTitle]?>
+                KIM GA YEON
               </p>
               <p class="mainVisual__more">
-                <?if($rowB[ReLink1]){?>
-                <a href="<?=$rowB[ReLink1]?>" <?if($rowB[ReMethod]=="2" ){?>target="_blank"
-                  <?}?>>VIEW MORE
-                </a>
-                <?}else{?>
                 <a href="#!">VIEW MORE</a>
-                <?}?>
               </p>
             </div>
-            <div class="mainVisual__photo"><img src="/HyAdmin/upload/etcFile/<?=$rowB[ReFile1]?>" alt="슬라이드 이미지"></div>
+            <div class="mainVisual__photo"><img src="images/main/mv_pc1.jpg" alt="슬라이드 이미지"></div>
           </div>
           <!-- pc -->
           <!-- 모바일 -->
-          <?if($rowB[ReLink1]){?>
-          <a class="mainVisual__mobile" href="<?=$rowB[ReLink1]?>" <?if($rowB[ReMethod]=="2" ){?>target="_blank"
-            <?}?>>
-            <?}else{?>
-            <a class="mainVisual__mobile" href="#!">
-              <?}?>
-              <p class="mainVisual__nameM poppins">
-                <?=$rowB[ReTitle]?>
-              </p>
-              <div class="mainVisual__photoM"><img src="/HyAdmin/upload/etcFile/<?=$rowB[ReFile2]?>" alt="슬라이드 이미지"></div>
-            </a>
-            <!-- 모바일 -->
+          <a class="mainVisual__mobile" href="#!">
+            <p class="mainVisual__nameM poppins">
+              KIM GA YEON
+            </p>
+            <div class="mainVisual__photoM"><img src="images/main/mv_mob1.jpg" alt="슬라이드 이미지"></div>
+          </a>
+          <!-- 모바일 -->
         </div>
         <!--  -->
 
-        <?}?>
+        <!--  -->
+        <div class="mainVisual__cell">
+          <!-- pc -->
+          <div class="mainVisual__pc">
+            <div class="mainVisual__texts">
+              <p class="mainVisual__text1 poppins">
+                KIM GA YEON
+              </p>
+              <p class="mainVisual__more">
+                <a href="#!">VIEW MORE</a>
+              </p>
+            </div>
+            <div class="mainVisual__photo"><img src="images/main/mv_pc2.jpg" alt="슬라이드 이미지"></div>
+          </div>
+          <!-- pc -->
+          <!-- 모바일 -->
+          <a class="mainVisual__mobile" href="#!">
+            <p class="mainVisual__nameM poppins">
+              KIM GA YEON
+            </p>
+            <div class="mainVisual__photoM"><img src="images/main/mv_mob2.jpg" alt="슬라이드 이미지"></div>
+          </a>
+          <!-- 모바일 -->
+        </div>
+        <!--  -->
 
+        <!--  -->
+        <div class="mainVisual__cell">
+          <!-- pc -->
+          <div class="mainVisual__pc">
+            <div class="mainVisual__texts">
+              <p class="mainVisual__text1 poppins">
+                KIM GA YEON
+              </p>
+              <p class="mainVisual__more">
+                <a href="#!">VIEW MORE</a>
+              </p>
+            </div>
+            <div class="mainVisual__photo"><img src="images/main/mv_pc3.jpg" alt="슬라이드 이미지"></div>
+          </div>
+          <!-- pc -->
+          <!-- 모바일 -->
+          <a class="mainVisual__mobile" href="#!">
+            <p class="mainVisual__nameM poppins">
+              KIM GA YEON
+            </p>
+            <div class="mainVisual__photoM"><img src="images/main/mv_mob3.jpg" alt="슬라이드 이미지"></div>
+          </a>
+          <!-- 모바일 -->
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="mainVisual__cell">
+          <!-- pc -->
+          <div class="mainVisual__pc">
+            <div class="mainVisual__texts">
+              <p class="mainVisual__text1 poppins">
+                KIM GA YEON
+              </p>
+              <p class="mainVisual__more">
+                <a href="#!">VIEW MORE</a>
+              </p>
+            </div>
+            <div class="mainVisual__photo"><img src="images/main/mv_pc4.jpg" alt="슬라이드 이미지"></div>
+          </div>
+          <!-- pc -->
+          <!-- 모바일 -->
+          <a class="mainVisual__mobile" href="#!">
+            <p class="mainVisual__nameM poppins">
+              KIM GA YEON
+            </p>
+            <div class="mainVisual__photoM"><img src="images/main/mv_mob4.jpg" alt="슬라이드 이미지"></div>
+          </a>
+          <!-- 모바일 -->
+        </div>
+        <!--  -->
+
+        <!--  -->
+        <div class="mainVisual__cell">
+          <!-- pc -->
+          <div class="mainVisual__pc">
+            <div class="mainVisual__texts">
+              <p class="mainVisual__text1 poppins">
+                KIM GA YEON
+              </p>
+              <p class="mainVisual__more">
+                <a href="#!">VIEW MORE</a>
+              </p>
+            </div>
+            <div class="mainVisual__photo"><img src="images/main/mv_pc5.jpg" alt="슬라이드 이미지"></div>
+          </div>
+          <!-- pc -->
+          <!-- 모바일 -->
+          <a class="mainVisual__mobile" href="#!">
+            <p class="mainVisual__nameM poppins">
+              KIM GA YEON
+            </p>
+            <div class="mainVisual__photoM"><img src="images/main/mv_mob5.jpg" alt="슬라이드 이미지"></div>
+          </a>
+          <!-- 모바일 -->
+        </div>
+        <!--  -->
       </div>
       <!-- 슬라이드 -->
     </section>
