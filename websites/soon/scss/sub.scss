@@ -1,0 +1,1029 @@
+@charset "utf-8";
+@import './mixin';
+
+.sub_header {
+  @include headerOn;
+
+  .header__logo {
+    background: url(../images/common/logo_on.png) no-repeat center;
+    background-size: cover;
+  }
+
+  @include lap {
+    .header__logo {
+      background: url(../images/common/logo_pc_on.png) no-repeat center;
+      background-size: cover;
+    }
+  }
+}
+
+// 서브공통
+.subContents {
+  margin-top: 10rem;
+  padding-block: clamp(7rem, 5vw, 9rem) clamp(9rem, 8vw, 120rem)
+}
+
+.subTitle {
+  font-size: clamp(5rem, 5vw, 7rem);
+  font-weight: 600;
+  margin-bottom: 1.2em;
+  text-align: center;
+}
+
+// 인트로덕션
+.introduction {
+  width: 95%;
+  max-width: 73rem;
+  margin: 0 auto;
+  overflow: hidden;
+
+  &__title {
+    font-size: clamp(4.1rem, 10vw, 10rem);
+    font-weight: 900;
+    color: #e6e6e6;
+    line-height: 1.1;
+
+    span {
+      display: inline-block;
+      font-size: 0.5em;
+      font-weight: 700;
+      color: #333333;
+      transform: translateY(-0.4rem);
+      margin-left: clamp(2.6rem, 6vw, 7rem);
+    }
+  }
+
+  &__logo {
+    margin: 2rem 0;
+  }
+
+  &__dt {
+    font-size: clamp(3.3rem, 7vw, 5.5rem);
+
+    span {
+      color: var(--green);
+      font-weight: 700;
+    }
+  }
+
+  &__dl {
+    margin-bottom: clamp(4rem, 6vw, 6rem);
+  }
+
+  &__dd {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    font-weight: 300;
+    color: #555;
+    margin-top: clamp(1rem, 4vw, 1.5rem);
+
+    span {
+      color: var(--green);
+      font-weight: 700;
+    }
+  }
+
+  &__slogun {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #000;
+    line-height: 1.3;
+    display: table;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .intexts {
+      display: table-cell;
+      width: 6rem;
+      padding-right: 1.5rem;
+      text-align: right;
+    }
+
+    .colored {
+      display: table-cell;
+      color: #fff;
+      background-color: var(--green);
+    }
+  }
+
+
+
+  @include pc {
+    max-width: none;
+
+    &__flex {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: row-reverse;
+      column-gap: 4rem;
+      transform: translateX(13rem);
+    }
+
+    &__logo {
+      margin: 0;
+    }
+
+
+    &__title {
+      width: 100%;
+      max-width: 120rem;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+
+// 오시는 길
+.mapWrap {
+  width: 100% !important;
+  height: 32rem !important;
+  margin-bottom: 4rem !important;
+
+  .wrap_map {
+    height: calc(100% - 3.2rem) !important;
+  }
+
+  @include pc {
+    height: 58.3rem !important;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+
+  &__title {
+    font-size: clamp(2rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: #000;
+  }
+
+  &__dl {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 1rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
+
+    dt {
+      width: 4rem;
+      color: var(--green);
+    }
+
+    dd {
+      color: #555555;
+      font-weight: 300;
+    }
+  }
+
+  &__numberWrap {
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-top: 0.1rem solid #ddd;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  @include pc {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__info {
+      width: 70%;
+    }
+
+    &__numberWrap {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+// 아티스트
+.artistList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 7rem;
+
+  &__cell {
+    width: 48%;
+  }
+
+  &__thum {
+    position: relative;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 117.64705882353%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__name {
+    font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.3
+  }
+
+  &__downs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .artistList__button {
+      margin: 0;
+    }
+  }
+
+  &__button {
+    @include flexAlign;
+    column-gap: 1rem;
+    width: 13.5rem;
+    height: 3.5rem;
+    border: 0.1rem solid #ddd;
+    border-radius: 50vmax;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0 auto;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 1.5rem;
+      height: 1.4rem;
+      background: url(../images/sub/artist/bootIcon.png) no-repeat center;
+      background-size: cover;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: var(--orange);
+      border-color: var(--orange);
+
+      &:after {
+        background: url(../images/sub/artist/bootIcon_on.png) no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+
+  @include pc {
+    column-gap: clamp(5rem, 5vw, 9rem);
+    justify-content: flex-start;
+
+    &__cell {
+      width: calc(35.8% - clamp(5rem, 5vw, 9rem));
+      max-width: 34rem;
+
+      a {
+        &:hover {
+          .artistList__thum {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+
+    &__downs {
+      flex-direction: row;
+    }
+  }
+}
+
+// 아티스트 상세페이지
+.profile {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.5rem;
+  margin-bottom: clamp(8rem, 9vw, 11.5rem);
+  overflow-x: hidden;
+
+  &__image {}
+
+  &__slide {
+    margin-bottom: 2rem;
+  }
+
+  &__thum {
+    padding: 0 1.5rem;
+
+    .slick-prev,
+    .slick-next {
+      width: 1.2rem;
+      height: 2rem;
+      opacity: 0.3;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .slick-prev {
+      background: url(../images/sub/artist/thumPrev.png) no-repeat center;
+      background-size: cover;
+      left: 0;
+    }
+
+    .slick-next {
+      background: url(../images/sub/artist/thumNext.png) no-repeat center;
+      background-size: cover;
+      right: 0;
+    }
+
+    .slick-slide {
+      margin: 0 0.5rem;
+    }
+
+    .profile__thumCell {
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        border: 0.1rem solid #ddd;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+    }
+
+    .slick-current {
+      .profile__thumCell {
+        &::after {
+          border: 0.2rem solid var(--green);
+        }
+      }
+    }
+
+    @include pc {
+      .profile__thumCell {
+        cursor: pointer;
+      }
+    }
+  }
+
+
+  &__korName {
+    font-size: clamp(4rem, 5vw, 6rem);
+    color: #000;
+    margin-bottom: 2rem;
+  }
+
+  &__engName {
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    font-weight: 500;
+    color: #919191;
+    margin-bottom: 6rem;
+  }
+
+  &__spec {
+    display: flex;
+    font-size: 1.8rem;
+    line-height: 1.3;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    dt {
+      width: 9.2rem;
+      color: #000;
+    }
+
+    dd {
+      color: #555555;
+    }
+  }
+
+  &__buttons {
+    margin-block: clamp(4rem, 5vw, 6rem);
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  &__blank {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    font-size: 2.2rem;
+
+
+    &::before {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      transform: translateY(0.3rem);
+    }
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+
+
+  &__downs {
+   display: flex;
+   gap:0.5rem;
+  }
+
+  &__link {
+    &::before {
+      background: url(../images/sub/artist/sns.png) no-repeat center;
+      background-size: cover;
+    }
+
+    &:hover {
+
+      &::before {
+        background: url(../images/sub/artist/snsOn.png) no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+
+  &__vod {
+    &::before {
+      background: url(../images/sub/artist/vod.png) no-repeat center;
+      background-size: cover;
+    }
+
+    &:hover {
+
+      &::before {
+        background: url(../images/sub/artist/vodOn.png) no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+
+
+  .artistList__button {
+    margin: 0;
+  }
+
+  @include lap {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__image {
+      width: 47%;
+    }
+
+    &__texts {
+      width: 47%;
+    }
+  }
+}
+
+.career {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+
+  &__value {
+    font-size: clamp(2.7rem, 5vw, 3.5rem);
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 0.1rem solid #ddd;
+  }
+
+  &__cell {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.5rem;
+    column-gap: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.4;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__year {
+    font-weight: 500;
+    color: #000;
+    width: 3.5rem;
+  }
+
+  &__work {
+    color: #777777;
+
+    span {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  @include lap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 3.5%;
+    row-gap: 10rem;
+
+    &__wrap {
+      width: 31%;
+    }
+  }
+}
+
+// 오디션
+.audition {
+  text-align: center;
+
+  &__title1 {
+    font-size: 2.6rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+  }
+
+  &__title2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: clamp(6rem, 9vw, 9.5rem);
+  }
+
+  &__stepTitle {
+    font-size: 2.6rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  &__stepCell {
+    &:not(:last-child) {
+      &:after {
+        content: '';
+        display: block;
+        width: 3.5rem;
+        height: 2.1rem;
+        background: url(../images/sub/audition/arr_m.png) no-repeat center;
+        background-size: cover;
+        margin: 4rem auto 0 auto;
+      }
+    }
+  }
+
+  &__icon {
+    width: 15rem;
+    margin: 0 auto;
+  }
+
+  &__stepText {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  &__mail {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.3;
+  }
+
+  &__comment {
+    font-size: 1.8rem;
+    color: #555555;
+    line-height: 1.5;
+    margin-top: 4rem;
+
+    span {
+      color: var(--green);
+    }
+  }
+
+  @include lap {
+    &__step {
+      flex-direction: row;
+      justify-content: center;
+      column-gap: 15rem;
+    }
+
+    &__stepCell {
+      position: relative;
+
+      &:not(:last-child) {
+        &:after {
+          content: '';
+          display: block;
+          width: 2.1rem;
+          height: 3.5rem;
+          background: url(../images/sub/audition/arr_pc.png) no-repeat center;
+          background-size: cover;
+          margin: 0;
+          position: absolute;
+          right: -8rem;
+          top: 5.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+// 서포트
+.hiCustomer {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 0.1rem solid #ddd;
+
+  &__dt {
+    font-size: clamp(2.7rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 0.9em;
+
+    b {
+      font-weight: 700;
+    }
+  }
+
+  &__dd {
+    font-size: clamp(1.6rem, 4vw, 1.8rem);
+    line-height: 1.4;
+    color: #555555;
+  }
+
+  &__colored {
+    color: var(--green);
+  }
+}
+
+
+.csForm {
+  &__agreeTitle {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    line-height: 1.3;
+    margin-bottom: 0.4em;
+  }
+
+  &__agreeText {
+    color: var(--green);
+    font-size: 1.6rem;
+    line-height: 1.4;
+    padding-left: 2rem;
+    position: relative;
+
+    &::before {
+      content: '※';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    padding-block: 3rem;
+    border-radius: 1.5rem;
+    border: 0.1rem solid #ddd;
+    background-color: #fbfbfb;
+    columns: clamp(2rem, 4vw, 4rem);
+    margin-block: 3rem 7rem;
+  }
+
+  &__prav {
+    width: 17.4rem;
+    height: 5rem;
+    background-color: var(--green);
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    @include flexAlign;
+  }
+
+  &__radioLine {
+    display: flex;
+    align-items: center;
+    column-gap: clamp(2rem, 4vw, 4rem);
+    position: relative;
+
+    input[type="radio"] {
+      position: absolute;
+      right: 0;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      border: 0 none;
+      margin: 0;
+      top: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    label {
+      font-size: 1.5rem;
+      color: #555555;
+      position: relative;
+      @include flexAlign;
+      gap: 1rem;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 100%;
+        border: 0.1rem solid #ddd;
+        box-sizing: border-box;
+      }
+    }
+
+    input[type="radio"]:checked+label {
+      &::before {
+        border: 0.7rem solid var(--green);
+      }
+    }
+  }
+
+  &__inputHead {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 4rem;
+    border-bottom: 0.2rem solid #333;
+  }
+
+  &__head1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 500;
+  }
+
+  &__head2 {
+    font-size: 1.5rem;
+    color: #555555;
+    position: relative;
+    padding-left: 1.2rem;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 100%;
+      background-color: var(--green);
+      left: 0;
+      @include centerY(absolute);
+    }
+  }
+
+  &__inputLine {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      height: 5rem;
+      border: 0.1rem solid #ddd;
+      font-size: 1.6rem;
+      font-weight: 300;
+      padding-left: 1.5rem;
+    }
+  }
+
+  &__th {
+    font-size: 1.8rem;
+    font-weight: 500;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 1.2rem;
+
+  }
+
+  .must {
+    .csForm__th {
+      &::before {
+        content: '';
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+        background-color: var(--green);
+        left: 0;
+        @include centerY(absolute);
+      }
+    }
+  }
+
+  &__td {
+    display: flex;
+    align-items: center;
+  }
+
+  &__at {
+    font-size: 1.8rem;
+    display: block;
+    width: 5rem;
+    text-align: center;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__number {
+    width: calc(33.3333% - 1.5rem);
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__mail {
+    width: calc(50% - 2.5rem);
+    max-width: 33rem;
+  }
+
+  &__select {
+    width: 100%;
+    max-width: 43rem;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(../images/sub/selectArr.png);
+    background-repeat: no-repeat;
+    background-position: center right 10px;
+    background-size: 1.2rem;
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 11.5rem;
+    box-sizing: border-box;
+    border: 0.1rem solid #ddd;
+    resize: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+
+  &__submit {
+    width: clamp(22rem, 17vw, 31rem);
+    height: 7.8rem;
+    color: #fff;
+    border-radius: 50vmax;
+    background-color: var(--green);
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: clamp(4.5rem, 4vw, 7rem) auto 0 auto;
+    @include flexAlign;
+  }
+
+  .file_wrap {
+    width: 100%;
+  }
+
+  .file_wrap li {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .file_wrap li .fileName {
+    display: block;
+    width: 100%;
+    max-width: 94rem;
+  }
+
+  .file_wrap li label {
+    display: block;
+    width: 100%;
+    // max-width: 16.5rem;
+    line-height: 5rem;
+    margin-right: 5px;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    background-color: #333;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .file_wrap li input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  @include tablet {
+    &__box {
+      flex-direction: row;
+      justify-content: center;
+      column-gap: 4rem;
+    }
+
+    &__number {
+      max-width: 23rem;
+    }
+
+    &__inputLine {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &__th {
+      width: 20%;
+      line-height: 5rem;
+    }
+
+    &__td {
+      flex: 1;
+      width: 100%;
+    }
+
+    .file_wrap li {
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .file_wrap li .fileName {
+      width: calc(100% - 16.5rem);
+    }
+
+    .file_wrap li label {
+      width: 16.5rem;
+    }
+  }
+}
+
+.privacy {
+  background: #fbfafa;
+  border: 1px solid #d7d5d5;
+  padding: 25px;
+  height: 645px;
+  box-sizing: border-box;
+
+  >div {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .intxtarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    line-height: 1.7;
+    word-break: keep-all;
+    font-size: 14px;
+    overflow-y: scroll;
+    white-space: pre-line;
+  }
+}

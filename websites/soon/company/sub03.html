@@ -1,0 +1,53 @@
+<? include "../inc/header.html"; ?>
+
+<main class="subContents">
+  <div class="center_box">
+    <h2 class="subTitle poppins">Contact Us</h2>
+
+    <!-- * 카카오맵 - 지도퍼가기 -->
+    <!-- 1. 지도 노드 -->
+    <div id="daumRoughmapContainer1699408527446" class="root_daum_roughmap root_daum_roughmap_landing mapWrap"></div>
+
+    <!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+    <!-- 3. 실행 스크립트 -->
+    <script charset="UTF-8">
+      new daum.roughmap.Lander({
+        "timestamp": "1699408527446",
+        "key": "2gquh"
+      }).render();
+    </script>
+
+    <article class="contact">
+      <p class="contact__title">(주) 매니지먼트 순</p>
+      <div class="contact__info">
+        <dl class="contact__dl">
+          <dt>ADD.</dt>
+          <dd>서울시 성북구 보문로 91, 3층(보문동 5가, 엠2빌딩)<br />
+            3F, M2 Bldg, 91 Bomun-ro, Seongbuk-gu Seoul, Rep. of KOREA.</dd>
+        </dl>
+        <div class="contact__numberWrap">
+          <dl class="contact__dl">
+            <dt>TEL.</dt>
+            <dd>070-7826-9872</dd>
+          </dl>
+          <dl class="contact__dl">
+            <dt>FAX.</dt>
+            <dd>02-737-6615</dd>
+          </dl>
+          <dl class="contact__dl">
+            <dt>MAIL.</dt>
+            <dd>management_soon@naver.com</dd>
+          </dl>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+<script src="../js/sub.js"></script>
+<? include "../inc/footer.html"; ?>

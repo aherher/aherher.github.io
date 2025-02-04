@@ -1,0 +1,554 @@
+   @charset "uft-8";
+   @import './mixin';
+
+   :root {
+     --orange: #f37321;
+     --green: #6bb219;
+     --light-green: #85cc33;
+   }
+
+   input[type="number"]::-webkit-outer-spin-button,
+   input[type="number"]::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+   }
+
+   input:focus,
+   textarea:focus,
+   select:focus {
+     outline: none;
+   }
+
+   img {
+     max-width: 100%;
+   }
+
+
+   .center_box {
+     width: 95%;
+     max-width: 1200px;
+     margin: 0 auto;
+     //  @include centerY(relative);
+   }
+
+   .unMove {
+     opacity: 0;
+     transition: all 1.5s;
+   }
+
+   .moveOn {
+     transform: translate(0) !important;
+     opacity: 1 !important;
+   }
+
+   .moverWrap {
+     .movingBox {
+       opacity: 0;
+       transition: all 1.5s;
+     }
+   }
+
+   .moverOn_Wrap {
+     .movingBox {
+       transform: translate(0) !important;
+       opacity: 1 !important;
+     }
+   }
+
+
+   @for $i from 1 through 100 {
+     .delay#{$i} {
+       transition-delay: 0.1s * $i !important;
+     }
+   }
+
+   .flex_start {
+     display: flex;
+     align-items: flex-start;
+     justify-content: space-between;
+   }
+
+   .flex_center {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+   }
+
+   .poppins {
+     font-family: 'Poppins', sans-serif;
+   }
+
+   // 헤더
+   .header {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 9rem;
+     z-index: 5;
+     transition: background 0.3s;
+
+     &__head {
+       @include flexCenter;
+       width: 94%;
+       margin: 0 auto;
+       height: 100%;
+       position: relative;
+       z-index: 1;
+     }
+
+     &__logo {
+       font-size: 0;
+       width: 8rem;
+       height: 6rem;
+       background: url(../images/common/logo.png) no-repeat center;
+       background-size: cover;
+
+       a {
+         display: block;
+         height: 100%;
+       }
+     }
+
+     &__menu {
+       >li {
+         >a {
+           font-size: 2rem;
+           height: 100%;
+           color: #fff;
+           @include flexAlign;
+         }
+       }
+     }
+
+     &__submenu {
+       max-height: 0;
+       overflow: hidden;
+       transition: max-height 0.5s;
+     }
+
+     &__sns {
+       display: flex;
+       align-items: center;
+       column-gap: 1rem;
+
+       li {
+         width: 2.5rem;
+         height: 2.5rem;
+       }
+
+       a {
+         font-size: 0;
+         text-indent: -999999rem;
+         display: block;
+         height: 100%;
+       }
+
+       .snsLink1 {
+         background: url(../images/common/sns_off1.png) no-repeat center;
+         background-size: cover;
+       }
+
+       .snsLink2 {
+         background: url(../images/common/sns_off2.png) no-repeat center;
+         background-size: cover;
+       }
+     }
+
+     &__menubtn {
+       width: 3.2rem;
+       height: 2.2rem;
+       position: relative;
+       background: none;
+       display: none;
+       flex-direction: column;
+       justify-content: space-between;
+       z-index: 1;
+
+       div {
+         width: 100%;
+         height: 0.2rem;
+         background-color: #fff;
+
+         &:nth-child(2) {
+           width: 2rem;
+           margin: 0 auto;
+           transition: width 0.3s;
+         }
+       }
+
+       &:hover {
+         div {
+           &:nth-child(2) {
+             width: 100%;
+           }
+         }
+       }
+     }
+
+     &__close {
+       display: none;
+       z-index: 1;
+     }
+
+     &.header_on {
+       @include headerOn;
+
+       .header__logo {
+         background: url(../images/common/logo_on.png) no-repeat center;
+         background-size: cover;
+       }
+     }
+
+     @include mobileOnly(960px) {
+
+       &__callNumber {
+         font-size: clamp(2.2rem, 4vw, 4.5rem);
+         font-weight: 600;
+
+         span {
+           font-size: 0.8em;
+         }
+       }
+
+       &__menuWrap {
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         top: -100%;
+         left: 0;
+         background-color: #fff;
+         box-sizing: border-box;
+         padding: 0 3%;
+         overflow: scroll;
+         border-top: 1px solid #ddd;
+         transition: all 0.3s;
+         visibility: hidden;
+       }
+
+       &__menu {
+         width: 100%;
+         padding-bottom: 10rem;
+
+         >li {
+           border-bottom: 1px solid #ddd;
+
+           >a {
+             font-size: 2.3rem;
+             font-weight: 700;
+             justify-content: flex-start;
+             padding: 3rem 2rem;
+             position: relative;
+
+             &:after {
+               content: '+';
+               font-weight: 200;
+               color: #cecece;
+               right: 3rem;
+               font-size: 4rem;
+               @include centerY(absolute);
+             }
+           }
+
+           .on {
+             &:after {
+               content: '-';
+             }
+           }
+
+         }
+       }
+
+       &__submenu {
+         display: block;
+         max-height: 0;
+         background-color: #f7f7f7;
+
+         li {
+           border-top: 0.1rem solid #ddd;
+
+           a {
+             font-size: 2rem;
+             justify-content: flex-start;
+             padding: 3rem 4rem;
+             display: block;
+           }
+         }
+       }
+
+       .mobileOn {
+         max-height: 50rem;
+       }
+
+       &__sns {
+         position: absolute;
+         right: 4.5rem;
+       }
+
+       &__menubtn {
+         display: flex;
+       }
+
+       &.forMobile {
+         @include headerOn;
+
+         .header__logo {
+           background: url(../images/common/logo_on.png) no-repeat center;
+           background-size: cover;
+         }
+
+         .header__menuWrap {
+           top: 9rem;
+           visibility: visible;
+         }
+
+         .header__menubtn {
+           display: none;
+         }
+
+         .header__close {
+           display: block;
+           background: none;
+           width: 3.5rem;
+           height: 3.5rem;
+           background: url(../images/common/close_btn.png) no-repeat center;
+         }
+
+       }
+
+     }
+
+     @include lap {
+       height: 10rem;
+
+       &__head {
+         margin: 0;
+       }
+
+       &__logo {
+         width: 10.3rem;
+         height: 5.6rem;
+         background: url(../images/common/logo_pc.png) no-repeat center;
+         background-size: cover;
+       }
+
+       &__iqText1 {
+         font-size: 1.9rem;
+       }
+
+       &__iqText2 {
+         font-size: 2.6rem;
+       }
+
+       &__menuWrap {
+         width: 75%;
+         max-width: 113rem;
+         height: 100%;
+         @include flexCenter;
+       }
+
+       &__menu {
+         @include flexCenter;
+         width: 100%;
+         height: 100%;
+         text-align: center;
+
+         >li {
+           width: 25%;
+           height: 100%;
+           position: relative;
+
+           >a {
+             position: relative;
+             font-weight: 700;
+           }
+
+           &:after {
+             content: '';
+             display: none;
+             width: 3.5rem;
+             height: 0.2rem;
+             background-color: var(--green);
+             bottom: 0rem;
+             @include centerX(absolute);
+           }
+
+           &:hover {
+             &:after {
+               display: block;
+             }
+           }
+         }
+       }
+
+       &__submenu {
+         position: absolute;
+         width: 100%;
+         height: 30rem;
+         padding-top: 0rem;
+         top: 10rem;
+         box-sizing: border-box;
+         transition: max-height 0.3s, padding-top 0.3s;
+
+         li {
+           margin-bottom: 2rem;
+
+           a {
+             font-size: 1.5rem;
+             display: inline-block;
+             padding-bottom: 0.5rem;
+             position: relative;
+             color: #767676;
+
+             &:hover {
+               color: var(--green);
+
+               &:after {
+                 display: block;
+               }
+             }
+           }
+         }
+       }
+
+       &__back {
+         position: absolute;
+         background-color: #fff;
+         width: 100%;
+         height: 0;
+         top: 10.1rem;
+         z-index: 0;
+         transition: all 0.3s;
+         opacity: 0;
+
+         >div {
+           background-color: #555;
+           position: absolute;
+         }
+       }
+
+       &__backLine1 {
+         width: 0.1rem;
+         height: 5.5rem;
+         left: 3rem;
+       }
+
+       &__backLine2 {
+         width: 0.1rem;
+         height: 10.5rem;
+         left: 0.5%;
+         bottom: 0rem;
+       }
+
+       &__backLine3 {
+         width: 100%;
+         height: 0.1rem;
+         left: 0%;
+         bottom: 2.5rem;
+       }
+
+       //  마우스 오버시 헤더
+       &.header_on {
+         .header__logo {
+           background: url(../images/common/logo_pc_on.png) no-repeat center;
+           background-size: cover;
+         }
+       }
+
+       &.hovered {
+         @include headerOn;
+
+         .header__logo {
+           background: url(../images/common/logo_pc_on.png) no-repeat center;
+           background-size: cover;
+         }
+
+         .header__back {
+           height: 14rem;
+           border-bottom: 1px solid #ddd;
+           opacity: 1;
+         }
+
+         .header__submenu {
+           max-height: 18rem;
+           padding-top: 3rem;
+         }
+       }
+     }
+   }
+
+   // 푸터
+   .footer {
+     border-top: 0.1rem solid #ddd;
+     padding-block: 5rem;
+     text-align: center;
+
+     &__foot {
+       width: 95%;
+       margin: 0 auto;
+       display: flex;
+       flex-direction: column;
+       row-gap: 2rem;
+       position: relative;
+     }
+
+     &__logo {
+       width: 9rem;
+       margin: 0 auto;
+     }
+
+     &__sns {
+       @include flexAlign;
+       column-gap: 1.5rem;
+
+       li {
+         width: 3rem;
+       }
+     }
+
+     &__info {
+       font-size: 1.6rem;
+       color: #555555;
+       display: flex;
+       flex-direction: column;
+       row-gap: 1rem;
+       margin-bottom: 1rem;
+     }
+
+     &__copy {
+       font-size: 1.4rem;
+       color: #a3a3a3;
+       line-height: 1.3;
+       margin-top: 1.5rem;
+     }
+
+     @include lap {
+       text-align: left;
+
+       &__foot {
+         flex-direction: row;
+         align-items: center;
+         column-gap: 6rem;
+       }
+
+       &__logo {
+         margin: 0;
+       }
+
+       &__info {
+         flex-direction: row;
+         column-gap: 2rem;
+       }
+
+       &__sns {
+         position: absolute;
+         right: 0;
+         top: 0;
+       }
+     }
+   }
+
+   //  하단배너
+   .banner {
+     &__box {}
+   }

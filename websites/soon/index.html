@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg" />
+  <link rel="shortcut icon" href="/images/common/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/common/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="http://management-soon.com/">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/common.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/slick.js"></script>
+
+  <title>매니지먼트 순</title>
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="header__head">
+      <h1 class="header__logo"><a href="/">매니지먼트 순</a></h1>
+      <nav class="header__menuWrap">
+        <ul class="header__menu poppins">
+          <li><a href="company/sub01.html">COMPANY</a>
+            <ul class="header__submenu">
+              <li><a href="company/sub01.html">Introduction</a></li>
+              <li><a href="company/sub03.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="artist/sub01.html">ARTIST</a></li>
+          <li><a href="audition/sub01.html">AUDITION</a></li>
+        </ul>
+
+        <li><a href="pr/sub01.html">PR CENTER</a>
+          <ul class="header__submenu">
+            <li><a href="pr/sub01.html">News</a></li>
+          </ul>
+        </li>
+        <li><a href="support/sub01.html">SUPPORT</a></li>
+        <li><a href="#!">STORE</a></li>
+        </ul>
+      </nav>
+
+      <button class="header__menubtn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+      <div class="header__close"></div>
+    </div>
+    <div class="header__back">
+      <div class="header__backLine1"></div>
+      <div class="header__backLine2"></div>
+      <div class="header__backLine3"></div>
+    </div>
+  </header>
+  <!-- 헤더 끝 -->
+
+  <main>
+    <section class="mainVisual">
+      <!-- 슬라이드 -->
+
+      <?
+        $queryB = "select * from hy_banner order by ReOrder desc,ReIdx desc";
+        $rsB = query($queryB,$dbcon);
+        $countB = mysql_num_rows($rsB);
+      ?>
+
+      <div class="mainVisual__slide">
+
+        <?
+          for($k=0;$k<$countB;$k++){
+            $rowB = mysql_fetch_array($rsB);
+        ?>
+
+        <!--  -->
+        <div class="mainVisual__cell">
+          <!-- pc -->
+          <div class="mainVisual__pc">
+            <div class="mainVisual__texts">
+              <p class="mainVisual__text1 poppins">
+                <?=$rowB[ReTitle]?>
+              </p>
+              <p class="mainVisual__more">
+                <?if($rowB[ReLink1]){?>
+                <a href="<?=$rowB[ReLink1]?>" <?if($rowB[ReMethod]=="2" ){?>target="_blank"
+                  <?}?>>VIEW MORE
+                </a>
+                <?}else{?>
+                <a href="#!">VIEW MORE</a>
+                <?}?>
+              </p>
+            </div>
+            <div class="mainVisual__photo"><img src="/HyAdmin/upload/etcFile/<?=$rowB[ReFile1]?>" alt="슬라이드 이미지"></div>
+          </div>
+          <!-- pc -->
+          <!-- 모바일 -->
+          <?if($rowB[ReLink1]){?>
+          <a class="mainVisual__mobile" href="<?=$rowB[ReLink1]?>" <?if($rowB[ReMethod]=="2" ){?>target="_blank"
+            <?}?>>
+            <?}else{?>
+            <a class="mainVisual__mobile" href="#!">
+              <?}?>
+              <p class="mainVisual__nameM poppins">
+                <?=$rowB[ReTitle]?>
+              </p>
+              <div class="mainVisual__photoM"><img src="/HyAdmin/upload/etcFile/<?=$rowB[ReFile2]?>" alt="슬라이드 이미지"></div>
+            </a>
+            <!-- 모바일 -->
+        </div>
+        <!--  -->
+
+        <?}?>
+
+      </div>
+      <!-- 슬라이드 -->
+    </section>
+
+
+  </main>
+  <script src="js/main.js"></script>
+  <!-- 푸터 -->
+  <footer class="footer">
+    <article class="footer__foot">
+      <div class="footer__logo"><img src="images/common/foot_logo.png" alt="매니지먼트 순"></div>
+      <ul class="footer__sns">
+        <li><a href="#!"><img src="images/common/sns1.png" alt="인스타그램 링크"></a></li>
+        <li><a href="#!"><img src="images/common/sns2.png" alt="페이스북 링크"></a></li>
+        <li><a href="#!"><img src="images/common/sns3.png" alt="유튜브 링크"></a></li>
+        <li><a href="#!"><img src="images/common/sns4.png" alt="트위터 링크"></a></li>
+
+      </ul>
+      <div class="footer__texts">
+        <p class="footer__info"><span>주소 : 서울시 성북구 보문로 91, 3층(보문동 5가, 엠2빌딩)</span> <span>대표이사 : 이규한</span> <span>사업자등록번호 : 201-86-23008</span></p>
+        <p class="footer__info"><span>대표전화 : 070-7826-9872</span> <span>팩스 : 02-737-6615</span></p>
+        <p class="footer__copy">COPYRIGHT ⓒ 2023 MANAGEMENT SOON. ALL RIGHTS RESERVED.</p>
+      </div>
+    </article>
+  </footer>
+  <!-- 푸터 끝 -->
+
+  <script src="js/layout.js"></script>
+
+</body>
+
+</html>
