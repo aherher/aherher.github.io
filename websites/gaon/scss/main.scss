@@ -1,0 +1,482 @@
+@charset "utf-8";
+@import './mixin';
+
+body>img:last-child {
+  display: none;
+}
+
+// 슬라이드
+.slide {
+  position: relative;
+  font-size: 0;
+  overflow: hidden;
+
+  img {
+    max-width: none;
+    @include centerX(relative);
+
+    @media screen and (min-width:1925px) {
+      width: 100%;
+    }
+  }
+
+  &__texts {
+    color: #fff;
+    @include centerC(absolute);
+    top: 43%;
+    left: 55%;
+    z-index: 1;
+    width: 100%;
+
+    dt {
+      font-size: clamp(1.8rem, 6vw, 6.5rem);
+      font-weight: 700;
+      margin-bottom: 0.3em;
+    }
+
+    dd {
+      font-size: clamp(1.2rem, 4vw, 3rem);
+
+      &.text03 {
+        letter-spacing: 0.38em;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  &__timebar {
+    @include centerX(absolute);
+    z-index: 1;
+    bottom: 2rem;
+  }
+
+  &__control {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+
+    .img_nums {
+      font-size: 1.8rem;
+      margin-left: 2rem;
+      color: #fff;
+    }
+  }
+
+  &__progressive {
+    position: relative;
+    width: 21rem;
+    height: 0.2rem;
+    background-color: #fff;
+
+    span {
+      display: block;
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #d4a952;
+    }
+
+    span.doing {
+      animation: doprogress 4s infinite;
+
+    }
+  }
+
+  .slick-arrow {
+    width: 36px;
+    height: 36px;
+    position: static;
+    display: inline-block;
+    transform: translate(0);
+    margin-right: 0.5rem;
+  }
+
+  .slick-prev {
+    background: url(../images/main/slide_prav.png) no-repeat center;
+    background-size: cover;
+
+    &:hover {
+      background: url(../images/main/slide_prav.png) no-repeat center;
+      background-size: cover;
+    }
+
+  }
+
+  .slick-next {
+    background: url(../images/main/slide_next.png) no-repeat center;
+    background-size: cover;
+
+    &:hover {
+      background: url(../images/main/slide_next.png) no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  @include tablet {
+    img {
+      max-width: 100%;
+    }
+
+    &__texts {
+      top: 55%;
+    }
+
+  }
+
+  @include mobileOnly {
+    img {
+      max-width: 190%;
+    }
+
+    &__texts {
+      top: 55%;
+    }
+
+    padding-top: 9.1rem;
+  }
+
+  @include pc {
+    &__timebar {
+      bottom: 7rem;
+    }
+
+    &__texts {
+      left: 26.1%;
+      width: auto;
+    }
+  }
+}
+
+@keyframes doprogress {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+// 환경
+.about {
+  padding: 6rem 0;
+
+  &__texts {
+    text-align: center;
+
+    .icon {
+      width: 7.6rem;
+      margin: 0 auto 2rem auto;
+    }
+
+    .text01 {
+      font-size: clamp(1.8rem, 4vw, 2rem);
+      font-weight: 500;
+      color: #000;
+      margin-bottom: 1em;
+    }
+
+    .text02 {
+      font-size: clamp(1.5rem, 4vw, 1.8rem);
+      color: #555555;
+      line-height: 1.4;
+    }
+
+    .controlTitle {
+      margin-top: 4rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+  }
+
+  &__article {
+    position: relative;
+    margin-top: 3rem;
+  }
+
+  &__control {
+    position: relative;
+    text-align: center;
+    // margin-top: 5rem;
+
+    .inNums {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #a2a2a2;
+      margin-top: 2rem;
+    }
+
+    @include flexCenter;
+  }
+
+  &__inTitle {
+    width: 20rem;
+  }
+
+  .slick-arrow {
+    width: 3.5rem;
+    height: 3.5rem;
+    position: static;
+    transform: translate(0);
+  }
+
+  .slick-next {
+    background: url(../images/main/about_next.png) no-repeat center;
+    background-size: cover;
+  }
+
+  .slick-prev {
+    background: url(../images/main/about_prev.png) no-repeat center;
+    background-size: cover;
+  }
+
+
+
+  @include pc {
+    padding: 9rem 0;
+
+    &__texts {
+      .controlTitle {
+        margin-top: 9rem;
+      }
+    }
+
+    &__center {
+      @include flexCenter;
+      flex-direction: row-reverse;
+    }
+
+    &__article {
+      width: 35%;
+      margin-top: 0;
+    }
+
+    &__imgs {
+      width: 55%;
+      max-width: 96rem;
+    }
+
+    .slick-arrow {
+      width: 7.5rem;
+      height: 7.5rem;
+    }
+
+    &__control {
+      // margin-top: 10rem;
+      margin-top: -2.5em;
+    }
+  }
+}
+
+
+// 시공사례
+.plan {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 6rem 0;
+
+  &__center {
+    width: 95%;
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 5rem;
+
+    dt {
+      font-size: clamp(1.6rem, 4vw, 1.8rem);
+      color: #4d685e;
+      margin-bottom: 0.8em;
+    }
+
+    dd {
+      font-size: clamp(3rem, 4vw, 4.5rem);
+      color: #032646;
+    }
+  }
+
+  &__slide {
+    margin: 0 auto;
+
+    .slick-arrow {
+      width: 3.4rem;
+      height: 6.6rem;
+      z-index: 1;
+    }
+
+    .slick-next {
+      background: url(../images/main/planNext.png) no-repeat center;
+      right: 0rem;
+    }
+
+    .slick-prev {
+      background: url(../images/main/planPrev.png) no-repeat center;
+      left: 0rem;
+    }
+
+    .slick-track {
+      .slick-slide {
+        .align {
+          display: flex;
+        }
+
+        &:nth-child(odd) {
+          .align {
+            flex-direction: column;
+
+            .plan__img {
+              margin-bottom: 2.5rem;
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          .align {
+            flex-direction: column-reverse;
+
+            .plan__img {
+              margin-top: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    li {
+      padding: 0 1.5rem;
+      box-sizing: border-box;
+    }
+  }
+
+  &__img {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 auto;
+
+    img {
+      @include centerC(absolute);
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 107.56578947368%;
+    }
+  }
+
+  &__dl {
+    font-size: 1.5rem;
+
+    dt {
+      color: #b08c45;
+      display: inline-block;
+      line-height: 3.5rem;
+      border: 1px solid #b08c45;
+      border-radius: 3.5rem;
+      padding: 0 2rem;
+    }
+
+    dd {
+      line-height: 1.4;
+      margin-top: 0.6em;
+    }
+  }
+
+  @include pc {
+    padding: 7.5rem 0;
+
+    &__img {
+      width: 100%;
+    }
+
+    &__title {
+      margin-bottom: 5rem;
+    }
+
+    &__slide {
+      .slick-next {
+        right: -10rem;
+      }
+
+      .slick-prev {
+        left: -10rem;
+      }
+    }
+  }
+}
+
+// 하단 배너
+.bottom {
+  &__banner {
+    display: block;
+    height: 15rem;
+  }
+
+  &__align {
+    @include centerC(relative);
+    width: 95%;
+    color: #fff;
+  }
+
+  &__text01 {
+    font-size: clamp(3rem, 5vw, 3.7rem);
+    font-weight: 700;
+    margin-bottom: 0.3em;
+  }
+
+  &__text02 {
+    font-size: clamp(1.5rem, 5vw, 1.7rem);
+    opacity: 0.5;
+  }
+
+  &__arrow {
+    width: 4rem;
+    height: 1rem;
+    background: url(../images/main/bottom_arr.png) no-repeat center;
+    background-size: cover;
+    margin-top: clamp(2rem, 4vw, 4rem);
+  }
+
+
+  .banner01 {
+    background: url(../images/main/bottom01.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  .banner02 {
+    background: url(../images/main/bottom02.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  @include pc {
+    display: flex;
+
+    &__banner {
+      width: 50%;
+      height: 25rem;
+    }
+
+    &__align {
+      width: 70%;
+    }
+  }
+}
+
+// 퀵메뉴
+.quick {
+  position: fixed;
+  z-index: 2;
+  right: 1rem;
+  bottom: 1rem;
+  @include mobileOnly{
+   width: 7.3rem;
+  }
+}

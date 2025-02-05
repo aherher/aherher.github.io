@@ -1,0 +1,650 @@
+@charset "utf-8";
+@import './mixin';
+
+
+// 서브 비주얼
+.subVisual {
+  padding-top: 9.1rem;
+  height: 30rem;
+  text-align: center;
+  box-sizing: border-box;
+
+  dl {
+    color: #fff;
+    width: 95%;
+    margin: 0 auto;
+    @include centerY(relative);
+
+
+    dt {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 700;
+      margin-bottom: 0.4em;
+    }
+
+    dd {
+      font-size: clamp(1.6rem, 5vw, 2rem);
+    }
+  }
+
+  @include pc {
+    height: 42rem;
+    padding-top: 0;
+
+    dl {
+      top: 60%;
+    }
+  }
+}
+
+.subVisual01 {
+  background: url(../images/sub/sub_visual01.jpg) no-repeat center;
+}
+
+.subVisual02 {
+  background: url(../images/sub/sub_visual02.jpg) no-repeat center;
+}
+
+.subVisual03 {
+  background: url(../images/sub/sub_visual03.jpg) no-repeat center;
+}
+
+.subVisual04 {
+  background: url(../images/sub/sub_visual04.jpg) no-repeat center;
+}
+
+.subVisual05 {
+  background: url(../images/sub/sub_visual05.jpg) no-repeat center;
+}
+
+.subVisual06 {
+  background: url(../images/sub/sub_visual06.jpg) no-repeat center;
+}
+
+
+
+.sub_center {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.subLinks {
+  height: 5rem;
+  line-height: 5rem;
+  border-bottom: 1px solid #dedede;
+
+  .sub_center {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  &__wrap {
+    display: flex;
+
+    >div {
+      border-right: 1px solid #dedede;
+      height: 100%;
+    }
+  }
+
+  &__Home {
+    display: none;
+    width: 6rem;
+    border-left: 1px solid #dedede;
+    text-align: center;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  &__leftLink,
+  &__rightLink {
+    width: 50%;
+    box-sizing: border-box;
+
+    .cur_page {
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: #999999;
+      padding: 0 2rem;
+      background: url(../images/sub/openTab.png) no-repeat center right 2rem;
+      background-size: 1.1rem auto;
+      cursor: pointer;
+    }
+
+    .openedTab {
+      background: url(../images/sub/closeTab.png) no-repeat center right 2rem;
+      background-size: 1.1rem auto;
+    }
+  }
+
+  &__List {
+    // border-bottom: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    background-color: #fff;
+    position: relative;
+    top: 1px;
+    left: -1px;
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s -0.3s;
+
+    li {
+      a {
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: #999999;
+        padding: 0 2rem;
+        display: block;
+      }
+    }
+  }
+
+  .listOpen {
+    max-height: 60rem;
+    border-bottom: 1px solid #dedede;
+    transition-delay: 0s;
+  }
+
+  .hided_lise {
+    display: none;
+  }
+
+  @include tablet {
+    .sub_center {
+      width: 95%;
+    }
+
+    &__Home {
+      display: block;
+    }
+
+    &__leftLink,
+    &__rightLink {
+      max-width: 24.0rem;
+    }
+  }
+}
+
+.pageNav {
+  right: 0;
+  @include centerY(absolute);
+
+  li {
+    font-size: 1.4rem;
+    color: #999999;
+    padding-right: 1.7rem;
+    margin-right: 1rem;
+
+    &:last-child {
+      color: #222;
+    }
+
+    &:not(:last-child) {
+      background: url(../images/sub/pageNav.png) no-repeat center right;
+    }
+  }
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+
+.subContents {
+  padding: 7rem 0;
+
+  @include pc {
+    padding: 10rem 0;
+  }
+}
+
+.pageTitle {
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 4rem;
+  text-align: center;
+
+  @include pc {
+    margin-bottom: 7rem;
+  }
+}
+
+.subTabs {
+  @include flexAlign;
+  max-width: 80rem;
+  margin: 0 auto;
+  border-right: 1px solid #ddd;
+  margin-bottom: clamp(3rem, 10vw, 8rem);
+
+  li {
+    width: 50%;
+    height: 6rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-right: none;
+
+    a {
+      @include flexAlign;
+      height: 100%;
+      font-size: 2rem;
+    }
+
+    &.on {
+      background-color: #032646;
+      color: #fff;
+    }
+  }
+}
+
+// 인사말
+.greeting {
+  &__head {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.3;
+    margin-bottom: clamp(5rem, 5vw, 7rem);
+
+    b {
+      color: #4b78c0;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+
+  &__text {
+    font-size: clamp(1.5rem, 4vw, 1.7rem);
+    line-height: 1.5;
+    color: #555555;
+  }
+
+  &__ceo {
+    margin-top: 5rem;
+
+    span {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #333;
+    }
+  }
+
+  @include pc {
+    &__wrap {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    &__image {
+      width: 50%;
+    }
+
+    &__text {
+      width: 45%;
+    }
+  }
+}
+
+
+// 조직도
+.group_image {
+  display: block;
+  margin: 0 auto;
+}
+
+
+// 오시는 길
+.map {
+  width: 100% !important;
+  z-index: 0;
+
+  .wrap_map {
+    height: 30rem !important;
+  }
+
+  @include pc {
+    .wrap_map {
+      height: 54.5rem !important;
+    }
+  }
+}
+
+.address_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  padding: 5rem 1.5rem 3rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  line-height: 1.3;
+
+  p {
+    padding: 1rem 0 1rem 4rem;
+
+    &.info01 {
+      background: url(../images/sub/about/icon01.png) no-repeat center left 0.5rem;
+      background-size: 2.3rem;
+    }
+
+    &.info02 {
+      background: url(../images/sub/about/icon02.png) no-repeat center left;
+      background-size: 3.4rem;
+    }
+
+    &.info03 {
+      background: url(../images/sub/about/icon03.png) no-repeat center left;
+      background-size: 3.3rem;
+    }
+  }
+
+  @include pc {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+  }
+}
+
+
+// 진행절차
+.box_title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: #063866;
+  padding-bottom: 3rem;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.process {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 3rem;
+
+  li {
+    width: 48%;
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    padding: 5rem 3%;
+    text-align: center;
+  }
+
+  &__number {
+    width: 60px;
+    height: 60px;
+
+    &:after {
+      content: '';
+      display: block;
+      box-sizing: border-box;
+      border-top: 12rem solid;
+      border-left: 0px solid transparent;
+      border-right: 8rem solid transparent;
+    }
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    span {
+      @include centerC(absolute);
+      color: #fff;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+  }
+
+  .number01 {
+    &:after {
+      border-top-color: #4b78c0;
+    }
+  }
+
+  .number02 {
+    &:after {
+      border-top-color: #2862bf;
+    }
+  }
+
+  .number03 {
+    &:after {
+      border-top-color: #1951aa;
+    }
+  }
+
+  .number04 {
+    &:after {
+      border-top-color: #1979aa;
+    }
+  }
+
+  .number05 {
+    &:after {
+      border-top-color: #126b98;
+    }
+  }
+
+
+  .number06 {
+    &:after {
+      border-top-color: #195e81;
+    }
+  }
+
+  &__icon {
+    height: 7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .icon01 {
+    background: url(../images/sub/precess/icon01.png) no-repeat center;
+  }
+
+  .icon02 {
+    background: url(../images/sub/precess/icon02.png) no-repeat center;
+  }
+
+  .icon03 {
+    background: url(../images/sub/precess/icon03.png) no-repeat center;
+  }
+
+  .icon04 {
+    background: url(../images/sub/precess/icon04.png) no-repeat center;
+  }
+
+  .icon05 {
+    background: url(../images/sub/precess/icon05.png) no-repeat center;
+  }
+
+  .icon06 {
+    background: url(../images/sub/precess/icon06.png) no-repeat center;
+  }
+
+  &__text01 {
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1em;
+  }
+
+  &__text02 {
+    font-size: clamp(1.4rem, 5vw, 1.5rem);
+    line-height: 1.4;
+    color: #555555;
+  }
+
+  @include pc {
+    flex-wrap: nowrap;
+
+    li {
+      width: 15%;
+    }
+  }
+}
+
+.steps_wrap {
+  margin-top: clamp(7rem, 6vw, 9.5rem);
+
+  .stepbox {
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+    padding: clamp(4rem, 5.5vw, 7rem) 4%;
+
+    @include pc {
+      padding: clamp(4rem, 5.5vw, 7rem) 0;
+    }
+  }
+
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 3rem;
+
+    li {
+      width: 48%;
+      position: relative;
+
+
+      p {
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.3
+      }
+
+      .align {
+        @include centerC(absolute);
+        width: 100%;
+      }
+
+      .icon {
+        height: 5rem;
+        transform: scale(0.5);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        padding-bottom: 104.86891385768%;
+      }
+    }
+
+    &__01 {
+      background: url(../images/sub/precess/bg01.png) no-repeat center top;
+      background-size: cover;
+
+      .icon {
+        background: url(../images/sub/precess/step01.png) no-repeat center;
+      }
+    }
+
+    &__02 {
+      background: url(../images/sub/precess/bg02.png) no-repeat center;
+      background-size: cover;
+
+      .icon {
+        background: url(../images/sub/precess/step02.png) no-repeat center;
+      }
+    }
+
+    &__03 {
+      background: url(../images/sub/precess/bg03.png) no-repeat center;
+      background-size: cover;
+
+      .icon {
+        background: url(../images/sub/precess/step03.png) no-repeat center;
+      }
+    }
+
+    &__04 {
+      background: url(../images/sub/precess/bg04.png) no-repeat center;
+      background-size: cover;
+
+      .icon {
+        background: url(../images/sub/precess/step04.png) no-repeat center;
+      }
+    }
+
+    &__05 {
+      background: url(../images/sub/precess/bg05.png) no-repeat center;
+      background-size: cover;
+
+      .icon {
+        background: url(../images/sub/precess/step05.png) no-repeat center;
+      }
+    }
+
+    &__06 {
+      background: url(../images/sub/precess/bg06.png) no-repeat center;
+      background-size: cover;
+
+      .icon {
+        background: url(../images/sub/precess/step06.png) no-repeat center;
+      }
+    }
+
+    @include pc {
+      gap: 4rem;
+      justify-content: flex-start;
+
+      li {
+        width: 30%;
+        max-width: 26.7rem;
+
+        &:first-child {
+          margin-left: clamp(5rem, 7vw, 9rem);
+        }
+
+        &:nth-child(4) {
+          margin-left: clamp(10rem, 16vw, 23rem);
+        }
+
+        .icon {
+          transform: scale(1);
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+
+}
+
+
+/*개인정보취급방침*/
+.privacy {
+  background: #fbfafa;
+  border: 1px solid #d7d5d5;
+  padding: 25px;
+  height: 645px;
+  box-sizing: border-box;
+
+  >div {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    height: 100%;
+
+    >.intxtarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      line-height: 1.7;
+      word-break: keep-all;
+      font-size: 14px;
+      overflow-y: scroll;
+      white-space: pre-line;
+    }
+  }
+}
