@@ -1,0 +1,35 @@
+@charset "euc-kr";
+
+.talk_wrap {position:fixed; right:0; top:30%; max-width:230px; width:100%; background-color:#0052ce; z-index:4;}
+.talk_wrap .close_alert {position:absolute; left:-55px; top:0; display:none;}
+.talk_wrap .close_alert img {width:55px;}
+.talk_wrap .tw_titlw {margin-bottom:10px; text-align:center; color:#fff; font-size:24px; font-weight:700; padding-top:15px;}
+.talk_wrap .tw_titlw img {width:123px;}
+.talk_wrap .talk_mob {width:193px; margin:0 auto; padding:43px 0 10px 0; background:url(../images/common/phone_bg.png) no-repeat;}
+.talk_wrap .talk_mob .tbcont {width:150px; margin:0 auto;}
+.talk_wrap .talk_mob .tbcont .twtxt {font-size:16px; font-weight:500; color:#000000; line-height:1.3; padding-bottom:14px; margin-bottom:14px;
+border-bottom:1px solid #fff;}
+.talk_wrap .talk_mob .agrtxt {font-size:14px; color:#000; margin-bottom:15px;}
+.talk_wrap .talk_mob .tfag {position:relative;}
+.talk_wrap .talk_mob .tfag a {font-size:15px; font-weight:500; color:#000; margin-right:5px;}
+.talk_wrap .talk_mob .tfag input[type="checkbox"] {position: absolute; right: 0; width: 1px; height: 1px; padding: 0; border: 0 none; margin: 0; top: 0; overflow: hidden;
+    clip: rect(0 0 0 0);}
+.talk_wrap .talk_mob .tfag label {font-size:15px; color:#000; background: url(/HyAdmin/images/member/uncheck.png) no-repeat center right; padding-right: 25px;}
+.talk_wrap .talk_mob .tfag input[type="checkbox"]:checked+label {background: url(/HyAdmin/images/member/checked.png) no-repeat center right;}
+.talk_wrap .talk_mob .tw_phone {display:block; border:none; background-color:#fff; width:100%; box-sizing:border-box; padding-left:5px; height:35px; margin:15px 0 5px 0;}
+.talk_wrap .talk_mob .talk_submit {width:100%; line-height:40px; display:block; text-align:center; font-size:17px; font-weight:500; color:#fff;
+background-color:#d31846;}
+
+.alert_btn {position:fixed; right:0; top:30%; z-index:4; display:none;}
+.alert_btn img {width:96px;}
+
+@media screen and (max-width:1100px) {
+.talk_wrap {display:none; right:-280px;}
+.talk_wrap .close_alert,
+.alert_btn {display:block;}
+}
+
+@media screen and (max-width:500px) {
+.alert_btn {top:40%}
+.alert_btn img {width:70px;}
+}

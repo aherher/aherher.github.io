@@ -1,0 +1,135 @@
+<!-- 헤더 -->
+<div class="header_wrap sub_header">
+  <div class="head">
+    <h1><a href="../index.html"></a></h1>
+    <ul class="menu">
+      <li><a href="/about/sub01.html">삽자루수학</a>
+        <ul class="sub_menu">
+          <li><a href="/about/sub01.html">인사말</a></li>
+          <li><a href="/about/sub02.html">강사소개</a></li>
+          <li><a href="/about/sub04.html">학원소개</a></li>
+          <li><a href="/about/sub06.html">멘토링 서비스</a></li>
+          <li><a href="/about/sub05.html">오시는 길</a></li>
+        </ul>
+      </li>
+      <li><a href="/about/sub03.html">학습 시스템</a>
+        <ul class="sub_menu">
+          <li><a href="/about/sub03.html">학습 시스템</a></li>
+        </ul>
+      </li>
+      <li><a href="/HyAdmin/list.php?bbs_id=bo07">수강신청</a>
+        <ul class="sub_menu ">
+          <li><a href="/HyAdmin/list.php?bbs_id=bo07">시간표</a></li>
+          <li><a href="/info/school_list.html">수강신청</a></li>
+        </ul>
+      </li>
+      <li><a href="/contetns/sub01.html">컨텐츠</a>
+        <ul class="sub_menu sm04">
+          <li><a href="/contetns/sub01.html">선배들의 공부법</a></li>
+          <li><a href="/contetns/sub02.html">학원교재</a></li>
+          <li><a href="/HyAdmin/list.php?bbs_id=bo01">자료실</a></li>
+        </ul>
+      </li>
+      <li><a href="/HyAdmin/list.php?bbs_id=bo02">커뮤니티</a>
+        <ul class="sub_menu sm04">
+          <li><a href="/HyAdmin/list.php?bbs_id=bo02">설명회</a></li>
+          <li><a href="/HyAdmin/list.php?bbs_id=bo03">공지사항</a></li>
+          <li><a href="/HyAdmin/list.php?bbs_id=bo04">문의사항</a></li>
+        </ul>
+      </li>
+      <li><a href="/online/sub01.html">온라인 강의실</a>
+        <ul class="sub_menu">
+          <li><a href="/online/sub01.html">온라인 강의실</a></li>
+          <li><a href="#!">무료 강의실</a></li>
+        </ul>
+      </li>
+      <!-- <li><a href="/studys/sub01.html">독한 재수</a>
+        <ul class="sub_menu sm_last">
+          <li><a href="/studys/sub01.html">삽자루 독한 재수</a></li>
+          <li><a href="/studys/sub02.html">시간표</a></li>
+          <li><a href="/studys/sub03.html">강사</a></li>
+          <li><a href="/studys/sub04.html">시설안내</a></li>
+        </ul>
+      </li> -->
+    </ul>
+    <p class="call">전화상담 : 02-2645-0045</p>
+    <ul class="log_wrap">
+      <?if(!$_SESSION['ss_mb_id']){?>
+      <li><a href="/HyAdmin/mb_login.php">로그인</a></li>
+      <li><a href="/HyAdmin/mb_joincheck.php">회원가입</a></li>
+      <?}else{?>
+      <li><a href="/HyAdmin/mb_logout.php">로그아웃</a></li>
+      <li><a href="/HyAdmin/mb_edit.php">마이페이지</a></li>
+      <?}?>
+    </ul>
+    <div class="menu_btn"><span></span></div>
+  </div>
+  <div class="subm_bg"></div>
+  <!-- 모바일 메뉴 -->
+  <div class="menu_mwrap">
+    <div class="menu_marea">
+      <p class="tocall"><a href="tel:02-2645-0045">02-2645-0045</a></p>
+      <ul class="mlog_wrap">
+        <?if(!$_SESSION['ss_mb_id']){?>
+        <li><a href="/HyAdmin/mb_login.php">로그인</a></li>
+        <li><a href="/HyAdmin/mb_joincheck.php">회원가입</a></li>
+        <?}else{?>
+        <li><a href="/HyAdmin/mb_logout.php">로그아웃</a></li>
+        <li><a href="/HyAdmin/mb_edit.php">마이페이지</a></li>
+        <?}?>
+      </ul>
+      <ul class="menu_m">
+        <li><a href="/about/sub01.html">삽자루수학</a>
+          <ul class="sub_menus">
+            <li><a href="/about/sub01.html">인사말</a></li>
+            <li><a href="/about/sub02.html">강사소개</a></li>
+            <li><a href="/about/sub04.html">학원안내</a></li>
+            <li><a href="/about/sub06.html">멘토링 서비스</a></li>
+            <li><a href="/about/sub05.html">오시는 길</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/sub03.html">학습 시스템</a>
+          <ul class="sub_menus">
+            <li><a href="/about/sub03.html">학습 시스템</a></li>
+          </ul>
+        </li>
+        <li><a href="/HyAdmin/list.php?bbs_id=bo07">수강신청</a>
+          <ul class="sub_menus">
+            <li><a href="/HyAdmin/list.php?bbs_id=bo07">시간표</a></li>
+            <li><a href="/info/school_list.html">수강신청</a></li>
+          </ul>
+        </li>
+        <li><a href="/contetns/sub01.html">컨텐츠</a>
+          <ul class="sub_menus">
+            <li><a href="/contetns/sub01.html">선배들의 공부법</a></li>
+            <li><a href="/contetns/sub02.html">학원교재</a></li>
+            <li><a href="/HyAdmin/list.php?bbs_id=bo01">자료실</a></li>
+          </ul>
+        </li>
+        <li><a href="/HyAdmin/list.php?bbs_id=bo02">커뮤니티</a>
+          <ul class="sub_menus">
+            <li><a href="/HyAdmin/list.php?bbs_id=bo02">설명회</a></li>
+            <li><a href="/HyAdmin/list.php?bbs_id=bo03">공지사항</a></li>
+            <li><a href="/HyAdmin/list.php?bbs_id=bo04">문의사항</a></li>
+          </ul>
+        </li>
+        <li><a href="/online/sub01.html">온라인 강의실</a>
+          <ul class="sub_menus">
+            <li><a href="/online/sub01.html">온라인 강의실</a></li>
+          </ul>
+        </li>
+        <!-- <li><a href="/studys/sub01.html">독한 재수</a>
+          <ul class="sub_menus">
+            <li><a href="/studys/sub01.html">삽자루 독한 재수</a></li>
+            <li><a href="/studys/sub02.html">시간표</a></li>
+            <li><a href="/studys/sub03.html">강사</a></li>
+            <li><a href="/studys/sub04.html">시설안내</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </div>
+    <div class="blck_bg"></div>
+  </div>
+  <!-- 모바일 메뉴 끝 -->
+</div>
+<!-- 헤더 끝 -->

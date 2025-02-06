@@ -1,0 +1,181 @@
+<?
+  $site_path = "../HyAdmin/";
+  require_once($site_path."include/lib.inc.php");
+
+  $goodsTable = "hy_teacher";
+
+  $count_que = "select count(ReIdx) from $goodsTable where (1=1) $str_que";
+  $count_list = mysql_query($count_que);
+  $count_total = @mysql_result($count_list,0,0);
+
+  if(!$scale){
+    $scale = "12"; //리스트수
+  }
+  $pagescale = "10"; //페이지수
+
+  if(!$start) $start=0; //시작페이지
+
+  $current = ceil(($start+1)/$scale); //현재
+
+  $list_que = "select * from $goodsTable where (1=1) $str_que order by ReOrder DESC,ReIdx DESC limit $start,$scale";
+  $result_list = mysql_query($list_que);
+  $total = mysql_affected_rows();
+?>
+
+<? include $_SERVER["DOCUMENT_ROOT"]."/inc/header.html"; ?>
+<!-- 서브시작  -->
+
+<style>
+/*페이지넘버 New*/
+.list_top_padd{padding-top:25px; text-align:center; font-size:16px;}
+.list_b_number {padding:3px; MARGIN:3px; TEXT-ALIGN: center}
+.list_b_number A {padding:5px 8px 4px 8px; MARGIN: 2px; BORDER: #ccc 1px solid; COLOR: #888; TEXT-DECORATION: none}
+.list_b_number A:hover {BORDER:#888 1px solid; COLOR: #555;}
+.list_b_number A:active {BORDER:#888 1px solid; COLOR: #555;}
+.list_b_number .current {BORDER: <?=$bbsColorBg?> 1px solid; padding:5px 8px 4px 8px; FONT-WEIGHT: bold; MARGIN: 2px; COLOR: <?=$bbsColorBg?>;}
+.list_b_number .disabled {BORDER: #ddd 1px solid; padding:5px 8px 4px 8px; MARGIN: 2px; COLOR: #ccc;}
+/*페이지넘버 New*/
+</style>
+
+<div class="sub_content">
+  <? include $_SERVER["DOCUMENT_ROOT"]."/inc/sub_tabs.html"; ?>
+  <script>
+  $(document).ready(function(e) {
+	$("#subin01").appendTo(".right_links");
+	var lefttext = $(".li_left > li").eq(0).text(); //좌측
+	var righttext = $(".right_links > .in_links > li").eq(1).text(); //우측
+	$(".left_links .cur_page").text(lefttext);
+	$(".right_links .cur_page").text(righttext);
+});
+  </script>
+  <dl class="sub_title">
+    <dt>강사소개</dt>
+    <dd>삽자루 수학학원은 오늘도 여러분의 성장을 위해 달려갑니다.</dd>
+  </dl>
+  <div class="sub_center">
+    <ul class="page_tabs tabs02">
+      <li><a href="sub02_test.html">정규반</a></li>
+      <li class="pt_on"><a href="sub02_2.html">단과반</a></li>
+    </ul>
+
+    <!-- 강사소개 시작 -->
+    <ul class="teachers hidden_tab" id="view01">
+
+      <?
+        for($i=0; $i<$total; $i++){
+          mysql_data_seek($result_list, $i);
+          $row = mysql_fetch_array($result_list);
+      ?>
+
+      <li>
+        <a href="<?=$row[ReLink]?>">
+        <div class="teach_img"><img src="/HyAdmin/upload/etcFile/<?=$row[ReFile1]?>" alt=""/>
+          <p class="who">WHO AM I</p>
+          <p class="vod_btn">동영상 보기</p>
+        </div>
+        <p class="t_name"><span><?=$row[ReMemName]?></span> 강사</p>
+        </a>
+      </li>
+
+      <?}?>
+
+    </ul>
+    <!-- 강사소개 끝 -->
+    <!-- 동영상 팝업 -->
+    <div class="subpop_wrap subpop_vod">
+      <!-- -->
+      <div class="subpop_box"> <img class="close_sp" src="../images/sub/close_pop.png" alt=""/>
+        <div class="inpop_area"><!-- 동영상 영역 --> </div>
+      </div>
+      <!--  -->
+      <div class="black_bg"></div>
+    </div>
+    <!-- 동영상 팝업 끝-->
+
+
+
+
+
+    <?
+      if(!$total){
+    ?>
+
+    <div style="width:100%;height:140px;text-align:center;font-size:14px;border-bottom:solid 1px #dddcdc;"><br><br><br>등록된 강사가 없습니다.</div>
+
+    <?}?>
+
+
+
+    <?
+      $page=  floor($start/($scale*$pagescale)) ;
+      $tmp_prev = $start - $scale; // 이전 누르면 찾아갈 곳
+      $tmp_next = $start + $scale; // 다음 누르면 찾아갈 곳
+    ?>
+
+    <div class="list_top_padd">
+      <div>
+        <p>
+          <div class="list_b_number">
+
+            <?
+              if($start+1 > $scale*$pagescale){
+        		    $pre_start= $start - $scale*$pagescale ;
+                echo "<a href='$PHP_SELF?CatNo=$CatNo&start=$pre_start'><<</a>";
+
+        		  }
+        		?>
+
+            <?
+              if($start > 1){
+                echo "<a href='$PHP_SELF?CatNo=$CatNo&start=$tmp_prev'><  이전</a>";
+              }else{
+                echo "<span class='disabled'><  이전</span>";
+              }
+            ?>
+
+            <?
+              for($vj=0; $vj < $pagescale ; $vj++){
+          		  $ln = ($page * $pagescale + $vj)*$scale ;
+          		  $vk= $page * $pagescale + $vj+1 ;
+          		  if($ln<$count_total){
+          			  if($ln!=$start){
+                    echo "<a href='$PHP_SELF?CatNo=$CatNo&start=$ln'>$vk</a>";
+                  }else{
+                    echo "<span class='current'>$vk</span>";
+                  }
+                }
+              }
+            ?>
+
+            <?
+              if($count_total>=$start+$scale){
+            		echo "<a href='$PHP_SELF?CatNo=$CatNo&start=$tmp_next'>다음  ></a>";
+            	}else{
+            	  echo "<span class='disabled'>다음  ></span>";
+            	}
+            ?>
+
+            <?
+              if ($count_total > (($page+1)*$scale*$pagescale)){
+        		    $n_start=($page+1)*$scale*$pagescale ;
+
+        		    echo "<a href='$PHP_SELF?CatNo=$CatNo&start=$n_start'>>></a>";
+
+        		  }
+            ?>
+
+          </div>
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+</div>
+<!-- 서브 끝  -->
+<? include $_SERVER["DOCUMENT_ROOT"]."/inc/footer.html"; ?>

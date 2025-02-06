@@ -1,0 +1,228 @@
+<? include $_SERVER["DOCUMENT_ROOT"]."/inc/header.html"; ?>
+  <!-- 서브시작  -->
+
+  <div class="sub_content">
+    <? include $_SERVER["DOCUMENT_ROOT"]."/inc/sub_tabs.html"; ?>
+    <script>
+      $(document).ready(function(e) {
+        $("#subin02").appendTo(".right_links");
+        var lefttext = $(".li_left > li").eq(2).text(); //좌측
+        var righttext = $(".right_links > .in_links > li").eq(1).text(); //우측
+        $(".left_links .cur_page").text(lefttext);
+        $(".right_links .cur_page").text(righttext);
+      });
+    </script>
+    <dl class="sub_title">
+      <dt>수강신청</dt>
+      <dd>삽자루 수학학원은 오늘도 여러분의 성장을 위해 달려갑니다.</dd>
+    </dl>
+    <div class="sub_center class_warp">
+      <form class="seat_list">
+        <section class="class_room class_type02">
+          <div class="wall wall_left">
+            <p class="door left_mid01">출입문</p>
+            <p class="door left_mid02">출입문</p>
+          </div>
+          <div class="wall wall_right">
+          </div>
+          <p class="front">칠판</p>
+          <div class="seat_info">
+            <p class="seat_numb">좌석 : <span>A-1</span></p>
+            <ul class="visible">
+              <li><span class="visbox vb01"></span><span class="vis_txt">선택완료</span></li>
+              <li><span class="visbox vb02"></span><span class="vis_txt">선택가능</span></li>
+              <li><span class="visbox vb03"></span><span class="vis_txt">선택불가</span></li>
+            </ul>
+          </div>
+          <div class="class_table class_table02">
+            <!-- A구역 -->
+            <ul class="seats line02">
+              <li><input type="radio" id="A-1" name="classType" />
+                <label for="A-1"></label>
+              </li>
+              <li><input type="radio" id="A-2" name="classType" />
+                <label for="A-2"></label>
+              </li>
+              <li><input type="radio" id="A-3" name="classType" disabled />
+                <label for="A-3"></label>
+              </li>
+              <li><input type="radio" id="A-4" name="classType" />
+                <label for="A-4"></label>
+              </li>
+              <li><input type="radio" id="A-5" name="classType" />
+                <label for="A-5"></label>
+              </li>
+              <li><input type="radio" id="A-6" name="classType" />
+                <label for="A-6"></label>
+              </li>
+              <li><input type="radio" id="A-7" name="classType" />
+                <label for="A-7"></label>
+              </li>
+              <li><input type="radio" id="A-8" name="classType" />
+                <label for="A-8"></label>
+              </li>
+              <li><input type="radio" id="A-9" name="classType" />
+                <label for="A-9"></label>
+              </li>
+              <li><input type="radio" id="A-10" name="classType" disabled />
+                <label for="A-10"></label>
+              </li>
+              <li><input type="radio" id="A-11" name="classType" />
+                <label for="A-11"></label>
+              </li>
+              <li><input type="radio" id="A-12" name="classType" />
+                <label for="A-12"></label>
+              </li>
+              <li><input type="radio" id="A-13" name="classType" />
+                <label for="A-13"></label>
+              </li>
+              <li><input type="radio" id="A-14" name="classType" />
+                <label for="A-14"></label>
+              </li>
+            </ul>
+            <!-- A구역 끝-->
+            <!-- B구역 -->
+            <ul class="seats line03">
+              <li><input type="radio" id="B-1" name="classType" />
+                <label for="B-1"></label>
+              </li>
+              <li><input type="radio" id="B-2" name="classType" />
+                <label for="B-2"></label>
+              </li>
+              <li><input type="radio" id="B-3" name="classType" disabled />
+                <label for="B-3"></label>
+              </li>
+              <li><input type="radio" id="B-4" name="classType" />
+                <label for="B-4"></label>
+              </li>
+              <li><input type="radio" id="B-5" name="classType" />
+                <label for="B-5"></label>
+              </li>
+              <li><input type="radio" id="B-6" name="classType" />
+                <label for="B-6"></label>
+              </li>
+              <li><input type="radio" id="B-7" name="classType" />
+                <label for="B-7"></label>
+              </li>
+              <li><input type="radio" id="B-8" name="classType" />
+                <label for="B-8"></label>
+              </li>
+              <li><input type="radio" id="B-9" name="classType" />
+                <label for="B-9"></label>
+              </li>
+              <li><input type="radio" id="B-10" name="classType" />
+                <label for="B-10"></label>
+              </li>
+              <li><input type="radio" id="B-11" name="classType" />
+                <label for="B-11"></label>
+              </li>
+              <li><input type="radio" id="B-12" name="classType" />
+                <label for="B-12"></label>
+              </li>
+              <li><input type="radio" id="B-13" name="classType" />
+                <label for="B-13"></label>
+              </li>
+              <li><input type="radio" id="B-14" name="classType" />
+                <label for="B-14"></label>
+              </li>
+              <li><input type="radio" id="B-15" name="classType" />
+                <label for="B-15"></label>
+              </li>
+              <li><input type="radio" id="B-16" name="classType" />
+                <label for="B-16"></label>
+              </li>
+              <li><input type="radio" id="B-17" name="classType" />
+                <label for="B-17"></label>
+              </li>
+              <li><input type="radio" id="B-18" name="classType" />
+                <label for="B-18"></label>
+              </li>
+              <li><input type="radio" id="B-19" name="classType" />
+                <label for="B-19"></label>
+              </li>
+              <li><input type="radio" id="B-20" name="classType" />
+                <label for="B-20"></label>
+              </li>
+              <li><input type="radio" id="B-21" name="classType" />
+                <label for="B-21"></label>
+              </li>
+            </ul>
+            <!-- B구역 끝-->
+            <!-- C구역 -->
+            <ul class="seats line03">
+              <li><input type="radio" id="C-1" name="classType" />
+                <label for="C-1"></label>
+              </li>
+              <li><input type="radio" id="C-2" name="classType" />
+                <label for="C-2"></label>
+              </li>
+              <li><input type="radio" id="C-3" name="classType" />
+                <label for="C-3"></label>
+              </li>
+              <li><input type="radio" id="C-4" name="classType" />
+                <label for="C-4"></label>
+              </li>
+              <li><input type="radio" id="C-5" name="classType" />
+                <label for="C-5"></label>
+              </li>
+              <li><input type="radio" id="C-6" name="classType" />
+                <label for="C-6"></label>
+              </li>
+              <li><input type="radio" id="C-7" name="classType" />
+                <label for="C-7"></label>
+              </li>
+              <li><input type="radio" id="C-8" name="classType" />
+                <label for="C-8"></label>
+              </li>
+              <li><input type="radio" id="C-9" name="classType" disabled />
+                <label for="C-9"></label>
+              </li>
+              <li><input type="radio" id="C-10" name="classType" />
+                <label for="C-10"></label>
+              </li>
+              <li><input type="radio" id="C-11" name="classType" />
+                <label for="C-11"></label>
+              </li>
+              <li><input type="radio" id="C-12" name="classType" />
+                <label for="C-12"></label>
+              </li>
+              <li><input type="radio" id="C-13" name="classType" disabled />
+                <label for="C-13"></label>
+              </li>
+              <li><input type="radio" id="C-14" name="classType" />
+                <label for="C-14"></label>
+              </li>
+              <li><input type="radio" id="C-15" name="classType" />
+                <label for="C-15"></label>
+              </li>
+              <li><input type="radio" id="C-16" name="classType" />
+                <label for="C-16"></label>
+              </li>
+              <li><input type="radio" id="C-17" name="classType" />
+                <label for="C-17"></label>
+              </li>
+              <li><input type="radio" id="C-18" name="classType" />
+                <label for="C-18"></label>
+              </li>
+              <li><input type="radio" id="C-19" name="classType" />
+                <label for="C-19"></label>
+              </li>
+              <li><input type="radio" id="C-20" name="classType" />
+                <label for="C-20"></label>
+              </li>
+              <li><input type="radio" id="C-21" name="classType" />
+                <label for="C-21"></label>
+              </li>
+            </ul>
+            <!-- C구역 끝-->
+          </div>
+        </section>
+        <ul class="done_btns">
+          <li class="db_prev"><a href="#!" onClick="history.back(); return false;">이전</a></li>
+          <li class="db_next"><a href="done.html">다음</a></li>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <!-- 서브 끝  -->
+  <? include $_SERVER["DOCUMENT_ROOT"]."/inc/footer.html"; ?>

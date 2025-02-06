@@ -1,0 +1,39 @@
+  <? include $_SERVER["DOCUMENT_ROOT"]."/inc/header.html"; ?>
+  <!-- 서브시작  -->
+
+  <div class="sub_content">
+    <? include $_SERVER["DOCUMENT_ROOT"]."/inc/sub_tabs.html"; ?>
+    <script>
+      $(document).ready(function(e) {
+        $("#subin02").appendTo(".right_links");
+        var lefttext = $(".li_left > li").eq(2).text(); //좌측
+        var righttext = $(".right_links > .in_links > li").eq(1).text(); //우측
+        $(".left_links .cur_page").text(lefttext);
+        $(".right_links .cur_page").text(righttext);
+      });
+    </script>
+    <dl class="sub_title">
+      <dt>신청완료</dt>
+      <dd>신청내역을 확인하세요.</dd>
+    </dl>
+    <div class="sub_center">
+      <div class="done_incon">
+        <p class="mb20"><img src="../images/sub/info/done.png" alt="" /></p>
+        <p class="done_text">강좌신청이 완료되었습니다.</p>
+      </div>
+
+      <ul class="done_list">
+        <li><span class="done_th">과목</span><span class="done_td">고등수학(상) + 고등수학(하)</span></li>
+        <li><span class="done_th">강좌명</span><span class="done_td">고등수학상하-A</span></li>
+        <li><span class="done_th">강사</span><span class="done_td">김현종T + 김하현T</span></li>
+        <li><span class="done_th">수강기간</span><span class="done_td">10주</span></li>
+        <li><span class="done_th">수업시간</span><span class="done_td"><em>월 10:00 ~ 13:00</em><em>수 10:00 ~ 13:00</em></span></li>
+        <li><span class="done_th">TEST</span><span class="done_td">금 9:00 ~ 12:00</span></li>
+        <li><span class="done_th">수강료</span><span class="done_td">400,000원</span></li>
+      </ul>
+      <p class="end_btn"><a href="#!">결제완료</a></p>
+
+    </div>
+  </div>
+  <!-- 서브 끝  -->
+  <? include $_SERVER["DOCUMENT_ROOT"]."/inc/footer.html"; ?>

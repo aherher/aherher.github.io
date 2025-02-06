@@ -1,0 +1,182 @@
+<?
+	$site_path = '../HyAdmin/';
+	require_once($site_path."include/lib.inc.php");
+
+	$ss_mb_id = $_SESSION['ss_mb_id'];
+
+	//if(!$ss_mb_id) hy_href("/HyAdmin/mb_login.php","로그인후이용해주세요.");
+
+	if($ss_mb_id){ //회원이라면
+		$query = "select * from hy_member where mb_id='$ss_mb_id'";
+		$rs = query($query,$dbcon);
+		$row = mysql_fetch_array($rs);
+		$mb_num = $row[mb_num];
+		$mb_id = $row[mb_id];
+		$mb_name = $row[mb_name];
+		$mb_tel = $row[mb_tel];
+		$mb_telArr = explode("-",$mb_tel);
+		$mb_mobile = $row[mb_mobile];
+		$mb_mobileArr = explode("-",$mb_mobile);
+	}
+?>
+
+<!doctype html>
+<html>
+<head>
+<meta charset="euc-kr">
+<title>사전 예약하기</title>
+<meta name="viewport" content="width=device-width, user-scalable=yes" />
+<link href='https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="../css/common.css" />
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+  function actionGo(){
+    if(frm.ReMemName.value == ""){
+      alert("이름을 입력해 주세요.");
+      frm.ReMemName.focus();
+      return;
+    }
+    if(frm.RePhone1.value == ""){
+      alert("연락처를 입력해 주세요.");
+      frm.RePhone1.focus();
+      return;
+    }
+    if(frm.RePhone2.value == ""){
+      alert("연락처를 입력해 주세요.");
+      frm.RePhone2.focus();
+      return;
+    }
+    if(frm.RePhone3.value == ""){
+      alert("연락처를 입력해 주세요.");
+      frm.RePhone3.focus();
+      return;
+    }
+		if(frm.mail1.value == ""){
+      alert("이메일주소를 입력해 주세요.");
+      frm.mail1.focus();
+      return;
+    }
+		if(frm.mail2.value == ""){
+      alert("이메일주소를 입력해 주세요.");
+      frm.mail2.focus();
+      return;
+    }
+		if(frm.birth.value == ""){
+      alert("생년월일를 입력해 주세요.");
+      frm.birth.focus();
+      return;
+    }
+		if(frm.ReContent.value == ""){
+      alert("설명회참여목적을 입력해 주세요.");
+      frm.pop_prav.focus();
+      return;
+    }
+    if(frm.dong1.checked == false){
+      alert("개인정보 취급방침에 동의해주세요.");
+      return;
+    }
+
+    frm.submit();
+
+  }
+
+-->
+</script>
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  	<script src="/HyAdmin/jquery/calendar/jquery-ui.js"></script>
+
+  	<script>
+	  $(function() {
+		$( "#datepicker" ).datepicker({
+			// 달력 아이콘
+			//showOn: "button",
+			//buttonImage: "../jquery/calendar/calendar.gif",
+			//buttonImageOnly: true,
+			// 달력 하단의 종료와 오늘 버튼 Show
+			//showButtonPanel: true,
+			// date 포멧
+			dateFormat : "yy-mm-dd"
+			// 달력 에니메이션 ( show(default),slideDown,fadeIn,blind,bounce,clip,drop,fold,slide,"")
+			//showAnim : "",
+			// 다른 달의 일 보이기, 클릭 가능
+			//showOtherMonths: true,
+	 		//selectOtherMonths: true,
+	 		// 년도, 달 변경
+	 		//changeMonth: true,
+	    // 		changeYear: true,
+	     		// 여러달 보이기
+	    // 		numberOfMonths: 1,
+	    //  		showButtonPanel: true,
+	      		// 달력 선택 제한 주기(min: 현재부터 -20일,max:현재부터 +1달+10일)
+	    //  		minDate: -20,
+	    //  		maxDate: "+1M +10D",
+	      		// 주차 보여주기
+	    //  		showWeek: true,
+	    //  		firstDay: 1
+		});
+	  });
+  	</script>
+
+
+</head>
+
+<body>
+
+<form class="reg_wrap" name="frm" action="pop02_ps.php" method="post" ENCTYPE="multipart/form-data">
+  <h1 class="reg_title">사전 예약하기</h1>
+  <p class="must"><span class="input_tag">*</span> 표시는 필수 입력 사항입니다.</p>
+  <table class="reg_table">
+    <tbody>
+      <tr>
+        <th>이름 <span class="input_tag">*</span></th>
+        <td><input type="text" name="ReMemName" class="long_sel"></td>
+      </tr>
+			<tr>
+				<th>연락처  <span class="input_tag">*</span></th>
+				<td>
+					<input type="number" name="RePhone1" class="short_sel">
+					<input type="number" name="RePhone2" class="short_sel">
+					<input type="number" name="RePhone3" class="short_sel">
+				</td>
+			</tr>
+			<tr>
+				<th>이메일주소 <span class="input_tag">*</span></th>
+				<td>
+					<input type="number" name="mail1" class="short_sel">@
+					<input type="number" name="mail2" class="short_sel">
+				</td>
+			</tr>
+			<tr>
+				<th>생년월일 <span class="input_tag">*</span></th>
+				<td>
+					<input type="text" name="birth" class="long_sel">
+				</td>
+			</tr>
+			<tr>
+				<th>설명회참여목적  <span class="input_tag">*</span></th>
+				<td>
+				<textarea name="ReContent"></textarea>
+				</td>
+			</tr>
+
+    </tbody>
+  </table>
+  <div class="pop_prav">개인 정보 수집 및 활용 동의 (필수)
+
+	수집목적 :지원 및 선발전형, 이력관리, 기타 진행사항 안내
+	수집항목 : 본인사진, 혼인여부, 성명, 생년월일, 휴대폰번호, 최종학력, 전공, 이메일주소, 주소, 경력사항, 자기소개
+	보유기간 : 모집절자 종료 후 3년간 보유
+
+	개인정보 수집 및 이용에 동의하지 않을 권리가 있습니다. 다만, 동의를 거부할 경우 강사 지원을 하실 수 없습니다.</div>
+  <p class="in_agree">
+    <input type="checkbox" name="dong1" id="prav">
+    <label for="prav">개인정보취급방침에 동의합니다.</label>
+  </p>
+  <p class="sub_btn"><a href="javascript:actionGo();">신청</a></p>
+</form>
+</body>
+</html>
