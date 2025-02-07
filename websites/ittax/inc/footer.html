@@ -1,0 +1,64 @@
+<script language="JavaScript" type="text/JavaScript">
+<!--
+  function actionGo4(){
+    if(frm4.RePhone.value == ""){
+      alert("전화번호를 입력해 주세요.");
+      frm4.RePhone.focus();
+      return;
+    }
+
+    frm4.submit();
+  }
+-->
+</script>
+
+<section class="bott_inputs">
+  <form class="boinput_frm" name="frm4" action="/index4_ps.php" method="post" ENCTYPE="multipart/form-data">
+      <input type="text" name="RePhone" class="botn" placeholder="전화번호 입력">
+    <a href="javascript:actionGo4();" class="submit_btn">세무사 무료상담 신청</a>
+  </form>
+</section>
+  <!-- 푸터 -->
+  <footer class="footer_wrap section">
+    <div class="foot">
+      <ul class="sns">
+        <li>
+          <a href="#!"><img src="/images/common/sns01.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#!"><img src="/images/common/sns02.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#!"><img src="/images/common/sns03.png" alt="" /></a>
+        </li>
+      </ul>
+      <p class="foot_logo"><img style="width:127px;" src="/images/common/foot_logo.png" alt="" /></p>
+      <div class="fi_wrap">
+        <ul class="foot_btn">
+          <li><a href="/about/sub01.html">오시는 길</a></li>
+          <li><a href="/etc/sub01.html">개인정보취급방침</a></li>
+        </ul>
+        <p class="foot_info"><span>주소 : 서울시 강남구 학동로235 영일빌딩4층</span><span>대표 : 정원용</span><span>사업자등록번호 : 214-85-47673</span>고객센터 : 1644-7629</p>
+        <p class="copy">ⓒ 2019 IT’s TAX. All rights reserved.</p>
+
+      </div>
+    </div>
+  </footer>
+  <!-- 푸터 끝 -->
+  <script type="text/javascript" src="/js/layout.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163507825-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163507825-1');
+</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB2MZFV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>
