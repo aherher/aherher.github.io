@@ -1,0 +1,123 @@
+@charset "euc-kr";
+
+/*서브 공통*/
+.contents {margin-top: 109px; padding: 70px 0;}
+.contents img {max-width:100%;}
+.sub_title {position:relative; padding-bottom: 30px; margin-bottom: 70px; border-bottom: 1px solid #ddd;}
+.sub_title h2 {font-size:43px; font-weight:400;}
+.sub_title .st_nav {position:absolute; right:0; bottom:30px;}
+.sub_title .st_nav span {display: inline-block; vertical-align: middle; font-size: 15px; font-weight:300; padding-right: 20px; margin-right:18px; color:#797979; background: url(../images/sub/nav_arr.png) no-repeat center right;}
+.sub_title .st_nav span:last-child {padding-right: 0; margin-right: 0; background: none;}
+.sub_title .st_nav span img {width:17px;}
+.colord {color:#ff6000;}
+
+/*회사개요*/
+.def_table {width:100%; border-top:3px solid #ff6000;}
+.def_table tr th, .def_table tr td {padding:20px 0; border-bottom: 1px solid #ddd; font-size:18px; line-height: 1.4;}
+.def_table tr th {text-align: center; font-weight:500; background-color:#f7f7f9;}
+.def_table tr td {font-weight:300; padding-left: 30px;}
+
+/*기업이념*/
+.ism_wrap {border:2px solid #cccccc; border-radius: 10px; padding: 35px 0;}
+.ism_wrap > div {display:inline-block;vertical-align: middle; line-height: 1.5;}
+.ism_wrap .left_box {max-width:230px; width:20%; text-align: center; font-size:30px; font-weight:500; color:#000000;}
+.ism_wrap .right_box {width:79%; box-sizing: border-box; padding: 0 10%; border-left:1px solid #ddd;}
+.ism_wrap .right_box dl {text-align:center; color:#000;}
+.ism_wrap .right_box dl dt {font-size:35px; font-weight:500; margin-bottom:30px;}
+.ism_wrap .right_box dl dd {font-size:22px; font-weight:300;}
+.ism_wrap .right_box .ism_list li {display:table; width:100%; margin-bottom: 25px;}
+.ism_wrap .right_box .ism_list li:last-child {margin-bottom: 0;}
+.ism_wrap .right_box .ism_list li span {display:table-cell; vertical-align: top;}
+.ism_wrap .right_box .ism_list li .ils_th {color:#000; font-size:22px; width:150px;}
+.ism_wrap .right_box .ism_list li .ils_td {font-size:20px; font-weight: 300; color:555555;}
+
+/*업무진행과정*/
+.proc_warp {text-align:center;}
+.proc_warp .proc_mob {display:none;}
+
+/*오시는 길*/
+.address {padding:15px 0 0 135px; margin-top:40px; background:url(../images/sub/add_icon.png) no-repeat center left; background-size: 106px auto; line-height: 1.4;}
+.address p {padding-left:20px; font-size: 18px; color: #222; font-weight:300;}
+.address .adrline {padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #ddd;}
+.address p span {margin-right:45px;}
+.address p .adrth01 {font-size: 23px; font-weight: 500;}
+.address p .adrth02 {font-size: 20px; font-weight: 500;}
+.the_map .wrap_map {height:500px !important;}
+
+/* 입력폼 */
+.frm_table {width:100%; border-top:3px solid #333;}
+.frm_table tr th, .frm_table tr td {padding:20px 15px;text-align:left;border-bottom: 1px solid #d0d0d0;vertical-align:middle;}
+.frm_table tr th {font-weight:500;font-size:18px;color: #333;background-color: #ececec;}
+.frm_table tr td input[type="text"], .frm_table tr td input[type="number"] {padding-left:5px; height:35px; border:1px solid #ddd; box-sizing:border-box;}
+.frm_table tr td .long_sell {width:100%;}
+.frm_table tr td .numbsp {margin-right:1.3333%; width:31%;}
+.frm_table tr td .numbsp:last-child {margin-right:0;}
+.frm_table tr td .mail_box {width:45%;}
+.frm_table tr td textarea {width:100%; height:200px; box-sizing:border-box; padding:5px; border:1px solid #ddd;}
+.educ_frm .preb {box-sizing:border-box; border:1px solid #ddd; padding:20px 20px; height:200px; overflow-y:scroll; margin-top:40px; font-size:15px; line-height:1.5;     white-space: pre-line;}
+.educ_frm .agreed {margin-top:20px;}
+.educ_frm .agreed label {font-size:15px; margin-left:10px;}
+.educ_frm .agreed label, .educ_frm .agreed input {vertical-align:middle;}
+.educ_frm .submit {display:block;width:200px;height:60px;line-height:60px;text-align:center;font-size:20px;font-weight:500;margin:40px auto 0 auto;color:#fff;background-color: #e6002e;}
+
+/*포트폴리오*/
+.port_tabs {overflow: hidden; margin-bottom:40px;}
+.port_tabs li {height:70px; line-height: 70px; text-align:center;float:left; box-sizing: border-box; border: 1px solid #ddd; border-right:none;}
+.port_tabs li:last-child {border-right:1px solid #ddd;}
+.port_tabs li a {display: block; font-size:20px;}
+.port_tabs .tab_on {background-color:#ff6000;}
+.port_tabs .tab_on a {color:#fff;}
+.tabs02 li {width:50%;}
+.tabs03 li {width:33.3333333333%;}
+.tabs04 li {width:25%;}
+
+
+/*개인정보취급방침*/
+.privacy {background:#fbfafa; border:1px solid #d7d5d5; padding:25px; height:645px; box-sizing:border-box;}
+.privacy > div {padding:20px; background:#fff; border:1px solid #d7d5d5; box-sizing:border-box; height:100%;}
+.privacy > div > .intxtarea {width:100%; height:100%; border:none; line-height:1.7; word-break:keep-all; font-size:14px; overflow-y:scroll; white-space: pre-line;}
+
+
+@media screen and (max-width:850px) {
+/*오시는 길*/
+.address {padding:130px 0 0 0px; background:url(../images/sub/add_icon.png) no-repeat center top; background-size: 106px auto;}
+.address p {text-align: center; padding-left:0;}
+.address p span {margin-right:0; display: block;}
+.address p .adrth01, .address p .adrth02 {margin-bottom: 10px;}
+
+/*입력폼*/
+.frm_table tr td .mail_box {width:40%;}
+.frm_table, .frm_table tr, .frm_table tr th, .frm_table tr td {display:block;}
+.frm_table tr td {padding:20px 0;}
+.frm_table tr td .mail_box {width:45%;}
+}
+
+
+@media screen and (max-width:700px) {
+/*기업이념*/
+.ism_wrap {padding:30px;}
+.ism_wrap > div {display:block; width:100% !important;}
+.ism_wrap .left_box {max-width:100%;}
+.ism_wrap .right_box {padding:20px 0; margin-top: 20px;border-left:none; border-top:1px solid #ddd;}
+.ism_wrap .right_box dl dt {margin-bottom:15px;}
+.ism_wrap .right_box .ism_list li , .ism_wrap .right_box .ism_list li .ils_th, .ism_wrap .right_box .ism_list li .ils_td {display:block; width:100%; text-align: center;}
+
+/*업무진행과정*/
+.proc_warp {text-align:center;}
+.proc_warp .proc_mob {display:inline;}
+.proc_warp .proc_pc {display:none;}
+}
+
+@media screen and (max-width:500px) {
+/*서브공통*/
+.sub_title {margin-bottom: 50px;}
+.sub_title h2, .sub_title .st_nav {position: static;}
+.sub_title h2 {margin-bottom:15px;}
+
+/*회사개요*/
+.def_table, .def_table tr th, .def_table tr td {display:block; text-align: center;}
+.def_table tr td {padding-left:0;}
+
+/*오시는 길*/
+.the_map .wrap_map {height:300px !important;}
+}
