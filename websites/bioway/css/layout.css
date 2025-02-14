@@ -1,0 +1,521 @@
+@charset "euc-kr";
+body {-webkit-text-size-adjust:100%; max-height:1000000px;}
+body > img {display: none;}
+.center_box {max-width:1440px; width:95%; margin:0 auto; position:relative;}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+input:focus {outline:none;}
+
+/*헤더*/
+.header_wrap {width:100%; height:110px; position:fixed; top:0; left:0; background-color:#ffffff; border-bottom:1px solid #ddd; box-sizing:border-box; z-index:5;}
+.header_wrap .head {width:95%; max-width:1842px; margin:0 auto; text-align:center; position:relative;}
+.header_wrap .head h1 {position:absolute; left:0; top:25px; width:192px;}
+.header_wrap .head h1 img {width:100%;}
+.header_wrap .head .menu {overflow:hidden; display:inline-block; padding-top:57px;}
+.header_wrap .head .menu > li {float:left; padding:0 25px; height:55px;}
+.header_wrap .head .menu > li > a {font-size:18px; color:#000; font-weight:500; display:block; height:100%;}
+.header_wrap .head .menu > li > a:after {content:''; display:block; width:100%; height:3px; background-color:#e00b02; display:none;}
+.header_wrap .head .menu > li .sub_menu {position:absolute; position:absolute; top:153px; z-index:1; overflow:hidden; display:none;}
+.header_wrap .head .menu > li .sub_menu li {float:left; position:relative; margin-right:50px; padding:5px 50px 5px 0;}
+.header_wrap .head .menu > li .sub_menu li a {font-size:16px; color:#fff;}
+.header_wrap .head .menu > li .sub_menu li:after {content:''; display:block; width:3px; height:3px; background-color:#4b5666; position:absolute; top:14px; right:0; border-radius:100%;}
+.header_wrap .head .menu > li .sub_menu li:last-child {margin-right:0; padding-right:0;}
+.header_wrap .head .menu > li .sub_menu li:last-child:after {display:none;}
+.header_wrap .head .menu > li .sm03 {margin-left:-200px;}
+.header_wrap .head .menu > li .sm04 {margin-left:-170px;}
+.header_wrap .subm_bg {position:absolute; width:100%; height:110px; left:0; top:110px; background-color:#003680; display:none;}
+.header_wrap .head .src_wrap {width:210px; height:40px; border:1px solid #cccccc; box-sizing:border-box; position:absolute; right:0; top:35px; border-radius:40px;}
+.header_wrap .head .src_wrap .src_frm input[type="text"] {border:none; height:38px; width:147px;}
+
+.header_wrap .head .menu_btn {display:none; z-index:5; position:absolute; right:0; top:15px; width:30px; height:66px; cursor:pointer; transition:all 0.3s; -webkit-transition:all 0.3s;}
+.header_wrap .head .menu_btn span {top:50%; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
+.header_wrap .head .menu_btn span,
+.header_wrap .head .menu_btn span:before,
+.header_wrap .head .menu_btn span:after {display:block; width:30px; height:4px; background-color:#000; position:absolute; left:50%; -webkit-transform:translateX(-50%); transform:translateX(-50%); -webkit-transition:all 0.3s; transition:all 0.3s; }
+.header_wrap .head .menu_btn span:before, .header_wrap .head .menu_btn span:after {content:'';}
+.header_wrap .head .menu_btn span:before {top:-13px;}
+.header_wrap .head .menu_btn span:after {bottom:-13px;}
+.header_wrap .head .close_btn span {background-color:transparent !important; margin-top:0;}
+.header_wrap .head .close_btn span:before, .header_wrap .head .close_btn span:after {left:-10%; width:120%; background-color:#fff !important;}
+.header_wrap .head .close_btn span:before {transform:rotate(-45deg); -ms-transform:rotate(-45deg); top:5%; }
+.header_wrap .head .close_btn span:after {transform:rotate(45deg); -ms-transform:rotate(45deg); bottom:5%;}
+.menu_mwrap {position:fixed; top:0; right:0; width:100%; height:100%; z-index:4; display:none;}
+.menu_marea {width:100%; height:100%; background-color:#000; overflow-y:scroll; position:absolute; top:-100%; z-index:1;}
+.menu_m {padding:100px 0 40px 0; text-align:center;}
+.menu_m > li {line-height:70px;}
+.menu_m > li > a {color:#fff; font-size:27px;}
+.menu_m > li > .opend {border-bottom:1px solid #333;}
+.menu_m > .nav_on > a {border-bottom:1px solid #000; display:inline-block; padding-bottom:5px;}
+.header_wrap .head .close_btn {}
+.blck_bg {position:fixed; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.78); top:0; left:0; display:none;}
+
+.sub_menus {display:none;}
+.sub_menus li {margin-bottom: 30px;line-height:1;}
+.sub_menus li a {font-size: 24px;color:#8a8a8a;}
+
+
+/*메인 비주얼*/
+.slide_wrap {overflow:hidden; position:relative; text-align:center;}
+.slide li {position:relative; overflow:hidden;}
+.slide li > img {position:relative; left:50%; -webkit-transform:translateX(-50%); transform:translateX(-50%);}
+.slide li .mv_mob {display:none;}
+.slide_wrap .slick-dots .control {width:30px; height:30px; background-color:rgba(0, 0, 0, 0.5); -webkit-border-radius:100%; border-radius:100%; position:absolute; right:0; top:0; border:none; margin:0; text-align:center;}
+.slide_wrap .slick-dots .stop .contr_icon {width:7px; height:11px; background:url(../images/main/icon_stop.png) no-repeat center; margin:11px auto 0 auto;}
+.slide_wrap .slick-dots .play .contr_icon {width:13px; height:13px; background:url(../images/main/icon_play.png) no-repeat center; margin:9px auto 0 auto;}
+.slide_wrap .slick-dots .play {display:none;}
+
+@media screen and (min-width:1950px){
+.slide li > img  {width:100%;}
+}
+
+/*메인 내용*/
+.section {padding:110px 0;}
+.section .sec_title {text-align:center; margin-bottom:50px; line-height:1.4;}
+.section .sec_title dt {font-size:43px; font-weight:500; color:#111111; margin-bottom:15px;}
+.section .sec_title dd {font-size:16px; font-weight:300; color:#474747;}
+
+/*테크놀로지*/
+.info_boxs {overflow:hidden;}
+.info_boxs li {float:left; width:33.33%;}
+.info_boxs li a {display:block;}
+.info_boxs li .img_wraps {overflow:hidden;}
+.info_boxs li .img_wraps img {transition:all 0.4s; -webkit-transition:all 0.4s; width:100%;}
+.info_boxs li:hover .img_wraps img { transform:scale(1.1); -webkit-transform:scale(1.1);}
+.info_boxs .intxtbox {margin-left:20px; border-bottom:1px solid #ddd; padding-bottom:30px;}
+.info_boxs li dl {margin:30px 0 0px 0px; color:#111111;}
+.info_boxs li dl dt {font-size:20px; margin-bottom:20px; font-weight:bold;}
+.info_boxs li dl dd {font-size:16px; line-height:1.2; height:65px; font-weight:350;}
+.info_boxs li .inmore {font-size:16px; font-weight:bold;}
+.info_boxs li .inmore img {margin-right:15px; width:32px;}
+
+/*뉴스*/
+.main_news {background-color:#f8f8f8;}
+.main_news .news_table {border-top:4px solid #000000; width:100%;}
+.main_news .news_table li {border-bottom:1px solid #dddddd; padding:40px 0; overflow:hidden; background:url(../images/main/table_arr.png) no-repeat center right 45px;}
+.main_news .news_table li a {display:block;}
+.main_news .news_table li {vertical-align:middle;}
+.main_news .news_table li .new_date {padding:0 2% 0 2%; font-size:35px; color:#0051b6; box-sizing:border-box; width:17%; float:left;}
+.main_news .news_table li .new_txts {width:83%; box-sizing:border-box; float:left;}
+.main_news .news_table li .new_txts dl {width:85%;}
+.main_news .news_table li .new_txts dl dt {font-size:23px; font-weight:500; color:#333; margin-bottom:15px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; width:100%;}
+.main_news .news_table li .new_txts dl dd {font-size:16px; font-weight:300; color:#555555; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; width:100%;}
+.main_news .more_news {width:245px; height:58px; line-height:57px; box-sizing:border-box; border:1px solid #ddd; text-align:center; margin:50px auto 0 auto; -webkit-transition:all 0.5s; transition:all 0.5s;}
+.main_news .more_news a {font-size:18px; color:#555555; display:block; -webkit-transition:all 0.5s; transition:all 0.5s;}
+.main_news .more_news:hover {background-color:#555555;}
+.main_news .more_news:hover a {color:#fff;}
+
+
+/*어바웃*/
+.about_list {overflow:hidden;}
+.about_list li {/*float:left; width:24.6%;  margin-right:0.5%; 추후 추가시 */ width:50%; height:468px; margin: 0 auto; box-sizing:border-box; border:1px solid #ddd; text-align:center; -webkit-transition:all 0.5s; transition:all 0.5s;}
+.about_list li:last-child {/*margin-right:0;*/}
+.about_list li a {display:block; position:relative; height:100%;}
+.about_list li a .al_wrap {position:absolute; left:50%; top:50%; -webkit-transform:translate(-50%,-50%); transform:translate(-50%,-50%); width:100%;}
+.about_list li a .al_wrap .aicon {margin:0 auto 30px auto; width:90px; height:90px; -webkit-transition:all 0.5s; transition:all 0.5s;}
+.about_list li a .al_wrap .ai01 {background:url(../images/main/aicon01.png) no-repeat; background-size:90px 90px;}
+.about_list li a .al_wrap .ai02 {background:url(../images/main/aicon02.png) no-repeat; background-size:90px 90px;}
+.about_list li a .al_wrap .ai03 {background:url(../images/main/aicon03.png) no-repeat; background-size:90px 90px;}
+.about_list li a .al_wrap .ai04 {background:url(../images/main/aicon04.png) no-repeat; background-size:90px 90px;}
+.about_list li a .al_wrap dl {color:#333; margin-bottom:30px; -webkit-transition:all 0.5s; transition:all 0.5s;}
+.about_list li a .al_wrap dl dt {font-size:20px; font-weight:500; margin-bottom:20px;}
+.about_list li a .al_wrap dl dd {font-size:16px; line-height:1.4;}
+.about_list li a .al_wrap dl dd span {display:block;}
+.about_list li a .al_wrap .detail {font-size:14px; font-weight:500; color:#666666; background:url(../images/main/arr.png) no-repeat center right; padding:5px 25px 5px 0; display:inline-block; -webkit-transition:all 0.5s; transition:all 0.5s;}
+.about_list li:hover {background-color:#01b4e5;}
+.about_list li:hover a .al_wrap dl {color:#fff;}
+.about_list li:hover a .al_wrap .detail {color:#fff; background:url(../images/main/arr_on.png) no-repeat center right;}
+.about_list li:hover a .al_wrap .ai01 {background:url(../images/main/aicon01_on.png) no-repeat; background-size:90px 90px;}
+.about_list li:hover a .al_wrap .ai02 {background:url(../images/main/aicon02_on.png) no-repeat; background-size:90px 90px;}
+.about_list li:hover a .al_wrap .ai03 {background:url(../images/main/aicon03_on.png) no-repeat; background-size:90px 90px;}
+.about_list li:hover a .al_wrap .ai04 {background:url(../images/main/aicon04_on.png) no-repeat; background-size:90px 90px;}
+
+
+/*푸터*/
+.footer_wrap {background-color:#23272b; padding:50px 0;}
+.footer_wrap .foot {width:95%; margin:0 auto; line-height:1.3;}
+.footer_wrap .foot .foot_logo {font-size:20px; font-weight:500; color:#feffff; margin-bottom:30px;}
+.footer_wrap .foot .foot_info {font-size:16px; font-weight:300; color:#737a87; margin-bottom:5px;}
+.footer_wrap .foot .foot_info span {display:inline-block; padding-right:15px; margin-right:15px; position:relative;}
+.footer_wrap .foot .foot_info span:after {content:''; display:block; width:1px; height:12px; background-color:#737a87; position:absolute; right:0; top:5px;}
+.footer_wrap .foot .foot_info span.tel {color:#fff; font-weight:500;}
+.footer_wrap .foot .copy {font-size:16px; font-weight:300; color:#737a87; margin-top:15px;}
+
+/*서브공통*/
+.sub_visual {height:390px; text-align:center; position:relative;}
+.sub_visual01 {background:url(../images/sub/sub_visual01.jpg) no-repeat center top; background-attachment:fixed;}
+.sub_visual02 {background:url(../images/sub/sub_visual02.jpg) no-repeat center top; background-attachment:fixed;}
+.sub_visual03 {background:url(../images/sub/sub_visual03.jpg) no-repeat center top; background-attachment:fixed;}
+.sub_visual04 {background:url(../images/sub/sub_visual04.jpg) no-repeat center top; background-attachment:fixed;}
+.sub_visual05 {background:url(../images/sub/sub_visual05.jpg) no-repeat center top; background-attachment:fixed;}
+.sub_visual h2 {font-size:43px; color:#fff; padding-top:200px; font-weight:400;}
+.sub_visual .subpage_tab {width:100%; max-width:1085px; margin:0 auto; overflow:hidden; position:absolute; bottom:0; left:0; right:0;}
+.sub_visual .subpage_tab li {float:left; height:65px; line-height:65px; background-color:rgba(11, 12, 130, 0.72);}
+.sub_visual .subpage_tab li a {color:#fff; font-size:18px; font-weight:300; display:block;}
+.sub_visual .subpage_tab .st_on {background-color:#fff;}
+.sub_visual .subpage_tab .st_on a {font-size:18px; color:#000;}
+.sub_visual .st01 li {width:100%;}
+.sub_visual .st02 li {width:50%;}
+.sub_visual .st03 li {width:33.33333333%;}
+.sub_visual .st04 li {width:25%;}
+.sub_visual .st05 li {width:20%;}
+
+.sub_links {height:75px; width:100%; position:absolute; bottom:0; display:none; background-color:#fff; z-index:1;}
+.sub_links > div {width:50%; float:left; height:75px; border-bottom:1px solid #ddd; border-top:1px solid #ddd; text-align:left; background:url(../images/sub/sub_select.png) no-repeat center right 10px; background-size:26px auto; box-sizing:border-box;}
+.sub_links > div .cur_page {font-size:18px; color:#222; line-height:76px; line-height:1.3; width:80%; height:100%; display:table;}
+.sub_links > div:first-child {border-right:1px solid #ddd;}
+.sub_links > div .cur_page > span {display:table-cell; vertical-align:middle; padding-left:15px;}
+.in_links {border:1px solid #ddd; line-height:1.3; background-color:#fff; box-sizing:border-box; padding:20px 0 20px 22px; position:relative; width:-webkit-calc(100% + 1px); width:calc(100% + 1px); z-index:1;}
+.in_links > li {margin-bottom:20px;}
+.in_links > li:last-child { margin-bottom:0;}
+.in_links > li > a {font-size:18px; color:#222; display:block; width:100%; height:100%; word-break:break-all;}
+.right_links .in_links {left:-1px;}
+.detail_sub { padding-left:15px;}
+.detail_sub li a { font-size:25px; color:#333;}
+.the_subs { display:none;}
+.hided_lise {display:none;}
+
+.sub_contents {padding:80px 0;}
+.sub_contents .sub_center {width:95%; max-width:1200px; margin:0 auto;}
+.sub_contents .sub_center .sub_nav {margin-bottom:85px;}
+.sub_contents .sub_center .sub_nav > span {display:table-cell; vertical-align:middle; padding-right:10px;}
+.sub_contents .sub_center .sub_nav .the_home img {width:17px;}
+.sub_contents .sub_center .sub_nav .sn_arr {vertical-align:top;}
+.sub_contents .sub_center .sub_nav .sn_arr img {width:6px;}
+.sub_contents .sub_center .sub_nav .depth {font-size:15px; font-weight:300; color:#797979;}
+.sub_contents .sub_center .sub_title {font-size:30px; font-weight:300; line-height:1.3; color:#000;}
+.sub_contents .sub_center .def_txt {font-size:18px; font-weight:300; line-height:1.5; color:#797979;}
+
+/*오시는 길*/
+.map_txt {margin-top:60px; display:table; width:100%;}
+.map_txt .map_icon {width:106px; display:table-cell; vertical-align:top; padding-right:25px;}
+.map_txt .map_icon img {width:100%;}
+.map_txt .map_infos {display:table-cell; color:#222; line-height:1.4;}
+.map_txt .map_infos p:first-child {border-bottom:1px solid #ddd; padding-bottom:25px;}
+.map_txt .map_infos p:last-child {padding-top:25px;}
+.map_txt .map_infos p span {display:table-cell; padding-right:30px;}
+.map_txt .map_infos p span em {display:block;}
+.map_txt .map_infos p .mtit01 {font-size:23px; font-weight:500;}
+.map_txt .map_infos p .mtit02 {font-size:20px; font-weight:500;}
+.map_txt .map_infos p .maptxt {font-size:17px; font-weight:300;}
+.the_map {height:490px;}
+.root_daum_roughmap .wrap_map {height:450px !important;}
+.mob_map {display: none;}
+
+/*인사말*/
+.greet_box {height:425px; background:url(../images/sub/company/great_bg.jpg) no-repeat center; margin-bottom:50px;}
+.greet_box .greet_list {overflow:hidden; width:90%; margin:0 auto; position:relative; top:47%; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
+.greet_box .greet_list li {float:left; text-align:center; color:#fff; width:33.333333%;}
+.greet_box .greet_list li div img {width:100%; max-width:291px;}
+.greet_box .greet_list li p {font-size:20px; font-weight:500; line-height:1.4;}
+.poet_box {background:url(../images/sub/company/poet_box.jpg) center no-repeat; box-sizing: border-box; height: 815px; padding:8% 11%; }
+.poet_box .poet_txt {color:#fff; font-size:23px; line-height:1.7; margin-bottom:40px;}
+.poet_box .poet_txt .clear {display:block;}
+.poet_box .ceo_sign {color:#fff; font-size:25px;}
+.poet_box .ceo_sign span {font-size:20px;}
+.poet_box .ceo_sign img {margin-left: 10px;}
+
+/*회사소개*/
+.company_about {background:url(../images/sub/company/compay_bg.png) no-repeat right top 45px;}
+.company_about span.clear {display:block;}
+
+/*연혁*/
+.sub_contents .sub_center .box_tag {font-size:30px;font-weight:500;color:#000000;margin-bottom:30px;line-height: 1.3;}
+.team_wrap {margin-bottom:130px;}
+.history_wrap {}
+.history_wrap .historys > .years_wrap {margin-bottom:80px; overflow:hidden;}
+.history_wrap .historys > .years_wrap .years {font-size:30px; font-weight:500; color:#555555; float:left; padding-right:138px; background:url(../images/sub/company/year_line.png) no-repeat top 10px right;}
+.history_wrap .historys > .years_wrap .current_year {color:#0f1580;}
+.history_wrap .historys > .years_wrap .in_hist {float:left; position:relative;}
+.history_wrap .historys > .years_wrap .in_hist:before {content:''; width:1px; display:block; background-color:#ccc; position:absolute; left:0; top:13px;}
+.history_wrap .historys > .years_wrap .ih_01:before {height: 151px;}
+.history_wrap .historys > .years_wrap .ih_02:before {height:151px;}
+.history_wrap .historys > .years_wrap .ih_03:before {height:201px;}
+.history_wrap .historys > .years_wrap .ih_04:before {height:201px;}
+.history_wrap .historys > .years_wrap .ih_05:before {height: 151px;}
+.hist
+ory_wrap .historys > .years_wrap .ih_05:before {height:201px;}
+.history_wrap .historys > .years_wrap .in_hist li {font-size:18px; font-weight:300; color:#797979; line-height:1.4; margin-bottom:25px; background:url(../images/sub/company/blit.png) no-repeat top 5px left; background-size:17px 17px;
+padding-left:30px; position:relative; margin-left:70px;}
+.history_wrap .historys > .years_wrap .in_hist li:before {content:''; display:block; width:70px; height:1px; background-color:#cccccc; position:absolute; left:-70px; top:13px;}
+.history_wrap .historys li:last-child {margin-bottom:0 !important;}
+
+/*조직도*/
+.sub_tabwrap {text-align:center; margin-bottom:50px;}
+.sub_tabwrap .sub_tab {display:inline-block; overflow:hidden;}
+.sub_tabwrap .sub_tab li {float:left; width:400px; height:70px; line-height:69px; box-sizing:border-box; border:1px solid #ddd; border-right:none;}
+.sub_tabwrap .sub_tab li:last-child {border-right:1px solid #ddd}
+.sub_tabwrap .sub_tab li a {display:block; font-size:22px; font-weight:300; color:#333333;}
+.sub_tabwrap .sub_tab .st_on, .sub_tabwrap .sub_tab li:last-child.st_on  {border:1px solid #0f138c;}
+.sub_tabwrap .sub_tab .st_on a {color:#0050b1; font-weight:500;}
+
+/*연구원*/
+.chart_box {display:none;}
+.chart_box .dot_list li {font-size:16px; margin-bottom:8px;}
+.ceo_wrap {background-color:#306fc5; box-sizing:border-box; padding:43px 3.4%; margin-bottom:70px;}
+.ceo_wrap, .ceo_wrap .dot_list li {color:#fff;}
+.ceo_wrap .ceo_info {overflow:hidden;  display:table-cell; vertical-align:middle; padding-right:5%; border-right:1px dashed #6f9ad7; width:55%;}
+.ceo_wrap .ceo_info .ceo_photo {float:left; vertical-align:middle; margin-right:5%; width:205px;}
+.ceo_wrap .ceo_info .ceo_txtwrap {float:left; vertical-align:middle; line-height:1.3; -webkit-width:calc(95% - 205px); width:calc(95% - 205px);}
+.ceo_wrap .ceo_info .ceo_txtwrap .ceo_name {font-size:30px; font-weight:300; margin-bottom:15px;}
+.ceo_wrap .ceo_info .ceo_txtwrap .ceo_name b {font-weight:400;}
+.ceo_wrap .ceo_info .ceo_txtwrap .ceo_txt {font-size:18px; font-weight:300;}
+.ceo_wrap .ceo_info .ceo_txtwrap .ceo_txt b {font-weight:400;}
+.ceo_wrap .dot_list {display:table-cell; vertical-align:middle; padding-left:5%;}
+.ceo_wrap .dot_list li:before {background-color:#fff;}
+
+.crew_info {color:#333333;}
+.crew_info .crew_name {font-size:25px; font-weight:500; margin-bottom:10px;}
+.crew_info .crew_posi {padding-bottom:20px; margin-bottom:18px; border-bottom:1px solid #ddd; font-size:20px; font-weight:300; position:relative; padding-left:15px;}
+.crew_info .crew_posi:before {content:''; width:5px; height:20px; display:block; background-color:#4a5d72; position:absolute; left:0; top:0;}
+
+.leaders {display:table; width:100%; margin-bottom:70px;}
+.leaders > li {display:table-cell; vertical-align:top;}
+.leaders > li .lead_img, .leaders > .leader .crew_info  {float:left;}
+.leaders > li .lead_img {margin-right:6.5%; width:205px;}
+.leaders > .leader {padding-right:7%; border-right:1px dashed #ddd; overflow:hidden;}
+.leaders > .leader .crew_info  {-webkit-width:calc(93.5% - 205px); width:calc(93.5% - 205px);}
+.leaders > .sub_leader {padding-left:7%;}
+.leaders > li .crew_info .crew_name {font-size:30px;}
+.leaders > li .crew_info .crew_posi {font-size:30px;}
+.leaders > li .crew_info .crew_posi:before {height:28px; top:3px;}
+
+.crew_list {display:-webkit-flex; display:flex; flex-wrap:wrap; justify-content:space-between;}
+.crew_list > li {width:29%; margin-bottom:50px;}
+
+/*
+.crew_list > li {width:30%; height:210px; margin-right:4.833333%; float:left;}
+.crew_list > li:nth-child(3n-3) {margin-right:0;}*/
+
+/*파트너쉽*/
+.parnters {display:-webkit-flex; display:flex; flex-wrap:wrap;}
+.parnters li {width:230px; margin:0 10px 35px 0;}
+.parnters li p {text-align:center; font-size:16px; font-weight:300; color:#797979; margin-top:15px;}
+
+
+/*파이프라인*/
+.box_name {margin-bottom:30px; font-size:25px; font-weight:500; color:#000000;}
+.box_name .colored {font-size:23px; font-weight:400; color:#0050b1;}
+
+/* 메인 연구내용 - 혈액암 */
+.researchs_wrap {display:none;}
+.researchs_wrap .bl_img { float:right; position:relative; padding-left:30px }
+
+.colored_title {font-size:23px; color:#0050b1; line-height:1.4; margin-bottom:20px;}
+.dot_list li {font-size:18px; font-weight:300; color:#797979; line-height:1.4; margin-bottom:20px; padding-left:15px; position:relative;}
+.dot_list li:before {content:''; display:block; width:6px; height:6px; background-color:#797979; position:absolute; left:0; top:10px;}
+.dot_list li:last-child {margin-bottom:0;}
+.dna_wrap {overflow:hidden; margin-bottom:40px;}
+.dna_wrap li > div {margin-bottom:25px;}
+.slug_list {font-size:18px; position:relative; font-weight:300; line-height:1.4; padding-left:12px; margin-bottom:15px;}
+.slug_list:before {content:'-'; position:absolute; left:0; top:0;}
+.slug_list b {font-weight:500;}
+.dna_wrap li .slog_title {font-size:18px; font-weight:500; margin-bottom:15px;}
+.dna_wrap li:first-child {float:left;}
+.dna_wrap li:last-child {float:right;}
+
+.bio_table {width:100%; border-top:2px solid #333;}
+.bio_table thead tr th {text-align:center; background-color:#2164af; font-size:18px; font-weight:500; color:#fff; padding:30px 0; border:1px solid #dddddd; line-height:1.4;}
+.bio_table tbody tr th, .bio_table tbody tr td {text-align:center; font-size:15px; font-weight:300; padding:20px 0; border:1px solid #dddddd; color:#333333; line-height:1.4;}
+.bio_table tbody tr th {background-color:#f9f9f9;}
+.bio_table tbody tr:nth-child(odd) td {background-color:#f2f8ff;}
+
+.bw_wrap {box-sizing:border-box; height:312px; border:6px solid #ececec; position:relative; margin-bottom:20px;}
+.bw_wrap .bw_img {position:absolute; left:5%; top:50%; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
+.bw_wrap .bw_txts {font-size:18px; font-weight:300; line-height:1.4; color:#333333; position:absolute; left:35%; top:50%; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
+.bw_wrap .bw_txts b {font-weight:500;}
+
+.bw_list {overflow:hidden;}
+.bw_list li > div {width:50%; height:300px;}
+.bw_list li:nth-child(odd) > div {float:left;}
+.bw_list li:nth-child(even) > div {float:right;}
+.bw_list li .bw_info {color:#fff; box-sizing:border-box; padding-left:10%; position:relative;}
+.bw_list li .bw_info .bwi_txtw {position:absolute; top:50%; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
+.bw_list li .bw_info .bw_numb {font-size:50px; font-weight:500; margin-bottom:35px;}
+.bw_list li .bw_info .bw_dt {font-size:20px; font-weight:500; margin-bottom:10px; line-height:1.4;}
+.bw_list li .bw_info .bw_dd {font-size:18px; font-weight:300; line-height:1.4;}
+.bw_list li .bw_info .bw_dd .bw_dd_sapn {font-size:13px; font-weight:300; line-height:1.4;}
+.bw_list li .binf01 {background-color:#3aa8e0;}
+.bw_list li .binf02 {background-color:#2d74b4;}
+.bw_list li .binf03 {background-color:#115199;}
+.bw_list li .bw_bg img {}
+
+/* 메인 연구내용 - 지방간 */
+.dot_list li .slug_list {margin-bottom:0;}
+
+/*커리어*/
+.career_table tbody tr th, .career_table tbody tr td {text-align:left; padding:20px 1.5%;}
+.career_table tbody tr .master_th {text-align:center;}
+.the_btn {width:100%; max-width:305px; height:70px; line-height:69px; box-sizing:border-box; text-align:center; margin:50px auto 0 auto; border:1px solid #ddd;}
+.the_btn a {display:block; font-size:18px; color:#2164af;}
+.the_btn a.down {background:url(../images/sub/career/down_icon.png) no-repeat center right 50px; padding-right:15px;}
+.the_btn:hover {background-color:#2164af;}
+.the_btn:hover a {color:#fff;}
+.the_btn:hover a.down {background:url(../images/sub/career/down_on.png) no-repeat center right 50px;}
+
+
+@media screen and (max-width:1200px) {
+/*연혁*/
+.team_wrap img {width:100%;}
+
+/*조직도*/
+.chart_box > img {width:100%;}
+
+/*파이프라인*/
+.research > img {width:100%;}
+
+/* 메인 연구내용 - 혈액암 */
+.researchs_wrap .bl_img {float:none; width:100%; max-width:555px; margin:0 auto; margin-bottom:60px; padding-left:0}
+.researchs_wrap .bl_img img {width:100%;}
+
+.dna_wrap li:first-child, .dna_wrap li:last-child {float:none; width:100%; max-width:555px; margin:0 auto;}
+.dna_wrap li:first-child {margin-bottom:60px;}
+.dna_wrap li div img {width:100%;}
+}
+
+@media screen and (max-width:1010px) {
+/*헤더*/
+.header_wrap .head .menu,
+.header_wrap .head .src_wrap {display:none;}
+.header_wrap .head .menu_btn {display:block;}
+
+/*뉴스*/
+.main_news .news_table li {background:url(../images/main/table_arr.png) no-repeat center right;}
+.main_news .news_table li .new_date,
+.main_news .news_table li .new_txts {width:100%; box-sizing:border-box; float:none;}
+.main_news .news_table li .new_date {margin-bottom:30px; padding:0;}
+
+/*연혁*/
+.history_wrap .historys > .years_wrap .years,
+.history_wrap .historys > .years_wrap .in_hist {float:none;}
+.history_wrap .historys > .years_wrap .years {background:none; margin-bottom:30px;}
+.history_wrap .historys > .years_wrap .in_hist:before,
+.history_wrap .historys > .years_wrap .in_hist li:before {display:none;}
+.history_wrap .historys > .years_wrap .in_hist li {margin-left:0;}
+}
+
+
+@media screen and (max-width:920px) {
+/*오시는 길*/
+.map_txt, .map_txt .map_icon, .map_txt .map_infos, .map_txt .map_infos p span  {display:block;}
+.map_txt {text-align:center;}
+.map_txt .map_icon {padding:0; margin:0 auto 30px auto;}
+.map_txt .map_infos {line-height:1.6;}
+.map_txt .map_infos p span {padding-right:0;}
+
+/* 메인 연구내용 - 혈액암 */
+.bw_wrap {height:auto; text-align:center; padding:45px 10px;}
+.bw_wrap .bw_img, .bw_wrap .bw_txts  {position:static; -webkit-transform: translateY(0%); transform: translateY(0%);}
+.bw_wrap .bw_img {margin-bottom:30px;}
+
+
+/*조직도*/
+.sub_tabwrap .sub_tab {display:block;}
+.sub_tabwrap .sub_tab li {width:50%;}
+}
+
+@media screen and (max-width:800px) {
+/*메인 슬라이드*/
+.slide_wrap {}
+.slide li > img {width:100%;}
+.slide li .mv_pc {display:none;}
+.slide li .mv_mob {display:block;}
+
+
+/*테크놀로지*/
+.info_boxs li {float:none; width:100%; margin-bottom:20px;}
+.info_boxs li:last-child {margin-bottom:0;}
+.info_boxs .intxtbox {margin-left:0;}
+
+/*어바웃*/
+.about_list li {float:none; width:100%; height:auto; margin:0 0 15px 0;}
+.about_list li a {padding:30px 0;}
+.about_list li a .al_wrap {position:static; -webkit-transform:translate(0,0); transform:translate(0,0);}
+
+/*푸터*/
+.footer_wrap .foot {text-align:center;}
+.footer_wrap .foot .foot_info { line-height:1.6;}
+.footer_wrap .foot .foot_info span {display:block; margin-right:0; padding-right:0;}
+.footer_wrap .foot .foot_info span:after {display:none;}
+
+
+/*연구원*/
+.ceo_wrap .ceo_info, .ceo_wrap .dot_list, .ceo_wrap .ceo_info .ceo_photo, .ceo_wrap .ceo_info .ceo_txtwrap,
+.leaders,  .leaders > li, .leaders > li .lead_img, .leaders > li .crew_info {display:block; width:100%; padding:0;}
+.ceo_wrap .ceo_info {text-align:center; border-bottom:1px dashed #6f9ad7; border-right:0; padding-bottom:30px; margin-bottom:30px;}
+.ceo_wrap .ceo_info .ceo_txtwrap {margin-top:10px; line-height:1.4;}
+.leaders > .sub_leader {padding-left:0; margin-top:50px;}
+.leaders > .leader {padding-right:0; padding-bottom:50px; border-right:none; border-bottom: 1px dashed #ddd;}
+.leaders > .leader .crew_info {width:100%;}
+.leaders > li .lead_img {text-align:center; margin:0 0 30px 0;}
+.crew_list > li {width:47%;}
+.crew_list > .blank {display:none;}
+
+}
+
+@media screen and (max-width:700px) {
+.sub_links {display:block;}
+.sub_visual .subpage_tab {display:none;}
+
+/*인사말*/
+.greet_box {height:auto; background-size:cover; padding:30px 0 70px 0;}
+.greet_box .greet_list {width:100%; top:auto; -webkit-transform:translateY(0); transform:translateY(0);}
+.greet_box .greet_list li {float:none; width:100%; margin-bottom:45px;}
+.greet_box .greet_list li:last-child {margin-bottom:0;}
+
+.mob_scroll {overflow-x: scroll;}
+
+/*회사소개*/
+.company_about {background:url(../images/sub/company/compay_bg.png) no-repeat center top 120px;}
+.company_about .def_txt {padding-top:400px;}
+.company_about span.clear {display:inline;}
+
+/* 메인 연구내용 - 혈액암 */
+.bw_list li:nth-child(odd) > div, .bw_list li:nth-child(even) > div {float:none; width:100%; height:auto;}
+.bw_list li .bw_info {padding:50px 20px;}
+.bw_list li .bw_info .bw_numb {font-size:40px; margin-bottom:30px;}
+.bw_list li .bw_info .bwi_txtw {position:static; -webkit-transform:translateY(0); transform:translateY(0);}
+.bw_list li .bw_bg img {width:100%;}
+
+/*오시는 길*/
+.mob_map {display:block;}
+.pc_map {display:none;}
+}
+
+@media screen and (max-width:530px) {
+/*파트너쉽*/
+.parnters li {width:49%; margin-right:2%; max-width:230px;}
+.parnters li img {width:100%;}
+.parnters li:nth-child(2n-2) {margin-right:0;}
+}
+
+@media screen and (max-width:500px) {
+/*헤더*/
+.header_wrap {height:90px;}
+.header_wrap .head h1 {top:19px; width:160px;}
+.header_wrap .head .menu_btn {top:10px;}
+
+/*메인내용*/
+.section {padding:70px 0;}
+.section .sec_title dt {font-size:35px;}
+
+/*서브 공통*/
+.sub_contents {padding:30px 0 60px 0;}
+.sub_contents .sub_center .sub_nav {margin-bottom:30px;}
+.sub_visual h2 {font-size:40px; padding-top:190px;}
+
+/*회사소개*/
+.poet_box {padding:10% 5%;}
+.poet_box .poet_txt .clear {display: inline;}
+
+/* 메인 연구내용 - 혈액암 */
+.bio_table tbody tr th, .bio_table tbody tr td {/* font-size:11px; */}
+.bio_table thead tr th {/* font-size:13px; */}
+
+/*연구원*/
+.crew_list {display:block;}
+.crew_list > li {width:100%;}
+
+/*오시는 길*/
+.the_map {height:350px;}
+.root_daum_roughmap .wrap_map {height:310px !important;}
+}

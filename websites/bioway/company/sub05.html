@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>바이오웨이</title>
+  <meta name="viewport" content="width=device-width, user-scalable=yes" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="Googlebot" content="noindex, nofollow">
+  <meta name="Naverbot" content="noindex, nofollow">
+  <meta name="Daumoa" content="noindex, nofollow">
+  <link href='https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css' rel='stylesheet' type='text/css'>
+  <meta property="og:image" content="images/common/linkkakao_bar.jpg">
+  <link type="text/css" rel="stylesheet" href="../css/common.css" />
+  <link type="text/css" rel="stylesheet" href="../css/main.css" />
+  <link type="text/css" rel="stylesheet" href="../css/slick.css" />
+  <link type="text/css" rel="stylesheet" href="../css/slick-theme.css" />
+  <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="../js/slick.js"></script>
+
+</head>
+
+<body>
+
+  <!-- 헤더 -->
+  <div class="header_wrap">
+    <div class="head">
+      <h1><a href="../index.html"><img src="../images/common/logo.png" alt="" /></a></h1>
+      <ul class="menu">
+        <li><a href="../company/sub01.html">Company</a>
+          <ul class="sub_menu">
+            <li><a href="../company/sub01.html">대표이사 인사말</a></li>
+            <li><a href="../company/sub02.html">회사소개</a></li>
+            <li><a href="../company/sub03.html">연혁</a></li>
+            <li><a href="../company/sub04.html">조직도</a></li>
+            <li><a href="../company/sub05.html">협력관계</a></li>
+          </ul>
+        </li>
+        <li><a href="../research/sub01.html">Research</a>
+          <ul class="sub_menu">
+            <li><a href="../research/sub01.html">파이프라인</a></li>
+            <li><a href="../research/sub02.html">연구내용</a></li>
+            <li><a href="../research/sub03.html">비임상/임상 연구</a></li>
+            <li><a href="../research/sub04.html">연구 성과</a></li>
+          </ul>
+        </li>
+        <li><a href="../press/sub01.html">Press</a>
+          <ul class="sub_menu">
+            <li><a href="../press/sub01.html">뉴스</a></li>
+          </ul>
+        </li>
+        <li><a href="../career/sub01.html">Career</a>
+          <ul class="sub_menu">
+            <li><a href="../career/sub01.html">Career</a></li>
+          </ul>
+        </li>
+        <li><a href="../about/sub01.html">About</a>
+          <ul class="sub_menu">
+            <li><a href="../about/sub01.html">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="src_wrap">
+        <form class="src_frm" name="frm" action="/HyAdmin/list.php?bbs_id=bo01" method="post" ENCTYPE="multipart/form-data">
+          <input type="hidden" name="ss[sc]" value="1">
+          <input type="text" name="sskw" value="" placeholder="검색어를 입력하세요.">
+          <a href="javascript:actionGoM();"><img src="../images/common/src.png" alt="" /></a>
+        </form>
+      </div>
+      <div class="menu_btn"><span></span></div>
+    </div>
+    <div class="subm_bg"></div>
+    <!-- 모바일 메뉴 -->
+    <div class="menu_mwrap">
+      <div class="menu_marea">
+        <ul class="menu_m">
+          <li><a href="../company/sub01.html">Company</a>
+            <ul class="sub_menus">
+              <li><a href="../company/sub01.html">대표이사 인사말</a></li>
+              <li><a href="../company/sub02.html">회사소개</a></li>
+              <li><a href="../company/sub03.html">연혁</a></li>
+              <li><a href="../company/sub04.html">조직도</a></li>
+              <li><a href="../company/sub05.html">Partnership</a></li>
+            </ul>
+          </li>
+          <li><a href="../research/sub01.html">Research</a>
+            <ul class="sub_menus">
+              <li><a href="../research/sub01.html">파이프라인</a></li>
+              <li><a href="../research/sub02.html">연구내용</a></li>
+              <li><a href="../research/sub03.html">비임상/임상 연구</a></li>
+              <li><a href="../research/sub04.html">연구 성과</a></li>
+            </ul>
+          </li>
+          <li><a href="../press/sub01.html">Press</a>
+            <ul class="sub_menus">
+              <li><a href="../press/sub01.html">뉴스</a></li>
+            </ul>
+          </li>
+          <li><a href="../career/sub01.html">Career</a>
+            <ul class="sub_menus">
+              <li><a href="../career/sub01.html">Career</a></li>
+            </ul>
+          </li>
+          <li><a href="../about/sub01.html">About</a>
+            <ul class="sub_menus">
+              <li><a href="../about/sub01.html">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="blck_bg"></div>
+    </div>
+    <!-- 모바일 메뉴 끝 -->
+  </div>
+  <!-- 헤더 끝 -->
+
+  <!-- 서브 비주얼 -->
+  <div class="sub_visual sub_visual01">
+    <h2>협력관계</h2>
+    <? include "./sub_inc.html"; ?>
+    <? include "../inc/sub_select.html"; ?>
+    <script>
+      $(document).ready(function (e) {
+        $(".subpage_tab > li").eq(4).addClass("st_on");
+        $("#sub01").appendTo(".right_links");
+        var lefttext = $(".il_left > li").eq(0).text(); //좌측
+        var righttext = $(".right_links > .in_links > li").eq(4).text(); //우측
+        $(".left_links .cur_page > span").text(lefttext);
+        $(".right_links .cur_page > span").text(righttext);
+      });
+    </script>
+  </div>
+  <!-- 서브 비주얼 끝-->
+  <!-- 서브 내용 -->
+  <div class="sub_contents">
+    <div class="sub_center">
+      <p class="sub_nav"><span class="the_home"><img src="../images/sub/home.png" alt="" /></span><span class="sn_arr"><img src="../images/sub/sn_arr.png" alt="" /></span><span class="depth">Company</span><span class="sn_arr"><img src="../images/sub/sn_arr.png" alt="" /></span><span class="depth">협력관계</span></p>
+      <p class="sub_title mb40">글로벌 의료산업의 미래!<br />
+        바이오웨이에 오신것을 환영합니다.</p>
+      <ul class="parnters">
+        <li>
+          <div><img src="../images/sub/company/partner01.jpg" alt="" /></div>
+          <p>㈜바이오톡스텍</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner02.jpg" alt="" /></div>
+          <p>㈜켐온</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner03.jpg" alt="" /></div>
+          <p>Covance</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner04.jpg" alt="" /></div>
+          <p>Crown Bio</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner05.jpg" alt="" /></div>
+          <p>Sanyal Bio</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner06.jpg" alt="" /></div>
+          <p>KCRN</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner07.jpg" alt="" /></div>
+          <p>ICON</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner08.jpg" alt="" /></div>
+          <p>고려대학교 약학과 연구팀</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner09.jpg" alt="" /></div>
+          <p>큐베스트 바이오</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner10.jpg" alt="" /></div>
+          <p>대구경북첨단의료산업진흥재단</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner11.jpg" alt="" /></div>
+          <p>성균관대학교 유기약화학 연구팀</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner12.jpg" alt="" /></div>
+          <p>원광대학교 약학화 연구팀</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner13.jpg" alt="" /></div>
+          <p>우석대학교 약학과 연구팀</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner14.jpg" alt="" /></div>
+          <p>Concept Life Sciences</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner15.jpg" alt="" /></div>
+          <p>장스랩</p>
+        </li>
+        <li>
+          <div><img src="../images/sub/company/partner16.jpg" alt="" /></div>
+          <p>위드팔캠</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 서브 내용 끝 -->
+
+  <!-- 푸터 -->
+  <div class="footer_wrap">
+    <div class="foot">
+      <p class="foot_logo">바이오웨이</p>
+      <p class="foot_info"><span>본사 : 06211 서울특별시 강남구 테헤란로 314 (역삼동), 금성빌딩 15층, 16층</span>연구소 : 06211 서울특별시 강남구 테헤란로 314 (역삼동), 금성빌딩 14층</p>
+      <p class="foot_info"><span class="tel">T. 02-3295-5181~2</span><span>Fax. 02-3295-5183</span><span>사업자등록번호. 717-87-00021</span>대표자. 김종우</p>
+      <p class="copy">Copyrights ⓒ 2016 Bioway Inc. All rights reserved.</p>
+    </div>
+  </div>
+  <!-- 푸터 끝 -->
+  <script type="text/javascript" src="../js/layout.js"></script>
+</body>
+
+</html>
