@@ -117,8 +117,52 @@
   <!-- 서브 비주얼 -->
   <div class="sub_visual sub_visual01">
     <h2>협력관계</h2>
-    <? include "./sub_inc.html"; ?>
-    <? include "../inc/sub_select.html"; ?>
+  <ul class="subpage_tab st05">
+    <li><a href="./sub01.html">대표이사 인사말</a></li>
+    <li><a href="./sub02.html">회사소개</a></li>
+    <li><a href="./sub03.html">연혁</a></li>
+    <li><a href="./sub04.html">조직도</a></li>
+    <li><a href="./sub05.html">협력관계</a></li>
+  </ul>
+  <div class="sub_links">
+    <div class="left_links">
+      <p class="cur_page"><span></span></p>
+      <ul class="in_links the_subs il_left">
+        <li><a href="../company/sub01.html">Company</a></li>
+        <li><a href="../research/sub01.html">Research</a></li>
+        <li><a href="../press/sub01.html">Press</a></li>
+        <li><a href="../career/sub01.html">Career</a></li>
+        <li><a href="../about/sub01.html">About</a></li>
+      </ul>
+    </div>
+    <div class="right_links">
+      <p class="cur_page"><span></span></p>
+    </div>
+    <div class="hided_lise">
+      <ul id="sub01" class="in_links the_subs">
+        <li><a href="../company/sub01.html">대표이사 인사말</a></li>
+        <li><a href="../company/sub02.html">회사소개</a></li>
+        <li><a href="../company/sub03.html">연혁</a></li>
+        <li><a href="../company/sub04.html">조직도</a></li>
+        <li><a href="../company/sub05.html">협력관계</a></li>
+      </ul>
+      <ul id="sub02" class="in_links the_subs">
+        <li><a href="../research/sub01.html">파이프라인</a></li>
+        <li><a href="../research/sub02.html">연구내용</a></li>
+        <li><a href="../research/sub03.html">비임상/임상 연구</a></li>
+        <li><a href="../research/sub04.html">연구 성과</a></li>
+      </ul>
+      <ul id="sub03" class="in_links the_subs">
+        <li><a href="../press/sub01.htm">뉴스</a></li>
+      </ul>
+      <ul id="sub04" class="in_links the_subs">
+        <li><a href="../career/sub01.html">Career</a></li>
+      </ul>
+      <ul id="sub05" class="in_links the_subs">
+        <li><a href="../about/sub01.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
     <script>
       $(document).ready(function (e) {
         $(".subpage_tab > li").eq(4).addClass("st_on");
