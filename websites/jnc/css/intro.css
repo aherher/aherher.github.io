@@ -1,0 +1,9 @@
+/*ÀÎÆ®·Î*/
+.intro_Wrap {width:100%; max-width:2000px; background:url(../images/intro_bg.png) no-repeat center center; background-size:cover;}
+.intro_Wrap > a {width:100%; height:100%; position:fixed; z-index:99;}
+.intro_Wrap .intro_logo {position:absolute; width:402px; left:50%; top:50%; -webkit-transform:translate(-50%, -50%); transform:translate(-50%, -50%); display:none;}
+.intro_Wrap .intro_logo img {width:100%;}
+
+@media screen and (max-width:420px){
+.intro_Wrap .intro_logo {width:90% !important;}
+}
