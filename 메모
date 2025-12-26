@@ -13,17 +13,22 @@ https://coding-factory.tistory.com/620
 깃허브 기능 정리
 https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/ByfwpNJ-K
 
-깃허브 가져오기 전 클론
-git clone https://github.com/aherher/porto.git
-
-깃허브 가져오기(풀)
-git pull origin master
 
 깃허브 리모트 삭제
 git remote remove origin
 
 1. 초기화
 git init
+
+2. 먼저 할 것 깃허브 가져오기 전 클론
+git clone https://github.com/aherher/porto.git
+
+3. 연결
+git remote add origin https://github.com/aherher/myStudy.git
+
+4.깃허브 가져오기(풀)
+git pull origin master
+(여기서 origin은 사용자의 닉네임이고 master는 브런치 명. 요새는 main으로 많이 쓴다.)
 
 2. 추가할 파일 더하기
 git add .
@@ -33,14 +38,13 @@ git status
 
 4. 히스토리 만들기
 git commit -m "first commit"
-
-5. 연결
-git remote add origin https://github.com/aherher/myStudy.git
+(-은 메세지 보낼 때)
 
 6. 업로드
 git push -u origin master
 git push -f origin master
-
+(-는 앞으로 내 로컬 컴퓨터와 브랜치를 짝지어 놓는다는 뜻. 그래서 -u를 쓰고나면 앞으로는 길게 쓸 필요 없이 git push만 입력해도 된다.)
+(-fs는 강제 업로드. 서버의 내용을 무시하고 내 코드로 덮어씌운다는 뜻. 주의해서 사용해야 한다.)
 
 리액트 설치
 npx create-react-app my-app
