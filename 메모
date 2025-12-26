@@ -44,7 +44,7 @@ git commit -m "first commit"
 git push -u origin master
 git push -f origin master
 (-는 앞으로 내 로컬 컴퓨터와 브랜치를 짝지어 놓는다는 뜻. 그래서 -u를 쓰고나면 앞으로는 길게 쓸 필요 없이 git push만 입력해도 된다.)
-(-fs는 강제 업로드. 서버의 내용을 무시하고 내 코드로 덮어씌운다는 뜻. 주의해서 사용해야 한다.)
+(-f는 강제 업로드. 서버의 내용을 무시하고 내 코드로 덮어씌운다는 뜻. 주의해서 사용해야 한다.)
 
 리액트 설치
 npx create-react-app my-app
