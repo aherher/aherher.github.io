@@ -25,22 +25,31 @@ git clone https://github.com/aherher/porto.git
 
 3. 연결
 git remote add origin https://github.com/aherher/myStudy.git
+(여기서 origin은 사용자의 닉네임.)
 
 4.깃허브 가져오기(풀)
 git pull origin master
 (여기서 origin은 사용자의 닉네임이고 master는 브런치 명. 요새는 main으로 많이 쓴다.)
 
-2. 추가할 파일 더하기
+5. 현재 이름 확인하기
+git config user.name
+
+6. 깃에 올라갈 내 이름 바꾸기
+git config --global user.name "내이름"
+git config --global user.name "myname@email.com"
+git config user.name "내이름" (이프로젝트만 사용)
+
+7. 추가할 파일 더하기
 git add .
 
-3. 상태확인
+8. 상태확인
 git status
 
-4. 히스토리 만들기
+9. 히스토리 만들기
 git commit -m "first commit"
 (-은 메세지 보낼 때)
 
-6. 업로드
+10. 업로드
 git push -u origin master
 git push -f origin master
 (-는 앞으로 내 로컬 컴퓨터와 브랜치를 짝지어 놓는다는 뜻. 그래서 -u를 쓰고나면 앞으로는 길게 쓸 필요 없이 git push만 입력해도 된다.)
