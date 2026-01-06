@@ -36,7 +36,7 @@ git config user.name
 
 6. 깃에 올라갈 내 이름 바꾸기
 git config --global user.name "내이름"
-git config --global user.name "myname@email.com"
+git config --global user.email "myname@email.com"
 git config user.name "내이름" (이프로젝트만 사용)
 
 7. 추가할 파일 더하기
