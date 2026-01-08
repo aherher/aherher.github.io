@@ -1,0 +1,487 @@
+<?
+  $site_path = "./HyAdmin/";
+  require_once($site_path."include/lib.inc.php");
+  //require_once($site_path."lib/common.php"); //쇼핑몰추가
+
+  $ss_mb_idMain = $_SESSION['ss_mb_id'];
+
+  //작업도메인 체크
+  $site_domainchk = $_SERVER["HTTP_HOST"];
+  $findme = "o2vation";
+
+  $pos = strpos($site_domainchk, $findme);
+
+  if($pos === false) {
+    $domaChk = "N";
+  }else{
+    $domaChk = "Y";
+  }
+  //작업도메인 체크
+
+  //모바일체크 펑션
+  if($moChk) $_SESSION['moChk']="Y";
+  function MobileCheck() {
+    global $HTTP_USER_AGENT;
+    $MobileArray  = array("iPhone","lgtelecom","skt","mobile","samsung","Nokia","BlackBerry","Android","android","sony","phone","iPad","POLARIS","Note","iPod","iPod","SymbianOS","SCH-M\d+","Opera Mini","Windows CE","SonyEricsson","webOS","PalmOS");
+
+    $checkCount = 0;
+      for($i=0; $i<sizeof($MobileArray); $i++){
+        if(preg_match("/$MobileArray[$i]/", strtolower($HTTP_USER_AGENT))){ $checkCount++; break; }
+      }
+    return ($checkCount >= 1) ? "Mobile" : "Computer";
+  }
+  //모바일체크 펑션
+
+  //모바일인지 체크
+  if(MobileCheck() == "Mobile"){
+    $mobileChk = "Y";
+  }else{
+    $mobileChk = "";
+  }
+  //모바일인지 체크
+
+
+  //올드 접속통계 시작
+  $dbqryY4 = "SHOW TABLES	like 'hy_logfile'";
+  $rsY4 = query($dbqryY4,$dbcon);
+  $countY4 = mysql_num_rows($rsY4);
+	if($countY4) {
+
+    if(!$_SESSION[SITE]){
+      insert("hy_logfile", "ip='$_SERVER[REMOTE_ADDR]', url='$_SERVER[HTTP_REFERER]', register=now()");
+    }
+
+    //접속통계 세션생성
+    if(empty($_SESSION[SITE])) {
+      $SITE=md5(uniqid(rand()));
+      //@session_register("SITE") or die("session_register SITE_ID err");
+      $_SESSION[SITE] = $SITE;
+    }
+
+  }
+  //올드 접속통계 끝
+
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:image" content="/images/common/linkkakao_bar.jpg" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+
+<?if($domaChk == "Y"){?>
+  <title></title>
+<?}else{?>
+  <?if($site[st_naverkey]){?>
+  <meta name="naver-site-verification" content="<?=$site[st_naverkey]?>"/>
+  <?}?>
+  <?if($site[st_site_exp]){?>
+  <meta name="description" content="<?=$site[st_site_exp]?>">
+  <meta name="keywords" content="<?=$site[st_site_exp]?>">
+  <?}?>
+  <title><?=$site[st_site_name]?></title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?=$site[st_site_name]?>">
+  <meta property="og:image" content="images/common/linkkakao_bar.jpg">
+  <meta property="og:url" content="http://xxx.com/">
+  <meta property="og:description" content="<?=$site[st_site_exp]?>">
+	<meta property="og:site_name" content="<?=$site[st_site_name]?>">
+<?}?>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" type="text/css" href="css/common.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css?v=230830" />
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/slick.js"></script>
+
+<?if($mobileChk == "Y"){?>
+
+<?
+  //모바일 팝업창 시작
+  $dbqryY1 = "SHOW TABLES	like 'hy_popupMobile'";
+	$rsY1 = query($dbqryY1,$dbcon);
+	$countY1 = mysql_num_rows($rsY1);
+	if($countY1) {
+	  include "./HyAdmin/include/popupM_inc.php";
+	}
+	//모바일 팝업창 끝
+?>
+
+<?}else{?>
+
+<?
+  //팝업창 시작
+  $dbqryY1 = "SHOW TABLES	like 'hy_popupNew'";
+	$rsY1 = query($dbqryY1,$dbcon);
+	$countY1 = mysql_num_rows($rsY1);
+	if($countY1) {
+	  include "./HyAdmin/include/popup_inc.php";
+	}
+	//팝업창 끝
+?>
+
+<?}?>
+
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+  function actionMain(){
+    if(frm.ReCalChk.value == ""){
+      alert("간단 시공비용 계산을 해주세요.");
+      return;
+    }
+    if(frm.ReMemName.value == ""){
+      alert("이름을 입력해 주세요.");
+      frm.ReMemName.focus();
+      return;
+    }
+    if(frm.RePhone.value == ""){
+      alert("연락처를 입력해 주세요.");
+      frm.RePhone.focus();
+      return;
+    }
+    if(frm.ReEmail1.value == ""){
+      alert("이메일을 입력해 주세요.");
+      frm.ReEmail1.focus();
+      return;
+    }
+    if(frm.ReEmail2.value == ""){
+      alert("이메일을 입력해 주세요.");
+      frm.ReEmail2.focus();
+      return;
+    }
+    if(frm.ReContent.value == ""){
+      alert("문의사항을 입력해 주세요.");
+      frm.ReContent.focus();
+      return;
+    }
+    if(frm.dong1.checked == false){
+      alert("개인정보취급방침에 동의해주세요.");
+      return;
+    }
+
+    frm.nospamchk.value = "Y";
+    frm.submit();
+
+  }
+
+  function calMain(){
+    if(frm.RePyung.value == ""){
+      alert("평수를 입력해 주세요.");
+      frm.RePyung.focus();
+      return;
+    }
+    if(frm.ReSigong.value == ""){
+      alert("시공 타입을 선택해 주세요.");
+      frm.ReSigong.focus();
+      return;
+    }
+
+    calins01 = 0;
+    calins02 = 0;
+    RePyungIn = Number(frm.RePyung.value);
+    ReSigongIn = frm.ReSigong.value;
+
+    if(ReSigongIn == "1"){
+      calins01 = RePyungIn * 80000;
+      calins02 = RePyungIn * 5500000;
+    }else if(ReSigongIn == "2"){
+      calins01 = RePyungIn * 80000;
+      calins02 = RePyungIn * 6500000;
+    }else if(ReSigongIn == "3"){
+      calins01 = RePyungIn * 60000;
+      calins02 = RePyungIn * 4500000;
+    }
+
+    frm.ReCalChk.value = "Y";
+    frm.ReCalNum1.value = Number(calins01);
+    frm.ReCalNum2.value = Number(calins02);
+    document.getElementById('result01').innerHTML = comma(calins01);
+    document.getElementById('result02').innerHTML = comma(calins02);
+
+  }
+
+  function comma(str) {
+    str = String(str);
+    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+  }
+
+  function number_format(num) {
+  	num = num.replace(/,/g, "")
+  	var num_str = num.toString()
+  	var result = ''
+
+  	 for(var i=0; i<num_str.length; i++) {
+  		var tmp = num_str.length-(i+1)
+  		if(i%3==0 && i!=0) result = ',' + result
+  		result = num_str.charAt(tmp) + result
+  	}
+
+  	return result;
+  }
+
+-->
+</script>
+
+
+</head>
+
+<body>
+  <? include "inc/menu_wrap.html"; ?>
+  <main>
+    <!-- 슬라이드 -->
+    <div class="visual">
+      <!-- <dl class="visual__title">
+        <dt><b>신뢰</b>와 <b>정직</b>을 바탕으로 성실시공</dt>
+        <dd>경험과 기술력을 갖고 있는 건설회사로서 토목과 건축분야의 최고의 기술력으로<br />
+          건설산업 발전에 이바지하고 있습니다.</dd>
+      </dl> -->
+
+      <?
+        $queryB = "select * from hy_banner order by ReOrder desc,ReIdx desc";
+        $rsB = query($queryB,$dbcon);
+        $countB = mysql_num_rows($rsB);
+      ?>
+
+      <ul class="visual__slide">
+
+        <?
+          for($k=0;$k<$countB;$k++){
+            $rowB = mysql_fetch_array($rsB);
+        ?>
+
+        <li>
+          <img class="mv_pc" src="/HyAdmin/upload/etcFile/<?=$rowB[ReFile1]?>" alt="pc 이미지">
+          <img class="mv_mobile" src="images/main/mv_m.jpg" alt="모바일 이미지">
+        </li>
+
+        <?}?>
+
+      </ul>
+      <!-- <div class="visual__frame"></div> -->
+    </div>
+    <!-- 슬라이드 끝 -->
+
+    <!-- 파트너 -->
+    <div class="mainSection">
+      <div class="center_box">
+        <dl class="section_title">
+          <dt class="poppins">Your First <b>Partner</b></dt>
+          <dd>전문성과 공간에 머무는 사람에 대한 이해를 바탕으로 최고의 공간을 만듭니다.</dd>
+        </dl>
+        <ul class="partners">
+          <li class="partners__01">
+            <a href="/portfolio/sub01.html">
+              <div class="partners__text">
+                <div class="icon icon01"></div>
+                <p class="text01">건설사업</p>
+                <p class="text02 poppins">CIVIL ENGINEERING</p>
+                <div class="arrow"></div>
+              </div>
+            </a>
+          </li>
+          <li class="partners__02">
+            <a href="/portfolio/sub02.html">
+              <div class="partners__text">
+                <div class="icon icon02"></div>
+                <p class="text01">상업용 빌딩</p>
+                <p class="text02 poppins">BUILDING PROJECT</p>
+                <div class="arrow"></div>
+              </div>
+            </a>
+          </li>
+          <li class="partners__03">
+            <a href="/portfolio/sub03.html">
+              <div class="partners__text">
+                <div class="icon icon03"></div>
+                <p class="text01">주택</p>
+                <p class="text02 poppins">HOUSING BUSINESS</p>
+                <div class="arrow"></div>
+              </div>
+            </a>
+          </li>
+          <!-- <li class="partners__04">
+            <a href="/business/sub04.html">
+              <div class="partners__text">
+                <div class="icon icon04"></div>
+                <p class="text01">건축·토목설계</p>
+                <p class="text02 poppins">DESIGN</p>
+                <div class="arrow"></div>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <!-- 파트너끝 -->
+
+    <!-- 스토리 -->
+    <div class="mainSection">
+      <div class="center_box">
+        <dl class="section_title">
+          <dt><b>성장하는 KSJ</b> 스토리</dt>
+          <dd>머무는 사람에 대한 이해를 바탕으로 다양한 스토리를 만들어 가고 있습니다.</dd>
+        </dl>
+        <div class="story">
+          <div class="story__left">
+
+            <?
+              $queryS = "select * from hy_portfolio where ReState = 'Y'";
+              $rsS = query($queryS,$dbcon);
+              $countS = mysql_num_rows($rsS);
+            ?>
+
+            <ul class="story__slide">
+
+              <?
+                for($k=0;$k<$countS;$k++){
+                  $rowS = mysql_fetch_array($rsS);
+              ?>
+
+              <li>
+                <div class="texts">
+                  <p class="text01"><?=$rowS[ReWhere]?> <?=$rowS[RePosition]?> <?=$rowS[ReYongbub]?></p>
+                  <p class="text02"><?=$rowS[ReTitle]?></p>
+                  <p class="text03"><?=$rowS[ReYongbub]?></p>
+                </div>
+                <img src="/HyAdmin/upload/etcFile/<?=$rowS[ReFile2]?>" alt="">
+              </li>
+
+              <?}?>
+
+            </ul>
+          </div>
+          <div class="story__right">
+            <div class="story__thumWrap">
+
+              <?
+                $queryU = "select * from hy_portfolio where ReState = 'Y'";
+                $rsU = query($queryU,$dbcon);
+                $countU = mysql_num_rows($rsU);
+              ?>
+
+              <ul class="story__thum">
+
+                <?
+                  for($k=0;$k<$countU;$k++){
+                    $rowU = mysql_fetch_array($rsU);
+                ?>
+
+                <li>
+                  <p class="tag"><?=$rowU[ReYongbub]?></p>
+                  <img src="/HyAdmin/upload/etcFile/<?=$rowU[ReFile2]?>" alt="">
+                </li>
+
+                <?}?>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a href="/portfolio/sub00.html" class="mainButton">
+          <span>시공사례 더보기</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
+    </div>
+    <!-- 스토리끝 -->
+    <!-- 문의 -->
+    <div class="consult">
+      <div class="center_box">
+        <form class="consult__form" name="frm" action="index_ps.php" method="post" ENCTYPE="multipart/form-data">
+        <input type="hidden" name="nospamchk" value="">
+        <input type="hidden" name="ReCalChk" value="">
+        <input type="hidden" name="ReCalNum1" value="">
+        <input type="hidden" name="ReCalNum2" value="">
+
+          <div class="consult__left">
+            <dl class="consult__title">
+              <dt>간단 시공비용 계산</dt>
+              <dd>자세한 견적은 전화 상담바랍니다.</dd>
+            </dl>
+            <div class="consult__calc">
+              <input type="number" name="RePyung" placeholder="평수를 입력하세요.">
+              <div class="select_wrap"> <span>시공 타입을 선택하세요.</span>
+                <select class="sub_sel" name="ReSigong">
+                  <option value="">시공 타입을 선택하세요.</option>
+                  <option value="1">TYPE1(철골조)</option>
+                  <option value="2">TYPE2(철근콘크리트조)</option>
+                  <option value="3">TYPE3(경량철골조)</option>
+                </select>
+              </div>
+            </div>
+            <button type="button" onClick="calMain();" class="mainButton">
+              <span>시공비용 계산하기</span>
+              <div class="arrow"></div>
+            </button>
+
+            <div class="consult__total">
+              <div class="totalhead">
+                <p class="totalText01">예상비용 결과</p>
+                <p class="totalText02">※ 감리비는 별도</p>
+              </div>
+              <div class="totals">
+                <p>설계비용. <span id="result01">0</span>원</p>
+                <span class="devide">/</span>
+                <p>시공비용. <span id="result02">0</span>원</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="consult__right">
+            <dl class="consult__title">
+              <dt>온라인 문의</dt>
+              <dd>문의내용을 남겨주시면 확인 후 연락드리겠습니다.</dd>
+            </dl>
+            <div class="consult__inputs">
+              <div><input type="text" name="ReMemName" placeholder="이름"></div>
+              <div><input type="text" name="RePhone" placeholder="연락처"></div>
+              <div><input type="text" name="ReEmail1" placeholder="이메일" class="mailCell"><span>@</span><input type="text" name="ReEmail2" class="mailCell" placeholder="직접입력"></div>
+              <div><textarea name="ReContent" placeholder="문의사항"></textarea></div>
+              <p class="agreeBox"><input type="checkbox" name="dong1" value="Y" id="agree"><label for="agree">개인정보취급방침 동의</label> <a href="#!" class="viewPrav">자세히보기</a></p>
+            </div>
+            <button type="button" onClick="actionMain();" class="mainButton">
+              <span>온라인 문의하기</span>
+              <div class="arrow"></div>
+            </button>
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <!-- 문의끝 -->
+    <!-- 공지사항 -->
+    <div class="notice">
+      <div class="notice__center center_box">
+        <p class="notice__title"><a href="/HyAdmin/list.php?bbs_id=bo01">공지사항</a></p>
+
+        <?=hy_lastest('maingong','bo01','공지사항',0,2,20, '..')?>
+
+      </div>
+    </div>
+    <!-- 공지사항 끝 -->
+  </main>
+  <script src="js/main.js?v=230629"></script>
+  <? include "inc/footer.html"; ?>
+
+<?
+  //새로운 접속통계 시작
+  $dbqryY10 = "SHOW TABLES	like 'hy_counter_day'";
+	$rsY10 = query($dbqryY10,$dbcon);
+	$countY10 = mysql_num_rows($rsY10);
+	if($countY10) {
+    include($site_path."counter/hy_counter.php");
+  }
+  //새로운 접속통계 끝
+?>

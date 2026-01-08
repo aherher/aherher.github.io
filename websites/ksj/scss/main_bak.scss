@@ -1,0 +1,83 @@
+@charset "utf-8";
+@import './mixin';
+
+.story {
+  &__left {
+    width: 100%;
+    max-width: 97rem;
+  }
+
+  &__slide {
+    width: 100%;
+    position: relative;
+
+
+    >li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s;
+
+      &.current {
+        opacity: 1;
+        visibility: visible;
+
+      }
+    }
+  }
+
+  &__right {
+    position: relative;
+  }
+
+  &__thumWrap {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__thum {
+    display: flex;
+    overflow: hidden;
+
+    &.moveing {
+      transition: transform 0.5s;
+    }
+
+    >li {
+      &.thumOn {
+        box-sizing: border-box;
+        border: 5px solid #2c67eb;
+      }
+    }
+  }
+
+
+  @include pc {
+    display: flex;
+    height: 54.5rem;
+
+    &__thum {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &__right {
+      .thum_arrow {
+        width: 3.6rem;
+        height: 2.2rem;
+        cursor: pointer;
+      }
+
+      .thum_prev {
+        background: url(../images/main/thum_prev.png) no-repeat;
+      }
+
+      .thum_next {
+        background: url(../images/main/thum_next.png) no-repeat;
+      }
+    }
+  }
+}
