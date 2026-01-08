@@ -1,0 +1,618 @@
+@charset "utf-8";
+@import './mixin';
+
+// 서브공통
+.sectionDl {
+  text-align: center;
+
+  dt {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.5em;
+
+    span {
+      color: $sky;
+    }
+  }
+
+  dd {
+    font-size: 1.8rem;
+    color: #474747;
+  }
+}
+
+// 메인비주얼
+.mainVisual {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 85vh;
+  }
+
+  &__center {
+    @include centerX(absolute);
+    height: 100%;
+    color: #fff;
+    z-index: 1;
+  }
+
+  &__texts {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .dots {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+
+      li {
+        opacity: 0.7;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 100%;
+        @include flexAlign;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 100%;
+          background-color: #fff;
+        }
+
+        &.on {
+          border: 1px solid #fff;
+        }
+      }
+    }
+
+    .slogun {
+      max-width: 82.5rem;
+
+      dt {
+        font-size: clamp(2.5rem, 5vw, 6rem);
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 0.8em;
+      }
+
+      dd {
+        font-size: clamp(1.4rem, 5vw, 2.2rem);
+      }
+    }
+
+    .arrs {
+      display: flex;
+      gap: 1rem;
+      margin-top: clamp(3.4rem, 4vw, 6.5rem);
+
+      li {
+        border: 1px solid #fff;
+        width: clamp(5rem, 3vw, 10rem);
+        position: relative;
+        border: 1px solid #fff;
+        cursor: pointer;
+
+        span {
+          @include centerC(absolute);
+          display: block;
+          width: 2.6rem;
+          height: 1.1rem;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          padding-bottom: 100%;
+        }
+
+        &.next {
+          span {
+            background: url(../images/main/nextArr.png) no-repeat;
+            background-size: cover;
+          }
+        }
+
+        &.prev {
+          span {
+            background: url(../images/main/prevArr.png) no-repeat;
+            background-size: cover;
+          }
+        }
+
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    width: 100%;
+    max-width: 60rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+    li {
+      width: 50%;
+      height: clamp(6rem, 7vw, 12rem);
+
+      &:nth-child(1) {
+        background-color: $blue;
+      }
+
+      &:nth-child(2) {
+        background-color: $sky;
+      }
+
+      a {
+        @include flexAlign;
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        height: 100%;
+        color: #fff;
+      }
+    }
+  }
+
+  .slide {
+    position: relative;
+
+    li {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transition: all 2s;
+      opacity: 0;
+
+      img {
+        max-width: none;
+        @include centerX(relative);
+
+        @media screen and (min-width:1925px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .current {
+      opacity: 1;
+    }
+  }
+
+  .scroll {
+    @include centerX(absolute);
+    width: 4.25rem;
+    bottom: 8rem;
+  }
+
+  @include pc {
+
+    &:after {
+      padding-bottom: 51.04166666667%;
+    }
+
+    .scroll {
+      width: auto;
+      bottom: 2rem;
+    }
+
+    .slide {
+      li {
+        img {
+          max-width: none;
+
+        }
+      }
+    }
+  }
+}
+
+// 어바웃
+.about {
+  &__Lists {
+    margin-top: 7rem;
+
+    li {
+      max-width: 43rem;
+      margin: 0 auto 6rem auto;
+      transform: translateY(5rem);
+
+      .image {
+        overflow: hidden;
+
+        img {
+          transition: transform 0.3s;
+        }
+      }
+
+      .texts {
+        padding: clamp(2rem, 3vw, 5rem) 0 0 clamp(2rem, 3vw, 5rem);
+
+        .title {
+          font-size: 2.3rem;
+          font-weight: 900;
+          color: #111111;
+          margin-bottom: 1rem;
+        }
+
+        .comment {
+          font-size: 1.8rem;
+          color: #555555;
+          line-height: 1.5;
+          margin-bottom: 0.5rem;
+        }
+
+        .more {
+          display: flex;
+          align-items: center;
+          font-size: 1.8rem;
+          font-weight: 900;
+          color: #111111;
+
+          span {
+            width: 3.2rem;
+            height: 3.2rem;
+            background: url(../images/main/moreArrow.png) no-repeat center;
+            background-size: cover;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+
+    @include lap {
+      display: flex;
+
+      li {
+        transition: transform 0.3s;
+        width: 33.333333%;
+        max-width: none;
+
+        &:hover {
+
+          .image {
+            box-shadow: 1px 1px 18px 8px rgba(0, 0, 0, 0.4);
+
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 기업
+.mainContetns_wrap {
+  position: relative;
+  padding: 13rem 0 clamp(12rem, 20vw, 29rem) 0;
+  overflow: hidden;
+
+  .bgObject {}
+
+  .leftBg {
+    width: 23.1rem;
+    height: 42.3rem;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    z-index: 1;
+
+    .inner {
+      width: 100%;
+      height: 100%;
+      background: url(../images/main/leftBg.png) no-repeat;
+      transform: translateX(-100%);
+    }
+  }
+
+  .rightBg {
+    width: 28.1rem;
+    height: 44.3rem;
+    position: absolute;
+    right: 0;
+    bottom: -40%;
+    z-index: 1;
+
+    .inner {
+      width: 100%;
+      height: 100%;
+      background: url(../images/main/rightBg.png) no-repeat;
+      transform: translateX(100%);
+    }
+  }
+
+  @include mobileOnly(1200px) {
+    .bgObject {
+      display: none;
+    }
+  }
+}
+
+.company {
+  position: relative;
+  z-index: 3;
+  margin-top: clamp(7rem, 4vw, 17rem);
+
+  &__left {
+    position: relative;
+    width: 85%;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__hands {
+    width: 100%;
+    position: absolute;
+    background: url(..//images/main/hands.jpg) no-repeat center;
+    background-size: cover;
+    z-index: 0;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 97.25274725275%;
+    }
+  }
+
+  &__inbox {
+    position: absolute;
+    bottom: -17%;
+    right: -17.5%;
+    width: 50%;
+    max-width: 36rem;
+    background: rgb(88, 37, 131);
+    background: linear-gradient(0deg, rgba(88, 37, 131, 1) 0%, rgba(100, 155, 226, 1) 100%);
+    z-index: 1;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: -11%;
+      top: -10%;
+      background: url(../images/main/frame.png) no-repeat;
+      background-size: cover;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    dl {
+      position: absolute;
+      top: 45%;
+      left: 42%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+
+      dt {
+        font-size: clamp(1.4rem, 3vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 0.7em;
+      }
+
+      dd {
+        a {
+          font-size: clamp(1.5rem, 3vw, 2rem);
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__right {
+    margin-top: clamp(12rem, 15vw, 25rem);
+
+    dt {
+      font-size: clamp(2.8rem, 4vw, 5rem);
+      font-weight: 900;
+      line-height: 1.2;
+      color: #000;
+      margin-bottom: 1em;
+      transform: translateX(5rem);
+
+      div {
+        color: #fff;
+        background-color: $sky;
+        display: inline-block;
+      }
+    }
+
+    dd {
+      font-size: clamp(1.8rem, 4vw, 2rem);
+      font-weight: 600;
+      color: #303030;
+      line-height: 1.5;
+      transform: translateX(5rem);
+    }
+  }
+
+
+  @include pc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+      width: 50%;
+    }
+
+    &__right {
+      width: 40%;
+      margin-top: 0;
+    }
+  }
+}
+
+.pipeBg {
+  background: url(../images/main/pipeBg.png) no-repeat center bottom;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  background-size: cover;
+  animation: bgMove 2s alternate infinite;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 43.54166666667%;
+  }
+}
+
+@keyframes bgMove {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(6rem);
+  }
+}
+
+// 뉴스
+.news {
+  background-color: #f2f2f2;
+  padding: 10rem 0;
+
+  &__head {
+    position: relative;
+  }
+
+  &__more {
+    right: 0;
+    width: 6rem;
+    height: 6rem;
+    border: 3px solid #999999;
+    color: #999999;
+    box-sizing: border-box;
+    font-size: 4rem;
+    font-weight: 300;
+    @include centerY(absolute);
+
+    a {
+      height: 100%;
+      @include flexAlign;
+    }
+  }
+
+  &__lists {
+    padding-top: 6rem;
+    margin-top: 4rem;
+    border-top: 3px solid #000;
+
+    li {
+      background-color: #fff;
+      box-sizing: border-box;
+      margin: 0 auto 5rem auto;
+      max-width: 69rem;
+      max-height: 26.7rem;
+      transform: translateY(20rem);
+
+      a {
+        @include flexStart;
+        padding: 4rem 5%;
+      }
+
+      .image {
+        overflow: hidden;
+        position: relative;
+        width: 42%;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          padding-bottom: 66.8%;
+        }
+      }
+
+      .texts {
+        width: 50%;
+
+        .title {
+          font-size: 2rem;
+          font-weight: 700;
+          line-height: 1.5;
+          padding-bottom: 1.5rem;
+          margin-bottom: 1rem;
+          border-bottom: 1px solid #ddd;
+        }
+
+        .articles {
+          font-size: 1.8rem;
+          font-weight: 500;
+          line-height: 1.4;
+          color: #555555;
+          margin-bottom: 1em;
+        }
+
+        .date {
+          font-size: 1.5rem;
+          color: #9f9f9f;
+        }
+      }
+    }
+
+    @include mobileOnly(768px) {
+      li {
+        max-height: none;
+
+        .image {
+          max-width: 25rem;
+          margin: 0 auto 4rem auto
+        }
+
+        .image,
+        .texts {
+          width: 100%;
+        }
+
+        a {
+          display: block;
+        }
+      }
+    }
+
+    @include pc {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      li {
+        width: 48%;
+        margin: 0 0 5rem 0;
+
+        a {
+          @include flexStart;
+        }
+      }
+    }
+  }
+
+
+}
